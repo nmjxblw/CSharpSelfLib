@@ -1,0 +1,18 @@
+{
+	"Version": "beta 1.0.0",
+	"BeatInterval": 1000, //心跳间隔1000ms
+	"LocalIP": {
+		"Address": "127.0.0.1",
+		"Port": {
+			"Beat": 10001, //心跳端口
+			"Business": 10002 //业务端口
+		}
+	},
+	"RemoteIP": {
+		"Address": "127.0.0.1",
+		"Port": {
+			"Beat": 11011,
+			"Business": 11012
+		}
+	}
+}
