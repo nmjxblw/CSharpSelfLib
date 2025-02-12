@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Request Inspector</title>
+	<style>
+		body {
+			font-family: YouYuan,Arial, sans-serif;
+			padding: 20px;
+		}
+
+		.status-box {
+			margin: 10px;
+			padding: 15px;
+			border-radius: 5px;
+		}
+
+		.online {
+			background: #dfffdf;
+			border: 1px solid #4CAF50;
+		}
+
+		.offline {
+			background: #ffe6e6;
+			border: 1px solid #ff4444;
+		}
+
+		.error {
+			background: #fff3cd;
+			border: 1px solid #ffc107;
+		}
+
+		.request {
+			border: 1px solid #ccc;
+			margin: 10px;
+			padding: 10px;
+		}
+
+		pre {
+			background: #f5f5f5;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>客户端状态监控</h1>
+	<div>
+		<input type="text" id="targetIP" placeholder="输入客户端IP" style="width: 200px;">
+		<button onclick="sendCommand('START')">开始心跳</button>
+		<button onclick="sendCommand('END')">结束心跳</button>
+	</div>
+	<div id="statusContainer"></div>
+
+	<script>
+		// 获取状态并更新显示
+		function refreshStatus() {
+			fetch('/api/status')
+				.then(res => res.json())
+				.then(data => {
+					const container = document.getElementById('statusContainer');
+					container.innerHTML = data.map(([ip, info]) => `
+							<div class="status-box ${info.status}">
+								IP: ${ip}<br>
+								状态: ${info.status.toUpperCase()}<br>
+								最后心跳: ${new Date(info.lastHeartbeat).toLocaleString()}
+							</div>
+						`).join('');
+				});
+		}
+
+		// 发送控制命令
+		function sendCommand(command) {
+			const targetIP = document.getElementById('targetIP').value;
+			fetch('/api/control', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ targetIP, command })
+			});
+		}
+
+		// 每2秒刷新状态
+		setInterval(refreshStatus, 2000);
+		refreshStatus();
+	</script>
+</body>
+</html>

@@ -14,5 +14,8 @@
 			"Beat": 11011,
 			"Business": 11012
 		}
+	},
+	"Url": {
+		"Beat": "http://localhost:10001//"
 	}
 }

@@ -12,7 +12,9 @@ public class TestSO : ScriptableObject, IComparable<TestSO>
 	/// 测试文本资产
 	/// </summary>
 	[SerializeField]
+#pragma warning disable CS0649
 	private TextAsset? m_TextAsset;
+#pragma warning restore CS0649
 	/// <summary>
 	/// 排序方法
 	/// </summary>

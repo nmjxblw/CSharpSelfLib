@@ -2,14 +2,18 @@
 /// <summary>
 /// DeepSeek 写的 Tcp 客户端
 /// </summary>
-class DeepSeekTcpClient
+public class DeepSeekTcpClient
 {
 	private const int HeartbeatInterval = 1000;
 	private const int ReconnectInterval = 5000;
 	private TcpClient? client;
 	private NetworkStream? stream;
 	private bool isRunning;
-
+	/// <summary>
+	/// 联机
+	/// </summary>
+	/// <param name="server"></param>
+	/// <param name="port"></param>
 	public void Connect(string server, int port)
 	{
 		isRunning = true;
@@ -76,7 +80,9 @@ class DeepSeekTcpClient
 			stream?.Write(response, 0, response.Length);
 		}
 	}
-
+	/// <summary>
+	/// 
+	/// </summary>
 	public void Disconnect()
 	{
 		isRunning = false;

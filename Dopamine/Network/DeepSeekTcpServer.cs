@@ -2,12 +2,15 @@
 /// <summary>
 /// DeepSeek 的 Tcp 服务器
 /// </summary>
-class DeepSeekTcpServer
+public class DeepSeekTcpServer
 {
 	private const int HeartbeatInterval = 1000;
 	private const int Timeout = 10000;
 	private TcpListener? listener;
-
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="port"></param>
 	public void Start(int port)
 	{
 		listener = new TcpListener(IPAddress.Any, port);
@@ -76,7 +79,10 @@ class DeepSeekTcpServer
 			Console.WriteLine("Client disconnected.");
 		}
 	}
-
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="command"></param>
 	public void SendCommand(byte[] command)
 	{
 		// 实际应用中需要管理多个客户端连接
