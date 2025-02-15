@@ -17,5 +17,9 @@
 	},
 	"Url": {
 		"Beat": "http://localhost:10001//"
+	},
+	"Format": {
+		"Receive": "^\\s*cmd\\s*=\\s*(\\d{4})\\s*,\\s*sn\\s*=\\s*(\\d\u002B)\\s*,\\s*data\\s*=\\s*(.*)$",
+		"Send": "cmd={0},sn={1},data={2}\r\n"
 	}
 }

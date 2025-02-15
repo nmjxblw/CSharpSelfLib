@@ -1,0 +1,25 @@
+{
+  "RemoteIP": {
+    "Port": {
+      "Business": 11012,
+      "Beat": 11011
+    },
+    "Address": "127.0.0.1"
+  },
+  "Format": {
+    "Send": "cmd={0},sn={1},data={2}\r\n",
+    "Receive": "^\\s*cmd\\s*=\\s*(?<cmd>\\d{4})\\s*,\\s*sn\\s*=\\s*(?<sn>\\d+)\\s*,\\s*data\\s*=\\s*(?<data>.*)$"
+  },
+  "LocalIP": {
+    "Port": {
+      "Business": 10002,
+      "Beat": 10001
+    },
+    "Address": "127.0.0.1"
+  },
+  "BeatInterval": 1000,
+  "Version": "beta 1.0.0",
+  "Url": {
+    "Beat": "http://localhost:10001//"
+  }
+}

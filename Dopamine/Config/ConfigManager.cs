@@ -39,4 +39,20 @@ public static class ConfigManager
 			Trace.WriteLine(ex.Message);
 		}
 	}
+	/// <summary>
+	/// 存储
+	/// </summary>
+	public static void Save()
+	{
+		string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "test.json");
+		string? path = Path.GetDirectoryName(filepath);
+		if (string.IsNullOrEmpty(path)) return;
+
+		if (!Directory.Exists(path))
+			Directory.CreateDirectory(path);
+
+		FileStream stream = File.Create(filepath);
+		JsonSerializer.Serialize(stream, Data, opts);
+		stream.Dispose();
+	}
 }
