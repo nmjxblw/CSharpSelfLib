@@ -156,10 +156,34 @@
             DeepSeek 写的 Tcp 客户端
             </summary>
         </member>
+        <member name="M:Dopamine.DeepSeekTcpClient.Connect(System.String,System.Int32)">
+            <summary>
+            联机
+            </summary>
+            <param name="server"></param>
+            <param name="port"></param>
+        </member>
+        <member name="M:Dopamine.DeepSeekTcpClient.Disconnect">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Dopamine.DeepSeekTcpServer">
             <summary>
             DeepSeek 的 Tcp 服务器
             </summary>
+        </member>
+        <member name="M:Dopamine.DeepSeekTcpServer.Start(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="port"></param>
+        </member>
+        <member name="M:Dopamine.DeepSeekTcpServer.SendCommand(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="command"></param>
         </member>
         <member name="T:Dopamine.DopamineBeatClient">
             <summary>
@@ -303,11 +327,6 @@
             </summary>
             <param name="client"></param>
         </member>
-        <member name="F:Dopamine.BeatingState.data">
-            <summary>
-            固定格式
-            </summary>
-        </member>
         <member name="M:Dopamine.BeatingState.OnEnter">
             <summary>
             进入心跳时逻辑
@@ -321,6 +340,32 @@
         <member name="M:Dopamine.BeatingState.OnUpdate">
             <summary>
             实时运行逻辑
+            </summary>
+        </member>
+        <member name="T:Dopamine.BeatCommandController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dopamine.BeatCommandController.Control(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:Dopamine.HttpMessage">
+            <summary>
+            Message类
+            </summary>
+        </member>
+        <member name="P:Dopamine.HttpMessage.Message">
+            <summary>
+            HttpBody中的消息
+            </summary>
+        </member>
+        <member name="P:Dopamine.HttpMessage.Flag">
+            <summary>
+            标识符
             </summary>
         </member>
         <member name="T:Dopamine.ClientState">

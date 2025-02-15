@@ -10,7 +10,7 @@ public sealed class App
 	private DopamineHttpClient Client { get; set; } = new DopamineHttpClient();
 	public void Start()
 	{
-		string getString = Client.GetAsync($"{ConfigManager.Data.Url.Beat}").GetAwaiter().GetResult() ?? string.Empty;
-		getString.ShowInConsole(true);
+		//string getString = Client.GetAsync($"{ConfigManager.Data.Url.Beat}").GetAwaiter().GetResult() ?? string.Empty;
+		//getString.ShowInConsole(true);
 	}
 }

@@ -1,4 +1,6 @@
-﻿namespace Dopamine;
+﻿#pragma warning disable IDE0130 // 命名空间与文件夹结构不匹配
+namespace Dopamine;
+#pragma warning restore IDE0130 // 命名空间与文件夹结构不匹配
 /// <summary>
 /// 拓展域名下的Json配置管理器
 /// </summary>

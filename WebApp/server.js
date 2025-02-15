@@ -13,7 +13,7 @@ const clients = new Map(); // key: clientIP, value: { lastHeartbeat: Date, statu
 app.post('/api/control', (req, res) => {
     const { targetIP, command } = req.body;
     // 这里实际应通过网络发送到客户端，示例直接模拟
-    console.log(`[控制命令] 发送到 ${targetIP}: ${command}`);
+    console.log(`[Command] Send To ${targetIP}: ${command}`);
     res.json({ success: true });
 });
 
