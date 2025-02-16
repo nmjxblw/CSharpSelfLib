@@ -54,173 +54,54 @@
             <param name="capacity">容量</param>
             <returns>流数据帧</returns>
         </member>
-        <member name="T:Dopamine.DopamineBeatClient">
+        <member name="T:Dopamine.DopamineHttpClient">
             <summary>
-            心跳客户端
+            基于HttpClient客户端
             </summary>
         </member>
-        <member name="M:Dopamine.DopamineBeatClient.#ctor(System.String)">
+        <member name="M:Dopamine.DopamineHttpClient.#ctor">
             <summary>
             构造
             </summary>
         </member>
-        <member name="F:Dopamine.DopamineBeatClient.State">
+        <member name="M:Dopamine.DopamineHttpClient.#ctor(System.String)">
             <summary>
-            状态机
+            构造
             </summary>
         </member>
-        <member name="P:Dopamine.DopamineBeatClient.CurrentState">
+        <member name="M:Dopamine.DopamineHttpClient.#ctor(System.Net.Http.HttpMessageHandler)">
             <summary>
-            当前客户端状态
+            构造
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Dopamine.DopamineHttpClient.#ctor(System.Net.Http.HttpMessageHandler,System.Boolean)">
+            <summary>
+            构造
+            </summary>
+            <param name="handler"></param>
+            <param name="disposeHandler"></param>
+        </member>
+        <member name="P:Dopamine.DopamineHttpClient.Url">
+            <summary>
+            目标Url
             </summary>
         </member>
-        <member name="P:Dopamine.DopamineBeatClient.CancellationTokenSource">
+        <member name="M:Dopamine.DopamineHttpClient.PostStringAsync(System.String,System.String)">
             <summary>
-            取消信号源
+            异步POST请求String型消息
             </summary>
-        </member>
-        <member name="P:Dopamine.DopamineBeatClient.IsRunning">
-            <summary>
-            运行标识符
-            </summary>
-        </member>
-        <member name="P:Dopamine.DopamineBeatClient.Disposed">
-            <summary>
-            是否被释放
-            </summary>
-        </member>
-        <member name="M:Dopamine.DopamineBeatClient.Initialize">
-            <summary>
-            初始化
-            </summary>
-        </member>
-        <member name="M:Dopamine.DopamineBeatClient.Update">
-            <summary>
-            处理每秒运行逻辑
-            </summary>
+            <param name="stringMessage"></param>
+            <param name="url"></param>
             <returns></returns>
         </member>
-        <member name="M:Dopamine.DopamineBeatClient.SwitchState(Dopamine.ClientState)">
+        <member name="M:Dopamine.DopamineHttpClient.GetAPIAsync(System.String,System.String)">
             <summary>
-            状态切换
+            异步GET请求API
             </summary>
-            <param name="newState"></param>
-        </member>
-        <member name="M:Dopamine.DopamineBeatClient.Dispose">
-            <summary>
-            释放
-            </summary>
-        </member>
-        <member name="M:Dopamine.DopamineBeatClient.Dispose(System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="disposing"></param>
-        </member>
-        <member name="M:Dopamine.DopamineBeatClient.Finalize">
-            <summary>
-            析构
-            </summary>
-        </member>
-        <member name="T:Dopamine.ClientStateMachine">
-            <summary>
-            简单客户端状态机，用于处理客户端逻辑
-            </summary>
-        </member>
-        <member name="M:Dopamine.ClientStateMachine.#ctor(Dopamine.DopamineBeatClient)">
-            <summary>
-            简单客户端状态机，用于处理客户端逻辑
-            </summary>
-        </member>
-        <member name="P:Dopamine.ClientStateMachine.Client">
-            <summary>
-            父类心跳客户端
-            </summary>
-        </member>
-        <member name="M:Dopamine.ClientStateMachine.OnEnter">
-            <summary>
-            进入逻辑
-            </summary>
-        </member>
-        <member name="M:Dopamine.ClientStateMachine.OnUpdate">
-            <summary>
-            实时运行逻辑
-            </summary>
-        </member>
-        <member name="M:Dopamine.ClientStateMachine.OnExit">
-            <summary>
-            退出逻辑
-            </summary>
-        </member>
-        <member name="T:Dopamine.IDLEState">
-            <summary>
-            待机逻辑
-            </summary>
-            <param name="client"></param>
-        </member>
-        <member name="M:Dopamine.IDLEState.#ctor(Dopamine.DopamineBeatClient)">
-            <summary>
-            待机逻辑
-            </summary>
-            <param name="client"></param>
-        </member>
-        <member name="P:Dopamine.IDLEState.Listener">
-            <summary>
-            监听
-            </summary>
-        </member>
-        <member name="M:Dopamine.IDLEState.OnEnter">
-            <summary>
-            进入待机时逻辑
-            </summary>
-        </member>
-        <member name="M:Dopamine.IDLEState.OnExit">
-            <summary>
-            退出待机时逻辑
-            </summary>
-        </member>
-        <member name="M:Dopamine.IDLEState.OnUpdate">
-            <summary>
-            实时运行逻辑
-            </summary>
-        </member>
-        <member name="T:Dopamine.BeatingState">
-            <summary>
-            心跳逻辑
-            </summary>
-            <param name="client"></param>
-        </member>
-        <member name="M:Dopamine.BeatingState.#ctor(Dopamine.DopamineBeatClient)">
-            <summary>
-            心跳逻辑
-            </summary>
-            <param name="client"></param>
-        </member>
-        <member name="M:Dopamine.BeatingState.OnEnter">
-            <summary>
-            进入心跳时逻辑
-            </summary>
-        </member>
-        <member name="M:Dopamine.BeatingState.OnExit">
-            <summary>
-            退出心跳时逻辑
-            </summary>
-        </member>
-        <member name="M:Dopamine.BeatingState.OnUpdate">
-            <summary>
-            实时运行逻辑
-            </summary>
-        </member>
-        <member name="T:Dopamine.BeatCommandController">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Dopamine.BeatCommandController.Control(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="msg"></param>
+            <param name="APIString"></param>
+            <param name="url"></param>
+            <returns></returns>
         </member>
         <member name="T:Dopamine.HttpMessage">
             <summary>
@@ -236,51 +117,6 @@
             <summary>
             标识符
             </summary>
-        </member>
-        <member name="T:Dopamine.ClientState">
-            <summary>
-            客户端状态
-            </summary>
-        </member>
-        <member name="F:Dopamine.ClientState.IDLE">
-            <summary>
-            待机
-            </summary>
-        </member>
-        <member name="F:Dopamine.ClientState.Beating">
-            <summary>
-            心跳
-            </summary>
-        </member>
-        <member name="T:Dopamine.DopamineHttpClient">
-            <summary>
-            基于HttpClient客户端
-            </summary>
-        </member>
-        <member name="M:Dopamine.DopamineHttpClient.#ctor(System.String)">
-            <summary>
-            构造
-            </summary>
-        </member>
-        <member name="P:Dopamine.DopamineHttpClient.Url">
-            <summary>
-            目标Url
-            </summary>
-        </member>
-        <member name="M:Dopamine.DopamineHttpClient.GetAsync(System.String)">
-            <summary>
-            异步获取
-            </summary>
-            <param name="url"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Dopamine.DopamineHttpClient.PostAsync(System.String,System.String)">
-            <summary>
-            异步请求
-            </summary>
-            <param name="data"></param>
-            <param name="url"></param>
-            <returns></returns>
         </member>
         <member name="T:Dopamine.GameManager">
             <summary>

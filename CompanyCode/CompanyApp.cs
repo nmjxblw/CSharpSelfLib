@@ -21,8 +21,5 @@ public sealed class CompanyApp
 		{
 			$"code={code},target={target},data={data}".ShowInConsole(true);
 		}
-		//ConfigManager.Data.Format.Receive = @"^\s*cmd\s*=\s*(?<cmd>\d{4})\s*,\s*sn\s*=\s*(?<sn>\d+)\s*,\s*data\s*=\s*(?<data>.*)$";
-		//ConfigManager.Data.Format.Send = "cmd={0},sn={1},data={2}\r\n";
-		//ConfigManager.Save();
 	}
 }

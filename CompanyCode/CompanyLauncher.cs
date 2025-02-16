@@ -14,7 +14,7 @@ sealed class CompanyLauncher
 	/// <param name="args"></param>
 	static void Main(string[] args)
 	{
-		"正在启动APP".ShowInConsole();
+		"正在启动 CompanyApp ".ShowInConsole();
 		App.Start();
 	}
 }
