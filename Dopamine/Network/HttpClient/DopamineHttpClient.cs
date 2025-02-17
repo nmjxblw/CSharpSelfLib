@@ -37,7 +37,7 @@ public class DopamineHttpClient : HttpClient
 	/// <summary>
 	/// 目标Url
 	/// </summary>
-	public virtual string Url { get; set; } = "https://localhost:10001/";
+	public virtual string Url { get; set; } = "http://localhost:11011/";
 	/// <summary>
 	/// 异步POST请求String型消息
 	/// </summary>
@@ -73,7 +73,7 @@ public class DopamineHttpClient : HttpClient
 		url = url ?? Url;
 		try
 		{
-			url = string.Format("{0}/api/{1}", url, APIString);
+			url = string.Format("{0}/api/{1}", url.TrimEnd('/'), APIString);
 			HttpResponseMessage response = await this.GetAsync(url);
 			response.EnsureSuccessStatusCode();
 			$"Uri:{response.RequestMessage?.RequestUri?.ToString()}".ShowInConsole();
@@ -84,6 +84,14 @@ public class DopamineHttpClient : HttpClient
 			ex.Message.ShowInTrace(true);
 			return null;
 		}
+	}
+	/// <summary>
+	/// 内部释放
+	/// </summary>
+	/// <param name="disposing"></param>
+	protected override void Dispose(bool disposing)
+	{
+		base.Dispose(disposing);
 	}
 }
 

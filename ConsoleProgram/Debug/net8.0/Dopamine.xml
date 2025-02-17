@@ -103,6 +103,12 @@
             <param name="url"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.DopamineHttpClient.Dispose(System.Boolean)">
+            <summary>
+            内部释放
+            </summary>
+            <param name="disposing"></param>
+        </member>
         <member name="T:Dopamine.HttpMessage">
             <summary>
             Message类
@@ -117,6 +123,81 @@
             <summary>
             标识符
             </summary>
+        </member>
+        <member name="T:Dopamine.DopamineHttpServer">
+            <summary>
+            基于HttpServer
+            </summary>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.#ctor(System.Web.Http.HttpConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.#ctor(System.Net.Http.HttpMessageHandler)">
+            <summary>
+            
+            </summary>
+            <param name="dispatcher"></param>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.#ctor(System.Web.Http.HttpConfiguration,System.Net.Http.HttpMessageHandler)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+            <param name="dispatcher"></param>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.Dispose(System.Boolean)">
+            <summary>
+            手动释放资源
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.Initialize">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.Send(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.DopamineHttpServer.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
         </member>
         <member name="T:Dopamine.GameManager">
             <summary>
@@ -450,6 +531,11 @@
             </summary>
             <param name="path"></param>
             <returns></returns>
+        </member>
+        <member name="T:Dopamine.SerializableDictionary`2">
+            <summary>
+            基于双链表实现的可序列化字典
+            </summary>
         </member>
         <member name="T:ContextLevel">
             <summary>

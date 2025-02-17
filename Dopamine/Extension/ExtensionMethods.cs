@@ -9,7 +9,7 @@ public static class ExtensionMethods
 	/// </summary>
 	/// <param name="input">输入的字符串</param>
 	/// <param name="showDateTime">添加时间戳</param>
-	public static void ShowInTrace(this string input, bool showDateTime = false)
+	public static void ShowInTrace(this string? input, bool showDateTime = false)
 	{
 		Trace.WriteLine($"{(showDateTime ? DateTime.Now.ToString("[HH:mm:ss]\t") : string.Empty)}{input}");
 	}
@@ -18,7 +18,7 @@ public static class ExtensionMethods
 	/// </summary>
 	/// <param name="input"></param>
 	/// <param name="showDateTime"></param>
-	public static void ShowInConsole(this string input, bool showDateTime = false)
+	public static void ShowInConsole(this string? input, bool showDateTime = false)
 	{
 		Console.WriteLine($"{(showDateTime ? DateTime.Now.ToString("[HH:mm:ss]\t") : string.Empty)}{input}");
 	}
