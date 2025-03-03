@@ -48,4 +48,33 @@ public static class ExtensionMethods
 		Array.Copy(InitFrame, 0, TrimFrame, 0, len);
 		return TrimFrame;
 	}
+
+	/// <summary>
+	/// 和校验
+	/// </summary>
+	/// <param name="UserDataArea"></param>
+	/// <returns></returns>
+	public static byte GetSum(this IEnumerable<byte> UserDataArea)
+	{
+		byte result = 0x00;
+		foreach (var data in UserDataArea)
+		{
+			result += data;
+		}
+		return result;
+	}
+	/// <summary>
+	/// 计算异或和
+	/// </summary>
+	/// <param name="UserDataArea"></param>
+	/// <returns></returns>
+	public static byte GetXor(this IEnumerable<byte> UserDataArea)
+	{
+		byte result = 0x00;
+		foreach (var data in UserDataArea)
+		{
+			result ^= data;
+		}
+		return result;
+	}
 }

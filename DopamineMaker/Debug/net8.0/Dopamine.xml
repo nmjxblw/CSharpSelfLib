@@ -54,6 +54,40 @@
             <param name="capacity">容量</param>
             <returns>流数据帧</returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.GetSum(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            和校验
+            </summary>
+            <param name="UserDataArea"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.GetXor(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            计算异或和
+            </summary>
+            <param name="UserDataArea"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dopamine.DopamineController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dopamine.DopamineController.Test``1(``0)">
+            <summary>
+            泛型匹配
+            </summary>
+            <typeparam name="TParam"></typeparam>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.DopamineController.Test(CommunicationFormat{System.String})">
+            <summary>
+            string型交流
+            </summary>
+            <param name="communicate"></param>
+            <returns></returns>
+        </member>
         <member name="T:Dopamine.DopamineHttpClient">
             <summary>
             基于HttpClient客户端
@@ -123,6 +157,102 @@
             <summary>
             标识符
             </summary>
+        </member>
+        <member name="T:Dopamine.DopamineRouter">
+            <summary>
+            Dopamine路由
+            </summary>
+        </member>
+        <member name="M:Dopamine.DopamineRouter.#ctor(System.String,System.Int32)">
+            <summary>
+            构造
+            </summary>
+            <param name="ip"></param>
+            <param name="port"></param>
+        </member>
+        <member name="M:Dopamine.DopamineRouter.Close">
+            <summary>
+            关闭路由
+            </summary>
+        </member>
+        <member name="T:Dopamine.DopamineTcpClient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dopamine.SimpleClient">
+            <summary>
+            简易客户端
+            </summary>
+        </member>
+        <member name="M:Dopamine.SimpleClient.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dopamine.SimpleClient.#ctor(System.Net.Http.HttpMessageHandler)">
+            <summary>
+            
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Dopamine.SimpleClient.#ctor(System.Net.Http.HttpMessageHandler,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="handler"></param>
+            <param name="disposeHandler"></param>
+        </member>
+        <member name="M:Dopamine.SimpleClient.PostTo``2(``0,System.String)">
+            <summary>
+            自定义Post
+            </summary>
+            <typeparam name="TParam"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="input"></param>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.SimpleClient.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.SimpleClient.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.SimpleClient.Send(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.SimpleClient.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.SimpleClient.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.SimpleClient.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
         </member>
         <member name="T:Dopamine.DopamineHttpServer">
             <summary>
@@ -535,6 +665,27 @@
         <member name="T:Dopamine.SerializableDictionary`2">
             <summary>
             基于双链表实现的可序列化字典
+            </summary>
+        </member>
+        <member name="T:CommunicationFormat`1">
+            <summary>
+            Json请求体的通信格式
+            </summary>
+        </member>
+        <member name="P:CommunicationFormat`1.Data">
+            <summary>
+            主体信息
+            </summary>
+        </member>
+        <member name="P:CommunicationFormat`1.Remark">
+            <summary>
+            备注内容
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:CommunicationFormat`1.ErrorFlag">
+            <summary>
+            错误信号标识符
             </summary>
         </member>
         <member name="T:ContextLevel">

@@ -9,6 +9,7 @@
       "Dopamine/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Core": "5.3.0",
+          "Microsoft.AspNet.WebApi.SelfHost": "5.3.0",
           "Microsoft.AspNetCore.Mvc": "2.3.0",
           "System.Net.Http": "4.3.4",
           "Unity.Cecil": "0.10.0.0",
@@ -123,6 +124,17 @@
         },
         "runtime": {
           "lib/net45/System.Web.Http.dll": {
+            "assemblyVersion": "5.3.0.0",
+            "fileVersion": "5.3.61130.707"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi.SelfHost/5.3.0": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "5.3.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.SelfHost.dll": {
             "assemblyVersion": "5.3.0.0",
             "fileVersion": "5.3.61130.707"
           }
@@ -2437,6 +2449,13 @@
       "sha512": "sha512-h0oLsUFPgoB1R+6ichy1bniAs4oC6w6XrPsEgn+LuQBxBGskN0djSOSX7hzL8LTFEZUTdsh/3ShjRu1Mb2QRfw==",
       "path": "microsoft.aspnet.webapi.core/5.3.0",
       "hashPath": "microsoft.aspnet.webapi.core.5.3.0.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.SelfHost/5.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dy6qJQx9fR/0ZRMcyblOCHrecThz7RfeyxXBp8kOA/4vv5P5MA71I72XKtXYLZCkmyWHeFXpkW6DreQg5jkl4g==",
+      "path": "microsoft.aspnet.webapi.selfhost/5.3.0",
+      "hashPath": "microsoft.aspnet.webapi.selfhost.5.3.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/2.3.0": {
       "type": "package",
