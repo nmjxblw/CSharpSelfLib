@@ -19,6 +19,21 @@
             存储
             </summary>
         </member>
+        <member name="T:Dopamine.AccessManager">
+            <summary>
+            Access管理器
+            </summary>
+        </member>
+        <member name="F:Dopamine.AccessManager._lazy">
+            <summary>
+            延迟实例化
+            </summary>
+        </member>
+        <member name="P:Dopamine.AccessManager.Instance">
+            <summary>
+            单例实例化
+            </summary>
+        </member>
         <member name="T:Dopamine.ExtensionMethods">
             <summary>
             拓展域名下的额外静态方法

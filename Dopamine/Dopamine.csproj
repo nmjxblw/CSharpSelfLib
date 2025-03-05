@@ -8,13 +8,25 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile></DocumentationFile>
     <RootNamespace>Dopamine</RootNamespace>
+    <PackageId>Dopamine</PackageId>
+    <AssemblyName>Dopamine</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Environment\AccessDatabaseEngine_X64.exe" />
+    <None Remove="Environment\AccessDatabaseEngine_X86.exe" />
+    <None Remove="Environment\dotNetFx40_Full_x86_x64.exe" />
+    <None Remove="Environment\NDP461-KB3102436-x86-x64-AllOS-ENU.exe" />
     <None Remove="Unity\Font\SIMYOU SDF.asset" />
     <None Remove="Unity\Font\SIMYOU SDF.asset.meta" />
     <None Remove="Unity\Font\SIMYOU.TTF" />
     <None Remove="Unity\Font\SIMYOU.TTF.meta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Environment\AccessDatabaseEngine_X86.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +48,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DataBase\Access\Engine\" />
     <Folder Include="Network\ASP.NET Core\" />
     <Folder Include="Unity\Plugin\" />
     <Folder Include="Unity\UnityEditor\" />
@@ -310,6 +323,18 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>..\..\..\..\..\..\..\Program Files\Unity\Hub\Editor\2022.3.42f1\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Environment\AccessDatabaseEngine_X64.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Environment\dotNetFx40_Full_x86_x64.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Environment\NDP461-KB3102436-x86-x64-AllOS-ENU.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

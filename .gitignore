@@ -33,4 +33,4 @@ sysinfo.txt
 *.unitypackage
 
 # Exe File
-*.exe
+# *.exe
