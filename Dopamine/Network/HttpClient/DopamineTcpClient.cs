@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEditor.PackageManager;
 
 namespace Dopamine
 {
@@ -12,9 +11,17 @@ namespace Dopamine
 	/// </summary>
 	public class DopamineTcpClient : TcpClient
 	{
+		/// <summary>
+		/// 监听器
+		/// </summary>
 		public TcpListener Listener { get; set; } = new TcpListener(IPAddress.Any, 60000);
+		/// <summary>
+		/// 运行标识符
+		/// </summary>
 		public bool IsRunning { get; set; } = false;
-
+		/// <summary>
+		/// 启动
+		/// </summary>
 		public void Start()
 		{
 			Listener ??= new TcpListener(IPAddress.Any, 60000);
@@ -22,6 +29,10 @@ namespace Dopamine
 			Listener.Start();
 			Listener.BeginAcceptTcpClient(HandleClientConnected, null);
 		}
+		/// <summary>
+		/// 处理连结
+		/// </summary>
+		/// <param name="asyncResult"></param>
 		public void HandleClientConnected(IAsyncResult asyncResult)
 		{
 			while (IsRunning)
@@ -45,6 +56,9 @@ namespace Dopamine
 				}
 			}
 		}
+		/// <summary>
+		/// 客户端回复线程
+		/// </summary>
 		public void ProcessClient()
 		{
 			string? clientEndPoint = this.Client?.RemoteEndPoint?.ToString();

@@ -83,6 +83,41 @@
             <param name="UserDataArea"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.HasBytes(System.Collections.Generic.IEnumerable{System.Byte[]},System.Byte[])">
+            <summary>
+            判断目标 byte[] 是否在集合中 
+            </summary>
+            <param name="Input"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.AppendXOR(System.Byte[],System.Boolean)">
+            <summary>
+            在帧末尾添加异或校验
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Dopamine.FrameManager">
+            <summary>
+            报文处理器
+            </summary>
+        </member>
+        <member name="F:Dopamine.FrameManager._lazy">
+            <summary>
+            延迟实例化
+            </summary>
+        </member>
+        <member name="P:Dopamine.FrameManager.Instance">
+            <summary>
+            单例实例化
+            </summary>
+        </member>
+        <member name="M:Dopamine.FrameManager.AssembleFrame``1(``0[])">
+            <summary>
+            组装数据帧
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Dopamine.DopamineController">
             <summary>
             
@@ -193,6 +228,32 @@
         <member name="T:Dopamine.DopamineTcpClient">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:Dopamine.DopamineTcpClient.Listener">
+            <summary>
+            监听器
+            </summary>
+        </member>
+        <member name="P:Dopamine.DopamineTcpClient.IsRunning">
+            <summary>
+            运行标识符
+            </summary>
+        </member>
+        <member name="M:Dopamine.DopamineTcpClient.Start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:Dopamine.DopamineTcpClient.HandleClientConnected(System.IAsyncResult)">
+            <summary>
+            处理连结
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:Dopamine.DopamineTcpClient.ProcessClient">
+            <summary>
+            客户端回复线程
             </summary>
         </member>
         <member name="T:Dopamine.SimpleClient">

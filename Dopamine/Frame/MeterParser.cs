@@ -1,5 +1,0 @@
-﻿namespace Dopamine;
-
-class MeterParser
-{
-}

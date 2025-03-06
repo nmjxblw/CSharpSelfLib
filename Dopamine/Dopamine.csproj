@@ -13,6 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Network\ASP.NET Core\**" />
+    <EmbeddedResource Remove="Network\ASP.NET Core\**" />
+    <None Remove="Network\ASP.NET Core\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Environment\AccessDatabaseEngine_X64.exe" />
     <None Remove="Environment\AccessDatabaseEngine_X86.exe" />
     <None Remove="Environment\dotNetFx40_Full_x86_x64.exe" />
@@ -48,8 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataBase\Access\Engine\" />
-    <Folder Include="Network\ASP.NET Core\" />
     <Folder Include="Unity\Plugin\" />
     <Folder Include="Unity\UnityEditor\" />
   </ItemGroup>
