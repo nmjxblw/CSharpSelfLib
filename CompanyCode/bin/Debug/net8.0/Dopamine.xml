@@ -24,14 +24,29 @@
             Access管理器
             </summary>
         </member>
-        <member name="F:Dopamine.AccessManager._lazy">
-            <summary>
-            延迟实例化
-            </summary>
-        </member>
         <member name="P:Dopamine.AccessManager.Instance">
             <summary>
             单例实例化
+            </summary>
+        </member>
+        <member name="P:Dopamine.AccessManager.DataBaseFullNamePath">
+            <summary>
+            数据库完整路径
+            </summary>
+        </member>
+        <member name="P:Dopamine.AccessManager.Provider">
+            <summary>
+            Provider字段
+            </summary>
+        </member>
+        <member name="P:Dopamine.AccessManager.ConnectionString">
+            <summary>
+            访问数据库字段
+            </summary>
+        </member>
+        <member name="M:Dopamine.AccessManager.GetDataTable(System.String)">
+            <summary>
+            获取表信息
             </summary>
         </member>
         <member name="T:Dopamine.ExtensionMethods">
@@ -61,6 +76,13 @@
             <param name="input"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.CopyToClipboard(System.String)">
+            <summary>
+            复制文本到剪切板
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.GetFrame(System.Net.Sockets.NetworkStream,System.Int32)">
             <summary>
             从流中获取数据帧
@@ -83,6 +105,11 @@
             <param name="UserDataArea"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.FillBBCAtLast(System.Collections.Generic.IEnumerable{System.Byte},System.Boolean)">
+            <summary>
+            将BCC校验码填入数据帧最后一位（如果最后一位不为0x00,则自动补位）
+            </summary>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.HasBytes(System.Collections.Generic.IEnumerable{System.Byte[]},System.Byte[])">
             <summary>
             判断目标 byte[] 是否在集合中 
@@ -91,7 +118,7 @@
             <param name="item"></param>
             <returns></returns>
         </member>
-        <member name="M:Dopamine.ExtensionMethods.AppendXOR(System.Byte[],System.Boolean)">
+        <member name="M:Dopamine.ExtensionMethods.AppendXor(System.Byte[],System.Boolean)">
             <summary>
             在帧末尾添加异或校验
             </summary>

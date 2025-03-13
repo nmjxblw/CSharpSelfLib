@@ -16,7 +16,7 @@
     <Using Include="System.Text" />
     <Using Include="System.Text.Encodings.Web" />
     <Using Include="System.Text.Json" />
-    <Using Include="System.Text.RegularExpressions"/>
+    <Using Include="System.Text.RegularExpressions" />
   </ItemGroup>
 
 </Project>

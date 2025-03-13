@@ -90,8 +90,8 @@ namespace Dopamine
 				if (File.Exists(targetPath)) File.Delete(targetPath);
 				CreateEmptyDatabase(targetPath);
 
-				var firstDb = sourcePaths.First();
-				var otherDbs = sourcePaths.Skip(1).ToList();
+				string firstDb = sourcePaths.First();
+				List<string> otherDbs = sourcePaths.Skip(1).ToList();
 				// 复制首个数据库结构
 				CopyDatabaseStructure(firstDb, targetPath);
 
@@ -131,7 +131,7 @@ namespace Dopamine
 				source.Open();
 				target.Open();
 
-				var schema = source.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
+				DataTable schema = source.GetOleDbSchemaTable(OleDbSchemaGuid.Tables,
 					new object[] { null, null, null, "TABLE" });
 
 				foreach (DataRow row in schema.Rows)
@@ -147,7 +147,7 @@ namespace Dopamine
 
 		private void CloneTableStructure(OleDbConnection source, OleDbConnection target, string tableName)
 		{
-			using (var cmd = new OleDbCommand($"SELECT * INTO [{tableName}] FROM [{tableName}] IN '' [;DATABASE={source.DataSource}]", target))
+			using (OleDbCommand cmd = new OleDbCommand($"SELECT * INTO [{tableName}] FROM [{tableName}] IN '' [;DATABASE={source.DataSource}]", target))
 			{
 				cmd.ExecuteNonQuery();
 			}
@@ -155,13 +155,13 @@ namespace Dopamine
 
 		private void CopyTableData(OleDbConnection source, OleDbConnection target, string tableName)
 		{
-			using (var selectCmd = new OleDbCommand($"SELECT * FROM [{tableName}]", source))
-			using (var reader = selectCmd.ExecuteReader())
+			using (OleDbCommand selectCmd = new OleDbCommand($"SELECT * FROM [{tableName}]", source))
+			using (OleDbDataReader reader = selectCmd.ExecuteReader())
 			{
-				var targetColumns = GetTableColumns(target, tableName);
-				var columnNames = targetColumns.Keys.ToArray();
+				Dictionary<string, OleDbType> targetColumns = GetTableColumns(target, tableName);
+				string[] columnNames = targetColumns.Keys.ToArray();
 
-				using (var insertCmd = CreateInsertCommand(target, tableName, targetColumns))
+				using (OleDbCommand insertCmd = CreateInsertCommand(target, tableName, targetColumns))
 				{
 					while (reader.Read())
 					{
@@ -169,7 +169,7 @@ namespace Dopamine
 						{
 							for (int i = 0; i < columnNames.Length; i++)
 							{
-								var value = reader[columnNames[i]];
+								object value = reader[columnNames[i]];
 								insertCmd.Parameters[i].Value = value ?? DBNull.Value;
 							}
 							insertCmd.ExecuteNonQuery();
@@ -211,7 +211,7 @@ namespace Dopamine
 				{
 					conn.Open();  // 通过打开连接创建新数据库
 								  // 创建系统表（必需的基础结构）
-					using (var cmd = new OleDbCommand("CREATE TABLE __CreationLog (ID INT, CreatedDate DATETIME)", conn))
+					using (OleDbCommand cmd = new OleDbCommand("CREATE TABLE __CreationLog (ID INT, CreatedDate DATETIME)", conn))
 					{
 						cmd.ExecuteNonQuery();
 						cmd.CommandText = "DROP TABLE __CreationLog";
@@ -227,7 +227,7 @@ namespace Dopamine
 		// 获取数据库中的用户表列表
 		private List<string> GetTableNames(OleDbConnection connection)
 		{
-			var tables = new List<string>();
+			List<string> tables = new List<string>();
 			try
 			{
 				var schema = connection.GetOleDbSchemaTable(
@@ -236,7 +236,7 @@ namespace Dopamine
 
 				foreach (DataRow row in schema.Rows)
 				{
-					var tableName = row["TABLE_NAME"].ToString();
+					string tableName = row["TABLE_NAME"].ToString();
 					if (!tableName.StartsWith("MSys") && !tableName.StartsWith("~"))
 					{
 						tables.Add(tableName);
@@ -253,17 +253,17 @@ namespace Dopamine
 		// 获取表字段结构字典（字段名 -> 数据类型）
 		private Dictionary<string, OleDbType> GetTableColumns(OleDbConnection connection, string tableName)
 		{
-			var columns = new Dictionary<string, OleDbType>();
+			Dictionary<string, OleDbType> columns = new Dictionary<string, OleDbType>();
 			try
 			{
-				var schema = connection.GetOleDbSchemaTable(
+				DataTable schema = connection.GetOleDbSchemaTable(
 					OleDbSchemaGuid.Columns,
 					new object[] { null, null, tableName, null });
 
 				foreach (DataRow row in schema.Rows)
 				{
-					var columnName = row["COLUMN_NAME"].ToString();
-					var dataType = (int)row["DATA_TYPE"];
+					string columnName = row["COLUMN_NAME"].ToString();
+					int dataType = (int)row["DATA_TYPE"];
 
 					// 处理特殊类型映射
 					OleDbType oleType;
@@ -294,10 +294,10 @@ namespace Dopamine
 		// 创建参数化插入命令
 		private OleDbCommand CreateInsertCommand(OleDbConnection connection, string tableName, Dictionary<string, OleDbType> columns)
 		{
-			var fieldList = string.Join(", ", columns.Keys.Select(k => $"[{k}]"));
-			var paramList = string.Join(", ", columns.Keys.Select(k => $"@{k}"));
+			string fieldList = string.Join(", ", columns.Keys.Select(k => $"[{k}]"));
+			string paramList = string.Join(", ", columns.Keys.Select(k => $"@{k}"));
 
-			var cmd = new OleDbCommand
+			OleDbCommand cmd = new OleDbCommand
 			{
 				Connection = connection,
 				CommandText = $"INSERT INTO [{tableName}] ({fieldList}) VALUES ({paramList})"

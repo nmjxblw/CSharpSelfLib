@@ -1,4 +1,6 @@
-﻿namespace Dopamine
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace Dopamine
 {
 	// 拓展方法第一部分，常用调试代码
 	/// <summary>
@@ -11,18 +13,22 @@
 		/// </summary>
 		/// <param name="input">输入的字符串</param>
 		/// <param name="showDateTime">添加时间戳</param>
-		public static void ShowInTrace(this string? input, bool showDateTime = false)
+		public static string ShowInTrace(this string? input, bool showDateTime = false)
 		{
-			Trace.WriteLine($"{(showDateTime ? DateTime.Now.ToString("[HH:mm:ss]\t") : string.Empty)}{input}");
+			string result = $"{(showDateTime ? DateTime.Now.ToString("[HH:mm:ss]\t") : string.Empty)}{input}";
+			Trace.WriteLine(result);
+			return result;
 		}
 		/// <summary>
 		/// 在终端中打印文本信息
 		/// </summary>
 		/// <param name="input"></param>
 		/// <param name="showDateTime"></param>
-		public static void ShowInConsole(this string? input, bool showDateTime = false)
+		public static string ShowInConsole(this string? input, bool showDateTime = false)
 		{
-			Console.WriteLine($"{(showDateTime ? DateTime.Now.ToString("[HH:mm:ss]\t") : string.Empty)}{input}");
+			string result = $"{(showDateTime ? DateTime.Now.ToString("[HH:mm:ss]\t") : string.Empty)}{input}";
+			Console.WriteLine(result);
+			return result;
 		}
 		/// <summary>
 		/// 数组转字符串
@@ -32,7 +38,26 @@
 		/// <returns></returns>
 		public static string ToString<T>(this T[] input)
 		{
-			return string.Join(",", input.ToString());
+			return string.Join(",", input);
+		}
+		/// <summary>
+		/// 复制文本到剪切板
+		/// </summary>
+		/// <param name="text"></param>
+		/// <returns></returns>
+		public static string CopyToClipboard(this string text)
+		{
+			try
+			{
+				TextCopy.ClipboardService.SetText(text);
+			}
+			catch (Exception ex)
+			{
+				// 处理平台兼容异常
+				throw new PlatformNotSupportedException(
+					"当前操作系统不支持剪切板操作", ex);
+			}
+			return text;
 		}
 	}
 }

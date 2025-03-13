@@ -12,7 +12,7 @@ public sealed class App
 	private DopamineTcpClient? Client { get; set; }
 	public void Start()
 	{
-		byte[] newTest = new byte[] { 0x88, 0x9f }.AppendXOR(true); 
+		byte[] newTest = new byte[] { 0x88, 0x9f }.AppendXor(true); 
 	}
 	
 	/// <summary>

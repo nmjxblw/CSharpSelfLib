@@ -55,6 +55,23 @@ namespace Dopamine
 			return result;
 		}
 		/// <summary>
+		/// 将BCC校验码填入数据帧最后一位（如果最后一位不为0x00,则自动补位）
+		/// </summary>
+		public static byte[] FillBBCAtLast(this IEnumerable<byte> Input, bool FillInTail = false)
+		{
+			List<byte> result = Input.ToList();
+			if (result.Count <= 0) return result.ToArray();
+			if (!FillInTail) result.Add(0x00);
+			byte BBC = 0x00;
+			// 除去帧头，其余字节进行异或运算
+			for (int i = 1; i < result.Count - 1; i++)
+			{
+				BBC ^= result[i];
+			}
+			result[result.Count - 1] = BBC;
+			return result.ToArray();
+		}
+		/// <summary>
 		/// 判断目标 byte[] 是否在集合中 
 		/// </summary>
 		/// <param name="Input"></param>
@@ -68,7 +85,7 @@ namespace Dopamine
 		/// 在帧末尾添加异或校验
 		/// </summary>
 		/// <returns></returns>
-		public static byte[] AppendXOR(this byte[] inputFrame, bool IncludingHead = false)
+		public static byte[] AppendXor(this byte[] inputFrame, bool IncludingHead = false)
 		{
 			List<byte> ck = new List<byte>(inputFrame);
 			ck.Add(0x00);

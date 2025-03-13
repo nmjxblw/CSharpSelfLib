@@ -42,16 +42,18 @@
 		</Style>
 	</Window.Resources>
 	<Grid>
-		
+
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
-			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="40"/>
 		</Grid.RowDefinitions>
 
 		<StackPanel Orientation="Horizontal" Margin="5">
-			<Button Content="选择数据库" Click="SelectDatabases_Click" Margin="5" Padding="10 5"/>
-			<Button Content="合并到新数据库" Click="MergeDatabases_Click" Margin="5" Padding="10 5"/>
+			<Border CornerRadius="10" >
+				<Button Content="选择数据库" BorderThickness="0"  Click="SelectDatabases_Click" Margin="5" Padding="10 5"/>
+			</Border>
+			<Button Content="合并到新数据库" BorderThickness="0" Click="MergeDatabases_Click" Margin="5" Padding="10 5"/>
 		</StackPanel>
 
 		<ListBox x:Name="lstDatabases" Grid.Row="1" Margin="5">
@@ -66,15 +68,16 @@
 			</ListBox.ItemTemplate>
 		</ListBox>
 
-		<TextBlock x:Name="txtStatus" Grid.Row="2" 
+		<StackPanel Grid.Row="2">
+			<TextBlock x:Name="txtStatus" Text ="状态" FontFamily="YouYuan"  Height="20" Width="40"
                VerticalAlignment="Center" HorizontalAlignment="Center"
                Visibility="Collapsed"/>
 
-		<ProgressBar x:Name="progressBar" Grid.Row="2" 
+			<ProgressBar x:Name="progressBar" 
                  Height="20" Margin="5" 
                  IsIndeterminate="False"
                  Visibility="Collapsed"
                  Style="{StaticResource ModernProgressBar}"/>
-		
+		</StackPanel>
 	</Grid>
 </Window>

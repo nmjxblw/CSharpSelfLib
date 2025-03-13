@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWebApp", "..\Asp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.WPF.DataBaseMerge", "..\Dopamine.WPF\Dopamine.WPF.DataBaseMerge.csproj", "{D78AF256-D411-4564-BDA8-0CE47F1D2599}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.WPF.SelfLib", "..\Dopamine.WPF.SvgLib\Dopamine.WPF.SelfLib.csproj", "{F35A6ED4-245C-4E13-A6D6-73153C558BB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D78AF256-D411-4564-BDA8-0CE47F1D2599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D78AF256-D411-4564-BDA8-0CE47F1D2599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D78AF256-D411-4564-BDA8-0CE47F1D2599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

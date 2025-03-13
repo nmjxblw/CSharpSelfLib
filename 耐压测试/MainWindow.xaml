@@ -1,0 +1,539 @@
+﻿<Window x:Class="VoltageInsulationTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VoltageInsulationTest" d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
+		mc:Ignorable="d"
+		FontFamily="YouYuan"
+		ResizeMode="CanResize"
+        Title="简易耐压测试软件 内测版" Height="auto" Width="auto" MinHeight="500" MinWidth="600">
+
+	<Grid x:Name="MainGrid" Margin="2,2" Height="auto" Width="auto">
+		<!--主体分成三个部分：联机板块、数据帧以及参数设置板块、日志板块-->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		<!--联机部分板块-->
+		<Border  x:Name="ConnectionPartBorder" 
+				 Grid.Row="0" 
+				 BorderThickness="1" 
+				 Margin="2" 
+				 CornerRadius="5" 
+				 Background="LightYellow" 
+				 VerticalAlignment="Top" >
+			<Grid>
+				<!--分为耐压仪联机和耐压板联机-->
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<StackPanel Grid.Column="0" 
+							x:Name="InstrumentInputGrid" 
+							HorizontalAlignment="Center" 
+							Orientation="Horizontal">
+					<Image x:Name="InstrumentConnetionFlag" 
+						   Source="/Images/不合格.png" 
+						   VerticalAlignment="Center" 
+						   HorizontalAlignment="Center" 
+						   Height="20" 
+						   Width="20" 
+						   Margin="0,0,5,0"/>
+					<Label x:Name ="InstrumentCOMLable"  
+						   Content="耐压仪端口:" 
+						   ToolTip="默认波特率9600，RS232通讯接口，无校验位，8位数据位, 1位停止位。" 
+						   HorizontalContentAlignment="Center" 
+						   HorizontalAlignment="Left" 
+						   Height="25" VerticalAlignment="Top" Width="auto"/>
+					<TextBox x:Name="InstrumentCOMTextBox" 
+							 BorderThickness="0" 
+							 VerticalContentAlignment="Center" 
+							 TextWrapping="Wrap" 
+							 Text="端口号" 
+							 Foreground="LightGray" 
+							 MinWidth="80" 
+							 MinHeight="25" 
+							 HorizontalAlignment="Left" 
+							 VerticalAlignment="Top"
+							 GotFocus="OnInstrumentCOMTextBoxGotFocus"
+							 LostFocus="OnInstrumentCOMTextBoxLostFocus"
+							 />
+					<Border Margin="5,0,0,0" 
+							CornerRadius="5" 
+							BorderThickness="0"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+						<Button x:Name="InstrumentConnentButton" 
+								BorderThickness="0" 
+								Click="OnInstrumentConnectButtonClick" 
+								VerticalContentAlignment="Center" 
+								Content="联机" 
+								Width="auto" 
+								Background="LightGreen"
+								Foreground="Green" 
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Padding="10 5"/>
+					</Border>
+				</StackPanel>
+				<StackPanel Grid.Column="1" 
+							HorizontalAlignment="Center" 
+							x:Name="PlateInputGrid" 
+							Orientation="Horizontal">
+					<Image x:Name="PlateConnetionFlag" 
+						   Source="/Images/不合格.png" 
+						   VerticalAlignment="Center" 
+						   HorizontalAlignment="Center" 
+						   Height="20" Width="20" Margin="0,0,5,0"/>
+					<Label x:Name ="PlateCOMLable"  
+						   Content="耐压板端口:" 
+						   ToolTip="默认波特率19200，RS485通讯接口，无校验位，8位数据位，1位停止位。" 
+						   HorizontalContentAlignment="Center" 
+						   HorizontalAlignment="Left" 
+						   Height="25" 
+						   VerticalAlignment="Top" 
+						   Width="auto"/>
+					<TextBox x:Name="PlateCOMTextBox" 
+							 BorderThickness="0" 
+							 VerticalContentAlignment="Center" 
+							 TextWrapping="Wrap" 
+							 Text="端口号" 
+							 Foreground="LightGray" 
+							 MinWidth="80" 
+							 MinHeight="25" 
+							 HorizontalAlignment="Left" 
+							 VerticalAlignment="Top" 
+							 GotFocus="OnPlateCOMTextBoxGotFocus"
+							 LostFocus="OnPlateCOMTextBoxLostFocus"/>
+					<Border Margin="5,0,0,0" BorderThickness="0" CornerRadius="5">
+						<Button x:Name="PlateConnentButton" 
+								BorderThickness="0" 
+								Click="OnPlateConnectButtonClick" 
+								VerticalContentAlignment="Center" 
+								Content="联机" 
+								Width="auto" 
+								Background="LightGreen" 
+								Foreground="Green" 
+								Padding="10 5"/>
+					</Border>
+				</StackPanel>
+			</Grid>
+		</Border>
+		<Border x:Name="DataFrameAndSettingPartBorder" 
+				Grid.Row="1" 
+				BorderThickness="1" 
+				Margin="2" 
+				Height="auto"
+				MinHeight="450"
+				CornerRadius="5" 
+				Background="LightSeaGreen">
+			<Grid  x:Name="FrameGrid"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid Grid.Column="0" 
+					  VerticalAlignment="Stretch" 
+					  HorizontalAlignment="Stretch" 
+					  Margin="5" 
+					  Width="auto">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="auto"/>
+						<RowDefinition Height="auto"/>
+						<RowDefinition Height="auto"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+					<Border Grid.Row="0">
+						<Label x:Name="ReceiveFrameLable" 
+							   Content="接收数据帧" 
+							   Foreground="White" 
+							   HorizontalAlignment="Left"/>
+					</Border>
+					<Border Grid.Row="1" 
+							CornerRadius="5" 
+							BorderThickness="0">
+						<StackPanel Orientation="Horizontal">
+							<ScrollViewer x:Name="ReceiveFrameTextboxScrollViewer" 
+										  Width="auto" 
+										  VerticalScrollBarVisibility="Visible" 
+										  CanContentScroll="True" 
+										  Foreground="LightGray">
+								<TextBox x:Name="ReceiveFrameTextbox" 
+										 BorderThickness="0" 
+										 Text="接收数据帧实例" 
+										 HorizontalAlignment="Center" 
+										 Width="auto" 
+										 MinWidth="200" 
+										 MinHeight="100"/>
+							</ScrollViewer>
+							<Button x:Name="ReceiveFrameTextboxClearButton" 
+									ToolTip="清空接收区域数据帧" 
+									Width="auto" 
+									BorderThickness="0" 
+									Content="清空" 
+									MinWidth="40" 
+									Padding="5 10" 
+									Click="OnReceiveFrameTextboxClearButtonClick"/>
+						</StackPanel>
+					</Border>
+					<Border Grid.Row="2"  Margin="0,10,0,0">
+						<Label x:Name="ReceiveFrameDeserializeLable" 
+							   Content="数据帧解析" 
+							   Foreground="White" 
+							   HorizontalAlignment="Left"/>
+					</Border>
+					<Border Grid.Row="3" 
+							CornerRadius="5" Margin="0,0,0,0" >
+						<StackPanel Orientation="Horizontal">
+							<ScrollViewer x:Name="ReceiveFrameDeserializeScrollViewer" 
+										  Width="auto" 
+										  VerticalScrollBarVisibility="Visible" 
+										  CanContentScroll="True" 
+										  Foreground="LightGray">
+								<TextBox x:Name="ReceiveFrameDeserializeTextbox" 
+										 BorderThickness="0" 
+										 Text="数据帧解析结果" 
+										 Width="auto" 
+										 MinWidth="200" 
+										 MinHeight="240" 
+										 Height="auto"/>
+							</ScrollViewer>
+							<Button x:Name="ReceiveFrameDeserializeTextboxRefreshButton" 
+									Width="auto" 
+									BorderThickness="0" 
+									Content="刷新" 
+									MinWidth="40" 
+									Padding="5 10" 
+									Click="OnReceiveFrameDeserializeTextboxRefreshButtonClick"/>
+						</StackPanel>
+					</Border>
+				</Grid>
+				<Grid Grid.Column="1" 
+					  VerticalAlignment="Stretch" 
+					  HorizontalAlignment="Stretch" 
+					  Margin="5,5" Width="auto">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="auto"/>
+						<RowDefinition Height="auto"/>
+						<RowDefinition Height="113*"/>
+						<RowDefinition Height="201*"/>
+					</Grid.RowDefinitions>
+					<Border Grid.Row="0">
+						<Label x:Name="SendFrameLable" 
+							   Content="发送数据帧" 
+							   Foreground="White" 
+							   HorizontalAlignment="Left"/>
+					</Border>
+					<Border Margin="0,23,0,0" Grid.RowSpan="2">
+						<StackPanel Orientation="Horizontal" 
+									HorizontalAlignment="Stretch"
+									VerticalAlignment="Stretch">
+							<ScrollViewer x:Name="SendFrameTextboxScrollViewer"
+										  VerticalAlignment="Stretch"
+										  VerticalScrollBarVisibility="Visible" 
+										  CanContentScroll="True" 
+										  Foreground="LightGray">
+								<TextBox x:Name="SendFrameTextbox" 
+										 BorderThickness="0" 
+										 HorizontalContentAlignment="Left" 
+										 VerticalContentAlignment="Top" 
+										 Text="发送数据帧实例" 
+										 HorizontalAlignment="Stretch"
+										 VerticalAlignment="Center"
+										 Width="auto" 
+										 MinWidth="200" 
+										 MinHeight="100"/>
+							</ScrollViewer>
+							<Button x:Name="SendFrameTextboxClearButton" 
+									Width="auto" 
+									BorderThickness="0" 
+									Content="清空" 
+									MinWidth="40" 
+									Padding="5 10" 
+									Click="OnSendFrameTextboxClearButtonClick"/>
+						</StackPanel>
+					</Border>
+					<Border  Grid.Row="2"  
+							 Height="auto" 
+							 MinHeight="230" 
+							 Background="WhiteSmoke" 
+							 CornerRadius="1" 
+							 BorderThickness="1" 
+							 Opacity="0.8" Margin="0,10,0,10" Grid.RowSpan="2">
+						<Grid x:Name="ManualControlPanelGrid" 
+							  HorizontalAlignment="Center"  
+							  VerticalAlignment="Top" 
+							  Width="auto" 
+							  Height="auto"
+							  Margin="0,5,0,0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto"/>
+								<RowDefinition Height="auto"/>
+							</Grid.RowDefinitions>
+							<Grid x:Name="InstrumentManualControlPanelGrid" 
+								  HorizontalAlignment="Center"  
+								  VerticalAlignment="Top" 
+								  Width="auto" 
+								  Height="auto">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*"/>
+									<RowDefinition Height="auto"/>
+								</Grid.RowDefinitions>
+								<Grid x:Name="InstrumentManualSettingPanelGrid" 
+									Grid.Row="0">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*"/>
+										<ColumnDefinition Width="auto"/>
+									</Grid.ColumnDefinitions>
+									<Grid Grid.Column="0">
+										<Grid.RowDefinitions>
+											<RowDefinition Height="auto"/>
+											<RowDefinition Height="auto"/>
+											<RowDefinition Height="auto"/>
+										</Grid.RowDefinitions>
+										<StackPanel x:Name="InstrumentPartialStackPanel_0"  
+											Grid.Row="0" 
+											Orientation="Horizontal" 
+											Height="auto" 
+											MinHeight="20" 
+											Width="auto" 
+											MinWidth="200">
+											<Label x:Name="InstrumentVoltageLabel" 
+										   Content="耐压仪输出电压：" 
+										   HorizontalContentAlignment="Center" 
+										   HorizontalAlignment="Center"/>
+											<TextBox 
+												x:Name="InstrumentVoltageText" 
+												Text="2200" 
+												HorizontalContentAlignment="Center" 
+												Width="auto" 
+												MinWidth="50" 
+												Background="White" 
+												Opacity="1.0" 
+												HorizontalAlignment="Center" 
+												VerticalAlignment="Center"
+												GotFocus="OnInstrumentVoltageTextGotFocus"
+												LostFocus="OnInstrumentVoltageTextLostFocus"/>
+											<Label x:Name="InstrumentVoltageUnitLabel" Content="V" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+										</StackPanel>
+										<StackPanel x:Name="InstrumentPartialStackPanel_1"  Margin="0,5,0,0" Grid.Row="1" Orientation="Horizontal" Height="auto" MinHeight="20" Width="auto" MinWidth="200">
+											<Label x:Name="InstrumentOutputTimeLabel" Content="耐压仪输出持续时间：" ToolTip="默认电压10秒缓升，10秒缓降" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+											<TextBox 
+												x:Name="InstrumentOutputTimeText" 
+												Text="60" 
+												HorizontalContentAlignment="Center" 
+												Width="auto" 
+												MinWidth="50" 
+												Background="White" 
+												Opacity="1.0" 
+												HorizontalAlignment="Center" 
+												VerticalAlignment="Center"
+												GotFocus="OnInstrumentOutputTimeTextGotFocus"
+												LostFocus="OnInstrumentOutputTimeTextLostFocus"/>
+											<Label x:Name="InstrumentOutputTimeUnitLabel" Content="s" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+										</StackPanel>
+										<StackPanel x:Name="InstrumentPartialStackPanel_2" Margin="0,5,0,0" Grid.Row="2" Orientation="Horizontal" Height="auto" MinHeight="20" Width="auto" MinWidth="200">
+											<Label x:Name="InstrumentLeakCurrentLabel" Content="耐压仪漏电电流上限：" ToolTip="默认安全限制30mA，输入超出30mA将会强制设置为30mA。" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+											<TextBox 
+												x:Name="InstrumentLeakCurrentText" 
+												Text="30" 
+												HorizontalContentAlignment="Center" 
+												Width="auto" 
+												MinWidth="50" 
+												Background="White" 
+												Opacity="1.0" 
+												HorizontalAlignment="Center" 
+												VerticalAlignment="Center"
+												GotFocus="OnInstrumentLeakCurrentTextGotFocus"
+												LostFocus="OnInstrumentLeakCurrentTextLostFocus"/>
+											<Label x:Name="InstrumentLeakCurrentUnitLabel" Content="mA" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+										</StackPanel>
+									</Grid>
+									<Grid Grid.Column="1">
+										<Button x:Name="SetInstrumentVoltageButton" 
+												BorderThickness="0" 
+												Content="设置" 
+												Click="OnInstrumentSettingButtonClick" 
+												Padding="10 20"/>
+									</Grid>
+								</Grid>
+								<StackPanel x:Name="InstrumentPartialStackPanel_3" Grid.Row="1" Orientation="Horizontal" Margin="10" Width="auto" MinWidth="200" HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<Grid x:Name="PowerControlButtonGrid" 
+										  VerticalAlignment="Center"
+										  HorizontalAlignment="Center"
+										  Width="auto" MinWidth="200">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*"/>
+											<ColumnDefinition Width="*"/>
+										</Grid.ColumnDefinitions>
+										<Border Margin="0,0,10,0" 
+												CornerRadius="5" 
+												BorderThickness="0" 
+												Grid.Column="0">
+											<Button x:Name="PowerOnButton" 
+													BorderThickness="0" 
+													Content="开始实验" 
+													Foreground="Green" 
+													Background="LightGreen"  
+													HorizontalContentAlignment="Center" 
+													VerticalContentAlignment="Center" 
+													Width="auto" MinHeight="50" MinWidth="50"
+													Click="OnPowerOnButtonClick" />
+										</Border>
+										<Border Margin="10,0,0,0" 
+												CornerRadius="5" 
+												BorderThickness="0" 
+												Grid.Column="1">
+											<Button x:Name="PoweroffButton" 
+													BorderThickness="0" 
+													Click="OnPowerOffButtonClick" 
+													Content="停止实验" 
+													Foreground="White" 
+													Background="Red"  
+													HorizontalContentAlignment="Center" 
+													VerticalContentAlignment="Center" 
+													Width="auto" 
+													MinHeight="50" 
+													MinWidth="50"/>
+										</Border>
+									</Grid>
+								</StackPanel>
+							</Grid>
+							<Grid x:Name="PlateManualControlPanelGrid" 
+								  Grid.Row="1" 
+								  HorizontalAlignment="Center"  
+								  VerticalAlignment="Top" 
+								  Width="auto" 
+								  Height="auto">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="auto"/>
+									<RowDefinition Height="auto"/>
+									<RowDefinition Height="auto"/>
+								</Grid.RowDefinitions>
+								<StackPanel x:Name="PlatePatialStackPanel_0" 
+											Grid.Row="0" 
+											Orientation="Horizontal" 
+											Width="auto" 
+											MinWidth="200"
+											Margin="5">
+									<Label x:Name="PlateLeakCurrentLabel" Content="耐压板漏电电流上限：" ToolTip="默认安全限制5mA，超出5mA将会强制强制设置为5mA。" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+									<TextBox 
+										x:Name="PlateLeakCurrentText" 
+										Text="5" 
+										HorizontalContentAlignment="Center" 
+										Width="auto" MinWidth="50" 
+										Background="White" 
+										Opacity="1.0" 
+										HorizontalAlignment="Center" 
+										VerticalAlignment="Center"
+										GotFocus="OnPlateLeakCurrentTextGotFocus"
+										LostFocus="OnPlateLeakCurrentTextLostFocus"/>
+									<Label x:Name="PlateLeakCurrentUnitLabel" Content="mA" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+									<Button x:Name="SetPlateLeakCurrentButton" BorderThickness="0" Content="设置" Click="OnSetPlateLeakCurrentButtonClick" />
+								</StackPanel>
+								<Grid Grid.Row="1" Margin="5">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="auto"/>
+										<ColumnDefinition Width="auto"/>
+									</Grid.ColumnDefinitions>
+									<Grid Grid.Column="0" >
+										<Grid.RowDefinitions>
+											<RowDefinition Height="auto"/>
+											<RowDefinition Height="auto"/>
+										</Grid.RowDefinitions>
+										<StackPanel x:Name="PlatePatialStackPanel_1" Grid.Row="0"  Margin="0,5,0,0"  Orientation="Horizontal" Width="auto" MinWidth="170">
+											<Label x:Name="PlateStartSocketLabel" Content="读数读取开始表位号：" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+											<TextBox 
+												x:Name="PlateStartSocketText" 
+												ToolTip="需输入耐压板实际联机的表位号" 
+												Text="1" 
+												HorizontalContentAlignment="Center" 
+												Width="auto" 
+												MinWidth="50" 
+												Background="White" 
+												Opacity="1.0" 
+												HorizontalAlignment="Center" 
+												VerticalAlignment="Center"
+												GotFocus="OnPlateStartSocketTextGotFocus"
+												LostFocus="OnPlateStartSocketTextLostFocus"/>
+										</StackPanel>
+										<StackPanel x:Name="PlatePatialStackPanel_2" Margin="0,5,0,5" Grid.Row="1" Orientation="Horizontal" Width="auto" MinWidth="170">
+											<Label x:Name="PlateEndSocketLabel" Content="读数读取终止串口号：" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+											<TextBox 
+												x:Name="PlateEndSocketText" 
+												ToolTip="需输入耐压板实际联机的表位号" 
+												Text="1" 
+												HorizontalContentAlignment="Center" 
+												Width="auto" 
+												MinWidth="50" 
+												Background="White" 
+												Opacity="1.0" 
+												HorizontalAlignment="Center" 
+												VerticalAlignment="Center"
+												GotFocus="OnPlateEndSocketTextGotFocus"
+												LostFocus="OnPlateEndSocketTextLostFocus"/>
+										</StackPanel>
+									</Grid>
+									<Grid Grid.Column="1" Margin="5">
+										<StackPanel Orientation="Horizontal">
+											<Button x:Name="ReadPlateDataButton" 
+													BorderThickness="0" 
+													ToolTip="读取选取表位数据" 
+													Content="读取数据"  
+													Padding="5 10" 
+													Click="OnReadPlateDataButtonClick"/>
+										</StackPanel>
+									</Grid>
+								</Grid>
+							</Grid>
+						</Grid>
+					</Border>
+				</Grid>
+			</Grid>
+		</Border>
+		<Border x:Name="LoggerPartBorder" 
+				Grid.Row="2" 
+				BorderThickness="0"
+				CornerRadius="5"
+				Margin="5"
+				Background="LightCyan"
+				MinHeight="30">
+			<Grid x:Name="LoggerGrid" Margin="5" 
+				  VerticalAlignment="Center"
+				  HorizontalAlignment="Left">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+				</Grid.RowDefinitions>
+				<Grid x:Name="LoggerPartialPart_0" 
+					  VerticalAlignment="Center"
+					  HorizontalAlignment="Center">
+					<StackPanel x:Name="LoggerStackPanel_0" 
+								VerticalAlignment="Center"
+								HorizontalAlignment="Left"
+								MinHeight="30"
+								Width="auto"
+								Orientation="Horizontal"
+								Background="Transparent">
+						<ScrollViewer x:Name="LoggerTextBlockScrollViewer"
+									  VerticalScrollBarVisibility="Auto"
+									  VerticalAlignment="Top"
+									  HorizontalAlignment="Left"
+									  CanContentScroll="True"
+									  Height="50"
+									  MaxHeight="60">
+							<TextBlock x:Name="LoggerTextBlock"
+									   Foreground="DarkGreen"
+									   Text="日志"
+									   VerticalAlignment="Center"
+									   HorizontalAlignment="Left"
+									   TextAlignment="Center"
+									   />
+						</ScrollViewer>
+					</StackPanel>
+				</Grid>
+			</Grid>
+		</Border>
+	</Grid>
+</Window>
