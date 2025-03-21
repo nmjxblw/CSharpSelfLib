@@ -49,6 +49,10 @@ namespace ZH
 	public class Ainuo_WithstandVoltageInstrument : IClass_Interface
 	{
 		/// <summary>
+		/// 联机标识符
+		/// </summary>
+		public bool Connected { get; set; } = false;
+		/// <summary>
 		/// 重试次数
 		/// </summary>
 		public static int RETRYTIEMS = 1;
@@ -68,7 +72,7 @@ namespace ZH
 			return 0;
 		}
 
-		public int InitSetting(int ComNumber, int MaxWaitTime, int WaitSencondsPerByte, string IP, int RemotePort, int LocalStartPort)
+		public int InitSetting(int ComNumber, int MaxWaitTime, int WaitSecondsPerByte, string IP, int RemotePort, int LocalStartPort)
 		{
 			PortInfo.m_Exist = 1;
 			PortInfo.m_IP = IP;
@@ -77,13 +81,14 @@ namespace ZH
 			PortInfo.m_Port_Setting = "9600,n,8,1";
 			try
 			{
-				DriverBase.RegisterPort(ComNumber, PortInfo.m_Port_Setting, PortInfo.m_IP, RemotePort, LocalStartPort, MaxWaitTime, WaitSencondsPerByte);
+				DriverBase.RegisterPort(ComNumber, PortInfo.m_Port_Setting, PortInfo.m_IP, RemotePort, LocalStartPort, MaxWaitTime, WaitSecondsPerByte);
 			}
 			catch (Exception)
 			{
+				Connected = false;
 				return 1;
 			}
-
+			Connected = true;
 			return 0;
 		}
 
@@ -100,9 +105,10 @@ namespace ZH
 			}
 			catch (Exception)
 			{
-
+				Connected = false;
 				return 1;
 			}
+			Connected = true;
 			return 0;
 		}
 

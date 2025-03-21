@@ -25,7 +25,7 @@ namespace ZH
         /// <param name="UDPorCOM">true UDP,false COM</param>
         /// <param name="ip">IP isNullOrEmpty COM ,other wise UDP/TCP</param>
         /// <returns></returns>
-        public string GetPortNameByPortNumber(int port, bool UDPorCOM,string ip)
+        public static string GetPortNameByPortNumber(int port, bool UDPorCOM,string ip = "")
         {
             if (false == UDPorCOM)
             {

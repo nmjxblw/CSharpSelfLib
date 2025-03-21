@@ -48,6 +48,10 @@ namespace ZH
 	public class Ainuo_WithstandVoltagePlate : IClass_Interface
 	{
 		/// <summary>
+		/// 联机标识符
+		/// </summary>
+		public bool Connected { get; set; } = false;
+		/// <summary>
 		/// 重试次数
 		/// </summary>
 		public static int RETRYTIEMS = 1;
@@ -90,9 +94,10 @@ namespace ZH
 			}
 			catch (Exception)
 			{
+				Connected = false;
 				return 1;
 			}
-
+			Connected = true;
 			return 0;
 		}
 
@@ -109,9 +114,10 @@ namespace ZH
 			}
 			catch (Exception)
 			{
-
+				Connected = false;
 				return 1;
 			}
+			Connected = true;
 			return 0;
 		}
 		/// <summary>
@@ -306,6 +312,11 @@ namespace ZH
 				Thread.Sleep(100);
 			}
 			return false;
+		}
+
+		public bool HandleOnLogWriteEvent(Action<string,bool> targetAction)
+		{
+			
 		}
 	}
 }

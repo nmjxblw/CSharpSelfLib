@@ -5,10 +5,6 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoltageInsulationTest", "VoltageInsulationTest.csproj", "{834FF0F5-12C4-47CE-B68A-41C9B69C2267}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ainuo_WithstandVoltageInstrument", "Ainuo_WithstandVoltageInstrument\Ainuo_WithstandVoltageInstrument.csproj", "{EB4FA23F-47D7-4323-9211-2CF60FED0A81}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ainuo_WithstandVoltagePlate", "Ainuo_WithstandVoltagePlate\Ainuo_WithstandVoltagePlate.csproj", "{39AD68C1-8FEF-4B75-82D8-2E6071680737}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB4FA23F-47D7-4323-9211-2CF60FED0A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB4FA23F-47D7-4323-9211-2CF60FED0A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB4FA23F-47D7-4323-9211-2CF60FED0A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB4FA23F-47D7-4323-9211-2CF60FED0A81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39AD68C1-8FEF-4B75-82D8-2E6071680737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39AD68C1-8FEF-4B75-82D8-2E6071680737}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39AD68C1-8FEF-4B75-82D8-2E6071680737}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39AD68C1-8FEF-4B75-82D8-2E6071680737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

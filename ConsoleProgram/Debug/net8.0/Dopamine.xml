@@ -24,29 +24,168 @@
             Access管理器
             </summary>
         </member>
-        <member name="F:Dopamine.AccessManager._lazy">
-            <summary>
-            延迟实例化
-            </summary>
-        </member>
         <member name="P:Dopamine.AccessManager.Instance">
             <summary>
             单例实例化
             </summary>
+        </member>
+        <member name="P:Dopamine.AccessManager.DataBaseFullNamePath">
+            <summary>
+            数据库完整路径
+            </summary>
+        </member>
+        <member name="P:Dopamine.AccessManager.Provider">
+            <summary>
+            Provider字段
+            </summary>
+        </member>
+        <member name="P:Dopamine.AccessManager.ConnectionString">
+            <summary>
+            访问数据库字段
+            </summary>
+        </member>
+        <member name="M:Dopamine.AccessManager.GetDataTable(System.String)">
+            <summary>
+            获取表信息
+            </summary>
+        </member>
+        <member name="T:Dopamine.ConcurrentPriorityQueue`1">
+            <summary>
+            线程安全优先队列
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.#ctor(System.Func{`0,System.IComparable})">
+            <summary>
+            
+            </summary>
+            <param name="prioritySelector"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.#ctor(System.Func{`0,System.IComparable},System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            
+            </summary>
+            <param name="prioritySelector"></param>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.Enqueue(`0)">
+            <summary>
+            入队
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.TryDequeue(`0@)">
+            <summary>
+            尝试入队
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.TryPeek(`0@)">
+            <summary>
+            取头部
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.Clear">
+            <summary>
+            清空
+            </summary>
+        </member>
+        <member name="P:Dopamine.ConcurrentPriorityQueue`1.IsEmpty">
+            <summary>
+            是否为空
+            </summary>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.TryAdd(`0)">
+            <summary>
+            添加
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.TryTake(`0@)">
+            <summary>
+            尝试出队
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            复制到新数组
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.ToArray">
+            <summary>
+            转数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.GetEnumerator">
+            <summary>
+            获取迭代器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Dopamine.ConcurrentPriorityQueue`1.Count">
+            <summary>
+            个数
+            </summary>
+        </member>
+        <member name="P:Dopamine.ConcurrentPriorityQueue`1.SyncRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dopamine.ConcurrentPriorityQueue`1.IsSynchronized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+            <summary>
+            复制
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.HeapifyUp(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.EnqueueRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            添加
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:Dopamine.ConcurrentPriorityQueue`1.DequeueAll">
+            <summary>
+            全部出队
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Dopamine.ExtensionMethods">
             <summary>
             拓展域名下的额外静态方法
             </summary>
         </member>
-        <member name="M:Dopamine.ExtensionMethods.ShowInTrace(System.String,System.Boolean)">
+        <member name="M:Dopamine.ExtensionMethods.ShowInTrace(System.Object,System.Boolean)">
             <summary>
             在【输出】中将字符串打印出来
             </summary>
             <param name="input">输入的字符串</param>
             <param name="showDateTime">添加时间戳</param>
         </member>
-        <member name="M:Dopamine.ExtensionMethods.ShowInConsole(System.String,System.Boolean)">
+        <member name="M:Dopamine.ExtensionMethods.ShowInConsole(System.Object,System.Boolean)">
             <summary>
             在终端中打印文本信息
             </summary>
@@ -61,6 +200,13 @@
             <param name="input"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.CopyToClipboard(System.String)">
+            <summary>
+            复制文本到剪切板
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.GetFrame(System.Net.Sockets.NetworkStream,System.Int32)">
             <summary>
             从流中获取数据帧
@@ -69,11 +215,11 @@
             <param name="capacity">容量</param>
             <returns>流数据帧</returns>
         </member>
-        <member name="M:Dopamine.ExtensionMethods.GetSum(System.Collections.Generic.IEnumerable{System.Byte})">
+        <member name="M:Dopamine.ExtensionMethods.GetSumCheck(System.Collections.Generic.IEnumerable{System.Byte})">
             <summary>
             和校验
             </summary>
-            <param name="UserDataArea"></param>
+            <param name="input"></param>
             <returns></returns>
         </member>
         <member name="M:Dopamine.ExtensionMethods.GetXor(System.Collections.Generic.IEnumerable{System.Byte})">
@@ -83,6 +229,11 @@
             <param name="UserDataArea"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.FillBBCAtLast(System.Collections.Generic.IEnumerable{System.Byte},System.Boolean)">
+            <summary>
+            将BCC校验码填入数据帧最后一位（如果最后一位不为0x00,则自动补位）
+            </summary>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.HasBytes(System.Collections.Generic.IEnumerable{System.Byte[]},System.Byte[])">
             <summary>
             判断目标 byte[] 是否在集合中 
@@ -91,11 +242,60 @@
             <param name="item"></param>
             <returns></returns>
         </member>
-        <member name="M:Dopamine.ExtensionMethods.AppendXOR(System.Byte[],System.Boolean)">
+        <member name="M:Dopamine.ExtensionMethods.AppendXor(System.Byte[],System.Boolean)">
             <summary>
             在帧末尾添加异或校验
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.FromHexString(System.String)">
+            <summary>
+            将hex-string转化成byte[]
+            </summary>
+            <param name="hex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.SubFrame(System.Collections.Generic.IEnumerable{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            获取指定位置开始，目标长度的数据帧
+            </summary>
+            <param name="input"></param>
+            <param name="startIndex"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.GetInt16(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            输入2bytes，获得一个short型
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.GetInt32(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            输入4bytes，获得一个int型
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.GetInt64(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            输入8bytes，获得一个long型
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.ToFitNumber(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            输入任意字节，转化为合适的数字类型并返回值
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.ToFitNumber1(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            将字节数组转换为合适的数值类型（自动适配 Int16/Int32/Int64）
+            </summary>
         </member>
         <member name="T:Dopamine.FrameManager">
             <summary>

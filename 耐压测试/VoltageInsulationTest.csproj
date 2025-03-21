@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,10 +25,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -49,10 +51,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6774C3AC5C56FD039F2025C8F4E176C9084EBD55</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>VoltageInsulationTest_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=3.0.4.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>packages\log4net.3.0.4\lib\netstandard2.0\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -91,8 +102,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Log\FrameManager.cs" />
+    <Compile Include="FrameParseHelper.cs" />
+    <Compile Include="Struct\FrameInfo.cs" />
+    <Compile Include="WithstandVoltageInstrument.cs" />
+    <Compile Include="WithstandVoltagePlate.cs" />
+    <Compile Include="Device\WithstandVoltagePlate_Packet.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="IClassInterface.cs" />
+    <Compile Include="Device\ChkSum.cs" />
+    <Compile Include="Device\DataFormart.cs" />
+    <Compile Include="Device\DeviceAbstractClass.cs" />
+    <Compile Include="Device\DeviceBaseClass.cs" />
+    <Compile Include="Device\WithstandVoltageInstrument_Packet.cs" />
+    <Compile Include="Device\DriverBase.cs" />
+    <Compile Include="Device\WorkFlow.cs" />
+    <Compile Include="LogModel\LogFrameInfo.cs" />
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="SocketModule\ByteBuffer.cs" />
+    <Compile Include="SocketModule\Packet\Packet.cs" />
+    <Compile Include="SocketModule\Packet\ReceivePacket.cs" />
+    <Compile Include="SocketModule\Packet\ReceiveResult.cs" />
+    <Compile Include="SocketModule\Packet\SendPacket.cs" />
+    <Compile Include="SocketModule\SockPool.cs" />
+    <Compile Include="SocketModule\Sock\COM32.cs" />
+    <Compile Include="SocketModule\Sock\Connection.cs" />
+    <Compile Include="SocketModule\Sock\IConnection.cs" />
+    <Compile Include="SocketModule\Sock\UDPClient.cs" />
+    <Compile Include="Struct\StEquipInfo.cs" />
+    <Compile Include="Struct\StPortInfo.cs" />
+    <Compile Include="Struct\Struct.cs" />
+    <Compile Include="Struct\StSRFrame.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +164,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="VoltageInsulationTest_TemporaryKey.pfx" />
+    <None Include="数据帧解析.md" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,16 +189,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Ainuo_WithstandVoltageInstrument\Ainuo_WithstandVoltageInstrument.csproj">
-      <Project>{eb4fa23f-47d7-4323-9211-2cf60fed0a81}</Project>
-      <Name>Ainuo_WithstandVoltageInstrument</Name>
-    </ProjectReference>
-    <ProjectReference Include="Ainuo_WithstandVoltagePlate\Ainuo_WithstandVoltagePlate.csproj">
-      <Project>{39ad68c1-8fef-4b75-82d8-2e6071680737}</Project>
-      <Name>Ainuo_WithstandVoltagePlate</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

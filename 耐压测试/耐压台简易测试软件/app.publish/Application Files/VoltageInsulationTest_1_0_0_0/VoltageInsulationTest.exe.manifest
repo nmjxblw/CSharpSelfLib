@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="VoltageInsulationTest.exe" version="1.0.0.0" publicKeyToken="221b1be6f7d61e95" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="VoltageInsulationTest" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="VoltageInsulationTest.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+          如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换
+          requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+          如果要利用文件和注册表虚拟化提供
+          向后兼容性，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Configuration.ConfigurationManager.dll" size="92816">
+      <assemblyIdentity name="System.Configuration.ConfigurationManager" version="4.0.1.0" publicKeyToken="CC7B13FFCD2DDD51" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>QKCU7dJ3IhpRQ9imasubRwAunHfgM/hpjCI0QF+FSpQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Security.AccessControl.dll" size="39048">
+      <assemblyIdentity name="System.Security.AccessControl" version="4.1.1.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>BafpYCLHby5rATpWS+uPPHldG4fpmAnu0qKaXTsL72E=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Security.Permissions.dll" size="32912">
+      <assemblyIdentity name="System.Security.Permissions" version="4.0.1.0" publicKeyToken="CC7B13FFCD2DDD51" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>CExGvhKa5TwWmz9hpjJTNmpPMovZ5NB+X8YJSrPc4w0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Security.Principal.Windows.dll" size="23688">
+      <assemblyIdentity name="System.Security.Principal.Windows" version="4.1.1.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>FDoYC5rBHLn4gUqK2nH20QG4zO3EQ1K6YMblI2mE1Dw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VoltageInsulationTest.exe" size="103888">
+      <assemblyIdentity name="VoltageInsulationTest" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>eHfPZ3Z6ZwudrVOvYYft7HFEqZ9GRL69GtGHE7qsaVo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="VoltageInsulationTest.exe.config" size="1564">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ILoJiBcLD0hHGHgY12xyUy+64Ic+5cpA7o7AVsunO8c=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-S7LCDGO\隆元" issuerKeyHash="24dcfcb2b7099cadc64e90c392580afad6b7af60" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>nwmYs7Z3ZJyl4mfEkskitz/KBCA1V+QTFB6bQI5YqiE=</DigestValue></Reference></SignedInfo><SignatureValue>6kTMFMAx1V7hYi69bsS4YVDNfrgV01/Ag5EtLywDJrNW5a2ykUadQ/goYe+lpQ+dG2fiXUrwj9s4BHuvpe38Q7UE2uXg4bp0ztJoldUfLiWU83mSqxFfXHDxFvYISEZJiotGVt/gzJ6j8zDrZUVBOcCRCAFWSR0m/VcDbDyFAOs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>+ZwRlePnd6iqtGBYxDZ/Xi8l3SIPD5oTN5DRdJ+8CbPsCsZUR2ZbkdTAhJyyYZBc9gKw3G273//x0huLIUPD3anXy85VQO6kJZ5VoORaa/1iqp2KTA478C0NcpnBHTniNJ+XxOfc+pvQKu8VOgNu/Kz+SYghgR23gqCZlOGgZK0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="21aa588e409b1e1413e457352004ca3fb722c992c467e2a59c6477b6b398099f" Description="" Url=""><as:assemblyIdentity name="VoltageInsulationTest.exe" version="1.0.0.0" publicKeyToken="221b1be6f7d61e95" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-S7LCDGO\隆元</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>rW+10hW/TeX7wHXnw6L2CzXJ8vR8pZWRxunG96ey8Ew=</DigestValue></Reference></SignedInfo><SignatureValue>DXuSXGvBcbpqcFP9j+812BzUWjiCJtJiluiVVjjePxlho+vo624Cnd6kQSdEp/QuQwI1mifCd9jJtvZtR6eYNXvtMKUL7rgBSrZjJn9gJF0N9V38FgNuQ/AsKi2QqGaLOv8verwpggluK43MZ9TxfAoGcaD3fQZp78BBo035YZo=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>+ZwRlePnd6iqtGBYxDZ/Xi8l3SIPD5oTN5DRdJ+8CbPsCsZUR2ZbkdTAhJyyYZBc9gKw3G273//x0huLIUPD3anXy85VQO6kJZ5VoORaa/1iqp2KTA478C0NcpnBHTniNJ+XxOfc+pvQKu8VOgNu/Kz+SYghgR23gqCZlOGgZK0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQKiKcgUkyMbJJOZo7NYRA8DANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDHiQARABFAFMASwBUAE8AUAAtAFMANwBMAEMARABHAE8AXJaGUUMwHhcNMjUwMzIxMDk1NjQ5WhcNMjYwMzIxMTU1NjQ5WjAvMS0wKwYDVQQDHiQARABFAFMASwBUAE8AUAAtAFMANwBMAEMARABHAE8AXJaGUUMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAPmcEZXj53eoqrRgWMQ2f14vJd0iDw+aEzeQ0XSfvAmz7ArGVEdmW5HUwIScsmGQXPYCsNxtu9//8dIbiyFDw92p18vOVUDupCWeVaDkWmv9YqqdikwOO/AtDXKZwR054jSfl8Tn3Pqb0CrvFToDbvys/kmIIYEdt4KgmZThoGStAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAmXf6sM7EW3N4J/FxbfCYUT5U8CXHhjBZDhzfaIml+bVdbLfH6cX4K8MiT97/ypMwMkLFs6nd2No89Uh10lEp68EInv2ok0QL675E2iOz+U2r2gz+UTg8rf0fkdsxJ63hRR5aiGa5wBKXeG9RLoChk1+NbKQrg12w8CMPAi7owRg=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

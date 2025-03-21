@@ -13,7 +13,7 @@ namespace Dopamine
 		/// </summary>
 		/// <param name="input">输入的字符串</param>
 		/// <param name="showDateTime">添加时间戳</param>
-		public static string ShowInTrace(this string? input, bool showDateTime = false)
+		public static string ShowInTrace(this object? input, bool showDateTime = false)
 		{
 			string result = $"{(showDateTime ? DateTime.Now.ToString("[HH:mm:ss]\t") : string.Empty)}{input}";
 			Trace.WriteLine(result);
@@ -24,7 +24,7 @@ namespace Dopamine
 		/// </summary>
 		/// <param name="input"></param>
 		/// <param name="showDateTime"></param>
-		public static string ShowInConsole(this string? input, bool showDateTime = false)
+		public static string ShowInConsole(this object? input, bool showDateTime = false)
 		{
 			string result = $"{(showDateTime ? DateTime.Now.ToString("[HH:mm:ss]\t") : string.Empty)}{input}";
 			Console.WriteLine(result);
