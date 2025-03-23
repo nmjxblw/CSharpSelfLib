@@ -9,6 +9,11 @@
             拓展域名下的Json配置管理器
             </summary>
         </member>
+        <member name="P:Dopamine.ConfigManager.Options">
+            <summary>
+            配置管理器使用的Json序列化选项
+            </summary>
+        </member>
         <member name="P:Dopamine.ConfigManager.Data">
             <summary>
             动态解析后的 json 文件

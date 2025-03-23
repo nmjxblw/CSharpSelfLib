@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<doc>
+  <members>
+    <assembly>
+      <name>UnityEditor.UIElementsModule</name>
+    </assembly>
+    <member name="T:UnityEditor.UIElements.AssetMonitoringUtilities">
+      <summary>
+        <para>Utility that manages asset monitoring features of UI Toolkit panels.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.AssetMonitoringUtilities.GetResetPanelRenderingOnAssetChange(UnityEditor.EditorWindow)">
+      <summary>
+        <para>Gets the state that controls if the panel of the EditorWindow should reset its rendering data when an asset changes.</para>
+      </summary>
+      <param name="window"></param>
+    </member>
+    <member name="M:UnityEditor.UIElements.AssetMonitoringUtilities.SetResetPanelRenderingOnAssetChange(UnityEditor.EditorWindow,System.Boolean)">
+      <summary>
+        <para>Sets the state that controls if the panel of the EditorWindow should reset its rendering data when an asset changes.</para>
+      </summary>
+      <param name="window"></param>
+      <param name="reset"></param>
+    </member>
+    <member name="T:UnityEditor.UIElements.UxmlNamespacePrefixAttribute">
+      <summary>
+        <para>
+ Attribute that can be used on an assembly to define an XML namespace prefix for a namespace.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.UxmlNamespacePrefixAttribute.ns">
+      <summary>
+        <para>
+ The namespace name.
+ </para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.UIElements.UxmlNamespacePrefixAttribute.prefix">
+      <summary>
+        <para>
+ The namespace prefix.
+ </para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.UIElements.UxmlNamespacePrefixAttribute.#ctor(System.String,System.String)">
+      <summary>
+        <para>
+ Constructor.
+ </para>
+      </summary>
+      <param name="ns">The XML/C# namespace to which a prefix will be associated.</param>
+      <param name="prefix">The prefix to associate to the namespace.</param>
+    </member>
+  </members>
+</doc>
