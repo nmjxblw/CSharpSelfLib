@@ -21,7 +21,7 @@ namespace LeetCode
 		public static void Main()
 		{
 			Console.WriteLine("LeetCode训练程序启动。");
-			Task.Run(()=>App.Start());
+			App.Start();
 		}
 	}
 }

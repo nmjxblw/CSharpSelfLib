@@ -13,11 +13,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWebApp", "..\Asp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.WPF.DataBaseMerge", "..\Dopamine.WPF\Dopamine.WPF.DataBaseMerge.csproj", "{D78AF256-D411-4564-BDA8-0CE47F1D2599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.WPF.SelfLib", "..\Dopamine.WPF.SvgLib\Dopamine.WPF.SelfLib.csproj", "{F35A6ED4-245C-4E13-A6D6-73153C558BB3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode", "..\LeetCode\LeetCode.csproj", "{2C47F913-A521-4DB0-A01B-12C595C70CDB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepSeekApi", "..\DeepSeekApi\DeepSeekApi.csproj", "{BA42D9BD-03FB-4E98-8D7A-CDEF43786652}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{9FA3D6BD-1EC1-3BA5-80CB-CE02773A58D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.WPF.SelfLib", "..\Dopamine.WPF.SelfLib\Dopamine.WPF.SelfLib.csproj", "{F35A6ED4-245C-4E13-A6D6-73153C558BB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.ChatApp", "..\Dopamine.Framework.ChatApp\Dopamine.ChatApp.csproj", "{D4E31BF6-8ADC-45AE-AA9D-1FCAD1A1A3A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +49,6 @@ Global
 		{D78AF256-D411-4564-BDA8-0CE47F1D2599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D78AF256-D411-4564-BDA8-0CE47F1D2599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D78AF256-D411-4564-BDA8-0CE47F1D2599}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +57,14 @@ Global
 		{BA42D9BD-03FB-4E98-8D7A-CDEF43786652}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA42D9BD-03FB-4E98-8D7A-CDEF43786652}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA42D9BD-03FB-4E98-8D7A-CDEF43786652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E31BF6-8ADC-45AE-AA9D-1FCAD1A1A3A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E31BF6-8ADC-45AE-AA9D-1FCAD1A1A3A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E31BF6-8ADC-45AE-AA9D-1FCAD1A1A3A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E31BF6-8ADC-45AE-AA9D-1FCAD1A1A3A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

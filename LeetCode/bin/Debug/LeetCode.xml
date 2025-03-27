@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LeetCode</name>
+    </assembly>
+    <members>
+        <member name="T:LeetCode.Checker">
+            <summary>
+            检测器
+            </summary>
+        </member>
+        <member name="P:LeetCode.Checker.StartTime">
+            <summary>
+            起始时间
+            </summary>
+        </member>
+        <member name="P:LeetCode.Checker.TimeSpend">
+            <summary>
+            运行时间
+            </summary>
+        </member>
+        <member name="P:LeetCode.Checker.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="M:LeetCode.Checker.#ctor(System.DateTime)">
+            <summary>
+            构造检测器
+            </summary>
+        </member>
+        <member name="M:LeetCode.Checker.TimeRecord">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:LeetCode.Checker.MemberCache">
+            <summary>
+            成员缓存
+            </summary>
+        </member>
+        <member name="M:LeetCode.Checker.DeepCompare``1(``0,``0)">
+            <summary>
+            深度比较
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.Checker.CompareMembers(System.Object,System.Object,System.Type)">
+            <summary>
+            比较成员
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.Checker.CompareValues(System.Object,System.Object)">
+            <summary>
+            比较值
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LeetCode.ConfigManager.Data">
+            <summary>
+            动态解析后的 json 文件
+            </summary>
+        </member>
+        <member name="M:LeetCode.ConfigManager.Save">
+            <summary>
+            存储
+            </summary>
+        </member>
+        <member name="T:LeetCode.DynamicClass">
+            <summary>
+            动态解析类
+            </summary>
+        </member>
+        <member name="M:LeetCode.DynamicClass.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            动态属性访问
+            </summary>
+            <param name="binder"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.DynamicClass.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            <summary>
+            动态属性设置
+            </summary>
+            <param name="binder"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LeetCode.DynamicClass.Item(System.String)">
+            <summary>
+            索引器访问
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LeetCode.DynamicClass.Properties">
+            <summary>
+            获取所有属性
+            </summary>
+        </member>
+        <member name="M:LeetCode.DynamicClass.GetDynamicMemberNames">
+            <summary>
+            返回所有键名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.DynamicClass.TryDeleteMember(System.Dynamic.DeleteMemberBinder)">
+            <summary>
+            重写 TryDeleteMember：删除单个成员（支持动态语法）
+            </summary>
+            <param name="binder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.DynamicClass.Clear">
+            <summary>
+            清空
+            </summary>
+        </member>
+        <member name="M:LeetCode.DynamicClass.Remove(System.String[])">
+            <summary>
+            批量删除成员
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LeetCode.DynamicClassConverter">
+            <summary>
+            专属Json解析类
+            </summary>
+        </member>
+        <member name="M:LeetCode.DynamicClassConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            读取接口
+            </summary>
+            <param name="reader"></param>
+            <param name="typeToConvert"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.DynamicClassConverter.ReadObject(System.Text.Json.Utf8JsonReader@,LeetCode.DynamicClass,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            写入接口
+            </summary>
+            <param name="reader"></param>
+            <param name="data"></param>
+            <param name="options"></param>
+            <exception cref="T:System.Text.Json.JsonException"></exception>
+        </member>
+        <member name="M:LeetCode.DynamicClassConverter.ReadValue(System.Text.Json.Utf8JsonReader@,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            读取值
+            </summary>
+            <param name="reader"></param>
+            <param name="options"></param>
+            <returns></returns>
+            <exception cref="T:System.Text.Json.JsonException"></exception>
+        </member>
+        <member name="M:LeetCode.DynamicClassConverter.Write(System.Text.Json.Utf8JsonWriter,LeetCode.DynamicClass,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            写入动态类
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:LeetCode.DynamicClassConverter.WriteValue(System.Text.Json.Utf8JsonWriter,System.Object,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            写入值
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="options"></param>
+        </member>
+        <member name="T:LeetCode.JsonHelper">
+            <summary>
+            Json帮助类
+            </summary>
+            <remarks>注意：仅允许序列化属性而不是字段</remarks>
+            <example>
+            这是一个示例类，展示如何使用 Json帮助类：
+            <code>
+            public class TestClass
+            {
+                public TestClass(string name = "Bob", int age = 15) 
+                { 
+                    this.Name = name; 
+                    this.Age = age; 
+                }
+                
+                public string Name { get; set; } = "Bob";
+                public int Age { get; set; } = 15;
+            }
+            </code>
+            </example>
+        </member>
+        <member name="F:LeetCode.JsonHelper.MainJsonFilePath">
+            <summary>
+            Json文件主路径
+            </summary>
+        </member>
+        <member name="F:LeetCode.JsonHelper.JsonOptions">
+            <summary>
+            序列化设定
+            </summary>
+        </member>
+        <member name="F:LeetCode.JsonHelper.LockObj">
+            <summary>
+            线程锁
+            </summary>
+        </member>
+        <member name="M:LeetCode.JsonHelper.#cctor">
+            <summary>
+            静态实例化
+            </summary>
+        </member>
+        <member name="P:LeetCode.JsonHelper.JsonFilter">
+            <summary>
+            Json文件过滤器
+            </summary>
+        </member>
+        <member name="M:LeetCode.JsonHelper.Load``1(System.String)">
+            <summary>
+            加载Json文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="fileName">默认文件名包含绝对路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.JsonHelper.Save``1(``0,System.String[])">
+            <summary>
+            存写Json文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="fileNames"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LeetCode.Launcher">
+            <summary>
+            LeetCode启动器
+            </summary>
+        </member>
+        <member name="P:LeetCode.Launcher.App">
+            <summary>
+            Application实例化
+            </summary>
+        </member>
+        <member name="M:LeetCode.Launcher.Main">
+            <summary>
+            主方法，用于启动程序
+            </summary>
+        </member>
+        <member name="T:LeetCode.MainApplication">
+            <summary>
+            LeetCode的主程序
+            </summary>
+        </member>
+        <member name="M:LeetCode.MainApplication.Start">
+            <summary>
+            程序主方法
+            </summary>
+        </member>
+        <member name="T:DeepSeekApi.Recorder">
+            <summary>
+            记录器
+            </summary>
+        </member>
+        <member name="P:DeepSeekApi.Recorder.Enable">
+            <summary>
+            功能启用标识符
+            </summary>
+        </member>
+        <member name="M:DeepSeekApi.Recorder.#cctor">
+            <summary>
+            私有构造，在构造时自动注册记录报错
+            </summary>
+        </member>
+        <member name="M:DeepSeekApi.Recorder.Write(System.String,System.String,System.Boolean,ContextLevel)">
+            <summary>
+            写入
+            </summary>
+        </member>
+        <member name="M:DeepSeekApi.Recorder.Record(System.String)">
+            <summary>
+            标准记录
+            </summary>
+        </member>
+        <member name="M:DeepSeekApi.Recorder.RecordError(System.String)">
+            <summary>
+            报错记录
+            </summary>
+            <param name="err_msg"></param>
+        </member>
+        <member name="T:DeepSeekApi.PathHelper">
+            <summary>
+            路径辅助类
+            </summary>
+        </member>
+        <member name="M:DeepSeekApi.PathHelper.GetRuntimeDirectory(System.String)">
+            <summary>
+            将路径转换成OS可识别的路径
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ContextLevel">
+            <summary>
+            记录器内容的等级
+            </summary>
+        </member>
+        <member name="F:ContextLevel.None">
+            <summary>
+            无设置
+            </summary>
+        </member>
+        <member name="F:ContextLevel.Public">
+            <summary>
+            公开级别
+            </summary>
+        </member>
+        <member name="F:ContextLevel.Private">
+            <summary>
+            非公开级别
+            </summary>
+        </member>
+        <member name="F:ContextLevel.Alert">
+            <summary>
+            警告级别
+            </summary>
+        </member>
+        <member name="F:ContextLevel.Error">
+            <summary>
+            报错级别
+            </summary>
+        </member>
+        <member name="F:ContextLevel.Debug">
+            <summary>
+            调试级别
+            </summary>
+        </member>
+    </members>
+</doc>

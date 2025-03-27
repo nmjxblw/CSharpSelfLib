@@ -49,14 +49,14 @@ namespace Dopamine
 		/// </summary>
 		public static void Save()
 		{
-			string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "test.json");
-			string? path = Path.GetDirectoryName(filepath);
+			string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "test.json");
+			string? path = Path.GetDirectoryName(filePath);
 			if (string.IsNullOrEmpty(path)) return;
 
 			if (!Directory.Exists(path))
 				Directory.CreateDirectory(path);
 
-			FileStream stream = File.Create(filepath);
+			FileStream stream = File.Create(filePath);
 			JsonSerializer.Serialize(stream, Data, opts);
 			stream.Dispose();
 		}

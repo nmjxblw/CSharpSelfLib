@@ -39,4 +39,32 @@ public class FrontendTestCode
 		target = temp.ToString();
 		return true;
 	}
+	static List<UInt64> SocketState { get; } = new List<UInt64>() { (UInt64)0, (UInt64)0 };
+	/// <summary>
+	/// 5000H—设置载波模块工作电压
+	/// </summary>
+	/// <returns></returns>
+	public static int ControlRelay(List<List<int>> socketList, bool on = true)
+	{
+		int channelIndex = 0;
+		foreach (List<int> sockets in socketList)
+		{
+			foreach (int socket in sockets)
+			{
+				// 无效表位跳过
+				if (socket <= 0 || socket > 64)
+				{
+					continue;
+				}
+				// 通过位运算获得
+				if(on)
+					SocketState[channelIndex] |=  (UInt64)1 << (socket - 1);
+				else
+					SocketState[channelIndex] &= ~(UInt64)1 << (socket - 1);
+			}
+			channelIndex++;
+		}
+
+		return 0;
+	}
 }
