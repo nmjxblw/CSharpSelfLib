@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Input;
 namespace Dopamine.ChatApp
 {
@@ -175,7 +176,12 @@ namespace Dopamine.ChatApp
 			{
 				//将方法添加到数据库进程去处理
 				MethodInfo method = GetType().GetMethod(methodName);
-				method.Invoke(this, new object[] { });
+				if (method == null)
+				{
+					MessageBox.Show($"发送了无效命令，未找到方法{methodName}!","Error",MessageBoxButton.OK,MessageBoxImage.Error);
+					return;
+				}
+				method?.Invoke(this, new object[] { });
 			}
 			catch (Exception e)
 			{

@@ -31,7 +31,13 @@ namespace Dopamine.ChatApp
             this.DataContext = vm;
         }
 
-        private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		protected override void OnActivated(EventArgs e)
+		{
+            WindowState = WindowState.Normal;
+            base.OnActivated(e);
+		}
+
+		private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 			if (e.LeftButton == MouseButtonState.Pressed)
 			{

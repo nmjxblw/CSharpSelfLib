@@ -3,7 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Dopamine.ChatApp"
              StartupUri="MainWindow.xaml">
-    <Application.Resources>
-		<ResourceDictionary x:Name="DictionaryResource_1" Source="/Styles/DictionaryResource_1.xaml"/>
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary x:Name="Language" Source="/Resources/Language.xaml"/>
+				<ResourceDictionary x:Name="DictionaryResource_1" Source="/Styles/DictionaryResource_1.xaml"/>
+
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>

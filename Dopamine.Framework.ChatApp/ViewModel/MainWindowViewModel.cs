@@ -6,6 +6,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace Dopamine.ChatApp
@@ -22,6 +23,7 @@ namespace Dopamine.ChatApp
 		{
 			CompositionTarget.Rendering += OnRenderingFrame;
 		}
+		#region 公开属性
 		/// <summary>
 		/// AI输出对话框
 		/// </summary>
@@ -38,8 +40,14 @@ namespace Dopamine.ChatApp
 			get => GetProperty("Say Hi!");
 			set => SetProperty(value);
 		}
-
+		#endregion
+		#region 私有属性
+		/// <summary>
+		/// 上一帧的时间戳
+		/// </summary>
 		private DateTime _lastUpdateTime = DateTime.Now;
+		#endregion
+		#region 方法
 		/// <summary>
 		/// 响应程序每帧渲染事件
 		/// </summary>
@@ -62,9 +70,28 @@ namespace Dopamine.ChatApp
 		}
 		public void Send()
 		{
-			AIChatBoxText = "发送";
+			AIChatBoxText = ConfigManager.Data.Test;
 		}
-
+		public void OnMinimizeClicked()
+		{
+			App.Current.MainWindow.WindowState = WindowState.Minimized;
+		}
+		public void OnResizeClicked()
+		{
+			if(App.Current.MainWindow.WindowState != WindowState.Normal)
+			{
+				App.Current.MainWindow.WindowState = WindowState.Normal;
+			}
+			else
+			{
+				App.Current.MainWindow.WindowState = WindowState.Maximized;
+			}
+		}
+		public void OnAppQuitClicked()
+		{
+			if (MessageBox.Show("确定要退出吗？", "退出程序", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+				App.Current.Shutdown();
+		}
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing)
@@ -73,5 +100,6 @@ namespace Dopamine.ChatApp
 			}
 			base.Dispose(disposing);
 		}
+		#endregion
 	}
 }

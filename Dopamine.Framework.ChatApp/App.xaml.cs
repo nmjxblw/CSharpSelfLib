@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
@@ -69,9 +70,21 @@ namespace Dopamine.ChatApp
 		{
 			base.OnSessionEnding(e);
 		}
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="e"></param>
 		protected override void OnStartup(StartupEventArgs e)
 		{
+			// 创建进程锁，确保有且仅有一个进程在进行任务
+			new Mutex(true, "Dopamine.ChatApp", out bool ret);
+			if (!ret)
+			{
+				MessageBox.Show("程序已启动", "", MessageBoxButton.OK, MessageBoxImage.Stop);
+				// 强制关闭，不触发 Closing 事件，不释放 WPF 资源，不等待前台线程结束
+				Environment.Exit(0);
+				//Application.Current.Shutdown() // 安全关闭
+			}
 			SetUnhandledException();
 			base.OnStartup(e);
 		}
