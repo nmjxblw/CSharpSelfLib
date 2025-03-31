@@ -131,9 +131,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dopamine.WPF.SelfLib\Dopamine.WPF.SelfLib.csproj">
+    <ProjectReference Include="..\Dopamine.Framework.SelfLib\Dopamine.Framework.SelfLib.csproj">
       <Project>{f35a6ed4-245c-4e13-a6d6-73153c558bb3}</Project>
-      <Name>Dopamine.WPF.SelfLib</Name>
+      <Name>Dopamine.Framework.SelfLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

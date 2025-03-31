@@ -11,7 +11,7 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using Dopamine.WPF;
+using Dopamine.Framework;
 namespace Dopamine.ChatApp
 {
 	/// <summary>

@@ -399,27 +399,27 @@ namespace VoltageInsulationTest
 					smoothUpTime,
 					smoothDownTime);
 			}
-			else if (frame[1] == 18)
+			else if (frame[1] == 19)
 			{
 				// 处理读取测试结论 00H
 				// 先获取数据体，共14字节
-				byte[] body = frame.SubFrame(2, 14);
+				byte[] body = frame.SubFrame(2, 15);
 				short withstandVoltage = body.SubFrame(0, 2).GetInt16();
-				float withstandCurrent = body.SubFrame(2, 2).GetInt16() / 1000f;
-				float withstandRemainingTime = body.SubFrame(4, 2).GetInt16() / 10f;
-				short insulationVoltage = body.SubFrame(6, 2).GetInt16();
-				float insulationResistance = (int)body.SubFrame(8, 3).ToFitNumber() / 100f;
-				float insulationRemainingTime = body.SubFrame(11, 2).GetInt16() / 10f;
-				byte resultByte = body[13];
-				string ACWTest_Qualified = ((resultByte >> 0) & 1) != 0 ? "合格" : "不合格";
-				string ACWTest_UpperQualified = ((resultByte >> 1) & 1) != 0 ? "合格" : "不合格";
-				string ACWTest_LowerQualified = ((resultByte >> 2) & 1) != 0 ? "合格" : "不合格";
-				string IRTest_Qualified = ((resultByte >> 3) & 1) != 0 ? "合格" : "不合格";
-				string IRTest_UpperQualified = ((resultByte >> 4) & 1) != 0 ? "合格" : "不合格";
-				string IRTest_LowerQualified = ((resultByte >> 5) & 1) != 0 ? "合格" : "不合格";
-				string resultString = ((resultByte >> 6) & 1) != 0 ?
-					((resultByte >> 7) & 1) != 0 ? "故障状态" : "IR测试中"
-					: ((resultByte >> 7) & 1) != 0 ? "ACW测试中" : "测试完成";
+				float withstandCurrent = (int)body.SubFrame(2, 3).ToFitNumber() / 1000f;
+				float withstandRemainingTime = body.SubFrame(5, 2).GetInt16() / 10f;
+				short insulationVoltage = body.SubFrame(7, 2).GetInt16();
+				float insulationResistance = (int)body.SubFrame(9, 3).ToFitNumber() / 100f;
+				float insulationRemainingTime = body.SubFrame(12, 2).GetInt16() / 10f;
+				byte resultByte = body[14];
+				string ACWTest_Qualified = (resultByte & (1 << 0)) != 0 ? "合格" : "不合格";
+				string ACWTest_UpperQualified = (resultByte & (1 << 1)) != 0 ? "合格" : "不合格";
+				string ACWTest_LowerQualified = (resultByte & (1 << 2)) != 0 ? "合格" : "不合格";
+				string IRTest_Qualified = (resultByte & (1 << 3)) != 0 ? "合格" : "不合格";
+				string IRTest_UpperQualified = (resultByte & (1 << 4)) != 0 ? "合格" : "不合格";
+				string IRTest_LowerQualified = (resultByte & (1 << 5)) != 0 ? "合格" : "不合格";
+				string resultString = (resultByte & (1 << 6)) != 0 ?
+					(resultByte & (1 << 7)) != 0 ? "故障状态" : "ACW测试中"
+					: (resultByte & (1 << 7)) != 0 ? "IR测试中" : "测试完成";
 				return string.Format(
 					"耐电压测试实际输出电压值{0}V;" +
 					"耐电压击穿电流测试值{1}mA;" +
@@ -427,7 +427,7 @@ namespace VoltageInsulationTest
 					"绝缘测试实际输出电压值{3}V;" +
 					"绝缘电阻测试值{4}MΩ;" +
 					"绝缘实际测试剩余时间{5}s;" +
-					"ACW测试结果：{6};"+
+					"ACW测试结果：{6};" +
 					"ACW测试上限：{7};" +
 					"ACW测试下限：{8};" +
 					"IR测试结果：{9};" +

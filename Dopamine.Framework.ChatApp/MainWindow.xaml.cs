@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Dopamine.WPF;
+using Dopamine.Framework;
 namespace Dopamine.ChatApp
 {
     /// <summary>
