@@ -59,5 +59,21 @@ namespace Dopamine
 			}
 			return text;
 		}
+		/// <summary>
+		/// 获取最大值
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="input"></param>
+		/// <returns></returns>
+		public static T Max<T>(this IEnumerable<T> input) where T : IComparable
+		{
+			if (!input.Any()) return default;
+			T result = input.GetEnumerator().Current;
+			foreach (T v in input)
+			{
+				result = v.CompareTo(result) > 0 ? v : result;
+			}
+			return result;
+		}
 	}
 }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Dopamine.Framework;
 namespace LeetCode
@@ -17,11 +19,11 @@ namespace LeetCode
 		public void Start()
 		{
 			"任务开始".ShowInConsole(true);
-			string input = ConfigManager.Data.Tests[0].Input[0];
-			input.ShowInConsole(true);
-			Checker checker = new Checker(DateTime.Now);
-			checker.DeepCompare("happy", "happy").ToString().ShowInConsole(true);
-			checker.TimeRecord().ShowInConsole(true);
+			Stopwatch stopwatch = Stopwatch.StartNew();
+			Thread.Sleep(3000);
+			stopwatch.Stop();
+			Thread.Sleep(1000);
+			stopwatch.ElapsedMilliseconds.ToString().ShowInConsole(true);
 		}
 	}
 }

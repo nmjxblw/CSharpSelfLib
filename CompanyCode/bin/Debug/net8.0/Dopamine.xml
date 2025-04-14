@@ -212,6 +212,14 @@
             <param name="text"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.Max``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            获取最大值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.GetFrame(System.Net.Sockets.NetworkStream,System.Int32)">
             <summary>
             从流中获取数据帧

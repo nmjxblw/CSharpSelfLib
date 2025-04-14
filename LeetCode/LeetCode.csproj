@@ -94,9 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Checker.cs" />
-    <Compile Include="Config\ConfigManager.cs" />
-    <Compile Include="Dynamic\DynamicClass.cs" />
-    <Compile Include="Utilities\JsonHelper.cs" />
+    <Compile Include="Other\Config\ConfigManager.cs" />
+    <Compile Include="Other\DynamicClass\DynamicClass.cs" />
+    <Compile Include="Other\Utilities\JsonHelper.cs" />
     <Compile Include="Launcher.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,11 +105,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\Recorder.cs" />
+    <Compile Include="Other\Utilities\Recorder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EmbeddedResource Include="Config\RuntimeConfig.json">
+    <EmbeddedResource Include="Other\Config\RuntimeConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -135,6 +135,15 @@
       <Project>{f35a6ed4-245c-4e13-a6d6-73153c558bb3}</Project>
       <Name>Dopamine.Framework.SelfLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArrayAndString\" />
+    <Folder Include="BinarySearch\" />
+    <Folder Include="BreadthFirstSearch\" />
+    <Folder Include="DeepFirstSearch\" />
+    <Folder Include="Graphic\" />
+    <Folder Include="Hash\" />
+    <Folder Include="List\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
