@@ -74,7 +74,7 @@ namespace DeepSeekApi
 				string text = $"[{DateTime.Now:HH:mm:ss}] {msg}\n";
 
 				file = PathHelper.GetRuntimeDirectory(file);
-				File.AppendAllText(file, text);
+				File.AppendAllText(file, text, Encoding.UTF8);
 			}
 		}
 		/// <summary>
