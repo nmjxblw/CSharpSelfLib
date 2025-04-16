@@ -36,9 +36,12 @@ namespace DeepSeekApi
 		/// 返回上次访问是否发生错误
 		/// </summary>
 		public static bool Error => error;
+		/// <summary>
+		/// 信息队列
+		/// </summary>
 		private static List<object> message = new List<object>();
 		/// <summary>
-		/// 
+		/// 信息队列
 		/// </summary>
 		public static List<object> Message => message;
 		public static dynamic? Data { get; set; } = new DynamicClass();
@@ -117,7 +120,7 @@ namespace DeepSeekApi
 			{
 				message.RemoveAt(message.Count - 1);
 				error = true;
-				answer = $"错误: {e.Message}";
+				answer = $"错误信息: {e.Message}";
 			}
 			finally
 			{
@@ -125,7 +128,9 @@ namespace DeepSeekApi
 			}
 			return answer;
 		}
-
+		/// <summary>
+		/// 运行DeepSeek控制台程序
+		/// </summary>
 		public static void Run()
 		{
 			string? input = string.Empty;
