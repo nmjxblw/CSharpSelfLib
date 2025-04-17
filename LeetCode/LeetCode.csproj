@@ -96,6 +96,7 @@
     <Compile Include="Checker.cs" />
     <Compile Include="Other\Config\ConfigManager.cs" />
     <Compile Include="Other\DynamicClass\DynamicClass.cs" />
+    <Compile Include="Other\Structure\ListNode.cs" />
     <Compile Include="Other\Utilities\JsonHelper.cs" />
     <Compile Include="Launcher.cs" />
     <Compile Include="MainApplication.cs" />
