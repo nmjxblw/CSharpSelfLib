@@ -181,6 +181,28 @@
             <param name="value"></param>
             <param name="options"></param>
         </member>
+        <member name="T:LeetCode.ListNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LeetCode.ListNode.val">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LeetCode.ListNode.next">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LeetCode.ListNode.#ctor(System.Int32,LeetCode.ListNode)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="next"></param>
+        </member>
         <member name="T:LeetCode.JsonHelper">
             <summary>
             Json帮助类
@@ -269,6 +291,13 @@
             <summary>
             程序主方法
             </summary>
+        </member>
+        <member name="M:LeetCode.MainApplication.CalculateMinimumHP(System.Int32[][])">
+            <summary>
+            计算最小生命值
+            </summary>
+            <param name="dungeon"></param>
+            <returns></returns>
         </member>
         <member name="T:DeepSeekApi.Recorder">
             <summary>
