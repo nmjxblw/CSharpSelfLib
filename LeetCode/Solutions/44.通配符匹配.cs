@@ -64,10 +64,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public bool IsMatch(string s, string p) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

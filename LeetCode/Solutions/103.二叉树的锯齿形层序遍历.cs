@@ -63,10 +63,10 @@
  *     }
  * }
  */
-public class Solution {
-    public IList<IList<int>> ZigzagLevelOrder(TreeNode root) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<System.Collections.Generic.IList<int>> ZigzagLevelOrder(TreeNode root) {
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

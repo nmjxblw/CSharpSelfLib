@@ -60,10 +60,10 @@
  *     }
  * }
  */
-public class Solution {
+public partial class Solution {
     public bool IsSymmetric(TreeNode root) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

@@ -63,10 +63,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public string GetPermutation(int n, int k) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

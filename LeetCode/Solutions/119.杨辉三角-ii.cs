@@ -59,10 +59,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<int> GetRow(int rowIndex) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<int> GetRow(int rowIndex) {
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

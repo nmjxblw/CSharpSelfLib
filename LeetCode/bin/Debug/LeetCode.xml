@@ -181,28 +181,6 @@
             <param name="value"></param>
             <param name="options"></param>
         </member>
-        <member name="T:LeetCode.ListNode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:LeetCode.ListNode.val">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:LeetCode.ListNode.next">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:LeetCode.ListNode.#ctor(System.Int32,LeetCode.ListNode)">
-            <summary>
-            
-            </summary>
-            <param name="val"></param>
-            <param name="next"></param>
-        </member>
         <member name="T:LeetCode.JsonHelper">
             <summary>
             Json帮助类
@@ -299,6 +277,56 @@
             <param name="dungeon"></param>
             <returns></returns>
         </member>
+        <member name="T:ListNode">
+            <summary>
+             链表节点
+            </summary>
+        </member>
+        <member name="F:ListNode.val">
+            <summary>
+            链表节点值
+            </summary>
+        </member>
+        <member name="F:ListNode.next">
+            <summary>
+            下一节点
+            </summary>
+        </member>
+        <member name="M:ListNode.#ctor(System.Int32,ListNode)">
+            <summary>
+            链表节点构造函数
+            </summary>
+            <param name="val"></param>
+            <param name="next"></param>
+        </member>
+        <member name="T:TreeNode">
+            <summary>
+            树节点
+            </summary>
+        </member>
+        <member name="F:TreeNode.val">
+            <summary>
+            节点值
+            </summary>
+        </member>
+        <member name="F:TreeNode.left">
+            <summary>
+            左子节点
+            </summary>
+        </member>
+        <member name="F:TreeNode.right">
+            <summary>
+            右子节点
+            </summary>
+        </member>
+        <member name="M:TreeNode.#ctor(System.Int32,TreeNode,TreeNode)">
+            <summary>
+            树节点构造函数
+            </summary>
+            <param name="val"></param>
+            <param name="left"></param>
+            <param name="right"></param>
+        </member>
         <member name="T:DeepSeekApi.Recorder">
             <summary>
             记录器
@@ -377,5 +405,121 @@
             调试级别
             </summary>
         </member>
+        <member name="T:Solution">
+            <summary>
+            解决方法基类
+            </summary>
+            Definition for a binary tree node.
+            public class TreeNode {
+                public int val;
+                public TreeNode left;
+                public TreeNode right;
+                public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+                    this.val = val;
+                    this.left = left;
+                    this.right = right;
+                }
+            }
+            Definition for a binary tree node.
+            public class TreeNode {
+                public int val;
+                public TreeNode left;
+                public TreeNode right;
+                public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+                    this.val = val;
+                    this.left = left;
+                    this.right = right;
+                }
+            }
+            Definition for a binary tree node.
+            public class TreeNode {
+                public int val;
+                public TreeNode left;
+                public TreeNode right;
+                public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+                    this.val = val;
+                    this.left = left;
+                    this.right = right;
+                }
+            }
+            Definition for a binary tree node.
+            public class TreeNode {
+                public int val;
+                public TreeNode left;
+                public TreeNode right;
+                public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+                    this.val = val;
+                    this.left = left;
+                    this.right = right;
+                }
+            }
+            Definition for singly-linked list.
+            public class ListNode {
+                public int val;
+                public ListNode next;
+                public ListNode(int val=0, ListNode next=null) {
+                    this.val = val;
+                    this.next = next;
+                }
+            }
+            Definition for singly-linked list.
+            public class ListNode {
+                public int val;
+                public ListNode next;
+                public ListNode(int val=0, ListNode next=null) {
+                    this.val = val;
+                    this.next = next;
+                }
+            }
+            Definition for singly-linked list.
+            public class ListNode {
+                public int val;
+                public ListNode next;
+                public ListNode(int val=0, ListNode next=null) {
+                    this.val = val;
+                    this.next = next;
+                }
+            }
+            Definition for a binary tree node.
+            public class TreeNode {
+                public int val;
+                public TreeNode left;
+                public TreeNode right;
+                public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+                    this.val = val;
+                    this.left = left;
+                    this.right = right;
+                }
+            }
+        </member>
+        <member name="M:Solution.TwoSum(System.Int32[],System.Int32)">
+            <summary>
+            给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
+            </summary>
+            <param name="nums"></param>
+            <param name="target"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Solution.GridIllumination(System.Int32,System.Int32[][],System.Int32[][])">
+            <summary>
+            给定一个 n x n 的网格和一些灯的位置，返回每个查询的结果，表示该位置是否被照亮。
+            </summary>
+            <param name="n"></param>
+            <param name="lamps"></param>
+            <param name="queries"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Codec">
+            Definition for a binary tree node.
+            public class TreeNode {
+                public int val;
+                public TreeNode left;
+                public TreeNode right;
+                public TreeNode(int x) { val = x; }
+            }
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:NestedIterator" -->
     </members>
 </doc>

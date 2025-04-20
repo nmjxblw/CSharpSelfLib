@@ -70,24 +70,24 @@
 
 class PeekingIterator {
     // iterators refers to the first element of the array.
-    public PeekingIterator(IEnumerator<int> iterator) {
+    public PeekingIterator(System.Collections.Generic.IEnumerator<int> iterator) {
         // initialize any member here.
     }
     
     // Returns the next element in the iteration without advancing the iterator.
     public int Peek() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     // Returns the next element in the iteration and advances the iterator.
     public int Next() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     // Returns false if the iterator is refering to the end of the array of true otherwise.
     public bool HasNext() {
-		
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

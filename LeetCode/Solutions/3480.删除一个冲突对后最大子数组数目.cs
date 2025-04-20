@@ -75,10 +75,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public long MaxSubarrays(int n, int[][] conflictingPairs) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

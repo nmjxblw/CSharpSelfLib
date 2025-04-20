@@ -55,10 +55,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int LongestIncreasingPath(int[][] matrix) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

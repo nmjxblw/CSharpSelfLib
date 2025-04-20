@@ -60,10 +60,12 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<string> WordBreak(string s, IList<string> wordDict) {
-        
-    }
+using System.Collections.Generic;
+
+public partial class Solution {
+    public System.Collections.Generic.IList<string> WordBreak(string s,System.Collections.Generic.IList<string> wordDict) {
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

@@ -86,10 +86,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int[] HitBricks(int[][] grid, int[][] hits) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

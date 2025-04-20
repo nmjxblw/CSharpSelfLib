@@ -71,10 +71,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<int> FindSubstring(string s, string[] words) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<int> FindSubstring(string s, string[] words) {
+        throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

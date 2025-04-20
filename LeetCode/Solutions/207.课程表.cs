@@ -55,10 +55,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public bool CanFinish(int numCourses, int[][] prerequisites) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

@@ -55,10 +55,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<string> FindWords(char[][] board, string[] words) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<string> FindWords(char[][] board, string[] words) {
+        throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

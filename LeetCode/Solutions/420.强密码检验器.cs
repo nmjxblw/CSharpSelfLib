@@ -67,10 +67,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int StrongPasswordChecker(string password) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

@@ -56,10 +56,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<int> CountSmaller(int[] nums) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<int> CountSmaller(int[] nums) {
+        throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

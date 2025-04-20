@@ -96,10 +96,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<string> BasicCalculatorIV(string expression, string[] evalvars, int[] evalints) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<string> BasicCalculatorIV(string expression, string[] evalvars, int[] evalints) {
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

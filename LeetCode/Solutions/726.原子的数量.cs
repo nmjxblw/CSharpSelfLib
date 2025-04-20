@@ -77,10 +77,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public string CountOfAtoms(string formula) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

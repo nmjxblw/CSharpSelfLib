@@ -59,10 +59,12 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<int> FindMinHeightTrees(int n, int[][] edges) {
-        
-    }
+using System.Diagnostics.Tracing;
+
+public partial class Solution {
+    public System.Collections.Generic.IList<int> FindMinHeightTrees(int n, int[][] edges) {
+        throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

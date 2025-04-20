@@ -74,10 +74,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public bool IsScramble(string s1, string s2) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

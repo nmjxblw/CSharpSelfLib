@@ -67,10 +67,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int[][] FloodFill(int[][] image, int sr, int sc, int color) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

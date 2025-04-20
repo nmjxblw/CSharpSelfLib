@@ -67,7 +67,9 @@
  */
 
 // @lc code=start
-public class Solution
+using System;
+
+public partial class Solution
 {
     public int CalculateMinimumHP(int[][] dungeon)
     {

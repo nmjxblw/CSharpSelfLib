@@ -62,10 +62,10 @@
  *     }
  * }
  */
-public class Solution {
+public partial class Solution {
     public int MaxPathSum(TreeNode root) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

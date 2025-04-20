@@ -69,24 +69,24 @@
 public class AllOne {
 
     public AllOne() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public void Inc(string key) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public void Dec(string key) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public string GetMaxKey() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public string GetMinKey() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 
 /**

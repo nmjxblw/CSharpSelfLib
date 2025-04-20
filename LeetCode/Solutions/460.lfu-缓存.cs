@@ -82,16 +82,16 @@
 public class LFUCache {
 
     public LFUCache(int capacity) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public int Get(int key) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public void Put(int key, int value) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 
 /**

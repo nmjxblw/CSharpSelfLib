@@ -65,10 +65,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<IList<int>> GetSkyline(int[][] buildings) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<System.Collections.Generic.IList<int>> GetSkyline(int[][] buildings) {
+        throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

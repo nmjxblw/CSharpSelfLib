@@ -77,13 +77,13 @@ public class Codec {
 
     // Encodes a tree to a single string.
     public string serialize(TreeNode root) {
-        
-    }
+		throw new System.Exception("Not Implemented");
+	}
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(string data) {
-        
-    }
+		throw new System.Exception("Not Implemented");
+	}
 }
 
 // Your Codec object will be instantiated and called as such:

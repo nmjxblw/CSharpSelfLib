@@ -45,10 +45,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int MaxPoints(int[][] points) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

@@ -53,10 +53,12 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<IList<string>> SolveNQueens(int n) {
-        
-    }
+using System.Collections.Generic;
+
+public partial class Solution {
+    public System.Collections.Generic.IList<IList<string>> SolveNQueens(int n) {
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

@@ -66,16 +66,16 @@
 public class MedianFinder {
 
     public MedianFinder() {
-        
+        throw new System.Exception(); 
     }
     
     public void AddNum(int num) {
-        
-    }
+		throw new System.Exception();
+	}
     
     public double FindMedian() {
-        
-    }
+		throw new System.Exception();
+	}
 }
 
 /**

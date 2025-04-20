@@ -62,10 +62,13 @@
  */
 
 // @lc code=start
-public class Solution {
-    public bool IsMatch(string s, string p) {
-        
-    }
+public partial class Solution
+{
+#if false
+	public bool IsMatch(string s, string p) {
+		return default;
+	}
+#endif
 }
 // @lc code=end
 

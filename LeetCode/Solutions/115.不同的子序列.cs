@@ -56,10 +56,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int NumDistinct(string s, string t) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

@@ -69,20 +69,20 @@ public class MinStack {
     }
     
     public void Push(int val) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public void Pop() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public int Top() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public int GetMin() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 
 /**

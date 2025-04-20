@@ -79,8 +79,8 @@ public class StreamChecker {
     }
     
     public bool Query(char letter) {
-        
-    }
+		return default;
+	}
 }
 
 /**

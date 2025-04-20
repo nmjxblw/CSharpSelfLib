@@ -58,10 +58,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int[] FindRedundantConnection(int[][] edges) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

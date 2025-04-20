@@ -3,31 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace LeetCode
+/// <summary>
+///  链表节点
+/// </summary>
+public class ListNode
 {
 	/// <summary>
-	/// 
+	/// 链表节点值
 	/// </summary>
-	public class ListNode
+	public int val;
+	/// <summary>
+	/// 下一节点
+	/// </summary>
+	public ListNode next;
+	/// <summary>
+	/// 链表节点构造函数
+	/// </summary>
+	/// <param name="val"></param>
+	/// <param name="next"></param>
+	public ListNode(int val = 0, ListNode next = null)
 	{
-		/// <summary>
-		/// 
-		/// </summary>
-		public int val;
-		/// <summary>
-		/// 
-		/// </summary>
-		public ListNode next;
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="val"></param>
-		/// <param name="next"></param>
-		public ListNode(int val = 0, ListNode next = null)
-		{
-			this.val = val;
-			this.next = next;
-		}
+		this.val = val;
+		this.next = next;
 	}
 }

@@ -66,10 +66,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<string> AmbiguousCoordinates(string s) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<string> AmbiguousCoordinates(string s) {
+		throw new System.Exception(); throw new System.Exception();
+	}
 }
 // @lc code=end
 

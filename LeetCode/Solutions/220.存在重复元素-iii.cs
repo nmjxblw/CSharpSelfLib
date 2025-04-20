@@ -61,10 +61,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public bool ContainsNearbyAlmostDuplicate(int[] nums, int indexDiff, int valueDiff) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

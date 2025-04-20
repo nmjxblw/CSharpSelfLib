@@ -68,10 +68,10 @@
  *     }
  * }
  */
-public class Solution {
+public partial class Solution {
     public int Rob(TreeNode root) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

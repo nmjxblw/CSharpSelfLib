@@ -57,10 +57,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<string> AddOperators(string num, int target) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<string> AddOperators(string num, int target) {
+        throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

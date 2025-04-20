@@ -73,10 +73,10 @@
  *     }
  * }
  */
-public class Solution {
+public partial class Solution {
     public ListNode InsertionSortList(ListNode head) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

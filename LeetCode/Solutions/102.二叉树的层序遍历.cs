@@ -63,10 +63,10 @@
  *     }
  * }
  */
-public class Solution {
-    public IList<IList<int>> LevelOrder(TreeNode root) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<System.Collections.Generic.IList<int>> LevelOrder(TreeNode root) {
+        throw new System.Exception("Not Implemented");
+	}
 }
 // @lc code=end
 

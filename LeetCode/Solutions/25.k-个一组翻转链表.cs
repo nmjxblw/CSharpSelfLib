@@ -67,10 +67,10 @@
  *     }
  * }
  */
-public class Solution {
+public partial class Solution {
     public ListNode ReverseKGroup(ListNode head, int k) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

@@ -60,10 +60,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public int LadderLength(string beginWord, string endWord, IList<string> wordList) {
-        
-    }
+public partial class Solution {
+    public int LadderLength(string beginWord, string endWord,System.Collections.Generic.IList<string> wordList) {
+        throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

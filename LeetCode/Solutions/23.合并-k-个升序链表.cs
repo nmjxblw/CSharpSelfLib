@@ -72,10 +72,10 @@
  *     }
  * }
  */
-public class Solution {
+public partial class Solution {
     public ListNode MergeKLists(ListNode[] lists) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

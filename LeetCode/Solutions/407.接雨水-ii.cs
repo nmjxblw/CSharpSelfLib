@@ -53,10 +53,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int TrapRainWater(int[][] heightMap) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

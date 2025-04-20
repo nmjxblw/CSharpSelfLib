@@ -67,10 +67,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public string MinWindow(string s, string t) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

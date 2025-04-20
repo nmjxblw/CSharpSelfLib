@@ -62,10 +62,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int[] FindOrder(int numCourses, int[][] prerequisites) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

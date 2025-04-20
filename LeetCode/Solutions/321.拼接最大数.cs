@@ -59,10 +59,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public int[] MaxNumber(int[] nums1, int[] nums2, int k) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

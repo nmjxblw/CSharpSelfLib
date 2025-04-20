@@ -59,10 +59,12 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<string> FindItinerary(IList<IList<string>> tickets) {
-        
-    }
+using System.Collections.Generic;
+
+public partial class Solution {
+    public System.Collections.Generic.IList<string> FindItinerary(IList<IList<string>> tickets) {
+        throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

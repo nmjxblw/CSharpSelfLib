@@ -68,20 +68,20 @@
 public class RandomizedSet {
 
     public RandomizedSet() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public bool Insert(int val) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public bool Remove(int val) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
     
     public int GetRandom() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 
 /**

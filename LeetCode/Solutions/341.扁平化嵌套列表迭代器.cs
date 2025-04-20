@@ -78,22 +78,22 @@
  *
  *     // @return the nested list that this NestedInteger holds, if it holds a nested list
  *     // Return null if this NestedInteger holds a single integer
- *     IList<NestedInteger> GetList();
+ *    System.Collections.Generic.IList<NestedInteger> GetList();
  * }
  */
-public class NestedIterator {
+public partial class NestedIterator {
 
-    public NestedIterator(IList<NestedInteger> nestedList) {
-        
-    }
+    public NestedIterator(System.Collections.Generic.IList<NestedInteger> nestedList) {
+        throw new System.NotImplementedException();
+	}
 
     public bool HasNext() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 
     public int Next() {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 
 /**

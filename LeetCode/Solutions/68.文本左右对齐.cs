@@ -92,10 +92,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<string> FullJustify(string[] words, int maxWidth) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<string> FullJustify(string[] words, int maxWidth) {
+		throw new System.Exception();
+	}
 }
 // @lc code=end
 

@@ -53,10 +53,10 @@
  */
 
 // @lc code=start
-public class Solution {
-    public IList<string> RemoveInvalidParentheses(string s) {
-        
-    }
+public partial class Solution {
+    public System.Collections.Generic.IList<string> RemoveInvalidParentheses(string s) {
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 

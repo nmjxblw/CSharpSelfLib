@@ -53,10 +53,10 @@
  */
 
 // @lc code=start
-public class Solution {
+public partial class Solution {
     public double FindMedianSortedArrays(int[] nums1, int[] nums2) {
-        
-    }
+		throw new System.NotImplementedException();
+	}
 }
 // @lc code=end
 
