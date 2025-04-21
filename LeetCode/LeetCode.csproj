@@ -127,6 +127,7 @@
     <Compile Include="Solutions\13.罗马数字转整数.cs" />
     <Compile Include="Solutions\132.分割回文串-ii.cs" />
     <Compile Include="Solutions\135.分发糖果.cs" />
+    <Compile Include="Solutions\14.最长公共前缀.cs" />
     <Compile Include="Solutions\140.单词拆分-ii.cs" />
     <Compile Include="Solutions\147.对链表进行插入排序.cs" />
     <Compile Include="Solutions\149.直线上最多的点数.cs" />

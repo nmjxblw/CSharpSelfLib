@@ -489,17 +489,6 @@
                     this.right = right;
                 }
             }
-            Definition for a binary tree node.
-            public class TreeNode {
-                public int val;
-                public TreeNode left;
-                public TreeNode right;
-                public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
-                    this.val = val;
-                    this.left = left;
-                    this.right = right;
-                }
-            }
             Definition for singly-linked list.
             public class ListNode {
                 public int val;
@@ -558,11 +547,49 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:Solution.IsSymmetric(TreeNode)">
+            <summary>
+            判断二叉树是否对称
+            </summary>
+            <param name="root"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Solution.RomanToInt(System.String)">
+            <summary>
+            给定一个罗马数字，将其转换成整数。
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Solution.LongestCommonPrefix(System.String[])">
+            <summary>
+            查找字符串数组中的最长公共前缀
+            </summary>
+            <param name="strs"></param>
+            <returns></returns>
+        </member>
         <member name="M:Solution.CalculateMinimumHP(System.Int32[][])">
             <summary>
             计算骑士拯救公主所需的最低初始健康点数
             </summary>
             <param name="dungeon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Solution.SolveNQueens(System.Int32)">
+            <summary>
+            N 皇后问题
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Solution.GetEmptyBoard(System.Int32)">
+            <summary>
+            获取一个空的棋盘
+            </summary>
+            <param name="n"></param>
             <returns></returns>
         </member>
         <member name="M:Solution.IsPalindrome(System.Int32)">

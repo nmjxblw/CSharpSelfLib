@@ -72,13 +72,16 @@
  */
 
 // @lc code=start
-public class StreamChecker {
+public partial class StreamChecker
+{
 
-    public StreamChecker(string[] words) {
-        
-    }
-    
-    public bool Query(char letter) {
+	public StreamChecker(string[] words)
+	{
+
+	}
+
+	public bool Query(char letter)
+	{
 		return default;
 	}
 }

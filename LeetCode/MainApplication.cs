@@ -23,8 +23,8 @@ namespace LeetCode
 			stopwatch.Start();
 			Solution solution = new Solution();
 			// 运行测试
-			int input = -142241;
-			solution.IsPalindrome(input).ShowInConsole(true);
+			string[] input = new string[] { "ab", "a" };
+			solution.LongestCommonPrefix(input).ShowInConsole(true);
 			stopwatch.Stop();
 			Console.WriteLine($"执行时间：{stopwatch.ElapsedMilliseconds}ms");
 		}
