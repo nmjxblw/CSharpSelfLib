@@ -81,16 +81,35 @@
  *    System.Collections.Generic.IList<NestedInteger> GetList();
  * }
  */
+using System;
+using System.Collections.Generic;
+///<summary>
+///	扁平化嵌套列表迭代器
+/// </summary>
 public partial class NestedIterator {
-
-    public NestedIterator(System.Collections.Generic.IList<NestedInteger> nestedList) {
-        throw new System.NotImplementedException();
+	private static int _ptr = 0;
+	private static IList<INestedInteger> _nestedList;
+	/// <summary>
+	/// 扁平化嵌套列表迭代器
+	/// </summary>
+	/// <param name="nestedList"></param>
+	/// <exception cref="System.NotImplementedException"></exception>
+	public NestedIterator(IList<INestedInteger> nestedList) {
+		throw new NotImplementedException();
 	}
-
+	/// <summary>
+	/// 是否有下一个元素
+	/// </summary>
+	/// <returns></returns>
+	/// <exception cref="System.NotImplementedException"></exception>
     public bool HasNext() {
-		throw new System.NotImplementedException();
+		throw new NotImplementedException();
 	}
-
+	/// <summary>
+	/// 返回下一个元素
+	/// </summary>
+	/// <returns></returns>
+	/// <exception cref="System.NotImplementedException"></exception>
     public int Next() {
 		throw new System.NotImplementedException();
 	}

@@ -71,7 +71,12 @@ using System;
 
 public partial class Solution
 {
-    public int CalculateMinimumHP(int[][] dungeon)
+	/// <summary>
+	/// 计算骑士拯救公主所需的最低初始健康点数
+	/// </summary>
+	/// <param name="dungeon"></param>
+	/// <returns></returns>
+	public int CalculateMinimumHP(int[][] dungeon)
     {
         int m = dungeon.Length;
         int n = dungeon[0].Length;

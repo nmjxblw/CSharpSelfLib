@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <BaseOutputPath>..\$(MSBuildProjectName.Replace(" ", "_"))</BaseOutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,7 @@
     <Using Include="System.Text" />
     <Using Include="System.Text.Encodings.Web" />
     <Using Include="System.Text.Json" />
+    <Using Include="System.Security"/>
     <Using Include="Dopamine" />
   </ItemGroup>
 

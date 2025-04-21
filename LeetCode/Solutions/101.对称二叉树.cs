@@ -60,8 +60,16 @@
  *     }
  * }
  */
+using System;
+using System.Linq;
 public partial class Solution {
-    public bool IsSymmetric(TreeNode root) {
+	/// <summary>
+	/// 判断二叉树是否对称
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
+	/// <exception cref="System.NotImplementedException"></exception>
+	public bool IsSymmetric(TreeNode root) {
 		throw new System.NotImplementedException();
 	}
 }

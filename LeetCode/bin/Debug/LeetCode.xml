@@ -270,13 +270,6 @@
             程序主方法
             </summary>
         </member>
-        <member name="M:LeetCode.MainApplication.CalculateMinimumHP(System.Int32[][])">
-            <summary>
-            计算最小生命值
-            </summary>
-            <param name="dungeon"></param>
-            <returns></returns>
-        </member>
         <member name="T:ListNode">
             <summary>
              链表节点
@@ -298,6 +291,60 @@
             </summary>
             <param name="val"></param>
             <param name="next"></param>
+        </member>
+        <member name="T:INestedInteger">
+            <summary>
+            嵌套整型接口
+            </summary>
+        </member>
+        <member name="M:INestedInteger.IsInteger">
+            <summary>
+            return true if this NestedInteger holds a single integer, rather than a nested list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:INestedInteger.GetInteger">
+            <summary>
+            return the single integer that this NestedInteger holds, if it holds a single integer
+            Return null if this NestedInteger holds a nested list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:INestedInteger.GetList">
+            <summary>
+            return the nested list that this NestedInteger holds, if it holds a nested list, Return null if this NestedInteger holds a single integer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NestedInteger">
+            <summary>
+            嵌套整型
+            </summary>
+        </member>
+        <member name="M:NestedInteger.#ctor(System.Object)">
+            <summary>
+            嵌套整型构造函数
+            </summary>
+            <param name="input"></param>
+        </member>
+        <member name="M:NestedInteger.GetInteger">
+            <summary>
+            返回整型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NestedInteger.GetList">
+            <summary>
+            返回列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NestedInteger.IsInteger">
+            <summary>
+            是否为整数
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="T:TreeNode">
             <summary>
@@ -511,6 +558,20 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:Solution.CalculateMinimumHP(System.Int32[][])">
+            <summary>
+            计算骑士拯救公主所需的最低初始健康点数
+            </summary>
+            <param name="dungeon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Solution.IsPalindrome(System.Int32)">
+            <summary>
+            判断一个整数是否是回文数
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
         <member name="T:Codec">
             Definition for a binary tree node.
             public class TreeNode {
@@ -520,6 +581,31 @@
                 public TreeNode(int x) { val = x; }
             }
         </member>
-        <!-- Badly formed XML comment ignored for member "T:NestedIterator" -->
+        <member name="T:NestedIterator">
+            <summary>
+            	扁平化嵌套列表迭代器
+             </summary>
+        </member>
+        <member name="M:NestedIterator.#ctor(System.Collections.Generic.IList{INestedInteger})">
+            <summary>
+            扁平化嵌套列表迭代器
+            </summary>
+            <param name="nestedList"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:NestedIterator.HasNext">
+            <summary>
+            是否有下一个元素
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:NestedIterator.Next">
+            <summary>
+            返回下一个元素
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
     </members>
 </doc>

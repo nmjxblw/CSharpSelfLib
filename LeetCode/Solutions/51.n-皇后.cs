@@ -53,11 +53,72 @@
  */
 
 // @lc code=start
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
-public partial class Solution {
-    public System.Collections.Generic.IList<IList<string>> SolveNQueens(int n) {
-		throw new System.NotImplementedException();
+public partial class Solution
+{
+	/// <summary>
+	/// N 皇后问题
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
+	/// <exception cref="System.NotImplementedException"></exception>
+	public IList<IList<string>> SolveNQueens(int n)
+	{
+		List<List<string>> result = new List<List<string>>();
+		// 处理特殊情况
+		if (n <= 1)
+		{
+			if (n == 1)
+			{
+				result.Add(new List<string>() { "Q" });
+			}
+			return (IList<IList<string>>)result;
+		}
+		// 计算对称轴
+		int count = n / 2 + n % 2;
+		for (int i = 0; i < count; i++)
+		{
+			// 初始解法
+			bool[][] board1 = GetEmptyBoard(n);
+			// 镜像解
+			bool[][] board2 = GetEmptyBoard(n);
+			bool hasSoultion = true;
+			board1[i][0] = board2[n - 1 - i][0] = true;
+			for (int row = 1; row < n; row++)
+			{
+				for (int col = 0; col < n; col++)
+				{
+					bool isValid = true;
+					for(int j = 0; j < n; j++)
+					{
+
+					}
+				}
+
+				if (!hasSoultion)
+				{
+					continue;
+				}
+			}
+		}
+		return (IList<IList<string>>)result;
+	}
+	/// <summary>
+	/// 获取一个空的棋盘
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
+	public bool[][] GetEmptyBoard(int n)
+	{
+		bool[][] emptyBoard = new bool[n][];
+		for (int i = 0; i < n; i++)
+		{
+			emptyBoard[i] = new bool[n];
+		}
+		return emptyBoard;
 	}
 }
 // @lc code=end
