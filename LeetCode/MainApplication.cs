@@ -27,6 +27,7 @@ namespace LeetCode
 			solution.LongestCommonPrefix(input).ShowInConsole(true);
 			stopwatch.Stop();
 			Console.WriteLine($"执行时间：{stopwatch.ElapsedMilliseconds}ms");
+			Console.ReadKey();
 		}
 	}
 }

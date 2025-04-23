@@ -4,27 +4,21 @@ using DeepSeekApi;
 using System.Dynamic;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 namespace MainProgram;
 /// <summary>
 /// 主程序
 /// </summary>
+/// <remarks>
+/// <para>注：<b>使用了sealed字段，不允许继承</b></para>
+/// </remarks>
 public sealed class App
 {
 	public void Start()
 	{
-		string bs = "440100600004";
+		string bs = "4401F060F004";
 		bs = bs.PadLeft(12, '0');
-		byte[] bytes = ByteStringToBytes(bs);
+		byte[] bytes = bs.ByteStringToBytes();
 		BitConverter.ToString(bytes).ShowInConsole(true);
-	}
-	public byte[] ByteStringToBytes(string byteString)
-	{
-		int byteCount = byteString.Length % 2 + byteString.Length / 2;
-		byte[] bytes = new byte[byteCount];
-		for (int i = 0; i < byteCount; i++)
-		{
-			bytes[i] = Convert.ToByte(byteString.Substring(i * 2, 2), 16);
-		}
-		return bytes;
 	}
 }

@@ -187,8 +187,7 @@ namespace Dopamine
 				return Convert.ToInt16(BitConverter.ToString(input.ToArray()).Replace("-", ""), 16);
 			else if (input.Count() <= 4)
 				return Convert.ToInt32(BitConverter.ToString(input.ToArray()).Replace("-", ""), 16);
-			else
-				return Convert.ToInt64(BitConverter.ToString(input.ToArray()).Replace("-", ""), 16);
+			return Convert.ToInt64(BitConverter.ToString(input.ToArray()).Replace("-", ""), 16);
 		}
 
 		/// <summary>
@@ -229,6 +228,29 @@ namespace Dopamine
 				Array.Resize(ref truncated, 8); // 填充0至8字节
 				return BitConverter.ToInt64(truncated, 0);
 			}
+		}
+		/// <summary>
+		/// 将字节字符串转换为十六进制数组
+		/// </summary>
+		/// <param name="byteString"></param>
+		/// <returns></returns>
+		public static byte[] ByteStringToBytes(this string byteString)
+		{
+
+			int byteCount = byteString.Length % 2 + byteString.Length / 2;
+			byte[] bytes = new byte[byteCount];
+			for (int i = 0; i < byteCount; i++)
+			{
+				try
+				{
+					bytes[i] = Convert.ToByte(byteString.Substring(i * 2, 2), 16);
+				}
+				catch
+				{
+					bytes[i] = 0;
+				}
+			}
+			return bytes;
 		}
 	}
 }

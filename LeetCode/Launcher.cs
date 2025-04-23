@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LeetCode
@@ -15,13 +16,19 @@ namespace LeetCode
         /// Application实例化
         /// </summary>
         private static MainApplication App { get; } = new MainApplication();
-
         /// <summary>
         /// 主方法，用于启动程序
         /// </summary>
         public static void Main()
         {
-            Console.WriteLine("LeetCode训练程序启动。");
+			#region 进程锁
+			new Mutex(true, "LeetCodeTraining", out bool ret);
+			if (!ret)
+			{
+				Environment.Exit(0);
+			}
+			#endregion
+			Console.WriteLine("LeetCode训练程序启动。");
             App.Start();
         }
     }
