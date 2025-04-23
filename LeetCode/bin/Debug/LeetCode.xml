@@ -65,6 +65,16 @@
             <param name="y"></param>
             <returns></returns>
         </member>
+        <member name="T:LeetCode.LeetCodeApp">
+            <summary>
+            LeetCode的主程序
+            </summary>
+        </member>
+        <member name="M:LeetCode.LeetCodeApp.Start">
+            <summary>
+            程序主方法
+            </summary>
+        </member>
         <member name="P:LeetCode.ConfigManager.Data">
             <summary>
             动态解析后的 json 文件
@@ -258,16 +268,6 @@
         <member name="M:LeetCode.Launcher.Main">
             <summary>
             主方法，用于启动程序
-            </summary>
-        </member>
-        <member name="T:LeetCode.MainApplication">
-            <summary>
-            LeetCode的主程序
-            </summary>
-        </member>
-        <member name="M:LeetCode.MainApplication.Start">
-            <summary>
-            程序主方法
             </summary>
         </member>
         <member name="T:ListNode">
@@ -575,6 +575,29 @@
             计算骑士拯救公主所需的最低初始健康点数
             </summary>
             <param name="dungeon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Solution.Rob(System.Int32[])">
+            <summary>
+            打家劫舍
+            </summary>
+            <param name="nums"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Solution.SolveNQueens(System.Int32)">
+            <summary>
+            N 皇后问题
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Solution.GetEmptyBoard(System.Int32)">
+            <summary>
+            获取一个空的棋盘
+            </summary>
+            <param name="n"></param>
             <returns></returns>
         </member>
         <member name="M:Solution.IsPalindrome(System.Int32)">

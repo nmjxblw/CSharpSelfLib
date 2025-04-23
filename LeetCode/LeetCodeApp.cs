@@ -12,7 +12,7 @@ namespace LeetCode
 	/// <summary>
 	/// LeetCode的主程序
 	/// </summary>
-	public class MainApplication
+	public class LeetCodeApp
 	{
 		/// <summary>
 		/// 程序主方法
@@ -23,8 +23,8 @@ namespace LeetCode
 			stopwatch.Start();
 			Solution solution = new Solution();
 			// 运行测试
-			string[] input = new string[] { "ab", "a" };
-			solution.LongestCommonPrefix(input).ShowInConsole(true);
+			var input = new int[] { 1, 2, 3, 1 };
+			solution.Rob(input).ShowInConsole(true);
 			stopwatch.Stop();
 			Console.WriteLine($"执行时间：{stopwatch.ElapsedMilliseconds}ms");
 			Console.ReadKey();
