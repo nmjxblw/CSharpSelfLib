@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.ChatApp", "..\Dopa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.Framework.SelfLib", "..\Dopamine.Framework.SelfLib\Dopamine.Framework.SelfLib.csproj", "{F35A6ED4-245C-4E13-A6D6-73153C558BB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode", "..\LeetCode\LeetCode.csproj", "{2C47F913-A521-4DB0-A01B-12C595C70CDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F35A6ED4-245C-4E13-A6D6-73153C558BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
