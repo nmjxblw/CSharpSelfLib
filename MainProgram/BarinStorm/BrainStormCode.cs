@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleProgram.BarinStorm
+namespace ConsoleProgram
 {
+	/// <summary>
+	/// 头脑风暴
+	/// </summary>
 	public class BrainStormCode
 	{
 		public void MainCode()

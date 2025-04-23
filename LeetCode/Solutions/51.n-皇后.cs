@@ -1,125 +1,222 @@
-/*
- * @lc app=leetcode.cn id=51 lang=csharp
- *
- * [51] N 皇后
- *
- * https://leetcode.cn/problems/n-queens/description/
- *
- * algorithms
- * Hard (75.29%)
- * Likes:    2289
- * Dislikes: 0
- * Total Accepted:    524.5K
- * Total Submissions: 696.7K
- * Testcase Example:  '4'
- *
- * 按照国际象棋的规则，皇后可以攻击与之处在同一行或同一列或同一斜线上的棋子。
- * 
- * n 皇后问题 研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
- * 
- * 给你一个整数 n ，返回所有不同的 n 皇后问题 的解决方案。
- * 
- * 
- * 
- * 每一种解法包含一个不同的 n 皇后问题 的棋子放置方案，该方案中 'Q' 和 '.' 分别代表了皇后和空位。
- * 
- * 
- * 
- * 示例 1：
- * 
- * 
- * 输入：n = 4
- * 输出：[[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
- * 解释：如上图所示，4 皇后问题存在两个不同的解法。
- * 
- * 
- * 示例 2：
- * 
- * 
- * 输入：n = 1
- * 输出：[["Q"]]
- * 
- * 
- * 
- * 
- * 提示：
- * 
- * 
- * 1 <= n <= 9
- * 
- * 
- * 
- * 
- */
+///*
+// * @lc app=leetcode.cn id=51 lang=csharp
+// *
+// * [51] N 皇后
+// *
+// * https://leetcode.cn/problems/n-queens/description/
+// *
+// * algorithms
+// * Hard (75.29%)
+// * Likes:    2289
+// * Dislikes: 0
+// * Total Accepted:    524.5K
+// * Total Submissions: 696.7K
+// * Testcase Example:  '4'
+// *
+// * 按照国际象棋的规则，皇后可以攻击与之处在同一行或同一列或同一斜线上的棋子。
+// * 
+// * n 皇后问题 研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
+// * 
+// * 给你一个整数 n ，返回所有不同的 n 皇后问题 的解决方案。
+// * 
+// * 
+// * 
+// * 每一种解法包含一个不同的 n 皇后问题 的棋子放置方案，该方案中 'Q' 和 '.' 分别代表了皇后和空位。
+// * 
+// * 
+// * 
+// * 示例 1：
+// * 
+// * 
+// * 输入：n = 4
+// * 输出：[[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+// * 解释：如上图所示，4 皇后问题存在两个不同的解法。
+// * 
+// * 
+// * 示例 2：
+// * 
+// * 
+// * 输入：n = 1
+// * 输出：[["Q"]]
+// * 
+// * 
+// * 
+// * 
+// * 提示：
+// * 
+// * 
+// * 1 <= n <= 9
+// * 
+// * 
+// * 
+// * 
+// */
 
-// @lc code=start
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+//// @lc code=start
+//using System;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
+//using System.Linq;
+//using System.Text;
 
-public partial class Solution
-{
-	/// <summary>
-	/// N 皇后问题
-	/// </summary>
-	/// <param name="n"></param>
-	/// <returns></returns>
-	/// <exception cref="System.NotImplementedException"></exception>
-	public IList<IList<string>> SolveNQueens(int n)
-	{
-		List<List<string>> result = new List<List<string>>();
-		// 处理特殊情况
-		if (n <= 1)
-		{
-			if (n == 1)
-			{
-				result.Add(new List<string>() { "Q" });
-			}
-			return (IList<IList<string>>)result;
-		}
-		// 计算对称轴
-		int count = n / 2 + n % 2;
-		for (int i = 0; i < count; i++)
-		{
-			// 初始解法
-			bool[][] board1 = GetEmptyBoard(n);
-			// 镜像解
-			bool[][] board2 = GetEmptyBoard(n);
-			bool hasSoultion = true;
-			board1[i][0] = board2[n - 1 - i][0] = true;
-			for (int row = 1; row < n; row++)
-			{
-				for (int col = 0; col < n; col++)
-				{
-					bool isValid = true;
-					for(int j = 0; j < n; j++)
-					{
+//public partial class Solution
+//{
+//	/// <summary>
+//	/// N 皇后问题
+//	/// </summary>
+//	/// <param name="n"></param>
+//	/// <returns></returns>
+//	/// <exception cref="System.NotImplementedException"></exception>
+//	public IList<IList<string>> SolveNQueens(int n)
+//	{
+//		List<List<string>> result = new List<List<string>>();
+//		// 处理特殊情况
+//		if (n <= 1)
+//		{
+//			if (n == 1)
+//			{
+//				result.Add(new List<string>() { "Q" });
+//			}
+//			return (IList<IList<string>>)result;
+//		}
+		
+//		// 计算对称轴
+//		int count = n / 2 + n % 2;
+//		for (int i = 0; i < count; i++)
+//		{
+//			// 初始解法
+//			List<string> board1 = GetEmptyBoard(n);
+//			// 镜像解
+//			List<string> board2 = GetEmptyBoard(n);
+//			bool hasSolution = false;
+//			board1[i][0] = board2[n - 1 - i][0] = "Q";
+//			// 从第二行开始枚举
+//			for (int row = 1; row < n; row++)
+//			{
+//				// 从第row行第col列开始枚举
+//				for (int col = 0; col < n; col++)
+//				{
+//					// 皇后棋子位置合法标识符
+//					bool isValid = true;
+//					// 与第一行皇后在同一列上，跳过
+//					if (col == i) continue;
+//					// 从第0列开始检测合法性
+//					for (int j = 0; j < col; j++)
+//					{
+//						// 计算偏移量
+//						int offset = Math.Abs(col - j);
+//						// 以棋子为原点建立坐标系，第三以及第四象限默认合法。
+//						// 检测第二象限是否合法
+//						if (row - offset >= 0 && board1[row - offset][j])
+//						{
+//							isValid = false;
+//							break;
+//						}
+//						// 检测第一象限是否合法
+//						if (row + offset <= n - 1 && board1[row - offset][n - 1 - j])
+//						{
+//							isValid = false;
+//							break;
+//						}
+//						// 检测y轴是否合法
+//						for (int z = 0; z < row; z++)
+//						{
+//							if (board1[z][col])
+//							{
+//								isValid = false;
+//								break;
+//							}
+//						}
+//					}
+//					// 合法性通过，当前位置可以放置皇后
+//					// 计算下一行皇后的位置
+//					if (isValid)
+//					{
+//						board1[row][col] = true;
+//						board2[n - 1 - row][col] = true;
+//						if (row == n - 1)
+//						{
+//							// 当前皇后为最后一行
+//							// 找到了一组解
 
-					}
-				}
+//						}
+//						else
+//						{
 
-				if (!hasSoultion)
-				{
-					continue;
-				}
-			}
-		}
-		return (IList<IList<string>>)result;
-	}
-	/// <summary>
-	/// 获取一个空的棋盘
-	/// </summary>
-	/// <param name="n"></param>
-	/// <returns></returns>
-	public bool[][] GetEmptyBoard(int n)
-	{
-		bool[][] emptyBoard = new bool[n][];
-		for (int i = 0; i < n; i++)
-		{
-			emptyBoard[i] = new bool[n];
-		}
-		return emptyBoard;
-	}
-}
-// @lc code=end
+//						}
+//					}
+//					else
+//					{
+//						// 检测是否为最终列
+//						if (col < n - 1)
+//						{
+//							continue;
+//						}
+//						// 当前无解，即上一行皇后的位置不合法
+//						// 需要回溯到上一个皇后的位置
+//						if (row - 1 >= 0)
+//						{
+//							row = row - 1;
+//							col = Array.IndexOf(board1[row], true);
+//							board1[row][col] = false;
+//							board2[n - 1 - row][col] = false;
+//							col++;
+//							continue;
+//						}
+//						// 不可回溯，无解
+//						else
+//						{
+//							hasSolution = false;
+//							break;
+//						}
+//					}
+//				}
+//				// 当前行无解，回溯上一个答案
+//				if (!hasSolution)
+//				{
+
+//					continue;
+//				}
+//			}
+
+//		}
+//		return (IList<IList<string>>)result;
+//	}
+//	/// <summary>
+//	/// 获取一个空的棋盘
+//	/// </summary>
+//	/// <param name="n"></param>
+//	/// <returns></returns>
+//	public List<string> GetEmptyBoard(int n)
+//	{
+//		string row = "".PadLeft(n,'.');
+//		List<string> emptyBoard = new List<string>();
+//		for (int i = 0; i < n; i++)
+//		{
+//			emptyBoard.Add(row);
+//		}
+//		return emptyBoard;
+//	}
+//	/// <summary>
+//	/// 将棋盘转化为字符串列表
+//	/// </summary>
+//	/// <param name="board"></param>
+//	/// <returns></returns>
+//	public List<string> ToStringList(bool[][] board)
+//	{
+//		List<string> stringList = new List<string>();
+//		foreach (bool[] row in board)
+//		{
+//			StringBuilder sb = new StringBuilder();
+//			foreach(bool pos in row)
+//			{
+//				sb.Append(pos?"Q":".");
+//			}
+//			stringList.Append(sb.ToString());
+//		}
+//		return stringList;
+//	}
+//}
+//// @lc code=end
 

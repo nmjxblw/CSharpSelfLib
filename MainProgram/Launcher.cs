@@ -24,12 +24,14 @@ sealed class Launcher
 		sw.Restart();
 		App.Start();
 		sw.Stop();
-		var process = Process.GetCurrentProcess();
-		long managedMem = GC.GetTotalMemory(forceFullCollection: false);
+		System.Diagnostics.Process process = Process.GetCurrentProcess();
+		long workingSet = process.WorkingSet64 / 1024;
+		long managedMem = GC.GetTotalMemory(forceFullCollection: false) / 1024;
 		// 查看内存压力
-		long memory = GC.GetTotalMemory(true);
+		long memory = GC.GetTotalMemory(true) / 1024;
 		// 获取GC统计信息
 		System.GCMemoryInfo GCInfo = GC.GetGCMemoryInfo();
-		Console.WriteLine($"\n【总结】\n物理内存占用：{process.WorkingSet64 / 1024} KB\n托管堆内存：{managedMem/1024} KB\n堆分配：{memory/1024} KB\n耗时：{sw.ElapsedMilliseconds}ms\n刻度计数：{sw.ElapsedTicks}\n计数频率:{Stopwatch.Frequency}Hz");
+		long heapSizeBytes = GCInfo.HeapSizeBytes / 1024;
+		Console.WriteLine($"\n【内存统计】\n物理内存占用：{workingSet} KB\n托管堆内存：{managedMem} KB\n堆分配：{memory} KB\n堆最终分配：{heapSizeBytes} KB\n【计时统计】\n实际耗时{(double)sw.ElapsedTicks / Stopwatch.Frequency * 1000}ms");
 	}
 }

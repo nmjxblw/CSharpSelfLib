@@ -14,11 +14,21 @@ namespace MainProgram;
 /// </remarks>
 public sealed class App
 {
+	/// <summary>
+	/// 运行主方法
+	/// </summary>
 	public void Start()
 	{
-		string bs = "4401F060F004";
-		bs = bs.PadLeft(12, '0');
-		byte[] bytes = bs.ByteStringToBytes();
-		BitConverter.ToString(bytes).ShowInConsole(true);
+		List<string> sl = new List<string>() { 
+			"Apple",
+			"Banana",
+			"Cat",
+			"Dog",
+			"Elephant",
+			"Fork",
+			"Grass"
+		};
+
+		sl[0][0].ShowInConsole(true);
 	}
 }
