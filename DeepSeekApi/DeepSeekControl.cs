@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace DeepSeekApi
 {
@@ -21,6 +22,10 @@ namespace DeepSeekApi
 		{
 
 		}
+		/// <summary>
+		/// 内置计时器
+		/// </summary>
+		private static Stopwatch Stopwatch { get; } = new Stopwatch();
 		static string think = string.Empty;
 		/// <summary>
 		/// 返回上次思考的内容
@@ -84,6 +89,7 @@ namespace DeepSeekApi
 
 			try
 			{
+				Recorder.Write("提问：" + input);
 				HttpResponseMessage response = await httpClient.PostAsync(ConfigManager.Data.ApiUrl,
 					new StringContent(JsonSerializer.Serialize(requestData, sendOptions),
 					Encoding.UTF8,
@@ -139,20 +145,22 @@ namespace DeepSeekApi
 				int counter = 0;
 				string SleepChars = "......";
 				StringBuilder sb = new();
-
+				Stopwatch.Restart();
 				while (IsWaitingForAnswer)
 				{
 					Console.Write($"思考中\t");
 					sb.Clear();
 					sb.Append(SleepChars[..counter].PadRight(SleepChars.Length));
 					Console.Write(sb.ToString());
+					Console.Write(string.Format("经过了{0,10}s", ((double)Stopwatch.ElapsedTicks / Stopwatch.Frequency).ToString("F2")));
 					counter++;
 					counter %= sb.Length + 1;
-					await Task.Delay(500);
+					await Task.Delay(100);
 					Console.SetCursorPosition(0, Console.CursorTop);
 					Console.Write(new string(' ', Console.WindowWidth));
 					Console.SetCursorPosition(0, Console.CursorTop);
 				}
+				Stopwatch.Stop();
 				Console.SetCursorPosition(0, Console.CursorTop);
 				Console.Write(new string(' ', Console.WindowWidth));
 				Console.SetCursorPosition(0, Console.CursorTop);
@@ -160,7 +168,6 @@ namespace DeepSeekApi
 			}
 			while (true)
 			{
-				Console.SetCursorPosition(0, Console.CursorTop);
 				Console.Write("提问:");
 				input = Console.ReadLine();
 				if (string.IsNullOrWhiteSpace(input)) continue;

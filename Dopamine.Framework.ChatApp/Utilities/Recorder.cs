@@ -86,7 +86,7 @@ namespace Dopamine.ChatApp
 				string text = $"[{DateTime.Now:T}] {msg}\n";
 
 				file = PathHelper.GetRuntimeDirectory(file);
-				File.AppendAllText(file, text);
+				File.AppendAllText(file, text, Encoding.UTF8);
 			}
 		}
 		/// <summary>

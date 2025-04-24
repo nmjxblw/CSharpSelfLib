@@ -19,16 +19,7 @@ public sealed class App
 	/// </summary>
 	public void Start()
 	{
-		List<string> sl = new List<string>() { 
-			"Apple",
-			"Banana",
-			"Cat",
-			"Dog",
-			"Elephant",
-			"Fork",
-			"Grass"
-		};
-
-		sl[0][0].ShowInConsole(true);
+		string testString = "\n\t";
+		Dopamine.Recorder.Write("Test" + testString);
 	}
 }

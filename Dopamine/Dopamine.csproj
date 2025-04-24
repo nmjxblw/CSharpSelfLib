@@ -10,6 +10,8 @@
     <RootNamespace>Dopamine</RootNamespace>
     <PackageId>Dopamine</PackageId>
     <AssemblyName>Dopamine</AssemblyName>
+    <Version>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HH"))</Version>
+    <NeutralLanguage>zh-CN</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>

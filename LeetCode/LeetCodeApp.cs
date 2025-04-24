@@ -23,8 +23,22 @@ namespace LeetCode
 			stopwatch.Start();
 			Solution solution = new Solution();
 			// 运行测试
-			var input = new int[] { 1, 2, 3, 1 };
-			solution.Rob(input).ShowInConsole(true);
+			int input = 5;
+			IList<IList<string>> solutionList = solution.SolveNQueens(input);
+			int count = 1;
+			foreach(IList<string> solutionStringList in solutionList)
+			{
+				Console.WriteLine(count + ".");
+				foreach(string rowString in solutionStringList)
+				{
+					foreach(char pos in rowString)
+					{
+						Console.Write('|'+pos+'|');
+					}
+					Console.WriteLine();
+				}
+				Console.WriteLine();
+			}
 			stopwatch.Stop();
 			Console.WriteLine($"执行时间：{stopwatch.ElapsedMilliseconds}ms");
 			Console.ReadKey();

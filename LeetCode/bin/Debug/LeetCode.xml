@@ -585,6 +585,28 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:Solution.SolveNQueens(System.Int32)">
+            <summary>
+            N 皇后问题
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Solution.GetEmptyBoard(System.Int32)">
+            <summary>
+            获取一个空的棋盘
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Solution.ToStringList(System.Boolean[][])">
+            <summary>
+            将棋盘转化为字符串列表
+            </summary>
+            <param name="board"></param>
+            <returns></returns>
+        </member>
         <member name="M:Solution.IsPalindrome(System.Int32)">
             <summary>
             判断一个整数是否是回文数
