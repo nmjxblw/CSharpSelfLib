@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "CompanyCode/2025.04.24.15": {
+      "CompanyCode/2025.04.26.17": {
         "dependencies": {
           "Dopamine": "2025.4.24.15"
         },
@@ -1745,8 +1745,8 @@
         },
         "runtime": {
           "Dopamine.dll": {
-            "assemblyVersion": "2025.4.24.15",
-            "fileVersion": "2025.4.24.15"
+            "assemblyVersion": "2025.4.26.17",
+            "fileVersion": "2025.4.26.17"
           }
         }
       },
@@ -1777,7 +1777,7 @@
     }
   },
   "libraries": {
-    "CompanyCode/2025.04.24.15": {
+    "CompanyCode/2025.04.26.17": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

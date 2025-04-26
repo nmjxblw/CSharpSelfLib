@@ -89,11 +89,17 @@ public partial class Solution
 			List<StringBuilder> board1 = GetEmptyBoard(n);
 			// 镜像解
 			List<StringBuilder> board2 = GetEmptyBoard(n);
-			bool hasSolution = true;
+			// 棋盘解标识符
+			bool hasBoardSolution = true;
 			board1[0][i] = board2[0][n - 1 - i] = 'Q';
 			// 从第二行开始枚举
 			for (int row = 1; row < n; row++)
 			{
+				// 行有解标识符
+				bool rowHasSolution = true;
+				// 先清空当前行
+				board1[row] = new StringBuilder(new string('.', n));
+				board2[row] = new StringBuilder(new string('.', n));
 				// 从第row行第col列开始枚举
 				for (int col = 0; col < n; col++)
 				{
@@ -137,6 +143,7 @@ public partial class Solution
 					// 计算下一行皇后的位置
 					if (isValid)
 					{
+						rowHasSolution = true;
 						if (row == n - 1)
 						{
 							// 当前皇后为最后一行
@@ -154,12 +161,9 @@ public partial class Solution
 							result.Add(boardResult1);
 							result.Add(boardResult2);
 							// 记录完以后寻找下一组解
-							board1[row] = new StringBuilder(new string('.', n));
-							board2[row] = new StringBuilder(new string('.', n));
+
 							row = row - 1;
 							col = board1[row].ToString().IndexOf('Q');
-							board1[row] = new StringBuilder(new string('.', n));
-							board2[row] = new StringBuilder(new string('.', n));
 							col++;
 							continue;
 						}
@@ -180,27 +184,26 @@ public partial class Solution
 							// 不为最终列，说明本行还存在潜在解
 							continue;
 						}
+						// 最终列，行无解
+						rowHasSolution = false;
 						// 当前无解，即上一行皇后的位置不合法
 						// 需要回溯到上一个皇后的位置
 						if (row - 1 >= 1)
 						{
-							board1[row] = new StringBuilder(new string('.', n));
-							board2[row] = new StringBuilder(new string('.', n));
 							row = row - 1;
 							col = board1[row].ToString().IndexOf('Q');
-							board1[row] = new StringBuilder(new string('.', n));
-							board2[row] = new StringBuilder(new string('.', n));
 							col++;
 							continue;
 						}
 						// 不可回溯，无解，跳出循环
+						hasBoardSolution = false;
 						break;
 					}
 					#endregion
 				}
 				//// 当前行无解，说明上一行皇后的位置不对，
 				//// 回溯上一个答案
-				//if (!hasSolution)
+				//if (!hasBoardSolution)
 				//{
 				//	if (row - 1 >= 1)
 				//	{
@@ -209,7 +212,7 @@ public partial class Solution
 				//		row = row - 1;
 				//		board1[row] = new StringBuilder(new string('.', n));
 				//		board2[row] = new StringBuilder(new string('.', n));
-				//		hasSolution = true;
+				//		hasBoardSolution = true;
 				//		continue;
 				//	}
 				//	// 已经是第二行了，
