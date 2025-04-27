@@ -315,6 +315,58 @@
             <param name="byteString"></param>
             <returns></returns>
         </member>
+        <member name="T:Dopamine.DLT645_2007">
+            <summary>
+            DL/T 645-2007多功能电能表通讯协议
+            </summary>
+        </member>
+        <member name="P:Dopamine.DLT645_2007.Header">
+            <summary>
+            帧头
+            </summary>
+        </member>
+        <member name="P:Dopamine.DLT645_2007.Tail">
+            <summary>
+            帧尾
+            </summary>
+        </member>
+        <member name="M:Dopamine.DLT645_2007.FrameAssembly(System.Byte[],System.Byte,System.Byte[])">
+            <summary>
+            组帧
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.DLT645_2007.ReadMeterAddress">
+            <summary>
+            读取表地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Dopamine.DLT645_2007.FunctionCode">
+            <summary>
+            功能码枚举
+            </summary>
+        </member>
+        <member name="M:Dopamine.DLT645_2007.GetControlCode(System.Boolean,System.Boolean,System.Boolean,Dopamine.DLT645_2007.FunctionCode)">
+            <summary>
+            获取控制码
+            </summary>
+            <param name="direction">传送方向<para>true - 主站发出的命令帧</para><para>false - 从站发出的应答帧</para></param>
+            <param name="replyFlag">从站应答标志<para>true - 从站正确应答</para><para>false - 从站异常应答</para></param>
+            <param name="hasSubsequent">是否有后续帧<para>true - 有后续数据帧</para><para>false - 无后续数据帧</para></param>
+            <param name="functionCode">功能码<para>保留 = 0b0_0000</para><para>广播校时 = 0b0_1000</para><para>读数据 = 0b1_0001</para><para>写数据 = 0b1_0100</para><para>电表清零 = 0b1_1010</para></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.DLT645_2007.ParseControlCode(System.Byte,System.Boolean@,System.Boolean@,System.Boolean@,System.String@)">
+            <summary>
+            解析控制码
+            </summary>
+            <param name="inputControlCode">输入的控制码</param>
+            <param name="direction">传送方向<para>true - 主站发出的命令帧</para><para>false - 从站发出的应答帧</para></param>
+            <param name="replyFlag">从站应答标志<para>true - 从站正确应答</para><para>false - 从站异常应答</para></param>
+            <param name="hasSubsequent">是否有后续帧<para>true - 有后续数据帧</para><para>false - 无后续数据帧</para></param>
+            <param name="function">功能概述</param>
+        </member>
         <member name="T:Dopamine.FrameManager">
             <summary>
             报文处理器

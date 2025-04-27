@@ -961,6 +961,39 @@
             基于双链表实现的可序列化字典
             </summary>
         </member>
+        <member name="T:DLT645_2007">
+            <summary>
+            DL/T 645-2007多功能电能表通讯协议
+            </summary>
+        </member>
+        <member name="P:DLT645_2007.Header">
+            <summary>
+            帧头
+            </summary>
+        </member>
+        <member name="P:DLT645_2007.Tail">
+            <summary>
+            帧尾
+            </summary>
+        </member>
+        <member name="M:DLT645_2007.FrameAssembly(System.Byte[],System.Byte,System.Byte[])">
+            <summary>
+            组帧
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DLT645_2007.ReadMeterAddress">
+            <summary>
+            读取表地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DLT645_2007.GetControlCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:CommunicationFormat`1">
             <summary>
             Json请求体的通信格式

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace Dopamine
 {
@@ -236,8 +237,9 @@ namespace Dopamine
 		/// <returns></returns>
 		public static byte[] ByteStringToBytes(this string byteString)
 		{
-
+			byteString = string.Concat(byteString.Where(c => char.IsDigit(c) || (char.ToUpper(c) >= 'A' && char.ToUpper(c) <= 'F')));
 			int byteCount = byteString.Length % 2 + byteString.Length / 2;
+			byteString = byteString.PadLeft(byteCount * 2, '0');
 			byte[] bytes = new byte[byteCount];
 			for (int i = 0; i < byteCount; i++)
 			{

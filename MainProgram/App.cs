@@ -19,7 +19,8 @@ public sealed class App
 	/// </summary>
 	public void Start()
 	{
-		string testString = "\n\t";
-		Dopamine.Recorder.Write("Test" + testString);
+		
 	}
+
+	
 }

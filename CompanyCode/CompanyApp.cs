@@ -12,6 +12,7 @@ namespace CompanyCode
 		/// </summary>
 		public void Start()
 		{
+			DLT645_2007.GetControlCode(true, true, false, DLT645_2007.FunctionCode.读数据).ToString("B8").ShowInConsole(true);
 		}
 	}
 }
