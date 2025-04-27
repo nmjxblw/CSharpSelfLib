@@ -70,7 +70,8 @@ public partial class Solution
 	/// <exception cref="System.NotImplementedException"></exception>
 	public IList<IList<string>> SolveNQueens(int n)
 	{
-		List<List<string>> result = new List<List<string>>();
+
+		IList<IList<string>> result = new List<IList<string>>();
 		// 处理特殊情况
 		if (n <= 1)
 		{
@@ -78,9 +79,9 @@ public partial class Solution
 			{
 				result.Add(new List<string>() { "Q" });
 			}
-			return (IList<IList<string>>)result;
+			return result;
 		}
-
+#if false
 		// 计算对称轴
 		int count = n / 2 + n % 2;
 		for (int i = 0; i < count; i++)
@@ -97,12 +98,12 @@ public partial class Solution
 			{
 				// 行有解标识符
 				bool rowHasSolution = true;
-				// 先清空当前行
-				board1[row] = new StringBuilder(new string('.', n));
-				board2[row] = new StringBuilder(new string('.', n));
 				// 从第row行第col列开始枚举
 				for (int col = 0; col < n; col++)
 				{
+					// 先清空当前行
+					board1[row] = NewRow(n);
+					board2[row] = NewRow(n);
 					// 皇后棋子位置合法标识符
 					bool isValid = true;
 					#region 合法性检测算法
@@ -115,13 +116,16 @@ public partial class Solution
 						int offset = Math.Abs(col - j);
 						// 以棋子为原点建立坐标系，第三以及第四象限默认合法。
 						// 检测第二象限是否合法
-						if (row - offset >= 0 && board1[row - offset][j] == 'Q')
+						if (row - offset >= 0 &&
+							board1[row - offset][j] == 'Q')
 						{
 							isValid = false;
 							break;
 						}
 						// 检测第一象限是否合法
-						if (row + offset <= n - 1 && board1[row + offset][n - 1 - j] == 'Q')
+						if (col + offset < n
+							&& row - offset >= 0
+							&& board1[row - offset][col + offset] == 'Q')
 						{
 							isValid = false;
 							break;
@@ -159,7 +163,9 @@ public partial class Solution
 								boardResult2.Add(board2[s].ToString());
 							}
 							result.Add(boardResult1);
-							result.Add(boardResult2);
+							if (i < count - 1)
+								// 存储镜像解
+								result.Add(boardResult2);
 							// 记录完以后寻找下一组解
 
 							row = row - 1;
@@ -221,16 +227,101 @@ public partial class Solution
 				//}
 			}
 		}
-		return (IList<IList<string>>)result;
+#endif
+		Stack<(int, int)> QueenStack = new Stack<(int, int)>();
+		void TryAddPoint((int, int) input)
+		{
+			// 输入了超出最大行数范围的点
+			// 一般不太可能发生
+			if (input.Item1 >= n) return;
+			// 输入了列数不合法的点,
+			// 即上一个点的解不正确
+			if (input.Item2 >= n)
+			{
+				// 判断是否能回退
+				if (QueenStack.Count >= 1)
+				{
+					// 上一个点的列数+1
+					(int, int) lastPoint = QueenStack.Pop();
+					TryAddPoint((lastPoint.Item1, lastPoint.Item2 + 1));
+				}
+				// 终止当前操作
+				return;
+			}
+			// 检测行列合法性
+			foreach ((int, int) existPoint in QueenStack)
+			{
+				if (input.Item1 == existPoint.Item1 ||
+					input.Item2 == existPoint.Item2 ||
+					Math.Abs(input.Item1 - existPoint.Item1) == Math.Abs(input.Item2 - existPoint.Item2))
+				{
+					// 行列不合法，当前点不合法
+					// 移动到下一个点
+					TryAddPoint((input.Item1, input.Item2 + 1));
+					return;
+				}
+			}
+			// 合法性通过
+			// 记录当前点
+			QueenStack.Push(input);
+			if (QueenStack.Count < n)
+			{
+				// 还未找到一组完整的解
+				// 继续寻找下一个点
+				List<int> validCol = new List<int>();
+				for (int i = 0; i < n; i++)
+				{
+					validCol.Add(i);
+				}
+				foreach ((int, int) p in QueenStack)
+				{
+					if (validCol.Contains(p.Item2))
+					{
+						validCol.Remove(p.Item2);
+					}
+				}
+				TryAddPoint((input.Item1 + 1, validCol[0]));
+				return;
+			}
+			else if (QueenStack.Count == n)
+			{
+				// 找到了一组完整的解
+				// 记录当前解
+				IList<StringBuilder> bordSolution = GetEmptyBoard(n);
+				foreach ((int, int) point in QueenStack)
+				{
+					bordSolution[point.Item1][point.Item2] = 'Q';
+				}
+				IList<string> boardResult = new List<string>();
+				foreach (StringBuilder sb in bordSolution)
+				{
+					boardResult.Add(sb.ToString());
+				}
+				result.Add(boardResult);
+				// 继续寻找下一个解
+				if (QueenStack.Count > 0)
+				{
+					// 移除当前的解
+					(int, int) lastPoint = QueenStack.Pop();
+					// 列数+1
+					TryAddPoint((lastPoint.Item1, lastPoint.Item2 + 1));
+				}
+			}
+			return;
+		}
+		TryAddPoint((0, 0));
+		return result;
 	}
+
+
 	/// <summary>
 	/// 获取一个空的棋盘
 	/// </summary>
 	/// <param name="n"></param>
 	/// <returns></returns>
-	public List<StringBuilder> GetEmptyBoard(int n)
+	public IList<StringBuilder> GetEmptyBoard(int n)
 	{
-		List<StringBuilder> emptyBoard = new List<StringBuilder>();
+		IList<StringBuilder> emptyBoard = new List<StringBuilder>();
 		for (int i = 0; i < n; i++)
 		{
 			StringBuilder rowSb = new StringBuilder(new string('.', n));
@@ -256,6 +347,38 @@ public partial class Solution
 			stringList.Append(sb);
 		}
 		return stringList;
+	}
+	/// <summary>
+	/// 获取一个新的行
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
+	public StringBuilder NewRow(int n)
+	{
+		return new StringBuilder(new string('.', n));
+	}
+	/// <summary>
+	/// 打印N皇后问题的解
+	/// </summary>
+	/// <param name="n">棋盘尺寸</param>
+	public void PrintSolveNQueens(int n)
+	{
+		int count = 1;
+		foreach (IList<string> solutionStringList in SolveNQueens(n))
+		{
+			Console.WriteLine($"{count}.");
+			foreach (string rowString in solutionStringList)
+			{
+				Console.Write("|");
+				foreach (char pos in rowString)
+				{
+					Console.Write($"{pos}|");
+				}
+				Console.WriteLine();
+			}
+			Console.WriteLine();
+			count++;
+		}
 	}
 }
 // @lc code=end

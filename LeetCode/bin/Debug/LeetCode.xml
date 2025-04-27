@@ -346,6 +346,21 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="T:Point">
+            <summary>
+            点结构
+            </summary>
+        </member>
+        <member name="F:Point.row">
+            <summary>
+            行索引
+            </summary>
+        </member>
+        <member name="F:Point.col">
+            <summary>
+            列索引
+            </summary>
+        </member>
         <member name="T:TreeNode">
             <summary>
             树节点
@@ -606,6 +621,19 @@
             </summary>
             <param name="board"></param>
             <returns></returns>
+        </member>
+        <member name="M:Solution.NewRow(System.Int32)">
+            <summary>
+            获取一个新的行
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Solution.Run(System.Int32)">
+            <summary>
+            运行测试
+            </summary>
+            <param name="n"></param>
         </member>
         <member name="M:Solution.IsPalindrome(System.Int32)">
             <summary>

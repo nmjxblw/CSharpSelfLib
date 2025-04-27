@@ -100,6 +100,7 @@
     <Compile Include="Other\DynamicClass\DynamicClass.cs" />
     <Compile Include="Other\Structure\ListNode.cs" />
     <Compile Include="Other\Structure\NestedInteger.cs" />
+    <Compile Include="Other\Structure\Point.cs" />
     <Compile Include="Other\Structure\TreeNode.cs" />
     <Compile Include="Other\Utilities\JsonHelper.cs" />
     <Compile Include="Launcher.cs" />

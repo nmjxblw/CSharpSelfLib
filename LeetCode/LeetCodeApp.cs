@@ -20,28 +20,12 @@ namespace LeetCode
 		public void Start()
 		{
 			Stopwatch stopwatch = new Stopwatch();
-			stopwatch.Start();
+			stopwatch.Restart();
 			Solution solution = new Solution();
 			// 运行测试
-			int input = 5;
-			IList<IList<string>> solutionList = solution.SolveNQueens(input);
-			int count = 1;
-			foreach(IList<string> solutionStringList in solutionList)
-			{
-				Console.WriteLine(count + ".");
-				foreach(string rowString in solutionStringList)
-				{
-					foreach(char pos in rowString)
-					{
-						Console.Write('|'+pos+'|');
-					}
-					Console.WriteLine();
-				}
-				Console.WriteLine();
-			}
+			solution.PrintSolveNQueens(6);
 			stopwatch.Stop();
-			Console.WriteLine($"执行时间：{stopwatch.ElapsedMilliseconds}ms");
-			Console.ReadKey();
+			Console.WriteLine($"执行时间：{((double)stopwatch.ElapsedTicks / Stopwatch.Frequency * 1000f):F3}ms");
 		}
 	}
 }
