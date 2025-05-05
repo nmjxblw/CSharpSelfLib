@@ -264,7 +264,7 @@ namespace Dopamine
 		#endregion
 
 		#region 辅助方法
-		private List<T> SortedClone(IEnumerable<T> source = null)
+		private List<T> SortedClone(IEnumerable<T> source = default)
 		{
 			var tempHeap = new List<T>(source ?? _heap);
 			tempHeap.Sort((x, y) => _prioritySelector(x).CompareTo(_prioritySelector(y)));

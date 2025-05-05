@@ -362,9 +362,6 @@
     <Using Include="System.Text.Json.Serialization" />
     <Using Include="System.Text.Unicode" />
     <Using Include="System.Web.Http" />
-    <Using Include="UnityEditor" />
-    <Using Include="UnityEngine" />
-    <Using Include="UnityEngine.Events" />
   </ItemGroup>
 
 </Project>

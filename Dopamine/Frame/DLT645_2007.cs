@@ -24,7 +24,7 @@ namespace Dopamine
 		/// 组帧
 		/// </summary>
 		/// <returns></returns>
-		public static byte[] FrameAssembly(byte[] Address = default, byte ControlCode = default, byte[] Data = default)
+		public static byte[] FrameAssembly(byte[]? Address = default, byte ControlCode = default, byte[]? Data = default)
 		{
 			List<byte> bytes = new List<byte>();
 			bytes.Add(Header);
@@ -50,10 +50,25 @@ namespace Dopamine
 		/// </summary>
 		public enum FunctionCode
 		{
+			/// <summary>
+			/// 保留功能码，0b0_0000
+			/// </summary>
 			保留 = 0b0_0000,
+			/// <summary>
+			/// 广播校时功能码，0b0_1000
+			/// </summary>
 			广播校时 = 0b0_1000,
+			/// <summary>
+			/// 写数据功能码，0b1_0001
+			/// </summary>
 			读数据 = 0b1_0001,
+			/// <summary>
+			/// 写数据功能码，0b1_0100
+			/// </summary>
 			写数据 = 0b1_0100,
+			/// <summary>
+			/// 电表清零功能码，0b1_1010
+			/// </summary>
 			电表清零 = 0b1_1010,
 		}
 		/// <summary>
