@@ -347,6 +347,31 @@
             功能码枚举
             </summary>
         </member>
+        <member name="F:Dopamine.DLT645_2007.FunctionCode.保留">
+            <summary>
+            保留功能码，0b0_0000
+            </summary>
+        </member>
+        <member name="F:Dopamine.DLT645_2007.FunctionCode.广播校时">
+            <summary>
+            广播校时功能码，0b0_1000
+            </summary>
+        </member>
+        <member name="F:Dopamine.DLT645_2007.FunctionCode.读数据">
+            <summary>
+            写数据功能码，0b1_0001
+            </summary>
+        </member>
+        <member name="F:Dopamine.DLT645_2007.FunctionCode.写数据">
+            <summary>
+            写数据功能码，0b1_0100
+            </summary>
+        </member>
+        <member name="F:Dopamine.DLT645_2007.FunctionCode.电表清零">
+            <summary>
+            电表清零功能码，0b1_1010
+            </summary>
+        </member>
         <member name="M:Dopamine.DLT645_2007.GetControlCode(System.Boolean,System.Boolean,System.Boolean,Dopamine.DLT645_2007.FunctionCode)">
             <summary>
             获取控制码

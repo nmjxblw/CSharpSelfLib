@@ -11,8 +11,10 @@ namespace CompanyCode
 		/// 运行主方法
 		/// </summary>
 		public void Start()
-		{
-			DLT645_2007.GetControlCode(true, true, false, DLT645_2007.FunctionCode.读数据).ToString("B8").ShowInConsole(true);
+		{  
+			string frameString = " 68 13 FE 0A 01 09 00 00 00";
+			byte[] frame = frameString.ByteStringToBytes().AppendXor(false);
+			BitConverter.ToString(frame).Replace("-", " ").ShowInConsole(true);
 		}
 	}
 }

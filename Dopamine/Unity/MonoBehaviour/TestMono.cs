@@ -1,11 +1,15 @@
-﻿namespace Dopamine;
-/// <summary>
-/// 测试用例
-/// </summary>
-internal class TestMono : MonoBehaviour
+﻿using UnityEngine;
+
+namespace Dopamine
 {
-	void Awake()
+	/// <summary>
+	/// 测试用例
+	/// </summary>
+	internal class TestMono : MonoBehaviour
 	{
-		Recorder.Record("测试成功");
+		void Awake()
+		{
+			Recorder.Record("测试成功");
+		}
 	}
 }

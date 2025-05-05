@@ -629,11 +629,11 @@
             <param name="n"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.Run(System.Int32)">
+        <member name="M:Solution.PrintSolveNQueens(System.Int32)">
             <summary>
-            运行测试
+            打印N皇后问题的解
             </summary>
-            <param name="n"></param>
+            <param name="n">棋盘尺寸</param>
         </member>
         <member name="M:Solution.IsPalindrome(System.Int32)">
             <summary>
