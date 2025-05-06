@@ -1,3 +1,4 @@
 {
-	"BaudRate": 9600
+	"PortSettings": "9600,8,e,1",
+	"COM": 1
 }

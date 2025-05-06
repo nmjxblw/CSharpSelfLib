@@ -42,6 +42,9 @@
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\MainProgram\packages\Microsoft.Extensions.DependencyInjection.Abstractions.7.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\MainProgram\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -64,15 +67,16 @@
     <Compile Include="Extension\ExtensionMethods_1.cs" />
     <Compile Include="Extension\ExtensionMethods_2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DynamicClass.cs" />
+    <Compile Include="Utilities\JsonHelper.cs" />
+    <Compile Include="Utilities\Recorder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Svg\dopamine.icon.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Svg\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

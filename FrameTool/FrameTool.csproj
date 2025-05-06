@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dopamine\Dopamine.csproj" />
+    <PackageReference Include="System.IO.Ports" Version="9.0.4" />
   </ItemGroup>
 
 </Project>
