@@ -11,10 +11,15 @@ namespace CompanyCode
 		/// 运行主方法
 		/// </summary>
 		public void Start()
-		{  
-			string frameString = " 68 13 FE 0A 01 09 00 00 00";
-			byte[] frame = frameString.ByteStringToBytes().AppendXor(false);
-			BitConverter.ToString(frame).Replace("-", " ").ShowInConsole(true);
+		{
+			string id = "34 32 B3 35";
+			string pwdAndUser = "33 33 33 33 33 33 33 33";
+			byte phase = 0x33;
+			byte method = 0x34;
+			byte type = 0x33;
+			string frameString = "54 BF 52 33 33 33 33 33 33 33 33 33 33 F6 CC 33 33 33 33 33 33 33 33 33 DA 2E 75 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33";
+			int framStringCount = frameString.Split(" ").Count();
+			framStringCount.ShowInConsole(true);
 		}
 	}
 }

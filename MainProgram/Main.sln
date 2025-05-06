@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.Framework.SelfLib"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode", "..\LeetCode\LeetCode.csproj", "{2C47F913-A521-4DB0-A01B-12C595C70CDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameTool", "..\FrameTool\FrameTool.csproj", "{2BE9439E-03AB-4AB7-896D-922CB9BAB6FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C47F913-A521-4DB0-A01B-12C595C70CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE9439E-03AB-4AB7-896D-922CB9BAB6FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE9439E-03AB-4AB7-896D-922CB9BAB6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE9439E-03AB-4AB7-896D-922CB9BAB6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE9439E-03AB-4AB7-896D-922CB9BAB6FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

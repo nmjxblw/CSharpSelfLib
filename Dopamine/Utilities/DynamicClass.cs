@@ -1,4 +1,9 @@
-﻿namespace Dopamine
+﻿using System.Collections;
+using System.Collections.Concurrent;
+using System.Dynamic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+namespace Dopamine
 {
 	/// <summary>
 	/// 动态解析类

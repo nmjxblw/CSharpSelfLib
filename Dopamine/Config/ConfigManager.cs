@@ -1,4 +1,9 @@
 ﻿#pragma warning disable IDE0130 // 命名空间与文件夹结构不匹配
+using System.Diagnostics;
+using System.Reflection;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Unicode;
 namespace Dopamine
 {
 #pragma warning restore IDE0130 // 命名空间与文件夹结构不匹配
