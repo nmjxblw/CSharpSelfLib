@@ -229,6 +229,7 @@ public partial class Solution
 		}
 #endif
 		Stack<(int, int)> QueenStack = new Stack<(int, int)>();
+		//内置递归方法
 		void TryAddPoint((int, int) input)
 		{
 			// 输入了超出最大行数范围的点
