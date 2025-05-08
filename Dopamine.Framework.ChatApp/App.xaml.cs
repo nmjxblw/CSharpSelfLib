@@ -16,6 +16,7 @@ namespace Dopamine.ChatApp
 	/// </summary>
 	public partial class App : Application
 	{
+		//public static MainWindow mainWindow = new MainWindow();
 		protected override void OnActivated(EventArgs e)
 		{
 			base.OnActivated(e);
@@ -71,7 +72,7 @@ namespace Dopamine.ChatApp
 			base.OnSessionEnding(e);
 		}
 		/// <summary>
-		/// 
+		/// 程序启动时触发事件
 		/// </summary>
 		/// <param name="e"></param>
 		protected override void OnStartup(StartupEventArgs e)
@@ -86,6 +87,8 @@ namespace Dopamine.ChatApp
 				//Application.Current.Shutdown() // 安全关闭
 			}
 			SetUnhandledException();
+			this.MainWindow = new MainWindow();
+			MainWindow.Show();
 			base.OnStartup(e);
 		}
 
@@ -98,7 +101,7 @@ namespace Dopamine.ChatApp
 				{
 					e.Handled = true;
 					error_str = string.Format("{0}\t{1}", s.ToString(), e.Exception.StackTrace);
-					Recorder.RecordError(error_str);
+                    Recorder.RecordError(error_str);
 				}
 				catch (Exception ex)
 				{

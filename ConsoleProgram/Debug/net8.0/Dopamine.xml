@@ -315,6 +315,14 @@
             <param name="byteString"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.GetlittleEndianByteString(System.Single,System.Int32)">
+            <summary>
+            获取浮点型四舍五入后的小端序表示字符串
+            </summary>
+            <param name="inputFloat">输入的浮点数<para>范围在[int.MinValue,int.MaxValue]</para></param>
+            <param name="bytesCount">字节数<para>范围[1,4]</para></param>
+            <returns></returns>
+        </member>
         <member name="T:Dopamine.DLT645_2007">
             <summary>
             DL/T 645-2007多功能电能表通讯协议

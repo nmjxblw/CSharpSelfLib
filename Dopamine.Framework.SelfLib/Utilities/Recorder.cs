@@ -1,5 +1,4 @@
-﻿using Dopamine.ChatApp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -12,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Dopamine.Framework;
-namespace Dopamine.ChatApp
+namespace Dopamine
 {
 	/// <summary>
 	/// 记录器
