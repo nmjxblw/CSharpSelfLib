@@ -75,5 +75,21 @@ namespace Dopamine
 			}
 			return result;
 		}
-	}
+        /// <summary>
+        /// 泛型钳夹
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="input"></param>
+        /// <param name="LowerLimit"></param>
+        /// <param name="UpperLimit"></param>
+        /// <returns></returns>
+        public static T Clamp<T>(this T input, T LowerLimit, T UpperLimit) where T : IComparable
+        {
+            T low = LowerLimit.CompareTo(UpperLimit) > 0 ? UpperLimit : LowerLimit;
+            T high = UpperLimit.CompareTo(LowerLimit) > 0 ? UpperLimit : LowerLimit;
+            input = input.CompareTo(low) > 0 ? input : low;
+            input = input.CompareTo(high) < 0 ? input : high;
+            return input;
+        }
+    }
 }
