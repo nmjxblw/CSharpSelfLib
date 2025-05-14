@@ -35,21 +35,31 @@ namespace FrameTool
 		public static dynamic Data { get; set; } = new DynamicClass();
 		static ConfigManager()
 		{
-			try
-			{
-				using (Stream? stream = Assembly.GetManifestResourceStream(ConfigName))
-				using (StreamReader reader = new StreamReader(stream!))
-				{
-					string json = reader.ReadToEnd();
-					if (string.IsNullOrEmpty(json)) throw new Exception("json is null");
-					Data = JsonSerializer.Deserialize<DynamicClass>(json, opts)!;
-				}
-			}
-			catch (Exception ex)
-			{
-				Trace.WriteLine(ex.Message);
-			}
+			ReloadJson();
 		}
+		/// <summary>
+		/// 重新加载Json配置文件
+		/// </summary>
+		public static bool ReloadJson()
+		{
+            try
+            {
+                using (Stream? stream = Assembly.GetManifestResourceStream(ConfigName))
+                using (StreamReader reader = new StreamReader(stream!))
+                {
+                    string json = reader.ReadToEnd();
+                    if (string.IsNullOrEmpty(json)) throw new Exception("Json文件为空！");
+                    Data = JsonSerializer.Deserialize<DynamicClass>(json, opts)!;
+                }
+				return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+				Recorder.RecordError(ex.StackTrace);
+				return false;
+            }
+        }
 		/// <summary>
 		/// 存储
 		/// </summary>

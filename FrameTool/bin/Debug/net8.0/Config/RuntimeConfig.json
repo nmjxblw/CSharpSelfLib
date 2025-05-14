@@ -1,4 +1,27 @@
 {
-	"PortSettings": "9600,8,e,1",
-	"COM": 1
+  "AddressByteCount": 6,
+  "UsercodeByteCount": 4,
+  "PasswordByteCount": 4,
+  "PowerAndErrorCalibrationParameters": {
+    "Password": "00 00 00 00",
+    "Usercode": "00 00 00 00",
+    "Phase": 0,
+    "Method": 1,
+    "Type": 1,
+    "VoltageA": 220.0,
+    "VoltageB": 0.0,
+    "VoltageC": 0.0,
+    "CurrentA": 10.0,
+    "CurrentB": 0.0,
+    "CurrentC": 0.0,
+    "ActivePowerA": 2200.0,
+    "ActivePowerB": 0.0,
+    "ActivePowerC": 0.0,
+    "ReactivePowerA": 0.0,
+    "ReactivePowerB": 0.0,
+    "ReactivePowerC": 0.0,
+    "ErrorA": 12.25,
+    "ErrorB": 0.0,
+    "ErrorC": 0.0
+  }
 }

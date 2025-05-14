@@ -6,10 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ConsoleProgram/2025.05.08.15": {
+      "ConsoleProgram/2025.05.14.11": {
         "dependencies": {
           "DeepSeekApi": "2025.5.6.18",
-          "Dopamine": "2025.5.8.10"
+          "Dopamine": "2025.5.9.15"
         },
         "runtime": {
           "ConsoleProgram.dll": {}
@@ -1738,12 +1738,12 @@
       "DeepSeekApi/2025.5.6.18": {
         "runtime": {
           "DeepSeekApi.dll": {
-            "assemblyVersion": "2025.5.8.15",
-            "fileVersion": "2025.5.8.15"
+            "assemblyVersion": "2025.5.14.11",
+            "fileVersion": "2025.5.14.11"
           }
         }
       },
-      "Dopamine/2025.5.8.10": {
+      "Dopamine/2025.5.9.15": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Core": "5.3.0",
           "Microsoft.AspNet.WebApi.SelfHost": "5.3.0",
@@ -1754,8 +1754,8 @@
         },
         "runtime": {
           "Dopamine.dll": {
-            "assemblyVersion": "2025.5.8.15",
-            "fileVersion": "2025.5.8.15"
+            "assemblyVersion": "2025.5.14.11",
+            "fileVersion": "2025.5.14.11"
           }
         }
       },
@@ -1786,7 +1786,7 @@
     }
   },
   "libraries": {
-    "ConsoleProgram/2025.05.08.15": {
+    "ConsoleProgram/2025.05.14.11": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -2944,7 +2944,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Dopamine/2025.5.8.10": {
+    "Dopamine/2025.5.9.15": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

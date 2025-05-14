@@ -220,6 +220,16 @@
             <param name="input"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.Clamp``1(``0,``0,``0)">
+            <summary>
+            泛型钳夹
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input"></param>
+            <param name="LowerLimit"></param>
+            <param name="UpperLimit"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.GetFrame(System.Net.Sockets.NetworkStream,System.Int32)">
             <summary>
             从流中获取数据帧
@@ -315,9 +325,9 @@
             <param name="byteString"></param>
             <returns></returns>
         </member>
-        <member name="M:Dopamine.ExtensionMethods.GetlittleEndianByteString(System.Single,System.Int32)">
+        <member name="M:Dopamine.ExtensionMethods.TolittleEndianString(System.Single,System.Int32)">
             <summary>
-            获取浮点型四舍五入后的小端序表示字符串
+            将浮点型四舍五入后转化为小端序表示字符串
             </summary>
             <param name="inputFloat">输入的浮点数<para>范围在[int.MinValue,int.MaxValue]</para></param>
             <param name="bytesCount">字节数<para>范围[1,4]</para></param>

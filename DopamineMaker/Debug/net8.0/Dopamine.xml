@@ -220,6 +220,16 @@
             <param name="input"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.Clamp``1(``0,``0,``0)">
+            <summary>
+            泛型钳夹
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input"></param>
+            <param name="LowerLimit"></param>
+            <param name="UpperLimit"></param>
+            <returns></returns>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.GetFrame(System.Net.Sockets.NetworkStream,System.Int32)">
             <summary>
             从流中获取数据帧
