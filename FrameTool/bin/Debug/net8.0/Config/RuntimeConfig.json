@@ -1,27 +1,37 @@
 {
-  "AddressByteCount": 6,
-  "UsercodeByteCount": 4,
-  "PasswordByteCount": 4,
-  "PowerAndErrorCalibrationParameters": {
-    "Password": "00 00 00 00",
-    "Usercode": "00 00 00 00",
-    "Phase": 0,
-    "Method": 1,
-    "Type": 1,
-    "VoltageA": 220.0,
-    "VoltageB": 0.0,
-    "VoltageC": 0.0,
-    "CurrentA": 10.0,
-    "CurrentB": 0.0,
-    "CurrentC": 0.0,
-    "ActivePowerA": 2200.0,
-    "ActivePowerB": 0.0,
-    "ActivePowerC": 0.0,
-    "ReactivePowerA": 0.0,
-    "ReactivePowerB": 0.0,
-    "ReactivePowerC": 0.0,
-    "ErrorA": 12.25,
-    "ErrorB": 0.0,
-    "ErrorC": 0.0
+  "AddressByteCount": 6, // 地址字节数
+  "UsercodeByteCount": 4, // 用户标识码字节数
+  "PasswordByteCount": 4, // 密码字节数
+  "PowerAndErrorCalibrationParameters": { // 功率误差校准参数
+    "Password": "00 00 00 00", // 密码
+    "Usercode": "00 00 00 00", // 用户标识码
+    "Phase": 0, // 相位
+    "Method": 1, // 校准方法
+    "Type": 1, // 校准类型
+    "VoltageA": 220.0, // A相电压
+    "VoltageB": 0.0, // B相电压
+    "VoltageC": 0.0, // C相电压
+    "CurrentA": 10.0, // A相电流
+    "CurrentB": 0.0, // B相电流
+    "CurrentC": 0.0, // C相电流
+    "ActivePowerA": 2200.0, // A相有功功率
+    "ActivePowerB": 0.0, // B相有功功率
+    "ActivePowerC": 0.0, // C相有功功率
+    "ReactivePowerA": 0.0, // A相无功功率
+    "ReactivePowerB": 0.0, // B相无功功率
+    "ReactivePowerC": 0.0, // C相无功功率
+    "ErrorA": 12.25, // A相误差
+    "ErrorB": 0.0, // B相误差
+    "ErrorC": 0.0 // C相误差
+  },
+  "ReadAddressParameters": { // 读表地址参数
+    "InitialAddress": "AA AA AA AA AA AA" // 初始表地址
+  },
+  "WriteAddressParameters": { // 写表地址参数
+    "NewAddress": "00 00 00 00 00 0A" // 新表地址
+  },
+  "EnergyClearParameters": { // 电量清零参数
+    "Password": "00 00 00 00", // 密码
+    "Usercode": "00 00 00 00" // 用户标识码
   }
 }

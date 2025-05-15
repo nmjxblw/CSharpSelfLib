@@ -44,6 +44,7 @@ namespace FrameTool
 		{
             try
             {
+				Data = new DynamicClass();
                 using (Stream? stream = Assembly.GetManifestResourceStream(ConfigName))
                 using (StreamReader reader = new StreamReader(stream!))
                 {

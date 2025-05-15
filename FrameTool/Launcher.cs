@@ -6,7 +6,8 @@
 	internal class Launcher
 	{
 		private static MainApplication App { get; } = new MainApplication();
-		static void Main(string[] args)
+        [STAThread]
+        static void Main(string[] args)
 		{
 			Console.WriteLine("[帧工具助手]");
 			App.Run();

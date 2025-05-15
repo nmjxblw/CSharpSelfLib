@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -394,6 +395,29 @@ namespace FrameTool
         #endregion
 
         #region --- 时间校准（广播校准时间） ---
+        public static byte[] GetTimeCalibrationFrame()
+        {
+            List<byte> tempData = new List<byte>();
+            byte[] DI = new byte[] { 0x02, 0x80, 0xFF, 0x02 };
+            Array.Reverse(DI);
+            tempData.AddRange(DI);
+            byte Second, Minute, Hour, Day, Month, Year;
+            DateTime currentMoment = DateTime.Now;
+            Second = (byte)currentMoment.Second;
+            Minute = (byte)currentMoment.Minute;
+            Hour = (byte)currentMoment.Hour;
+            Day = (byte)currentMoment.Day;
+            Month = (byte)currentMoment.Month;
+            Year = (byte)(currentMoment.Year % 100);
+            foreach(byte @byte in new List<byte> { Second, Minute, Hour, Day, Month, Year })
+            {
+                tempData.Add(@byte);
+            }
+            AssembleFrame(out byte[]? outFrame, out _, 0b000_10000, tempData.ToArray());
+            if (outFrame == null)
+                throw new Exception("数据帧为空");
+            return outFrame;
+        }
         #endregion
 
         #endregion
