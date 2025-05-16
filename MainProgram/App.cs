@@ -19,5 +19,6 @@ public sealed class App
 	/// </summary>
 	public void Start()
 	{
-	}
+		DLLHelper.MessageBox(IntPtr.Zero, "Hello World", "Hello", 0);
+    }
 }

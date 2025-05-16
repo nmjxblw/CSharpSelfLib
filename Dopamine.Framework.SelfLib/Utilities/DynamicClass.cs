@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System;
 using Newtonsoft.Json.Linq;
-namespace Dopamine
+namespace Dopamine.Framework
 {
 	/// <summary>
 	/// 动态解析类

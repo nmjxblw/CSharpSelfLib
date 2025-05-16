@@ -65,7 +65,7 @@ namespace Dopamine
 		/// <typeparam name="T"></typeparam>
 		/// <param name="input"></param>
 		/// <returns></returns>
-		public static T Max<T>(this IEnumerable<T> input) where T : IComparable
+		public static T? Max<T>(this IEnumerable<T> input) where T : IComparable
 		{
 			if (!input.Any()) return default;
 			T result = input.GetEnumerator().Current;

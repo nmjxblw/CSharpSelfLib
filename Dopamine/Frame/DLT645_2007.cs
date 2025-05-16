@@ -33,6 +33,7 @@ namespace Dopamine
 			bytes.Add(Header);
 			if (ControlCode == default) ControlCode = 0b0000;
 			bytes.Add(ControlCode);
+			if (Data == default) Data = new byte[0];
 			bytes.Add((byte)Data.Length);
 			bytes.Add(Tail);
 			return bytes.ToArray();

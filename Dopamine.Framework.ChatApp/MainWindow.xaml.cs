@@ -35,6 +35,7 @@ namespace Dopamine.ChatApp
 		{
             WindowState = WindowState.Normal;
             base.OnActivated(e);
+            ConsoleManager.Toggle();
 		}
 
 		private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

@@ -6,13 +6,465 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ConsoleProgram/2025.05.16.11": {
+      "ConsoleProgram/2025.05.16.16": {
         "dependencies": {
-          "DeepSeekApi": "2025.5.15.15",
-          "Dopamine": "2025.5.15.15"
+          "DeepSeekApi": "2025.5.16.15",
+          "Dopamine": "2025.5.16.16"
         },
         "runtime": {
           "ConsoleProgram.dll": {}
+        }
+      },
+      "CommunityToolkit.HighPerformance/8.4.0": {
+        "runtime": {
+          "lib/net8.0/CommunityToolkit.HighPerformance.dll": {
+            "assemblyVersion": "8.4.0.0",
+            "fileVersion": "8.4.0.1"
+          }
+        }
+      },
+      "LLamaSharp/0.24.0": {
+        "dependencies": {
+          "CommunityToolkit.HighPerformance": "8.4.0",
+          "Microsoft.Bcl.AsyncInterfaces": "9.0.3",
+          "Microsoft.Extensions.AI.Abstractions": "9.5.0-preview.1.25262.9",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
+          "System.Numerics.Tensors": "9.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/LLamaSharp.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "LLamaSharp.Backend.Cpu/0.24.0": {
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libggml-base.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libggml-cpu.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libggml.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libllama.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libllava_shared.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx/libggml-base.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx/libggml-cpu.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx/libggml.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx/libllama.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx/libllava_shared.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx2/libggml-base.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx2/libggml-cpu.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx2/libggml.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx2/libllama.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx2/libllava_shared.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx512/libggml-base.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx512/libggml-cpu.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx512/libggml.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx512/libllama.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/avx512/libllava_shared.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/noavx/libggml-base.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/noavx/libggml-cpu.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/noavx/libggml.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/noavx/libllama.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/noavx/libllava_shared.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx/libggml-base.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx/libggml-cpu.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx/libggml.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx/libllama.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx/libllava_shared.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx2/libggml-base.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx2/libggml-cpu.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx2/libggml.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx2/libllama.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx2/libllava_shared.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx512/libggml-base.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx512/libggml-cpu.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx512/libggml.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx512/libllama.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/avx512/libllava_shared.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/noavx/libggml-base.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/noavx/libggml-cpu.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/noavx/libggml.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/noavx/libllama.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/noavx/libllava_shared.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/ggml-metal.metal": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libggml-base.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libggml-blas.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libggml-cpu.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libggml-metal.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libggml.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libllama.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libllava_shared.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libggml-base.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libggml-blas.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libggml-cpu.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libggml.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libllama.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libllava_shared.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/rosetta2/libggml-base.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/rosetta2/libggml-blas.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/rosetta2/libggml-cpu.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/rosetta2/libggml.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/rosetta2/libllama.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/rosetta2/libllava_shared.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx/ggml-base.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx/ggml-cpu.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx/ggml.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx/llama.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx/llava_shared.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx2/ggml-base.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx2/ggml-cpu.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx2/ggml.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx2/llama.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx2/llava_shared.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx512/ggml-base.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx512/ggml-cpu.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx512/ggml.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx512/llama.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/avx512/llava_shared.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/noavx/ggml-base.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/noavx/ggml-cpu.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/noavx/ggml.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/noavx/llama.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/noavx/llava_shared.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.Client/6.0.0": {
@@ -69,7 +521,7 @@
       "Microsoft.AspNetCore.Authentication.Abstractions/2.3.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
@@ -94,7 +546,7 @@
       },
       "Microsoft.AspNetCore.Authorization/2.3.0": {
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
@@ -120,8 +572,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Extensions": "2.3.0",
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
@@ -144,8 +596,8 @@
           "Microsoft.AspNetCore.Cryptography.Internal": "2.3.0",
           "Microsoft.AspNetCore.DataProtection.Abstractions": "2.3.0",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.3.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2",
           "Microsoft.Win32.Registry": "4.5.0",
           "System.Security.Cryptography.Xml": "8.0.2",
@@ -278,7 +730,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Extensions": "2.3.0",
           "Microsoft.Extensions.Localization.Abstractions": "8.0.11",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
@@ -346,8 +798,8 @@
           "Microsoft.Extensions.DependencyInjection": "8.0.1",
           "Microsoft.Extensions.DependencyModel": "2.1.0",
           "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
-          "System.Diagnostics.DiagnosticSource": "8.0.1",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
+          "System.Diagnostics.DiagnosticSource": "9.0.3",
           "System.Threading.Tasks.Extensions": "4.6.0"
         },
         "runtime": {
@@ -530,7 +982,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Extensions": "2.3.0",
           "Microsoft.AspNetCore.Routing.Abstractions": "2.3.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.ObjectPool": "8.0.11",
           "Microsoft.Extensions.Options": "8.0.2"
         },
@@ -561,6 +1013,14 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {
             "assemblyVersion": "2.3.0.0",
             "fileVersion": "2.3.0.25014"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/9.0.3": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "9.0.0.3",
+            "fileVersion": "9.0.325.11113"
           }
         }
       },
@@ -657,6 +1117,14 @@
           }
         }
       },
+      "Microsoft.Extensions.AI.Abstractions/9.5.0-preview.1.25262.9": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.AI.Abstractions.dll": {
+            "assemblyVersion": "9.5.0.0",
+            "fileVersion": "9.500.25.26209"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0"
@@ -671,8 +1139,8 @@
       "Microsoft.Extensions.Caching.Memory/8.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Caching.Abstractions": "8.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2",
           "Microsoft.Extensions.Primitives": "8.0.0"
         },
@@ -696,7 +1164,7 @@
       },
       "Microsoft.Extensions.DependencyInjection/8.0.1": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3"
         },
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
@@ -705,11 +1173,11 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.3": {
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1024.46610"
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.325.11113"
           }
         }
       },
@@ -730,7 +1198,7 @@
       },
       "Microsoft.Extensions.Diagnostics.Abstractions/8.0.1": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
@@ -774,10 +1242,10 @@
       "Microsoft.Extensions.Hosting.Abstractions/8.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
           "Microsoft.Extensions.Diagnostics.Abstractions": "8.0.1",
           "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3"
         },
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
@@ -788,9 +1256,9 @@
       },
       "Microsoft.Extensions.Localization/8.0.11": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
           "Microsoft.Extensions.Localization.Abstractions": "8.0.11",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
@@ -808,14 +1276,15 @@
           }
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/8.0.2": {
+      "Microsoft.Extensions.Logging.Abstractions/9.0.3": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
+          "System.Diagnostics.DiagnosticSource": "9.0.3"
         },
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1024.46610"
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.325.11113"
           }
         }
       },
@@ -829,7 +1298,7 @@
       },
       "Microsoft.Extensions.Options/8.0.2": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
           "Microsoft.Extensions.Primitives": "8.0.0"
         },
         "runtime": {
@@ -849,7 +1318,7 @@
       },
       "Microsoft.Extensions.WebEncoders/8.0.11": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
@@ -1034,7 +1503,14 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Diagnostics.DiagnosticSource/8.0.1": {},
+      "System.Diagnostics.DiagnosticSource/9.0.3": {
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.325.11113"
+          }
+        }
+      },
       "System.Diagnostics.EventLog/9.0.2": {
         "runtime": {
           "lib/net8.0/System.Diagnostics.EventLog.dll": {
@@ -1235,7 +1711,7 @@
           "Microsoft.NETCore.Platforms": "2.0.0",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "8.0.1",
+          "System.Diagnostics.DiagnosticSource": "9.0.3",
           "System.Diagnostics.Tracing": "4.3.0",
           "System.Globalization": "4.3.0",
           "System.Globalization.Extensions": "4.3.0",
@@ -1266,6 +1742,14 @@
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Handles": "4.3.0"
+        }
+      },
+      "System.Numerics.Tensors/9.0.3": {
+        "runtime": {
+          "lib/net8.0/System.Numerics.Tensors.dll": {
+            "assemblyVersion": "9.0.0.3",
+            "fileVersion": "9.0.325.11113"
+          }
         }
       },
       "System.ObjectModel/4.3.0": {
@@ -1726,7 +2210,7 @@
       },
       "TextCopy/6.2.1": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3"
         },
         "runtime": {
           "lib/net6.0/TextCopy.dll": {
@@ -1735,15 +2219,19 @@
           }
         }
       },
-      "DeepSeekApi/2025.5.15.15": {
+      "DeepSeekApi/2025.5.16.15": {
+        "dependencies": {
+          "LLamaSharp": "0.24.0",
+          "LLamaSharp.Backend.Cpu": "0.24.0"
+        },
         "runtime": {
           "DeepSeekApi.dll": {
-            "assemblyVersion": "2025.5.16.11",
-            "fileVersion": "2025.5.16.11"
+            "assemblyVersion": "2025.5.16.15",
+            "fileVersion": "2025.5.16.15"
           }
         }
       },
-      "Dopamine/2025.5.15.15": {
+      "Dopamine/2025.5.16.16": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Core": "5.3.0",
           "Microsoft.AspNet.WebApi.SelfHost": "5.3.0",
@@ -1754,8 +2242,8 @@
         },
         "runtime": {
           "Dopamine.dll": {
-            "assemblyVersion": "2025.5.16.11",
-            "fileVersion": "2025.5.16.11"
+            "assemblyVersion": "2025.5.16.16",
+            "fileVersion": "2025.5.16.16"
           }
         }
       },
@@ -1786,10 +2274,31 @@
     }
   },
   "libraries": {
-    "ConsoleProgram/2025.05.16.11": {
+    "ConsoleProgram/2025.05.16.16": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CommunityToolkit.HighPerformance/8.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-flxspiBs0G/0GMp7IK2J2ijV9bTG6hEwFc/z6ekHqB6nwRJ4Ry2yLdx+TkbCUYFCl4XhABkAwomeKbT6zM2Zlg==",
+      "path": "communitytoolkit.highperformance/8.4.0",
+      "hashPath": "communitytoolkit.highperformance.8.4.0.nupkg.sha512"
+    },
+    "LLamaSharp/0.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5XCPHVpaQ+FHnn7lLiGUdLyCT6uPdDNZ+N7MyV9lFVm43jkprYG/uI8XuTlOFMCCkeodyjfYeowlZh5XGZ3+wQ==",
+      "path": "llamasharp/0.24.0",
+      "hashPath": "llamasharp.0.24.0.nupkg.sha512"
+    },
+    "LLamaSharp.Backend.Cpu/0.24.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B5uUhRdhQKeiBShqMy+x+6QKDYd9TOOTR6LstdHfGxmS+2Qh+mETBlIcau7ya/17EHf8bDjeReWVIG/zZ02AKQ==",
+      "path": "llamasharp.backend.cpu/0.24.0",
+      "hashPath": "llamasharp.backend.cpu.0.24.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/6.0.0": {
       "type": "package",
@@ -2092,6 +2601,13 @@
       "path": "microsoft.aspnetcore.webutilities/2.3.0",
       "hashPath": "microsoft.aspnetcore.webutilities.2.3.0.nupkg.sha512"
     },
+    "Microsoft.Bcl.AsyncInterfaces/9.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oFFX9Ls8dnNUBCD9yzRzHTY8tqvv+CiX43B8L8DjrM8BqYTAlORYaJf6+KXNtSC2bD1135yV8OxzcZFaluow5w==",
+      "path": "microsoft.bcl.asyncinterfaces/9.0.3",
+      "hashPath": "microsoft.bcl.asyncinterfaces.9.0.3.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -2134,6 +2650,13 @@
       "path": "microsoft.dotnet.platformabstractions/2.1.0",
       "hashPath": "microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.AI.Abstractions/9.5.0-preview.1.25262.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b1IL+YciwqRkSCL1W6B4a99Ho4Oxu7yBkp8ykUleD58/tiFgeajVL84VaichMEnt8YRLt61dh89dwJEcdy1lgg==",
+      "path": "microsoft.extensions.ai.abstractions/9.5.0-preview.1.25262.9",
+      "hashPath": "microsoft.extensions.ai.abstractions.9.5.0-preview.1.25262.9.nupkg.sha512"
+    },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2162,12 +2685,12 @@
       "path": "microsoft.extensions.dependencyinjection/8.0.1",
       "hashPath": "microsoft.extensions.dependencyinjection.8.0.1.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
+    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3iE7UF7MQkCv1cxzCahz+Y/guQbTqieyxyaWKhrRO91itI9cOKO76OHeQDahqG4MmW5umr3CcCvGmK92lWNlbg==",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.2",
-      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512"
+      "sha512": "sha512-TfaHPSe39NyL2wxkisRxXK7xvHGZYBZ+dy3r+mqGvnxKgAPdHkMu3QMQZI4pquP6W5FIQBqs8FJpWV8ffCgDqQ==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.3",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.3.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyModel/2.1.0": {
       "type": "package",
@@ -2225,12 +2748,12 @@
       "path": "microsoft.extensions.localization.abstractions/8.0.11",
       "hashPath": "microsoft.extensions.localization.abstractions.8.0.11.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/8.0.2": {
+    "Microsoft.Extensions.Logging.Abstractions/9.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nroMDjS7hNBPtkZqVBbSiQaQjWRDxITI8Y7XnDs97rqG3EbzVTNLZQf7bIeUJcaHOV8bca47s1Uxq94+2oGdxA==",
-      "path": "microsoft.extensions.logging.abstractions/8.0.2",
-      "hashPath": "microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512"
+      "sha512": "sha512-H/MBMLt9A/69Ux4OrV7oCKt3DcMT04o5SCqDolulzQA66TLFEpYYb4qedMs/uwrLtyHXGuDGWKZse/oa8W9AZw==",
+      "path": "microsoft.extensions.logging.abstractions/9.0.3",
+      "hashPath": "microsoft.extensions.logging.abstractions.9.0.3.nupkg.sha512"
     },
     "Microsoft.Extensions.ObjectPool/8.0.11": {
       "type": "package",
@@ -2484,12 +3007,12 @@
       "path": "system.diagnostics.debug/4.3.0",
       "hashPath": "system.diagnostics.debug.4.3.0.nupkg.sha512"
     },
-    "System.Diagnostics.DiagnosticSource/8.0.1": {
+    "System.Diagnostics.DiagnosticSource/9.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vaoWjvkG1aenR2XdjaVivlCV9fADfgyhW5bZtXT23qaEea0lWiUljdQuze4E31vKM7ZWJaSUsbYIKE3rnzfZUg==",
-      "path": "system.diagnostics.diagnosticsource/8.0.1",
-      "hashPath": "system.diagnostics.diagnosticsource.8.0.1.nupkg.sha512"
+      "sha512": "sha512-cBA+28xDW33tSiGht/H8xvr8lnaCrgJ7EdO348AfSGsX4PPJUOULKxny/cc9DVNGExaCrtqagsnm5M2mkWIZ+g==",
+      "path": "system.diagnostics.diagnosticsource/9.0.3",
+      "hashPath": "system.diagnostics.diagnosticsource.9.0.3.nupkg.sha512"
     },
     "System.Diagnostics.EventLog/9.0.2": {
       "type": "package",
@@ -2623,6 +3146,13 @@
       "sha512": "sha512-qOu+hDwFwoZPbzPvwut2qATe3ygjeQBDQj91xlsaqGFQUI5i4ZnZb8yyQuLGpDGivEPIt8EJkd1BVzVoP31FXA==",
       "path": "system.net.primitives/4.3.0",
       "hashPath": "system.net.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.Numerics.Tensors/9.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XnOUXX5va9ZtSIFuMrXeaJ0RPImEYXvJvhMQoAYAqppGgazuoI2inkMp77F1j8exEiHDj7omD7dPeqh+Nd1ZYA==",
+      "path": "system.numerics.tensors/9.0.3",
+      "hashPath": "system.numerics.tensors.9.0.3.nupkg.sha512"
     },
     "System.ObjectModel/4.3.0": {
       "type": "package",
@@ -2939,12 +3469,12 @@
       "path": "textcopy/6.2.1",
       "hashPath": "textcopy.6.2.1.nupkg.sha512"
     },
-    "DeepSeekApi/2025.5.15.15": {
+    "DeepSeekApi/2025.5.16.15": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Dopamine/2025.5.15.15": {
+    "Dopamine/2025.5.16.16": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

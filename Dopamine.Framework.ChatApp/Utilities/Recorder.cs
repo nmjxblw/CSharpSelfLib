@@ -161,34 +161,34 @@ namespace Dopamine.ChatApp
 			return pathTemp.Replace("/", "\\");
 		}
 	}
-}
-/// <summary>
-/// 记录器内容的等级
-/// </summary>
-public enum ContextLevel
-{
-	/// <summary>
-	/// 无设置
-	/// </summary>
-	None = 0,
-	/// <summary>
-	/// 公开级别
-	/// </summary>
-	Public,
-	/// <summary>
-	/// 非公开级别
-	/// </summary>
-	Private,
-	/// <summary>
-	/// 警告级别
-	/// </summary>
-	Alert,
-	/// <summary>
-	/// 报错级别
-	/// </summary>
-	Error,
-	/// <summary>
-	/// 调试级别
-	/// </summary>
-	Debug,
+    /// <summary>
+    /// 记录器内容的等级
+    /// </summary>
+    public enum ContextLevel
+    {
+        /// <summary>
+        /// 无设置
+        /// </summary>
+        None = 0,
+        /// <summary>
+        /// 公开级别
+        /// </summary>
+        Public,
+        /// <summary>
+        /// 非公开级别
+        /// </summary>
+        Private,
+        /// <summary>
+        /// 警告级别
+        /// </summary>
+        Alert,
+        /// <summary>
+        /// 报错级别
+        /// </summary>
+        Error,
+        /// <summary>
+        /// 调试级别
+        /// </summary>
+        Debug,
+    }
 }

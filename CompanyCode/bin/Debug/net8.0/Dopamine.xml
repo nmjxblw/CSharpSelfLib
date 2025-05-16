@@ -178,6 +178,21 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Dopamine.DLLHelpper">
+            <summary>
+            DLL帮助类
+            </summary>
+        </member>
+        <member name="M:Dopamine.DLLHelpper.MessageBox(System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            显示消息框
+            </summary>
+            <param name="hWnd"></param>
+            <param name="text"></param>
+            <param name="caption"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
         <member name="T:Dopamine.ExtensionMethods">
             <summary>
             拓展域名下的额外静态方法

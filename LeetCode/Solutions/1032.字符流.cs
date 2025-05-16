@@ -72,15 +72,25 @@
  */
 
 // @lc code=start
+/// <summary>
+/// 字符流
+/// </summary>
 public partial class StreamChecker
 {
-
-	public StreamChecker(string[] words)
+    /// <summary>
+    /// 构造函数
+    /// </summary>
+    /// <param name="words"></param>
+    public StreamChecker(string[] words)
 	{
 
 	}
-
-	public bool Query(char letter)
+    /// <summary>
+    /// 查询字符
+    /// </summary>
+    /// <param name="letter"></param>
+    /// <returns></returns>
+    public bool Query(char letter)
 	{
 		return default;
 	}

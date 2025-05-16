@@ -13,4 +13,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="LlamaSharp" Version="0.24.0" />
+    <PackageReference Include="LlamaSharp.Backend.Cpu" Version="0.24.0" />
+  </ItemGroup>
+
 </Project>

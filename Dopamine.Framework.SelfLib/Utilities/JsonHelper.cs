@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-namespace Dopamine
+namespace Dopamine.Framework
 {
 	/// <summary>
 	/// Json帮助类

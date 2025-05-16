@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Dopamine
+namespace Dopamine.Framework
 {
     /// <summary>
     /// 剪切板助手类
