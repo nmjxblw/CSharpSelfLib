@@ -28,7 +28,7 @@
     "InitialAddress": "AA AA AA AA AA AA" // 初始表地址
   },
   "WriteAddressParameters": { // 写表地址参数
-    "NewAddress": "00 00 00 00 00 02" // 新表地址
+    "NewAddress": "00 00 00 00 00 01" // 新表地址
   },
   "EnergyClearParameters": { // 电量清零参数
     "Password": "00 00 00 00", // 密码

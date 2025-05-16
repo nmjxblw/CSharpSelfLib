@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "DeepSeekApi/2025.05.14.11": {
+      "DeepSeekApi/2025.05.16.11": {
         "runtime": {
           "DeepSeekApi.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "DeepSeekApi/2025.05.14.11": {
+    "DeepSeekApi/2025.05.16.11": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

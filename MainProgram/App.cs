@@ -19,6 +19,5 @@ public sealed class App
 	/// </summary>
 	public void Start()
 	{
-		DeepSeekControl.Run();
 	}
 }

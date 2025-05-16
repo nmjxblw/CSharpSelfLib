@@ -33,5 +33,9 @@
   "EnergyClearParameters": { // 电量清零参数
     "Password": "00 00 00 00", // 密码
     "Usercode": "00 00 00 00" // 用户标识码
+  },
+  "ResetDefaultParameters": { // 重置参数 
+    "Password": "00 00 00 00", // 密码
+    "Usercode": "00 00 00 00" // 用户标识码
   }
 }

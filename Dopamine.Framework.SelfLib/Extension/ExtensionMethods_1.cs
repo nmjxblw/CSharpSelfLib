@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using TextCopy;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Dopamine.Framework
@@ -42,25 +41,6 @@ namespace Dopamine.Framework
 		public static string ToString<T>(this T[] input)
 		{
 			return string.Join(",", input);
-		}
-		/// <summary>
-		/// 复制文本到剪切板
-		/// </summary>
-		/// <param name="text"></param>
-		/// <returns></returns>
-		public static string CopyToClipboard(this string text)
-		{
-			try
-			{
-				TextCopy.ClipboardService.SetText(text);
-			}
-			catch (Exception ex)
-			{
-				// 处理平台兼容异常
-				throw new PlatformNotSupportedException(
-					"当前操作系统不支持剪切板操作", ex);
-			}
-			return text;
 		}
 	}
 }

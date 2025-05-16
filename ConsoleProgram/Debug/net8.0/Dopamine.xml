@@ -838,6 +838,68 @@
             数据
             </summary>
         </member>
+        <member name="T:Dopamine.Clipboard">
+             <summary>
+             剪切板助手类
+             </summary>
+             <example>
+             [STAThread]
+            static void Main(string[] args)
+            {
+                // 业务逻辑
+            }
+            public static void SetText(string text)
+            {
+                if (!OpenClipboard(IntPtr.Zero))
+                {
+                    throw new Exception("无法打开剪切板");
+                 }
+                 try
+                 {
+                     EmptyClipboard();
+                     IntPtr hGlobal = Marshal.StringToHGlobalUni(text); // 将字符串转为非托管内存指针
+                     SetClipboardData(CF_UNICODETEXT, hGlobal);
+                 }
+                 finally
+                 {
+                     CloseClipboard();
+                     Marshal.FreeHGlobal(hGlobal); // 释放非托管内存（需确保在关闭剪切板后执行）
+                 }
+             }
+             </example>
+        </member>
+        <member name="M:Dopamine.Clipboard.OpenClipboard(System.IntPtr)">
+            <summary>
+            打开剪切板
+            </summary>
+            <param name="hWndNewOwner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.Clipboard.CloseClipboard">
+            <summary>
+            关闭剪切板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.Clipboard.EmptyClipboard">
+            <summary>
+            清空剪切板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.Clipboard.SetClipboardData(System.UInt32,System.IntPtr)">
+            <summary>
+            设置剪切板内容
+            </summary>
+            <param name="uFormat"></param>
+            <param name="hMem"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Dopamine.Clipboard.CF_UNICODETEXT">
+            <summary>
+            Unicode 文本格式标识
+            </summary>
+        </member>
         <member name="T:Dopamine.DynamicClass">
             <summary>
             动态解析类

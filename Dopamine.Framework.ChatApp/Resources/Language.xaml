@@ -8,4 +8,5 @@
 	<sys:String x:Key="Button_ToolTip_Minimize">最小化</sys:String>
 	<sys:String x:Key="Button_ToolTip_Resize">进入/退出全屏</sys:String>
 	<sys:String x:Key="Button_ToolTip_Close">关闭程序</sys:String>
+    <sys:String x:Key="ToolBar_Setting">设置</sys:String>
 </ResourceDictionary>

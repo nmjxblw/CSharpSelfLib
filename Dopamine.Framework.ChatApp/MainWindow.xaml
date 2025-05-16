@@ -17,13 +17,13 @@
 		MouseLeftButtonDown="OnMouseLeftButtonDown"
 		Background="Transparent"
         Title="聊天工具" MinHeight="400" MinWidth="500">
-	<Grid x:Name="MainBorderGrid" 
+    <Grid x:Name="MainBorderGrid" 
 		  Margin="-5"
 		  Height="auto"
 		  Width="auto"
 		  HorizontalAlignment="Center"
 		  VerticalAlignment="Center">
-		<Border x:Name="MainBorder" 
+        <Border x:Name="MainBorder" 
 				BorderThickness="5"
 				Width="auto"
 				Height="auto"
@@ -32,36 +32,36 @@
 				Background="LightBlue" 
 				HorizontalAlignment="Center"
 				VerticalAlignment="Center">
-			<Grid x:Name="MainInnerGrid"
+            <Grid x:Name="MainInnerGrid"
 				  HorizontalAlignment="Center"
 				  VerticalAlignment="Center"
 				  Margin="2"
 				  >
-				<Grid.RowDefinitions>
-					<RowDefinition Height="auto"/>
-					<RowDefinition Height="auto"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="auto	"/>
-				</Grid.RowDefinitions>
-				<Border x:Name="MianControlBorder"
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto	"/>
+                </Grid.RowDefinitions>
+                <Border x:Name="MianControlBorder"
 						Grid.Row="0"
 						Height="auto"
 						Margin="1"
 						Background="WhiteSmoke"
 						Opacity="0.8"
 						CornerRadius="2">
-					<Border.InputBindings>
-						<MouseBinding MouseAction="LeftDoubleClick" 
+                    <Border.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick" 
 										Command="{Binding LocalCommand}"
 									   CommandParameter="OnResizeClicked"></MouseBinding>
-					</Border.InputBindings>
-					<Grid x:Name="MainTitleControlGrid">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="auto"/>
-							<ColumnDefinition Width="*"/>
-							<ColumnDefinition Width="auto"/>
-						</Grid.ColumnDefinitions>
-						<Label x:Name="TitleLabel"
+                    </Border.InputBindings>
+                    <Grid x:Name="MainTitleControlGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="TitleLabel"
 							   HorizontalAlignment="Left"
 							   Grid.Column="0"
 							   Margin="1"
@@ -69,23 +69,23 @@
 							   Width="auto"
 							   FontWeight="Bold"
 							   Content="{DynamicResource TitleName}" />
-						<Grid x:Name="SpaceHolder_1"
+                        <Grid x:Name="SpaceHolder_1"
 							Grid.Column="1" 
 							  HorizontalAlignment="Stretch"
 							  />
-						<StackPanel x:Name="WindowControl"
+                        <StackPanel x:Name="WindowControl"
 									Grid.Column="2"
 									Margin="1"
 									Width="auto"
 									HorizontalAlignment="Right"
 									Orientation="Horizontal">
-							<Border x:Name="MinimizeButtonBorder"
+                            <Border x:Name="MinimizeButtonBorder"
 									CornerRadius="5"
 									Background="#ff55aaff"
 									BorderBrush="Transparent"
 									BorderThickness="0"
 									Margin="1">
-								<Button x:Name="MinimizeButton"
+                                <Button x:Name="MinimizeButton"
 										Margin="1"
 									BorderBrush="Transparent"
 									BorderThickness="0"
@@ -95,20 +95,20 @@
 									Command="{Binding LocalCommand}"
 									Padding="5"
 									>
-									<Viewbox>
-										<Canvas Width="10" Height="10">
-											<Path Data="M1,5 h8" Stroke="White" StrokeThickness="1.5" StrokeMiterLimit="1"/>
-										</Canvas>
-									</Viewbox>
-								</Button>
-							</Border>
-							<Border x:Name="ResizeButtonBorder"
+                                    <Viewbox>
+                                        <Canvas Width="10" Height="10">
+                                            <Path Data="M1,5 h8" Stroke="White" StrokeThickness="1.5" StrokeMiterLimit="1"/>
+                                        </Canvas>
+                                    </Viewbox>
+                                </Button>
+                            </Border>
+                            <Border x:Name="ResizeButtonBorder"
 									CornerRadius="5"
 									Background="#aa55ff55"
 									BorderBrush="Transparent"
 									BorderThickness="0"
 									Margin="1">
-								<Button x:Name="ResizeButton"
+                                <Button x:Name="ResizeButton"
 									Margin="1"
 									BorderBrush="Transparent"
 									Background="Transparent"
@@ -117,21 +117,21 @@
 									Command="{Binding LocalCommand}"
 									BorderThickness="0"
 								Padding="5">
-									<Viewbox>
-										<Canvas Width="10" Height="10">
-											<Path Data="M3,1 h6 v6 h-6 z " Stroke="WhiteSmoke" StrokeThickness="2" StrokeMiterLimit="1"/>
-											<Path Data="M1,5 h5 v5 h-5 z" Fill="White" Stroke="White" StrokeThickness="1.5" StrokeMiterLimit="1"/>
-										</Canvas>
-									</Viewbox>
-								</Button>
-							</Border>
-							<Border x:Name="CloseButtonBorder"
+                                    <Viewbox>
+                                        <Canvas Width="10" Height="10">
+                                            <Path Data="M3,1 h6 v6 h-6 z " Stroke="WhiteSmoke" StrokeThickness="2" StrokeMiterLimit="1"/>
+                                            <Path Data="M1,5 h5 v5 h-5 z" Fill="White" Stroke="White" StrokeThickness="1.5" StrokeMiterLimit="1"/>
+                                        </Canvas>
+                                    </Viewbox>
+                                </Button>
+                            </Border>
+                            <Border x:Name="CloseButtonBorder"
 									CornerRadius="5"
 									Background="#aaff0000"
 									BorderBrush="Transparent"
 									BorderThickness="0"
 									Margin="1">
-								<Button x:Name="CloseButton"
+                                <Button x:Name="CloseButton"
 										Margin="1"
 									BorderBrush="Transparent"
 									Background="Transparent"
@@ -140,54 +140,57 @@
 									Command="{Binding LocalCommand}"
 									BorderThickness="0"
 									Padding="5">
-									<Viewbox>
-										<Canvas Width="10" Height="10">
-											<Path Data="M1,1 L9,9 M9,1 L1,9" Stroke="White" StrokeThickness="1.5"/>
-										</Canvas>
-									</Viewbox>
-								</Button>
-							</Border>
-						</StackPanel>
-					</Grid>
-				</Border>
-				<Border  x:Name="ToolBarBorder"
+                                    <Viewbox>
+                                        <Canvas Width="10" Height="10">
+                                            <Path Data="M1,1 L9,9 M9,1 L1,9" Stroke="White" StrokeThickness="1.5"/>
+                                        </Canvas>
+                                    </Viewbox>
+                                </Button>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border  x:Name="ToolBarBorder"
 						 Background="WhiteSmoke" 
 						 BorderBrush="Transparent"
 					     Margin="1"
 						 CornerRadius="2"
 						 Grid.Row="1">
-					<Grid x:Name="ToolBarGrid" 
+                    <Grid x:Name="ToolBarGrid" 
 						  Background="Transparent"
 						  Margin="1">
-						<ToolBarTray x:Name="MainToolBarTray"
+                        <ToolBarTray x:Name="MainToolBarTray"
 									 Background="Transparent"
 									 Margin="1"	 
 									 Orientation="Horizontal">
-							<ToolBar x:Name="ToolBar_1"
+                            <ToolBar x:Name="ToolBar_1"
 									 Background="Transparent"
 									 BorderBrush="Transparent"
 									 BorderThickness="0"
 									 Band="0">
-								<Button x:Name="SettingButton" 
-										Width="10" 
-										Height="10" 
+                                <Button x:Name="SettingButton" 
+										Width="35" 
+										Height="15" 
 										Padding="5"
+                                        Content="{Binding ToolBarSettingButtonText}"
+                                        ToolTip="{DynamicResource ToolBar_Setting}"
+                                        Foreground="Black"
 										/>
-							</ToolBar>
-						</ToolBarTray>
-					</Grid>
-				</Border>
-				<Border x:Name="ChatBoxBorder"
+                            </ToolBar>
+                        </ToolBarTray>
+                    </Grid>
+                </Border>
+                <Border x:Name="ChatBoxBorder"
 						Margin="1"
 						BorderBrush="Transparent"
 						BorderThickness="0"
 						Background="WhiteSmoke"
 						CornerRadius="2"
 						Grid.Row="2">
-					<Grid x:Name="ChatBoxGrid"
+                    <Grid x:Name="ChatBoxGrid"
 						  Margin="1"
 						  >
-						<TextBox x:Name="ChatBoxTextBox"
+                        <TextBox x:Name="ChatBoxTextBox"
 							 BorderBrush="Transparent"
 							 BorderThickness="0"
 							 Text="{Binding AIChatBoxText}" 
@@ -201,23 +204,23 @@
 							 AcceptsReturn="True"
 							 VerticalScrollBarVisibility="Visible"
 					   />
-					</Grid>
-				</Border>
-				<Border x:Name="SendButtonBorder"
+                    </Grid>
+                </Border>
+                <Border x:Name="SendButtonBorder"
 						HorizontalAlignment="Center"
 						VerticalAlignment="Center"
 						Margin="0,10,0,10"
 						Grid.Row="3"
 						BorderThickness="1"
 						CornerRadius="5">
-					<Border.BorderBrush>
-						<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-							<GradientStop Color="Black"/>
-							<GradientStop Color="Red" Offset="1"/>
-						</LinearGradientBrush>
-					</Border.BorderBrush>
-					<Grid Margin="0">
-						<Button x:Name="SendButton"
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="Red" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Grid Margin="0">
+                        <Button x:Name="SendButton"
 								Margin="2"
 						Content="发送"
 						HorizontalContentAlignment="Center"
@@ -235,17 +238,17 @@
 								BorderBrush="Transparent"
 								BorderThickness="0"
 						Command="{Binding LocalCommand}">
-							<Button.Foreground>
-								<RadialGradientBrush>
-									<GradientStop Color="Black" Offset="1"/>
-									<GradientStop Color="#FF3189BB" Offset="0"/>
-								</RadialGradientBrush>
-							</Button.Foreground>
+                            <Button.Foreground>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="Black" Offset="1"/>
+                                    <GradientStop Color="#FF3189BB" Offset="0"/>
+                                </RadialGradientBrush>
+                            </Button.Foreground>
 
-						</Button>
-					</Grid>
-				</Border>
-			</Grid>
-		</Border>
-	</Grid>
+                        </Button>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
 </Window>

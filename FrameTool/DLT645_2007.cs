@@ -409,11 +409,33 @@ namespace FrameTool
             Day = (byte)currentMoment.Day;
             Month = (byte)currentMoment.Month;
             Year = (byte)(currentMoment.Year % 100);
-            foreach(byte @byte in new List<byte> { Second, Minute, Hour, Day, Month, Year })
+            foreach (byte @byte in new List<byte> { Second, Minute, Hour, Day, Month, Year })
             {
                 tempData.Add(@byte);
             }
             AssembleFrame(out byte[]? outFrame, out _, 0b000_10000, tempData.ToArray());
+            if (outFrame == null)
+                throw new Exception("数据帧为空");
+            return outFrame;
+        }
+        #endregion
+
+        #region --- 恢复出厂设置 ---
+        public static byte[] GetResetDefaultFrame(string? password = default, string? usercode = default)
+        {
+            if (string.IsNullOrWhiteSpace(password)) password = new string('0', 2 * PasswordByteCount);
+            if (string.IsNullOrWhiteSpace(usercode)) usercode = new string('0', 2 * UsercodeByteCount);
+            byte[] passwordBytes = ToLittleEndian(password, PasswordByteCount);
+            byte[] usercodeBytes = ToLittleEndian(usercode, UsercodeByteCount);
+            List<byte> tempData = new List<byte>();
+            byte[] DI = new byte[] { 0x02, 0x80, 0xFF, 0x00 };
+            Array.Reverse(DI);
+            tempData.AddRange(DI);
+            tempData.AddRange(passwordBytes);
+            tempData.AddRange(usercodeBytes);
+            byte[] Data = new byte[] { 0x01 };
+            tempData.AddRange(Data);
+            AssembleFrame(out byte[]? outFrame, out _, 0b000_10001, tempData.ToArray());
             if (outFrame == null)
                 throw new Exception("数据帧为空");
             return outFrame;

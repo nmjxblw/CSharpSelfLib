@@ -20,6 +20,7 @@ namespace FrameTool
         private static dynamic WriteAddressParams => ConfigManager.Data.WriteAddressParameters;
         private static dynamic EnergyClearParams => ConfigManager.Data.EnergyClearParameters;
         private static dynamic PowerAndErrorCalibrationParams => ConfigManager.Data.PowerAndErrorCalibrationParameters;
+        private static dynamic ResetDefaultParameters => ConfigManager.Data.ResetDefaultParameters;
         /// <summary>
         /// 运行主方法
         /// </summary>
@@ -39,7 +40,8 @@ namespace FrameTool
                 "[2] - 读地址\n" +
                 "[3] - 写地址\n" +
                 "[4] - 时间校准\n" +
-                "[5] - 电量清零\n").ShowInConsole();
+                "[5] - 电量清零\n" +
+                "[6] - 电能表参数重置\n").ShowInConsole();
                 string? input = Console.ReadLine();
 
                 if (string.IsNullOrEmpty(input)) continue;
@@ -79,13 +81,18 @@ namespace FrameTool
                                 frame = DLT645_2007.GetEnergyClearFrame(EnergyClearParams.Password, EnergyClearParams.Usercode);
                                 break;
                             }
+                        case 6:
+                            {
+                                frame = DLT645_2007.GetResetDefaultFrame(ResetDefaultParameters.Password, ResetDefaultParameters.Usercode);
+                                break;
+                            }
                         default:
                             {
                                 continue;
                             }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                     Recorder.RecordError(ex.StackTrace);
