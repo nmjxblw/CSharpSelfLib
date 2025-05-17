@@ -169,7 +169,9 @@ namespace DeepSeekApi
             int loopCount = 1;
             while (true)
             {
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.Write($"{loopCount}.提问:");
+
                 input = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(input)) continue;
                 if (input.ToLower().Equals("quit") || input.ToLower().Equals("q"))
@@ -178,6 +180,7 @@ namespace DeepSeekApi
                 }
                 IsWaitingForAnswer = true;
                 Task.Run(async () => await DisplayWaiting());
+                Console.ForegroundColor = (ConsoleColor)11;
                 string reply = $"\n{loopCount}.回复： {input.AskDeepSeek().GetAwaiter().GetResult()}\n";
 
                 Console.WriteLine(reply);

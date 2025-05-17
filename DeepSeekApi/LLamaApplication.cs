@@ -1,19 +1,20 @@
 ﻿using LLama.Common;
 using LLama;
 using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 
 namespace DeepSeekApi
 {
-    internal class Program
+    public class LLamaApplication
     {
-        static async Task Main(string[] args)
+        /// <summary>
+        /// 运行LLamaSharp
+        /// </summary>
+        /// <returns></returns>
+        public static async Task Run()
         {
-           await Chart();
-        }
-
-        static async Task Chart()
-        {
-            string modelPath = @"E:\Models\llama-2-7b-chat.Q4_K_M.gguf"; // change it to your own model path.
+            string modelPath = Path.Combine("Resources", "deepseek-r1-distill-llama-8b-q4_k_m.gguf"); // change it to your own model path.
 
             var parameters = new ModelParams(modelPath)
             {
@@ -30,7 +31,7 @@ namespace DeepSeekApi
             chatHistory.AddMessage(AuthorRole.User, "Hello, Bob.");
             chatHistory.AddMessage(AuthorRole.Assistant, "Hello. How may I help you today?");
 
-            ChatSession session = new(executor, chatHistory);
+            ChatSession session = new ChatSession(executor, chatHistory);
 
             InferenceParams inferenceParams = new InferenceParams()
             {
@@ -43,7 +44,7 @@ namespace DeepSeekApi
             Console.ForegroundColor = ConsoleColor.Green;
             string userInput = Console.ReadLine() ?? "";
 
-            while (userInput != "exit")
+            while (userInput.ToLower().Equals("exit") || userInput.ToLower().Equals("quit") || userInput.ToLower().Equals("q"))
             {
                 await foreach ( // Generate the response streamingly.
                     string text
@@ -57,6 +58,27 @@ namespace DeepSeekApi
                 Console.ForegroundColor = ConsoleColor.Green;
                 userInput = Console.ReadLine() ?? "";
             }
+        }
+        public static string ExtractEmbeddedModel(string outputPath)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            const string resourceName = "MyApp.Assets.Models.model.gguf";
+
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                if (stream == null)
+                    throw new FileNotFoundException($"资源 {resourceName} 未找到");
+
+                // 确保目标目录存在
+                var dir = Path.GetDirectoryName(outputPath);
+                Directory.CreateDirectory(dir ?? throw new InvalidOperationException());
+
+                using (var fileStream = new FileStream(outputPath, FileMode.Create))
+                {
+                    stream.CopyTo(fileStream);
+                }
+            }
+            return outputPath;
         }
     }
 }

@@ -18,4 +18,10 @@
     <PackageReference Include="LlamaSharp.Backend.Cpu" Version="0.24.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resources\deepseek-r1-distill-llama-8b-q4_k_m.gguf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

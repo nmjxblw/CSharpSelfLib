@@ -178,12 +178,12 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Dopamine.DLLHelpper">
+        <member name="T:Dopamine.DLLHelper">
             <summary>
             DLL帮助类
             </summary>
         </member>
-        <member name="M:Dopamine.DLLHelpper.MessageBox(System.Int32,System.String,System.String,System.Int32)">
+        <member name="M:Dopamine.DLLHelper.MessageBox(System.IntPtr,System.String,System.String,System.Int32)">
             <summary>
             显示消息框
             </summary>

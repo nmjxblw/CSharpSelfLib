@@ -34,3 +34,6 @@ sysinfo.txt
 
 # Exe File
 *.exe
+
+#LLM
+*.gguf

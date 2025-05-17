@@ -642,6 +642,24 @@
             <param name="x"></param>
             <returns></returns>
         </member>
+        <member name="T:StreamChecker">
+            <summary>
+            字符流
+            </summary>
+        </member>
+        <member name="M:StreamChecker.#ctor(System.String[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="words"></param>
+        </member>
+        <member name="M:StreamChecker.Query(System.Char)">
+            <summary>
+            查询字符
+            </summary>
+            <param name="letter"></param>
+            <returns></returns>
+        </member>
         <member name="T:Codec">
             Definition for a binary tree node.
             public class TreeNode {
