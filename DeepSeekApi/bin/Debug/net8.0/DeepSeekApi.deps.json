@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "DeepSeekApi/2025.05.17.18": {
+      "DeepSeekApi/2025.05.17.22": {
         "dependencies": {
           "LLamaSharp": "0.24.0",
           "LLamaSharp.Backend.Cpu": "0.24.0"
@@ -522,7 +522,7 @@
     }
   },
   "libraries": {
-    "DeepSeekApi/2025.05.17.18": {
+    "DeepSeekApi/2025.05.17.22": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

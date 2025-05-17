@@ -32,6 +32,7 @@ sealed class Launcher
 		// 获取GC统计信息
 		System.GCMemoryInfo GCInfo = GC.GetGCMemoryInfo();
 		long heapSizeBytes = GCInfo.HeapSizeBytes / 1024;
+		Console.ForegroundColor = ConsoleColor.White;
 		Console.WriteLine($"\n【内存统计】\n物理内存占用：{workingSet} KB\n托管堆内存：{managedMem} KB\n堆分配：{memory} KB\n堆最终分配：{heapSizeBytes} KB\n【计时统计】\n实际耗时{((double)sw.ElapsedTicks / Stopwatch.Frequency * 1000).ToString("F5")}ms");
 	}
 }

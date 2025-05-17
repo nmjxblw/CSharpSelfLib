@@ -19,6 +19,6 @@ public sealed class App
 	/// </summary>
 	public void Start()
 	{
-		LLamaApplication.Run().GetAwaiter().GetResult();
+		LLamaApplication.Run2().GetAwaiter().GetResult();
     }
 }
