@@ -91,5 +91,19 @@ namespace Dopamine
             input = input.CompareTo(high) < 0 ? input : high;
             return input;
         }
-    }
+
+		/// <summary>
+		/// 将文本从原始编码格式转化为目标编码格式
+		/// </summary>
+		/// <param name="inputString"></param>
+		/// <param name="original"></param>
+		/// <param name="target"></param>
+		/// <returns></returns>
+		public static string ConvertEncoding(this string inputString, Encoding original, Encoding target)
+		{
+			byte[] bytes = original.GetBytes(inputString);
+			byte[] convertedBytes = Encoding.Convert(original, target, bytes);
+			return target.GetString(convertedBytes);
+		}
+	}
 }
