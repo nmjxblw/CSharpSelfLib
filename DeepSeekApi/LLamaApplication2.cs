@@ -1,11 +1,20 @@
 ﻿using LLama.Common;
 using LLama;
 using System.Text;
+using System.Windows.Forms;
 
 namespace DeepSeekApi
 {
 	public partial class LLamaApplication
 	{
+		public static string SystemRole => ConfigManager.Data.SystemRole;
+		/// <summary>
+		/// 编码转化
+		/// </summary>
+		/// <param name="input"></param>
+		/// <param name="original"></param>
+		/// <param name="target"></param>
+		/// <returns></returns>
 		private static string ConvertEncoding(string input, Encoding original, Encoding target)
 		{
 			byte[] bytes = original.GetBytes(input);
@@ -18,12 +27,12 @@ namespace DeepSeekApi
 			// Register provider for GB2312 encoding
 			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.WriteLine("This example shows how to use Chinese with gb2312 encoding, which is common in windows. It's recommended" +
-				" to use https://huggingface.co/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q5_0.gguf, which has been verified by LLamaSharp developers.");
+			//Console.ForegroundColor = ConsoleColor.Yellow;
+			//Console.WriteLine("This example shows how to use Chinese with gb2312 encoding, which is common in windows. It's recommended" +
+			//	" to use https://huggingface.co/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q5_0.gguf, which has been verified by LLamaSharp developers.");
 			Console.ForegroundColor = ConsoleColor.White;
 
-			var parameters = new ModelParams(ModelPath)
+			ModelParams parameters = new ModelParams(ModelPath)
 			{
 				ContextSize = 1024,
 				GpuLayerCount = 5,
@@ -31,11 +40,11 @@ namespace DeepSeekApi
 			};
 			using LLamaWeights model = LLamaWeights.LoadFromFile(parameters);
 			using LLamaContext context = model.CreateContext(parameters);
-			var executor = new InteractiveExecutor(context);
+			InteractiveExecutor executor = new InteractiveExecutor(context);
 
 			ChatSession session;
 			ChatHistory chatHistory = new ChatHistory();
-
+			chatHistory.AddMessage(AuthorRole.System, SystemRole);
 			session = new ChatSession(executor, chatHistory);
 
 			session
@@ -43,6 +52,7 @@ namespace DeepSeekApi
 
 			InferenceParams inferenceParams = new InferenceParams()
 			{
+				MaxTokens = -1,
 				AntiPrompts = new List<string> { "用户：" }
 			};
 
@@ -64,13 +74,13 @@ namespace DeepSeekApi
 				// and later saving to the history json file.
 				userInput = ConvertEncoding(userInput, Encoding.GetEncoding("gb2312"), Encoding.UTF8);
 
-				if (userInput == "save")
+				if (userInput.ToLower().Equals("save"))
 				{
 					session.SaveSession("chat-with-DeepSeek-chinese");
 					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("Session saved.");
 				}
-				else if (userInput == "regenerate")
+				else if (userInput.ToLower().Equals("regenerate"))
 				{
 					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("Regenerating last response ...");
@@ -80,7 +90,7 @@ namespace DeepSeekApi
 						in session.RegenerateAssistantMessageAsync(
 							inferenceParams))
 					{
-						Console.ForegroundColor = ConsoleColor.White;
+						Console.ForegroundColor = (ConsoleColor)11;
 
 						// Convert the encoding from utf8 to gb2312 for the console output.
 						Console.Write(ConvertEncoding(text, Encoding.UTF8, Encoding.GetEncoding("gb2312")));
@@ -94,7 +104,7 @@ namespace DeepSeekApi
 							new ChatHistory.Message(AuthorRole.User, userInput),
 							inferenceParams))
 					{
-						Console.ForegroundColor = ConsoleColor.White;
+						Console.ForegroundColor = (ConsoleColor)11;
 						Console.Write(text);
 					}
 				}

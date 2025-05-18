@@ -1,4 +1,6 @@
-﻿namespace Dopamine;
+﻿using System.Web.Http;
+
+namespace Dopamine;
 /// <summary>
 /// 基于HttpServer
 /// </summary>

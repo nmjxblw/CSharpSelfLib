@@ -57,6 +57,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DataBase\Access\" />
     <Folder Include="Unity\Plugin\" />
     <Folder Include="Unity\UnityEditor\" />
   </ItemGroup>

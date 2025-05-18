@@ -70,26 +70,5 @@ namespace DeepSeekApi
 				userInput = Console.ReadLine() ?? "";
 			}
 		}
-		public static string ExtractEmbeddedModel(string outputPath)
-		{
-			var assembly = Assembly.GetExecutingAssembly();
-			const string resourceName = "MyApp.Assets.Models.model.gguf";
-
-			using (var stream = assembly.GetManifestResourceStream(resourceName))
-			{
-				if (stream == null)
-					throw new FileNotFoundException($"资源 {resourceName} 未找到");
-
-				// 确保目标目录存在
-				var dir = Path.GetDirectoryName(outputPath);
-				Directory.CreateDirectory(dir ?? throw new InvalidOperationException());
-
-				using (var fileStream = new FileStream(outputPath, FileMode.Create))
-				{
-					stream.CopyTo(fileStream);
-				}
-			}
-			return outputPath;
-		}
 	}
 }

@@ -16,6 +16,10 @@ sealed class Launcher
 	/// </summary>
 	private static Stopwatch sw { get; } = new Stopwatch();
 	/// <summary>
+	/// 1兆字节
+	/// </summary>
+	private const double MegaBytes = (double)(1 << 20);
+	/// <summary>
 	/// 启动
 	/// </summary>
 	/// <param name="args"></param>
@@ -25,14 +29,15 @@ sealed class Launcher
 		App.Start();
 		sw.Stop();
 		System.Diagnostics.Process process = Process.GetCurrentProcess();
-		long workingSet = process.WorkingSet64 / 1024;
-		long managedMem = GC.GetTotalMemory(forceFullCollection: false) / 1024;
+		double workingSet = process.WorkingSet64 / MegaBytes;
+		double virtualMem = process.VirtualMemorySize64 / MegaBytes;
+		double managedMem = GC.GetTotalMemory(forceFullCollection: false) / MegaBytes;
 		// 查看内存压力
-		long memory = GC.GetTotalMemory(true) / 1024;
+		double memory = GC.GetTotalMemory(true) / MegaBytes;
 		// 获取GC统计信息
 		System.GCMemoryInfo GCInfo = GC.GetGCMemoryInfo();
-		long heapSizeBytes = GCInfo.HeapSizeBytes / 1024;
+		double heapSizeBytes = GCInfo.HeapSizeBytes / MegaBytes;
 		Console.ForegroundColor = ConsoleColor.White;
-		Console.WriteLine($"\n【内存统计】\n物理内存占用：{workingSet} KB\n托管堆内存：{managedMem} KB\n堆分配：{memory} KB\n堆最终分配：{heapSizeBytes} KB\n【计时统计】\n实际耗时{((double)sw.ElapsedTicks / Stopwatch.Frequency * 1000).ToString("F5")}ms");
+		Console.WriteLine($"\n【内存统计】\n物理内存占用：{workingSet:F2} MB\n虚拟内存占用：{virtualMem:F2}MB\n托管堆内存：{managedMem:F2} MB\n堆分配：{memory:F2} MB\n堆最终分配：{heapSizeBytes:F2} MB\n【计时统计】\n实际耗时{((double)sw.ElapsedTicks / Stopwatch.Frequency * 1000).ToString("F5")}ms");
 	}
 }

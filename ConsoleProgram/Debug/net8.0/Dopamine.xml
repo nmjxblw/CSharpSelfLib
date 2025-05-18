@@ -24,36 +24,6 @@
             存储
             </summary>
         </member>
-        <member name="T:Dopamine.AccessManager">
-            <summary>
-            Access管理器
-            </summary>
-        </member>
-        <member name="P:Dopamine.AccessManager.Instance">
-            <summary>
-            单例实例化
-            </summary>
-        </member>
-        <member name="P:Dopamine.AccessManager.DataBaseFullNamePath">
-            <summary>
-            数据库完整路径
-            </summary>
-        </member>
-        <member name="P:Dopamine.AccessManager.Provider">
-            <summary>
-            Provider字段
-            </summary>
-        </member>
-        <member name="P:Dopamine.AccessManager.ConnectionString">
-            <summary>
-            访问数据库字段
-            </summary>
-        </member>
-        <member name="M:Dopamine.AccessManager.GetDataTable(System.String)">
-            <summary>
-            获取表信息
-            </summary>
-        </member>
         <member name="T:Dopamine.ConcurrentPriorityQueue`1">
             <summary>
             线程安全优先队列
@@ -243,6 +213,15 @@
             <param name="input"></param>
             <param name="LowerLimit"></param>
             <param name="UpperLimit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.ConvertEncoding(System.String,System.Text.Encoding,System.Text.Encoding)">
+            <summary>
+            将文本从原始编码格式转化为目标编码格式
+            </summary>
+            <param name="inputString"></param>
+            <param name="original"></param>
+            <param name="target"></param>
             <returns></returns>
         </member>
         <member name="M:Dopamine.ExtensionMethods.GetFrame(System.Net.Sockets.NetworkStream,System.Int32)">
