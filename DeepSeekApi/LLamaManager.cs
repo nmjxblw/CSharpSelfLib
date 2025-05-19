@@ -3,10 +3,10 @@ using LLama.Abstractions;
 using LLama.Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static LLama.Common.ChatHistory;
 using static System.Collections.Specialized.BitVector32;
 
 namespace DeepSeekApi
@@ -35,7 +35,7 @@ namespace DeepSeekApi
 		public static ModelParams ModelParams { get; set; } = new ModelParams(ModelPath)
 		{
 			ContextSize = 1024,
-			GpuLayerCount = 5,
+			GpuLayerCount = 80,
 			Encoding = Encoding.UTF8
 		};
 		/// <summary>
@@ -64,7 +64,7 @@ namespace DeepSeekApi
 		public static InferenceParams InferenceParams { get; } = new InferenceParams()
 		{
 			MaxTokens = 256,
-			AntiPrompts = Array.Empty<string>()
+			AntiPrompts = new List<string> { "User:" }  // 需设置有效的终止标记
 		};
 		/// <summary>
 		/// 最后一次用户输入
@@ -99,6 +99,16 @@ namespace DeepSeekApi
 		{
 			Console.ForegroundColor = ConsoleColor.White;
 			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+			ProcessStartInfo psi = new ProcessStartInfo("powershell", "nvidia-smi --query-gpu=name,driver_version --format=csv")
+			{
+				RedirectStandardOutput = true,
+				UseShellExecute = false
+			};
+
+			using Process? process = Process.Start(psi);
+			if (process == null) throw new Exception("无法验证nvidia-smi识别状态");
+			string output = process.StandardOutput.ReadToEnd();
+			Console.WriteLine($"【验证nvidia-smi识别状态】\n{output}\n");
 			Weights = LLamaWeights.LoadFromFile(ModelParams);
 			Context = Weights.CreateContext(ModelParams);
 			Executor = new InteractiveExecutor(Context);
@@ -134,8 +144,9 @@ namespace DeepSeekApi
 		{
 			if (string.IsNullOrEmpty(userInput)) return;
 			if (Session == null) throw new Exception("会话未初始化");
-			LastUserInput = ConvertEncoding(userInput, Encoding.GetEncoding("gb2312"), Encoding.UTF8);
+			LastUserInput = userInput;
 			StringBuilder.Clear();
+			//ChatHistory.Messages.RemoveAll(m => m.AuthorRole == AuthorRole.User);
 			// TODO:解决重复回答
 			await foreach (
 				string text
@@ -143,10 +154,8 @@ namespace DeepSeekApi
 							new ChatHistory.Message(AuthorRole.User, LastUserInput),
 							InferenceParams))
 			{
-				//OutputText = StringBuilder.Append(text).ToString();
-				//OutputText = text;
-				Console.ForegroundColor = (ConsoleColor)11;
-				Console.Write(text);
+				if (!InferenceParams.AntiPrompts.Contains(text))
+					OutputText = text;
 			}
 		}
 		/// <summary>

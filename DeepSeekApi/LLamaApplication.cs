@@ -7,6 +7,19 @@ namespace DeepSeekApi
 {
 	public partial class LLamaApplication
 	{
+		/// <summary>
+		/// 模型路径
+		/// </summary>
+		public static string ModelPath
+		{
+			get
+			{
+				string path = Path.Combine(Directory.GetCurrentDirectory(), "Resources", ConfigManager.Data.Model[0]);
+				if (!File.Exists(path))
+					throw new Exception($"模型路径不存在：{path}，请检查模型文件是否存在");
+				return path;
+			}
+		}
 		public static string SystemRole => ConfigManager.Data.SystemRole;
 		/// <summary>
 		/// 编码转化
@@ -21,21 +34,21 @@ namespace DeepSeekApi
 			byte[] convertedBytes = Encoding.Convert(original, target, bytes);
 			return target.GetString(convertedBytes);
 		}
-
-		public static async Task Run2()
+		/// <summary>
+		/// 主运行程序
+		/// </summary>
+		/// <returns></returns>
+		public static async Task Run()
 		{
 			// Register provider for GB2312 encoding
 			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-			//Console.ForegroundColor = ConsoleColor.Yellow;
-			//Console.WriteLine("This example shows how to use Chinese with gb2312 encoding, which is common in windows. It's recommended" +
-			//	" to use https://huggingface.co/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q5_0.gguf, which has been verified by LLamaSharp developers.");
 			Console.ForegroundColor = ConsoleColor.White;
 
 			ModelParams parameters = new ModelParams(ModelPath)
 			{
 				ContextSize = 1024,
-				GpuLayerCount = 5,
+				GpuLayerCount = 80,
 				Encoding = Encoding.UTF8
 			};
 			using LLamaWeights model = LLamaWeights.LoadFromFile(parameters);
@@ -44,7 +57,9 @@ namespace DeepSeekApi
 
 			ChatSession session;
 			ChatHistory chatHistory = new ChatHistory();
-			chatHistory.AddMessage(AuthorRole.System, SystemRole);
+			chatHistory.AddMessage(AuthorRole.System, ConvertEncoding(ConfigManager.Data.SystemRole, Encoding.GetEncoding("gb2312"), Encoding.UTF8));
+			chatHistory.AddMessage(AuthorRole.User, ConvertEncoding(ConfigManager.Data.UserRole, Encoding.GetEncoding("gb2312"), Encoding.UTF8));
+			chatHistory.AddMessage(AuthorRole.Assistant, ConvertEncoding(ConfigManager.Data.AssistantRole, Encoding.GetEncoding("gb2312"), Encoding.UTF8));
 			session = new ChatSession(executor, chatHistory);
 
 			session
@@ -53,7 +68,7 @@ namespace DeepSeekApi
 			InferenceParams inferenceParams = new InferenceParams()
 			{
 				MaxTokens = -1,
-				AntiPrompts = new List<string> { "用户：" }
+				//AntiPrompts = new List<string> { "用户：" }
 			};
 
 			Console.ForegroundColor = ConsoleColor.Yellow;

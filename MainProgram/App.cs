@@ -42,6 +42,6 @@ public sealed class App
 				LLamaManager.AskAsync(input).GetAwaiter().GetResult();
 			}
 		}
-		//LLamaApplication.Run2().GetAwaiter().GetResult();
+		//LLamaApplication.Run().GetAwaiter().GetResult();
 	}
 }
