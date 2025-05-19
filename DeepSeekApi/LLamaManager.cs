@@ -146,7 +146,6 @@ namespace DeepSeekApi
 			if (Session == null) throw new Exception("会话未初始化");
 			LastUserInput = userInput;
 			StringBuilder.Clear();
-			//ChatHistory.Messages.RemoveAll(m => m.AuthorRole == AuthorRole.User);
 			// TODO:解决重复回答
 			await foreach (
 				string text

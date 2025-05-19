@@ -59,6 +59,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 public partial class Solution
 {
@@ -81,153 +82,6 @@ public partial class Solution
 			}
 			return result;
 		}
-#if false
-		// 计算对称轴
-		int count = n / 2 + n % 2;
-		for (int i = 0; i < count; i++)
-		{
-			// 初始解法
-			List<StringBuilder> board1 = GetEmptyBoard(n);
-			// 镜像解
-			List<StringBuilder> board2 = GetEmptyBoard(n);
-			// 棋盘解标识符
-			bool hasBoardSolution = true;
-			board1[0][i] = board2[0][n - 1 - i] = 'Q';
-			// 从第二行开始枚举
-			for (int row = 1; row < n; row++)
-			{
-				// 行有解标识符
-				bool rowHasSolution = true;
-				// 从第row行第col列开始枚举
-				for (int col = 0; col < n; col++)
-				{
-					// 先清空当前行
-					board1[row] = NewRow(n);
-					board2[row] = NewRow(n);
-					// 皇后棋子位置合法标识符
-					bool isValid = true;
-					#region 合法性检测算法
-					// 与第一行皇后在同一列上，跳过
-					if (col == i) continue;
-					// 从第0列开始检测合法性
-					for (int j = 0; j < col; j++)
-					{
-						// 计算偏移量
-						int offset = Math.Abs(col - j);
-						// 以棋子为原点建立坐标系，第三以及第四象限默认合法。
-						// 检测第二象限是否合法
-						if (row - offset >= 0 &&
-							board1[row - offset][j] == 'Q')
-						{
-							isValid = false;
-							break;
-						}
-						// 检测第一象限是否合法
-						if (col + offset < n
-							&& row - offset >= 0
-							&& board1[row - offset][col + offset] == 'Q')
-						{
-							isValid = false;
-							break;
-						}
-					}
-					// 检测y轴是否合法
-					for (int k = 0; k < row; k++)
-					{
-						if (board1[k][col] == 'Q')
-						{
-							isValid = false;
-							break;
-						}
-					}
-					// 默认x轴没有棋子，x轴默认合法
-					#endregion
-					#region 处理合法性结果
-					// 合法性通过，当前位置可以放置皇后
-					// 计算下一行皇后的位置
-					if (isValid)
-					{
-						rowHasSolution = true;
-						if (row == n - 1)
-						{
-							// 当前皇后为最后一行
-							// 找到了一组解，将其记录到结果中
-							board1[row][col] = 'Q';
-							board2[row][n - 1 - col] = 'Q';
-							List<string> boardResult1 = new List<string>();
-							List<string> boardResult2 = new List<string>();
-
-							for (int s = 0; s < n; s++)
-							{
-								boardResult1.Add(board1[s].ToString());
-								boardResult2.Add(board2[s].ToString());
-							}
-							result.Add(boardResult1);
-							if (i < count - 1)
-								// 存储镜像解
-								result.Add(boardResult2);
-							// 记录完以后寻找下一组解
-
-							row = row - 1;
-							col = board1[row].ToString().IndexOf('Q');
-							col++;
-							continue;
-						}
-						else
-						{
-							// 找到了当前行的一个解
-							// 记录棋盘，并移动到下一行
-							board1[row][col] = 'Q';
-							board2[row][n - 1 - col] = 'Q';
-							break;
-						}
-					}
-					else
-					{
-						// 检测是否为最终列
-						if (col < n - 1)
-						{
-							// 不为最终列，说明本行还存在潜在解
-							continue;
-						}
-						// 最终列，行无解
-						rowHasSolution = false;
-						// 当前无解，即上一行皇后的位置不合法
-						// 需要回溯到上一个皇后的位置
-						if (row - 1 >= 1)
-						{
-							row = row - 1;
-							col = board1[row].ToString().IndexOf('Q');
-							col++;
-							continue;
-						}
-						// 不可回溯，无解，跳出循环
-						hasBoardSolution = false;
-						break;
-					}
-					#endregion
-				}
-				//// 当前行无解，说明上一行皇后的位置不对，
-				//// 回溯上一个答案
-				//if (!hasBoardSolution)
-				//{
-				//	if (row - 1 >= 1)
-				//	{
-				//		board1[row] = new StringBuilder(new string('.', n));
-				//		board2[row] = new StringBuilder(new string('.', n));
-				//		row = row - 1;
-				//		board1[row] = new StringBuilder(new string('.', n));
-				//		board2[row] = new StringBuilder(new string('.', n));
-				//		hasBoardSolution = true;
-				//		continue;
-				//	}
-				//	// 已经是第二行了，
-				//	// 说明起始皇后落子无解，跳出循环
-				//	break;
-				//}
-			}
-		}
-#endif
 		Stack<(int, int)> QueenStack = new Stack<(int, int)>();
 		//内置递归方法
 		void TryAddPoint((int, int) input)
@@ -258,13 +112,46 @@ public partial class Solution
 				{
 					// 行列不合法，当前点不合法
 					// 移动到下一个点
-					TryAddPoint((input.Item1, input.Item2 + 1));
+					List<int> validCol = new List<int>();
+					for (int i = 0; i < n; i++)
+					{
+						if(i>input.Item2)
+							validCol.Add(i);
+					}
+					foreach ((int, int) p in QueenStack)
+					{
+						if (validCol.Contains(p.Item2))
+						{
+							validCol.Remove(p.Item2);
+						}
+					}
+					validCol.Sort();
+					if (validCol.Count > 0)
+						TryAddPoint((input.Item1, validCol[0]));
+					else
+						TryAddPoint((input.Item1 + 1, n));
 					return;
 				}
 			}
 			// 合法性通过
 			// 记录当前点
 			QueenStack.Push(input);
+			Console.Clear();
+			IList<StringBuilder> _bordSolution = GetEmptyBoard(n);
+			foreach ((int, int) point in QueenStack)
+			{
+				_bordSolution[point.Item1][point.Item2] = 'Q';
+			}
+			foreach (StringBuilder rowStringBuilder in _bordSolution)
+			{
+				Console.Write("|");
+				foreach (char pos in rowStringBuilder.ToString())
+				{
+					Console.Write($"{pos}|");
+				}
+				Console.WriteLine();
+			}
+			Thread.Sleep(1000);
 			if (QueenStack.Count < n)
 			{
 				// 还未找到一组完整的解
@@ -281,6 +168,7 @@ public partial class Solution
 						validCol.Remove(p.Item2);
 					}
 				}
+				validCol.Sort();
 				TryAddPoint((input.Item1 + 1, validCol[0]));
 				return;
 			}

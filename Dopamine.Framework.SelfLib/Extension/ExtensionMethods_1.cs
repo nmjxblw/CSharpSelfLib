@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Text;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Dopamine.Framework
@@ -41,6 +44,52 @@ namespace Dopamine.Framework
 		public static string ToString<T>(this T[] input)
 		{
 			return string.Join(",", input);
+		}
+		/// <summary>
+		/// 获取最大值
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="input"></param>
+		/// <returns></returns>
+		public static T Max<T>(this IEnumerable<T> input) where T : IComparable
+		{
+			if (!input.Any()) return default;
+			T result = input.GetEnumerator().Current;
+			foreach (T v in input)
+			{
+				result = v.CompareTo(result) > 0 ? v : result;
+			}
+			return result;
+		}
+		/// <summary>
+		/// 泛型钳夹
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="input"></param>
+		/// <param name="LowerLimit"></param>
+		/// <param name="UpperLimit"></param>
+		/// <returns></returns>
+		public static T Clamp<T>(this T input, T LowerLimit, T UpperLimit) where T : IComparable
+		{
+			T low = LowerLimit.CompareTo(UpperLimit) > 0 ? UpperLimit : LowerLimit;
+			T high = UpperLimit.CompareTo(LowerLimit) > 0 ? UpperLimit : LowerLimit;
+			input = input.CompareTo(low) > 0 ? input : low;
+			input = input.CompareTo(high) < 0 ? input : high;
+			return input;
+		}
+
+		/// <summary>
+		/// 将文本从原始编码格式转化为目标编码格式
+		/// </summary>
+		/// <param name="inputString"></param>
+		/// <param name="original"></param>
+		/// <param name="target"></param>
+		/// <returns></returns>
+		public static string ConvertEncoding(this string inputString, Encoding original, Encoding target)
+		{
+			byte[] bytes = original.GetBytes(inputString);
+			byte[] convertedBytes = Encoding.Convert(original, target, bytes);
+			return target.GetString(convertedBytes);
 		}
 	}
 }

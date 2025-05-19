@@ -23,7 +23,7 @@ namespace LeetCode
 			stopwatch.Restart();
 			Solution solution = new Solution();
 			// 运行测试
-			solution.PrintSolveNQueens(6);
+			solution.PrintSolveNQueens(9);
 			stopwatch.Stop();
 			Console.WriteLine($"执行时间：{((double)stopwatch.ElapsedTicks / Stopwatch.Frequency * 1000f):F3}ms");
 		}

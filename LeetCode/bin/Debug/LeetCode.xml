@@ -635,6 +635,14 @@
             </summary>
             <param name="n">棋盘尺寸</param>
         </member>
+        <member name="M:Solution.TotalNQueens(System.Int32)">
+            <summary>
+            给定一个整数 n ，返回 n 皇后问题 不同的解决方案的数量。
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:Solution.IsPalindrome(System.Int32)">
             <summary>
             判断一个整数是否是回文数

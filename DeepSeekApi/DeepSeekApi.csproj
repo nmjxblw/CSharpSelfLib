@@ -25,9 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resources\deepseek-r1-distill-llama-8b-q4_k_m.gguf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>

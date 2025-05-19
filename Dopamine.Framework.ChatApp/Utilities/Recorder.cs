@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Dopamine.Framework;
+using Dopamine.Framework.Extension;
 namespace Dopamine.ChatApp
 {
 	/// <summary>

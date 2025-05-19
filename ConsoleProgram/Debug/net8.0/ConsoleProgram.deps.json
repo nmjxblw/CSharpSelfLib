@@ -6,9 +6,9 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ConsoleProgram/2025.05.19.19": {
+      "ConsoleProgram/2025.05.19.20": {
         "dependencies": {
-          "DeepSeekApi": "2025.5.19.19",
+          "DeepSeekApi": "2025.5.19.20",
           "Dopamine": "2025.5.18.15"
         },
         "runtime": {
@@ -2219,15 +2219,15 @@
           }
         }
       },
-      "DeepSeekApi/2025.5.19.19": {
+      "DeepSeekApi/2025.5.19.20": {
         "dependencies": {
           "LLamaSharp": "0.24.0",
           "LLamaSharp.Backend.Cpu": "0.24.0"
         },
         "runtime": {
           "DeepSeekApi.dll": {
-            "assemblyVersion": "2025.5.19.19",
-            "fileVersion": "2025.5.19.19"
+            "assemblyVersion": "2025.5.19.20",
+            "fileVersion": "2025.5.19.20"
           }
         }
       },
@@ -2274,7 +2274,7 @@
     }
   },
   "libraries": {
-    "ConsoleProgram/2025.05.19.19": {
+    "ConsoleProgram/2025.05.19.20": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3469,7 +3469,7 @@
       "path": "textcopy/6.2.1",
       "hashPath": "textcopy.6.2.1.nupkg.sha512"
     },
-    "DeepSeekApi/2025.5.19.19": {
+    "DeepSeekApi/2025.5.19.20": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

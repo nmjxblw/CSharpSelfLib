@@ -50,7 +50,13 @@
 
 // @lc code=start
 public partial class Solution {
-    public int TotalNQueens(int n) {
+	/// <summary>
+	/// 给定一个整数 n ，返回 n 皇后问题 不同的解决方案的数量。
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
+	/// <exception cref="System.NotImplementedException"></exception>
+	public int TotalNQueens(int n) {
 		throw new System.NotImplementedException();
 	}
 }
