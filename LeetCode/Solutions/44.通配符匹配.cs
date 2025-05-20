@@ -64,10 +64,20 @@
  */
 
 // @lc code=start
-public partial class Solution {
+public partial class Solution
+{
+#if 通配符匹配
+    /// <summary>
+    /// 通配符匹配
+    /// </summary>
+    /// <param name="s"></param>
+    /// <param name="p"></param>
+    /// <returns></returns>
+    /// <exception cref="System.NotImplementedException"></exception>
     public bool IsMatch(string s, string p) {
 		throw new System.NotImplementedException();
 	}
+#endif
 }
 // @lc code=end
 

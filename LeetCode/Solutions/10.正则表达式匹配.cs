@@ -64,7 +64,7 @@
 // @lc code=start
 public partial class Solution
 {
-#if false
+#if 正则表达式匹配
 	public bool IsMatch(string s, string p) {
 		return default;
 	}

@@ -47,10 +47,17 @@
  */
 
 // @lc code=start
+using System;
 public partial class Solution {
+    /// <summary>
+    /// 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+    /// </summary>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    /// <exception cref="System.NotImplementedException"></exception>
     public int Trap(int[] height) {
-		throw new System.NotImplementedException();
-	}
+		throw new System.Exception("Not Implemented");
+    }
 }
 // @lc code=end
 

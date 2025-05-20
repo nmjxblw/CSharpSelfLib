@@ -109,10 +109,20 @@
  */
 
 // @lc code=start
-public partial class Solution {
+
+public partial class Solution
+{
+#if 标签验证器
+    /// <summary>
+    /// 解析这段代码，并返回它是否合法
+    /// </summary>
+    /// <param name="code"></param>
+    /// <returns></returns>
+    /// <exception cref="System.NotImplementedException"></exception>
     public bool IsValid(string code) {
 		throw new System.NotImplementedException();
 	}
+#endif
 }
 // @lc code=end
 

@@ -138,7 +138,9 @@
     <Compile Include="Solutions\174.地下城游戏.cs" />
     <Compile Include="Solutions\188.买卖股票的最佳时机-iv.cs" />
     <Compile Include="Solutions\198.打家劫舍.cs" />
+    <Compile Include="Solutions\20.有效的括号.cs" />
     <Compile Include="Solutions\207.课程表.cs" />
+    <Compile Include="Solutions\21.合并两个有序链表.cs" />
     <Compile Include="Solutions\210.课程表-ii.cs" />
     <Compile Include="Solutions\212.单词搜索-ii.cs" />
     <Compile Include="Solutions\214.最短回文串.cs" />
@@ -180,6 +182,7 @@
     <Compile Include="Solutions\432.全-o-1-的数据结构.cs" />
     <Compile Include="Solutions\44.通配符匹配.cs" />
     <Compile Include="Solutions\460.lfu-缓存.cs" />
+    <Compile Include="Solutions\482.密钥格式化.cs" />
     <Compile Include="Solutions\488.祖玛游戏.cs" />
     <Compile Include="Solutions\493.翻转对.cs" />
     <Compile Include="Solutions\5.最长回文子串.cs" />
@@ -187,6 +190,7 @@
     <Compile Include="Solutions\516.最长回文子序列.cs" />
     <Compile Include="Solutions\517.超级洗衣机.cs" />
     <Compile Include="Solutions\52.n-皇后-ii.cs" />
+    <Compile Include="Solutions\529.扫雷游戏.cs" />
     <Compile Include="Solutions\552.学生出勤记录-ii.cs" />
     <Compile Include="Solutions\56.合并区间.cs" />
     <Compile Include="Solutions\591.标签验证器.cs" />
