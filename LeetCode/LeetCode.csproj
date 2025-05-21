@@ -120,6 +120,7 @@
     <Compile Include="Solutions\102.二叉树的层序遍历.cs" />
     <Compile Include="Solutions\103.二叉树的锯齿形层序遍历.cs" />
     <Compile Include="Solutions\1032.字符流.cs" />
+    <Compile Include="Solutions\1114.按序打印.cs" />
     <Compile Include="Solutions\115.不同的子序列.cs" />
     <Compile Include="Solutions\119.杨辉三角-ii.cs" />
     <Compile Include="Solutions\1210.穿过迷宫的最少移动次数.cs" />

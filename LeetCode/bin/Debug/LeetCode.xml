@@ -746,6 +746,34 @@
             <param name="duration"></param>
             <returns></returns>
         </member>
+        <member name="T:Foo">
+            <summary>
+            解决方法代理类
+            </summary>
+        </member>
+        <member name="M:Foo.#ctor">
+            <summary>
+            按序打印，构造函数
+            </summary>
+        </member>
+        <member name="M:Foo.First(System.Action)">
+            <summary>
+            第一个方法
+            </summary>
+            <param name="printFirst"></param>
+        </member>
+        <member name="M:Foo.Second(System.Action)">
+            <summary>
+            第二个方法
+            </summary>
+            <param name="printSecond"></param>
+        </member>
+        <member name="M:Foo.Third(System.Action)">
+            <summary>
+            第三个方法
+            </summary>
+            <param name="printThird"></param>
+        </member>
         <member name="T:StreamChecker">
             <summary>
             字符流
@@ -795,6 +823,40 @@
         <member name="M:NestedIterator.Next">
             <summary>
             返回下一个元素
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:RandomizedSet">
+            <summary>
+            设计一个支持在平均时间复杂度 O(1) 下，进行插入、删除和获取随机元素的集合。
+            </summary>
+        </member>
+        <member name="M:RandomizedSet.#ctor">
+            <summary>
+            构造集合对象
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RandomizedSet.Insert(System.Int32)">
+            <summary>
+            向集合中插入一个元素，如果元素已经存在，则返回 false，否则返回 true。
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RandomizedSet.Remove(System.Int32)">
+            <summary>
+            从集合中删除一个元素，如果元素不存在，则返回 false，否则返回 true。
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RandomizedSet.GetRandom">
+            <summary>
+            随机返回集合中的一个元素，要求每个元素被返回的概率相同。
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
