@@ -64,22 +64,31 @@
  */
 using System;
 using System.Collections.Generic;
+
 public partial class Solution
 {
     /// <summary>
     /// 合并两个有序链表
     /// </summary>
-    /// <param name="list1"></param>
-    /// <param name="list2"></param>
+    /// <param name="node1"></param>
+    /// <param name="node2"></param>
     /// <returns></returns>
-    public ListNode MergeTwoLists(ListNode list1, ListNode list2) {
-        if(list1 == null) return list2;
-        ListNode root = list1;
-        ListNode temp1 = root,temp2 = list2;
-        //while (list2 != null) { 
-        //    if(temp1.next.val > )
-        //}
-        return root;
+    public ListNode MergeTwoLists(ListNode node1, ListNode node2)
+    {
+        if (node1 == null)
+            return node2;
+        if (node2 == null)
+            return node1;
+        if (node1.val <= node2.val)
+        {
+            node1.next = MergeTwoLists(node1.next, node2);
+            return node1;
+        }
+        else
+        {
+            node2.next = MergeTwoLists(node1, node2.next);
+            return node2;
+        }
     }
 }
 // @lc code=end
