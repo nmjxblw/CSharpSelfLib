@@ -346,6 +346,39 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="T:Node">
+            <summary>
+            图节点
+            </summary>
+        </member>
+        <member name="F:Node.val">
+            <summary>
+            节点值
+            </summary>
+        </member>
+        <member name="F:Node.neighbors">
+            <summary>
+            邻接节点
+            </summary>
+        </member>
+        <member name="M:Node.#ctor">
+            <summary>
+            图节点构造函数
+            </summary>
+        </member>
+        <member name="M:Node.#ctor(System.Int32)">
+            <summary>
+            图节点构造函数
+            </summary>
+            <param name="_val"></param>
+        </member>
+        <member name="M:Node.#ctor(System.Int32,System.Collections.Generic.List{Node})">
+            <summary>
+            图节点构造函数
+            </summary>
+            <param name="_val"></param>
+            <param name="_neighbors"></param>
+        </member>
         <member name="T:Point">
             <summary>
             点结构
@@ -578,6 +611,13 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:Solution.CloneGraph(Node)">
+            <summary>
+            给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
         <member name="M:Solution.LongestCommonPrefix(System.String[])">
             <summary>
             查找字符串数组中的最长公共前缀
@@ -600,6 +640,21 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:Solution.IsValid(System.String)">
+            <summary>
+            给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Solution.MergeTwoLists(ListNode,ListNode)">
+            <summary>
+            合并两个有序链表
+            </summary>
+            <param name="node1"></param>
+            <param name="node2"></param>
+            <returns></returns>
+        </member>
         <member name="M:Solution.Trap(System.Int32[])">
             <summary>
             给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
@@ -615,6 +670,14 @@
             <param name="password"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Solution.LicenseKeyFormatting(System.String,System.Int32)">
+            <summary>
+            密钥格式化
+            </summary>
+            <param name="s"></param>
+            <param name="k"></param>
+            <returns></returns>
         </member>
         <member name="M:Solution.SolveNQueens(System.Int32)">
             <summary>
@@ -659,11 +722,28 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:Solution.UpdateBoard(System.Char[][],System.Int32[])">
+            <summary>
+            扫雷游戏
+            </summary>
+            <param name="board"></param>
+            <param name="click"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
         <member name="M:Solution.IsPalindrome(System.Int32)">
             <summary>
             判断一个整数是否是回文数
             </summary>
             <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Solution.FindPoisonedDuration(System.Int32[],System.Int32)">
+            <summary>
+            提莫在《英雄联盟》游戏中是一个非常可爱的角色，他的技能可以让敌人中毒。给你一个整数数组 timeSeries ，表示提莫在每个时间点施放技能的时刻，以及一个整数 duration ，表示提莫的技能在施放后持续多长时间（单位是秒）。返回敌人受到的总中毒时间。
+            </summary>
+            <param name="timeSeries"></param>
+            <param name="duration"></param>
             <returns></returns>
         </member>
         <member name="T:StreamChecker">

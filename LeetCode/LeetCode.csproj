@@ -100,6 +100,7 @@
     <Compile Include="Other\DynamicClass\DynamicClass.cs" />
     <Compile Include="Other\Structure\ListNode.cs" />
     <Compile Include="Other\Structure\NestedInteger.cs" />
+    <Compile Include="Other\Structure\Node.cs" />
     <Compile Include="Other\Structure\Point.cs" />
     <Compile Include="Other\Structure\TreeNode.cs" />
     <Compile Include="Other\Utilities\JsonHelper.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Solutions\127.单词接龙.cs" />
     <Compile Include="Solutions\13.罗马数字转整数.cs" />
     <Compile Include="Solutions\132.分割回文串-ii.cs" />
+    <Compile Include="Solutions\133.克隆图.cs" />
     <Compile Include="Solutions\135.分发糖果.cs" />
     <Compile Include="Solutions\14.最长公共前缀.cs" />
     <Compile Include="Solutions\140.单词拆分-ii.cs" />
@@ -215,6 +217,7 @@
     <Compile Include="Solutions\85.最大矩形.cs" />
     <Compile Include="Solutions\87.扰乱字符串.cs" />
     <Compile Include="Solutions\9.回文数.cs" />
+    <Compile Include="Solutions\米哈游.中毒时长.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

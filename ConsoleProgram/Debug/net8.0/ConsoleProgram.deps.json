@@ -6,10 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ConsoleProgram/2025.05.19.20": {
+      "ConsoleProgram/2025.05.21.09": {
         "dependencies": {
-          "DeepSeekApi": "2025.5.19.20",
-          "Dopamine": "2025.5.18.15"
+          "DeepSeekApi": "2025.5.20.8",
+          "Dopamine": "2025.5.20.8"
         },
         "runtime": {
           "ConsoleProgram.dll": {}
@@ -2219,19 +2219,19 @@
           }
         }
       },
-      "DeepSeekApi/2025.5.19.20": {
+      "DeepSeekApi/2025.5.20.8": {
         "dependencies": {
           "LLamaSharp": "0.24.0",
           "LLamaSharp.Backend.Cpu": "0.24.0"
         },
         "runtime": {
           "DeepSeekApi.dll": {
-            "assemblyVersion": "2025.5.19.20",
-            "fileVersion": "2025.5.19.20"
+            "assemblyVersion": "2025.5.21.9",
+            "fileVersion": "2025.5.21.9"
           }
         }
       },
-      "Dopamine/2025.5.18.15": {
+      "Dopamine/2025.5.20.8": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Core": "5.3.0",
           "Microsoft.AspNet.WebApi.SelfHost": "5.3.0",
@@ -2242,8 +2242,8 @@
         },
         "runtime": {
           "Dopamine.dll": {
-            "assemblyVersion": "2025.5.19.19",
-            "fileVersion": "2025.5.19.19"
+            "assemblyVersion": "2025.5.21.9",
+            "fileVersion": "2025.5.21.9"
           }
         }
       },
@@ -2274,7 +2274,7 @@
     }
   },
   "libraries": {
-    "ConsoleProgram/2025.05.19.20": {
+    "ConsoleProgram/2025.05.21.09": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3469,12 +3469,12 @@
       "path": "textcopy/6.2.1",
       "hashPath": "textcopy.6.2.1.nupkg.sha512"
     },
-    "DeepSeekApi/2025.5.19.20": {
+    "DeepSeekApi/2025.5.20.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Dopamine/2025.5.18.15": {
+    "Dopamine/2025.5.20.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

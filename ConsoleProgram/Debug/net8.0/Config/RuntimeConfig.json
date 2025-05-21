@@ -1,8 +1,27 @@
 {
-	"ApiKey": "sk-50b751cb6c8445b2a79dfcaa65a30e60",
-	"ApiUrl": "https://api.deepseek.com/v1/chat/completions",
-	"SystemRole": "你是一个高效的助理，使用简介的语句回答用户的问题。",
-	"UserRole": "你好。",
-	"AssistantRole": "请问有什么能帮到你？",
-	"Model": [ "DeepSeek-R1-Distill-Qwen-7B-Q8_0.gguf" ]
+	"Version": "beta 1.0.0",
+	"BeatInterval": 1000, //心跳间隔1000ms
+	"LocalIP": {
+		"Address": "127.0.0.1",
+		"Port": {
+			"Beat": 10001, //心跳端口
+			"Business": 10002 //业务端口
+		}
+	},
+	"RemoteIP": {
+		"Address": "localhost",
+		"Port": {
+			"Beat": 11011,
+			"Business": 11012
+		}
+	},
+	"Url": {
+		"Beat": "http://localhost:10001//"
+	},
+	"Format": {
+		"Receive": "^\\s*cmd\\s*=\\s*(?<cmd>\\d{4})\\s*,\\s*sn\\s*=\\s*(?<sn>\\d+)\\s*,\\s*data\\s*=\\s*(?<data>.*)$",
+		"Send": "cmd={0},sn={1},data={2}\r\n"
+	},
+	"AssemblyID": "440100",
+	"BenchID": "400001"
 }
