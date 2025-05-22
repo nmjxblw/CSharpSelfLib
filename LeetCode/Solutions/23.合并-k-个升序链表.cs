@@ -72,9 +72,31 @@
  *     }
  * }
  */
+using System;
+using System.Linq;
+using System.Collections.Generic;
 public partial class Solution {
-    public ListNode MergeKLists(ListNode[] lists) {
-		throw new System.NotImplementedException();
+	/// <summary>
+	/// 合并 K 个升序链表
+	/// </summary>
+	/// <param name="lists"></param>
+	/// <returns></returns>
+	/// <exception cref="System.NotImplementedException"></exception>
+	public ListNode MergeKLists(ListNode[] lists) {
+		ListNode tempMin = lists[0];
+		for(int i = 0; i < lists.Length; i++)
+		{
+			if (lists[i] == null)
+			{
+				return lists[i];
+			}
+			if (tempMin.val <= lists[i].val)
+			{
+				tempMin = lists[i];
+			}
+		}
+		tempMin.next = MergeKLists(lists.Where(x => x != tempMin).ToArray());
+		return MergeKLists(lists);
 	}
 }
 // @lc code=end
