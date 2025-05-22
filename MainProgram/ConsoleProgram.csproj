@@ -19,7 +19,7 @@
     <Using Include="System.Text" />
     <Using Include="System.Text.Encodings.Web" />
     <Using Include="System.Text.Json" />
-    <Using Include="System.Security"/>
+    <Using Include="System.Security" />
     <Using Include="Dopamine" />
   </ItemGroup>
 

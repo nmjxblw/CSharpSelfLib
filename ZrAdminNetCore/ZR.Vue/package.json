@@ -1,0 +1,80 @@
+{
+  "name": "zradmin",
+  "description": "ZrAdmnin.NET后台管理",
+  "author": "ZR",
+  "scripts": {
+    "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
+    "build:prod": "vue-cli-service build",
+    "build:stage": "vue-cli-service build --mode staging"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^6.0.2",
+    "@riophae/vue-treeselect": "0.4.0",
+    "axios": "^0.21.4",
+    "clipboard": "2.0.8",
+    "core-js": "3.6.5",
+    "echarts": "^5.1.1",
+    "echarts-gl": "^2.0.8",
+    "echarts-wordcloud": "^2.0.0",
+    "element-ui": "2.15.6",
+    "file-saver": "2.0.1",
+    "fuse.js": "3.4.4",
+    "highlight.js": "^11.2.0",
+    "js-beautify": "1.10.2",
+    "js-cookie": "2.2.0",
+    "jsencrypt": "3.0.0-rc.1",
+    "less-loader": "^6.0.0",
+    "mavon-editor": "^2.9.1",
+    "normalize.css": "7.0.0",
+    "nprogress": "0.2.0",
+    "path-to-regexp": "2.4.0",
+    "quill": "1.3.7",
+    "screenfull": "4.2.0",
+    "sortablejs": "1.8.4",
+    "vue": "2.6.12",
+    "vue-count-to": "1.0.13",
+    "vue-cropper": "0.4.9",
+    "vue-router": "3.4.9",
+    "vue-seamless-scroll": "^1.1.23",
+    "vuedraggable": "2.20.0",
+    "vuex": "3.6.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "4.4.4",
+    "@vue/cli-plugin-eslint": "4.4.4",
+    "@vue/cli-service": "4.4.4",
+    "babel-eslint": "10.1.0",
+    "babel-plugin-dynamic-import-node": "2.3.3",
+    "chalk": "4.1.0",
+    "connect": "3.6.6",
+    "eslint": "6.7.2",
+    "eslint-plugin-vue": "6.2.2",
+    "lint-staged": "8.1.5",
+    "runjs": "4.4.2",
+    "sass": "1.32.13",
+    "sass-loader": "10.1.0",
+    "script-ext-html-webpack-plugin": "2.1.3",
+    "svg-sprite-loader": "4.1.3",
+    "vue-template-compiler": "2.6.12",
+    "webpack-bundle-analyzer": "^4.5.0"
+  },
+  "engines": {
+    "node": ">=8.9",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
