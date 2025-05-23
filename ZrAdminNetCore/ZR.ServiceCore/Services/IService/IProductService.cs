@@ -10,7 +10,7 @@ using ZR.Model.Product;
 using ZR.Model.Product.Dto;
 namespace ZR.ServiceCore.Services
 {
-    public interface IProduct : IBaseService<Product>
+    public interface IProductService : IBaseService<Product>
     {
         /// <summary>
         /// 获取产品信息

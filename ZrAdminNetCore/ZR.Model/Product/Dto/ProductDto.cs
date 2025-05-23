@@ -24,7 +24,6 @@ namespace ZR.Model.Product.Dto
         /// 产品uid
         /// </summary>
         /// <remarks>主键，唯一标识编码</remarks>
-        [Required(ErrorMessage = "产品uid不能为空")]
         [ExcelColumn(Name = "产品UID", Width = 15)]
         [ExcelColumnName("产品UID")]
         public string UID { get; set; }
@@ -32,7 +31,6 @@ namespace ZR.Model.Product.Dto
         /// 条形码
         /// </summary>
         /// <remarks>主键，检索标识编码</remarks>
-        [Required(ErrorMessage = "产品条形码不能为空")]
         [ExcelColumn(Name = "产品条形码", Width = 15)]
         [ExcelColumnName("产品条形码")]
         public string Barcode { get; set; }

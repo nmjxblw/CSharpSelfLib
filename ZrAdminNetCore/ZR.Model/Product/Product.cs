@@ -17,13 +17,13 @@ namespace ZR.Model.Product
         /// <summary>
         /// 产品UID
         /// </summary>
-        [SugarColumn(ColumnDescription = "产品UID", ColumnName = "UID", IsPrimaryKey = true, IsIdentity = true, ColumnDataType = StaticConfig.CodeFirst_BigString)]
+        [SugarColumn(ColumnDescription = "产品UID", ColumnName = "UID", Length = 64, ColumnDataType = "varchar")]
         [JsonProperty(propertyName: "uid")]
         public string UID { get; set; }
         /// <summary>
         /// 产品条形码
         /// </summary>
-        [SugarColumn(ColumnDescription = "产品条形码", ColumnName = "Barcode", IsPrimaryKey = true, ColumnDataType = StaticConfig.CodeFirst_BigString)]
+        [SugarColumn(ColumnDescription = "产品条形码", ColumnName = "Barcode", Length = 64, ColumnDataType = "varchar")]
         [JsonProperty(propertyName: "barcode")]
         public string Barcode { get; set; }
         /// <summary>

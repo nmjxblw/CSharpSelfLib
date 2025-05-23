@@ -38,6 +38,7 @@ namespace ZR.Admin.WebApi.Extensions
                 c.SwaggerEndpoint("sys/swagger.json", "系统管理");
                 c.SwaggerEndpoint("article/swagger.json", "文章管理");
                 c.SwaggerEndpoint("v1/swagger.json", "business");
+                c.SwaggerEndpoint("product/swagger.json", "产品管理");
                 c.DocExpansion(DocExpansion.None); //->修改界面打开时自动折叠
             });
         }
@@ -68,6 +69,13 @@ namespace ZR.Admin.WebApi.Extensions
                     Title = "ZrAdmin.NET Api",
                     Version = "v1",
                     Description = "",
+                });
+                c.SwaggerDoc("product", new OpenApiInfo
+                {
+                    Title = "ZrAdmin.NET Api",
+                    Version = "v1",
+                    Description = "产品管理",
+                    Contact = new OpenApiContact { Name = "ZRAdmin doc", Url = new Uri("https://www.izhaorui.cn/doc") }
                 });
                 try
                 {
