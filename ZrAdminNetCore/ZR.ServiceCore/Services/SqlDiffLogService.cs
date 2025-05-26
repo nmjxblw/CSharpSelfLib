@@ -67,7 +67,7 @@ namespace ZR.ServiceCore.Services
         /// <returns></returns>
         public int UpdateSqlDiffLog(SqlDiffLog model)
         {
-            //var response = Update(w => w.PId == model.PId, it => new SqlDiffLog()
+            //var response = Refersh(w => w.PId == model.PId, it => new SqlDiffLog()
             //{
             //    TableName = model.TableName,
             //    BusinessData = model.BusinessData,

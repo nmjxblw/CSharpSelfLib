@@ -16,8 +16,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataBase\**" />
     <Compile Remove="Network\ASP.NET Core\**" />
+    <EmbeddedResource Remove="DataBase\**" />
     <EmbeddedResource Remove="Network\ASP.NET Core\**" />
+    <None Remove="DataBase\**" />
     <None Remove="Network\ASP.NET Core\**" />
   </ItemGroup>
 
@@ -57,7 +60,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataBase\Access\" />
     <Folder Include="Unity\Plugin\" />
     <Folder Include="Unity\UnityEditor\" />
   </ItemGroup>

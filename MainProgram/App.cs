@@ -20,28 +20,28 @@ public sealed class App
 	/// </summary>
 	public void Start()
 	{
-		LLamaManager.OutputTextChangeEvent += (text) =>
-		{
-			Console.ForegroundColor = (ConsoleColor)11;
-			Console.Write(text);
-		};
-		Console.ForegroundColor = ConsoleColor.Yellow;
-		Console.Write("\nThe chat session has started.");
-		while (true)
-		{
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.Write("\nUser: ");
-			Console.ForegroundColor = ConsoleColor.Green;
-			string input = Console.ReadLine() ?? string.Empty;
-			if (input.ToLower().Equals("exit") || input.ToLower().Equals("quit") || input.ToLower().Equals("q"))
-			{
-				break;
-			}
-			else
-			{
-				LLamaManager.AskAsync(input).GetAwaiter().GetResult();
-			}
-		}
+		//LLamaManager.OutputTextChangeEvent += (text) =>
+		//{
+		//	Console.ForegroundColor = (ConsoleColor)11;
+		//	Console.Write(text);
+		//};
+		//Console.ForegroundColor = ConsoleColor.Yellow;
+		//Console.Write("\nThe chat session has started.");
+		//while (true)
+		//{
+		//	Console.ForegroundColor = ConsoleColor.Yellow;
+		//	Console.Write("\nUser: ");
+		//	Console.ForegroundColor = ConsoleColor.Green;
+		//	string input = Console.ReadLine() ?? string.Empty;
+		//	if (input.ToLower().Equals("exit") || input.ToLower().Equals("quit") || input.ToLower().Equals("q"))
+		//	{
+		//		break;
+		//	}
+		//	else
+		//	{
+		//		LLamaManager.AskAsync(input).GetAwaiter().GetResult();
+		//	}
+		//}
 		//LLamaApplication.Run().GetAwaiter().GetResult();
 	}
 }

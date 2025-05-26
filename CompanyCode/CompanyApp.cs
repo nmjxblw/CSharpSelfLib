@@ -14,8 +14,7 @@ namespace CompanyCode
         /// </summary>
         public void Start()
         {
-            float[] test = new float[] { 1f };
-            string.Join(";", test).ShowInConsole();
+           DateTimeAPIExample.Show(); // 显示当前时间的各种格式
         }
     }
 }
