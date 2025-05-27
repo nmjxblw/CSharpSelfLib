@@ -57,25 +57,25 @@ namespace ZR.Common
         //                switch (p.PropertyType.Name.ToLower())
         //                {
         //                    case "string":
-        //                        p.SetValue(result, cell.GetValue<string>());
+        //                        p.TrySetFieldValue(result, cell.GetValue<string>());
         //                        break;
         //                    case "int16":
-        //                        p.SetValue(result, cell.GetValue<short>()); break;
+        //                        p.TrySetFieldValue(result, cell.GetValue<short>()); break;
         //                    case "int32":
-        //                        p.SetValue(result, cell.GetValue<int>()); break;
+        //                        p.TrySetFieldValue(result, cell.GetValue<int>()); break;
         //                    case "int64":
-        //                        p.SetValue(result, cell.GetValue<long>()); break;
+        //                        p.TrySetFieldValue(result, cell.GetValue<long>()); break;
         //                    case "decimal":
-        //                        p.SetValue(result, cell.GetValue<decimal>());
+        //                        p.TrySetFieldValue(result, cell.GetValue<decimal>());
         //                        break;
         //                    case "double":
-        //                        p.SetValue(result, cell.GetValue<double>()); break;
+        //                        p.TrySetFieldValue(result, cell.GetValue<double>()); break;
         //                    case "datetime":
-        //                        p.SetValue(result, cell.GetValue<DateTime>()); break;
+        //                        p.TrySetFieldValue(result, cell.GetValue<DateTime>()); break;
         //                    case "boolean":
-        //                        p.SetValue(result, cell.GetValue<bool>()); break;
+        //                        p.TrySetFieldValue(result, cell.GetValue<bool>()); break;
         //                    case "char":
-        //                        p.SetValue(result, cell.GetValue<string>()); break;
+        //                        p.TrySetFieldValue(result, cell.GetValue<string>()); break;
         //                    default:
         //                        break;
         //                }

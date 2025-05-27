@@ -64,5 +64,12 @@ namespace ZR.ServiceCore.Services
         /// <param name="product"></param>
         /// <returns></returns>
         ProductQueryDto ToDto(Product product);
+        /// <summary>
+        /// 修改特定的产品属性
+        /// </summary>
+        /// <param name="propertyName"></param>
+        /// <param name="product"></param>
+        /// <returns></returns>
+        int ModifyProperty(string propertyName, Product product);
     }
 }

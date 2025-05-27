@@ -10,9 +10,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using ZR.Infrastructure.Helper;
 using ZR.Model;
 using ZR.Model.Product;
 using ZR.Model.Product.Dto;
@@ -196,6 +198,43 @@ namespace ZR.ServiceCore.Services
             }
             product.LatesetUpdateTime = DateTime.Now.ToLocalTime();
             return product;
+        }
+
+        public int ModifyProperty(string propertyName, Product product)
+        {
+            Product temp = GetInfo(product.UID);
+            if (temp == null || temp == default)
+            {
+                return 0;
+            }
+            // 使用反射设置属性值
+            PropertyInfo propertyInfo = product.GetType()
+                .GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+            if (propertyInfo == null)
+            {
+                return 0;
+            }
+            if (temp.TrySetPropertyValue(propertyName, propertyInfo.GetValue(product)))
+            {
+                return Update(w => w.UID == product.UID, it => new Product
+                {
+                    UID = temp.UID,
+                    Barcode = temp.Barcode,
+                    Model = temp.Model,
+                    Type = temp.Type,
+                    State = temp.State,
+                    Parameter = temp.Parameter,
+                    ManufactureTime = temp.ManufactureTime,
+                    LatesetUpdateTime = temp.LatesetUpdateTime,
+                    Log = temp.Log,
+                    Remark = temp.Remark,
+                });
+            }
+            else
+            {
+                return 0;
+            }
+
         }
     }
 }

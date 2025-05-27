@@ -66,34 +66,34 @@ namespace ZR.Model.Product
         /// 产品UID
         /// </summary>
         [SugarColumn(ColumnDescription = "产品UID", ColumnName = "UID", Length = 64, ColumnDataType = "varchar")]
-        [JsonProperty(propertyName: "uid")]
+        [JsonProperty(propertyName: "UID")]
         public string UID { get; set; }
         /// <summary>
         /// 产品条形码
         /// </summary>
         [SugarColumn(ColumnDescription = "产品条形码", ColumnName = "Barcode", Length = 64, ColumnDataType = "varchar")]
-        [JsonProperty(propertyName: "barcode")]
+        [JsonProperty(propertyName: "Barcode")]
         public string Barcode { get; set; } = string.Empty;
         /// <summary>
         /// 产品型号
         /// </summary>
         /// <remarks>比如LY3001</remarks>
         [SugarColumn(ColumnDescription = "产品型号", ColumnName = "Model", ColumnDataType = StaticConfig.CodeFirst_BigString)]
-        [JsonProperty(propertyName: "model")]
+        [JsonProperty(propertyName: "Model")]
         public string Model { get; set; } = string.Empty;
         /// <summary>
         /// 产品类型
         /// </summary>
         /// <remarks>比如：功率源</remarks>
         [SugarColumn(ColumnDescription = "产品类型", ColumnName = "Type", ColumnDataType = StaticConfig.CodeFirst_BigString)]
-        [JsonProperty(propertyName: "type")]
+        [JsonProperty(propertyName: "Type")]
         public string Type { get; set; } = string.Empty;
         /// <summary>
         /// 产品状态
         /// </summary>
         /// <remarks>如：生产中；出厂检测中；已入库；已发货；已交付；维修中；已报废</remarks>
         [SugarColumn(ColumnDescription = "产品状态", ColumnName = "State", ColumnDataType = StaticConfig.CodeFirst_BigString)]
-        [JsonProperty(propertyName: "state")]
+        [JsonProperty(propertyName: "State")]
         public string State { get; set; } = string.Empty;
 
         /// <summary>
@@ -101,20 +101,20 @@ namespace ZR.Model.Product
         /// </summary>
         /// <remarks>记录一些产品自带的参数，比如：尺寸规格；重量；颜色</remarks>
         [SugarColumn(ColumnDescription = "产品物理参数", ColumnName = "Parameter", ColumnDataType = StaticConfig.CodeFirst_BigString)]
-        [JsonProperty(propertyName: "parameter")]
+        [JsonProperty(propertyName: "Parameter")]
         public string Parameter { get; set; } = string.Empty;
         /// <summary>
         /// 产品生产日期
         /// </summary>
         [SugarColumn(ColumnDescription = "产品生产日期", ColumnName = "ManufactureTime", ColumnDataType = "datetime")]
-        [JsonProperty(propertyName: "manufactureTime")]
+        [JsonProperty(propertyName: "ManufactureTime")]
         [ExcelColumn(Format = "yyyy-MM-dd HH:mm:ss")]
         public DateTime? ManufactureTime { get; set; } = default;
         /// <summary>
         /// 产品最近信息更新日期
         /// </summary>
         [SugarColumn(ColumnDescription = "产品最近信息更新日期", ColumnName = "LatestUpdateTime", ColumnDataType = "datetime")]
-        [JsonProperty(propertyName: "latesetUpdateTime")]
+        [JsonProperty(propertyName: "LatesetUpdateTime")]
         [ExcelColumn(Format = "yyyy-MM-dd HH:mm:ss")]
         public DateTime? LatesetUpdateTime { get; set; } = default;
         /// <summary>
@@ -133,7 +133,7 @@ namespace ZR.Model.Product
         /// </para>
         /// </remarks>
         [SugarColumn(ColumnDescription = "产品日志", ColumnName = "Log", ColumnDataType = StaticConfig.CodeFirst_BigString)]
-        [JsonProperty(propertyName: "log")]
+        [JsonProperty(propertyName: "Log")]
         public string Log { get; set; } = string.Empty;
         /// <summary>
         /// 产品备注/报告
@@ -141,7 +141,7 @@ namespace ZR.Model.Product
         /// <remarks>产品的其他信息,如：
         /// <para>采用六角螺母固定，需配备相应的工具；</para></remarks>
         [SugarColumn(ColumnDescription = "产品备注", ColumnName = "Remark", ColumnDataType = StaticConfig.CodeFirst_BigString)]
-        [JsonProperty(propertyName: "remark")]
+        [JsonProperty(propertyName: "Remark")]
         public new string Remark { get; set; } = string.Empty;
     }
 }

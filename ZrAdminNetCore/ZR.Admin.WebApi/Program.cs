@@ -78,7 +78,7 @@ builder.Services.AddMvc(options =>
     options.JsonSerializerOptions.Converters.Add(new StringConverter());
     //PropertyNamingPolicy属性用于前端传过来的属性的格式策略，目前内置的仅有一种策略CamelCase
     options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-    //options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;//属性可以忽略大小写格式，开启后性能会降低
+    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;//属性可以忽略大小写格式，开启后性能会降低
 });
 //注入SignalR实时通讯，默认用json传输
 builder.Services.AddSignalR()
