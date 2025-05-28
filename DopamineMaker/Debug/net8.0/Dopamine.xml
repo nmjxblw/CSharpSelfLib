@@ -344,6 +344,13 @@
             <param name="bytesCount">字节数<para>范围[1,4]</para></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.GetCRCCheck(System.Byte[])">
+            <summary>
+            计算 CRC16 校验码
+            </summary>
+            <param name="data">输入数据</param>
+            <returns name="crc">输出的 CRC 校验码</returns>
+        </member>
         <member name="T:Dopamine.DLT645_2007">
             <summary>
             DL/T 645-2007多功能电能表通讯协议

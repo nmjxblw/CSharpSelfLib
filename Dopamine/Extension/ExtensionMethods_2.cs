@@ -284,5 +284,43 @@ namespace Dopamine
             }
             return reultStringBuilder.ToString();
         }
+
+        /// <summary>
+        /// 计算 CRC16 校验码
+        /// </summary>
+        /// <param name="data">输入数据</param>
+        /// <returns name="crc">输出的 CRC 校验码</returns>
+        public static byte[] GetCRCCheck(this byte[] data)
+        {
+            // CRC16 校验码初始值
+            ushort crcValue = 0xFFFF;
+
+            // CRC16 多项式
+            const ushort polynomial = 0xA001;
+
+            foreach (byte b in data)
+            {
+                crcValue ^= b; // 将当前字节与 CRC 值异或
+
+                for (int i = 0; i < 8; i++)
+                {
+                    // 检查最低位
+                    if ((crcValue & 0x0001) == 1)
+                    {
+                        crcValue = (ushort)((crcValue >> 1) ^ polynomial); // 右移并与多项式异或
+                    }
+                    else
+                    {
+                        crcValue >>= 1; // 仅右移
+                    }
+                }
+            }
+
+            // 将 CRC 值转换为字节数组
+            byte[] crc = new byte[2];
+            crc[1] = (byte)((crcValue >> 8) & 0xFF); // 高位
+            crc[0] = (byte)(crcValue & 0xFF); // 低位
+            return crc;
+        }
     }
 }

@@ -71,5 +71,18 @@ namespace ZR.ServiceCore.Services
         /// <param name="product"></param>
         /// <returns></returns>
         int ModifyProperty(string propertyName, Product product);
+
+       /// <summary>
+       /// Removes the item associated with the specified unique identifier.
+       /// </summary>
+       /// <param name="uid">The unique identifier of the item to remove. Cannot be null or empty.</param>
+       /// <returns>The number of items removed. Returns 0 if no item with the specified identifier was found.</returns>
+        int Remove(string uid);
+        /// <summary>
+        /// Removes the specified items identified by their unique identifiers.
+        /// </summary>
+        /// <param name="uids">A collection of unique identifiers representing the items to be removed. Cannot be null or empty.</param>
+        /// <returns>The number of items successfully removed.</returns>
+        int[] Remove(IEnumerable<string> uids);
     }
 }

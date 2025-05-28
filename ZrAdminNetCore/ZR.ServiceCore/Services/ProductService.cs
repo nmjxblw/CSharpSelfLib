@@ -5,6 +5,7 @@ using Mapster;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.IdentityModel.Tokens;
+using Org.BouncyCastle.Asn1.X509.Qualified;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -156,6 +157,12 @@ namespace ZR.ServiceCore.Services
 
         public int Refersh(Product product)
         {
+            // 检查产品是否存在，如果不存在则添加新产品
+            if (GetInfo(product.UID).IsEmpty())
+            {
+                return Add(product, false);
+            }
+            // 如果产品存在，则进行软更新
             Product temp = SoftUpdate(product);
             return Update(w => w.UID == product.UID, it => new Product
             {
@@ -179,7 +186,7 @@ namespace ZR.ServiceCore.Services
         public Product SoftUpdate(Product product)
         {
             Product temp = GetInfo(product.UID);
-            if (temp != null || temp != default)
+            if (temp.IsNotEmpty())
             {
                 //制造时间只能使用初始时间，如果要修改制造时间需要访问特殊API
                 product.ManufactureTime = temp.ManufactureTime;
@@ -235,6 +242,38 @@ namespace ZR.ServiceCore.Services
                 return 0;
             }
 
+        }
+
+        public int Remove(string uid)
+        {
+            Product temp = GetInfo(uid);
+            if (temp.IsEmpty())
+            {
+                return 0;
+            }
+            return Context.Deleteable<Product>().Where(x => x.UID == uid).ExecuteCommand();
+        }
+
+        public int[] Remove(IEnumerable<string> uids)
+        {
+            int[] result = new int[uids.Count()];
+            Array.Fill(result, 0);
+            if (uids == null || uids.Count() <= 0)
+            {
+                return result;
+            }
+            int index = 0;
+            foreach (string uid in uids)
+            {
+                Product temp = GetInfo(uid);
+                if (temp.IsEmpty())
+                {
+                    continue;
+                }
+                result[index] = Context.Deleteable<Product>().Where(x => x.UID == uid).ExecuteCommand();
+                index++;
+            }
+            return result;
         }
     }
 }
