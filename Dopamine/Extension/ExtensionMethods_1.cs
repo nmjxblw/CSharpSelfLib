@@ -1,4 +1,5 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Dopamine
 {
