@@ -1,0 +1,10 @@
+{
+  "Name": "Dopamine.StardewValley",
+  "Author": "Octette",
+  "Version": "1.0-beta",
+  "Description": "Self StardewValley",
+  "UniqueID": "Octette.Dopamine.StardewValley",
+  "EntryDll": "Dopamine.StardewValley.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}

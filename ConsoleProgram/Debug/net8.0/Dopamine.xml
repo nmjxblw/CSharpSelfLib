@@ -4,6 +4,16 @@
         <name>Dopamine</name>
     </assembly>
     <members>
+        <member name="T:Dopamine.DateTimeAPIExample">
+            <summary>
+            DataTime API 示例
+            </summary>
+        </member>
+        <member name="M:Dopamine.DateTimeAPIExample.Show">
+            <summary>
+            在控制台显示当前时间的各种格式
+            </summary>
+        </member>
         <member name="T:Dopamine.ConfigManager">
             <summary>
             拓展域名下的Json配置管理器
@@ -224,6 +234,13 @@
             <param name="target"></param>
             <returns></returns>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.CallConsole(System.String)">
+            <summary>
+            呼出控制台执行命令
+            </summary>
+            <param name="args"></param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.GetFrame(System.Net.Sockets.NetworkStream,System.Int32)">
             <summary>
             从流中获取数据帧
@@ -326,6 +343,13 @@
             <param name="inputFloat">输入的浮点数<para>范围在[int.MinValue,int.MaxValue]</para></param>
             <param name="bytesCount">字节数<para>范围[1,4]</para></param>
             <returns></returns>
+        </member>
+        <member name="M:Dopamine.ExtensionMethods.GetCRCCheck(System.Byte[])">
+            <summary>
+            计算 CRC16 校验码
+            </summary>
+            <param name="data">输入数据</param>
+            <returns name="crc">输出的 CRC 校验码</returns>
         </member>
         <member name="T:Dopamine.DLT645_2007">
             <summary>

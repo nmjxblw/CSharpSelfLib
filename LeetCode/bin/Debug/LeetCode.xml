@@ -555,15 +555,6 @@
                     this.next = next;
                 }
             }
-            Definition for singly-linked list.
-            public class ListNode {
-                public int val;
-                public ListNode next;
-                public ListNode(int val=0, ListNode next=null) {
-                    this.val = val;
-                    this.next = next;
-                }
-            }
             Definition for a binary tree node.
             public class TreeNode {
                 public int val;
@@ -654,6 +645,14 @@
             <param name="node1"></param>
             <param name="node2"></param>
             <returns></returns>
+        </member>
+        <member name="M:Solution.MergeKLists(ListNode[])">
+            <summary>
+            合并 K 个升序链表
+            </summary>
+            <param name="lists"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:Solution.Trap(System.Int32[])">
             <summary>
