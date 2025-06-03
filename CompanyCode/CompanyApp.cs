@@ -15,8 +15,8 @@ namespace CompanyCode
         /// </summary>
         public void Start()
         {
-            string testString = "2|||||";
-            testString.TrimEnd('|').ShowInConsole();
+            int test = 99;
+            string result = (test + 1).ToString("X4").ShowInConsole(true);
         }
     }
 }

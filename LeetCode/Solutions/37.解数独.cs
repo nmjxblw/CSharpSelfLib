@@ -57,6 +57,9 @@
  * 
  * 
  */
+using System.Collections.Generic;
+using System.Linq;
+
 namespace LeetCode
 {
     // @lc code=start
@@ -68,7 +71,16 @@ namespace LeetCode
         /// <param name="board"></param>
         public void SolveSudoku(char[][] board)
         {
+            char[] fullChars = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' };
+            for (int row = 0; row < board.Length; row++)
+            {
+                // 获取当前行未使用的字符
+                List<char> validChars = fullChars.Where(c => !board[row].Contains(c)).ToList();
+                for (int col = 0; col < board[row].Length; col++)
+                {
 
+                }
+            }
         }
     }
     // @lc code=end
