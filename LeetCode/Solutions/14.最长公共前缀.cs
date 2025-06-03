@@ -44,49 +44,51 @@
  *
  *
  */
-
-// @lc code=start
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-public partial class Solution
+// @lc code=start
+namespace LeetCode
 {
-    /// <summary>
-    /// 查找字符串数组中的最长公共前缀
-    /// </summary>
-    /// <param name="strs"></param>
-    /// <returns></returns>
-    public string LongestCommonPrefix(string[] strs)
+
+    public partial class Solution
     {
-        if (strs.Length == 0)
-            return "";
-        if (strs.Length == 1)
-            return strs[0];
-        string shortestStr = strs[0];
-        foreach (string str in strs)
+        /// <summary>
+        /// 查找字符串数组中的最长公共前缀
+        /// </summary>
+        /// <param name="strs"></param>
+        /// <returns></returns>
+        public string LongestCommonPrefix(string[] strs)
         {
-            if (str.Length <= 0)
-                return str;
-            else if (shortestStr.Length > str.Length)
-                shortestStr = str;
-        }
-        string result = shortestStr;
-        for (int i = 0; i < shortestStr.Length; i++)
-        {
+            if (strs.Length == 0)
+                return "";
+            if (strs.Length == 1)
+                return strs[0];
+            string shortestStr = strs[0];
             foreach (string str in strs)
             {
-                if (str[i] != shortestStr[i])
+                if (str.Length <= 0)
+                    return str;
+                else if (shortestStr.Length > str.Length)
+                    shortestStr = str;
+            }
+            string result = shortestStr;
+            for (int i = 0; i < shortestStr.Length; i++)
+            {
+                foreach (string str in strs)
                 {
-                    result = shortestStr.Substring(0, i);
-                    return result;
+                    if (str[i] != shortestStr[i])
+                    {
+                        result = shortestStr.Substring(0, i);
+                        return result;
+                    }
                 }
             }
+            return result;
         }
-        return result;
     }
+    // @lc code=end
 }
-// @lc code=end
 // 126/126 cases passed (1 ms)
 // Your runtime beats 88.09 % of csharp submissions
 // Your memory usage beats 90.31 % of csharp submissions (42.4 MB)

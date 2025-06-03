@@ -63,12 +63,23 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public System.Collections.Generic.IList<System.Collections.Generic.IList<int>> GetSkyline(int[][] buildings) {
-        throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 天际线问题
+        /// </summary>
+        /// <param name="buildings"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public System.Collections.Generic.IList<System.Collections.Generic.IList<int>> GetSkyline(int[][] buildings)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

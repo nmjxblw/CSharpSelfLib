@@ -57,12 +57,19 @@
  * 
  * 
  */
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        ///  解数独
+        /// </summary>
+        /// <param name="board"></param>
+        public void SolveSudoku(char[][] board)
+        {
 
-// @lc code=start
-public partial class Solution {
-    public void SolveSudoku(char[][] board) {
-        
+        }
     }
+    // @lc code=end
 }
-// @lc code=end
-

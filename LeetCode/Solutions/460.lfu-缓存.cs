@@ -77,28 +77,33 @@
  * 
  * 
  */
+namespace LeetCode
+{
+    // @lc code=start
+    public class LFUCache
+    {
 
-// @lc code=start
-public class LFUCache {
+        public LFUCache(int capacity)
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public LFUCache(int capacity) {
-		throw new System.NotImplementedException();
-	}
-    
-    public int Get(int key) {
-		throw new System.NotImplementedException();
-	}
-    
-    public void Put(int key, int value) {
-		throw new System.NotImplementedException();
-	}
+        public int Get(int key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Put(int key, int value)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+    /**
+     * Your LFUCache object will be instantiated and called as such:
+     * LFUCache obj = new LFUCache(capacity);
+     * int param_1 = obj.Get(key);
+     * obj.Put(key,value);
+     */
+    // @lc code=end
 }
-
-/**
- * Your LFUCache object will be instantiated and called as such:
- * LFUCache obj = new LFUCache(capacity);
- * int param_1 = obj.Get(key);
- * obj.Put(key,value);
- */
-// @lc code=end
-

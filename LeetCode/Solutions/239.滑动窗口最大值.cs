@@ -54,12 +54,24 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int[] MaxSlidingWindow(int[] nums, int k) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 滑动窗口最大值
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int[] MaxSlidingWindow(int[] nums, int k)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -49,46 +49,49 @@
  *
  *
  */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     public int val;
- *     public ListNode next;
- *     public ListNode(int val=0, ListNode next=null) {
- *         this.val = val;
- *         this.next = next;
- *     }
- * }
- */
 using System;
 using System.Collections.Generic;
-
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 合并两个有序链表
-    /// </summary>
-    /// <param name="node1"></param>
-    /// <param name="node2"></param>
-    /// <returns></returns>
-    public ListNode MergeTwoLists(ListNode node1, ListNode node2)
+    // @lc code=start
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *     public int val;
+     *     public ListNode next;
+     *     public ListNode(int val=0, ListNode next=null) {
+     *         this.val = val;
+     *         this.next = next;
+     *     }
+     * }
+     */
+
+
+    public partial class Solution
     {
-        if (node1 == null)
-            return node2;
-        if (node2 == null)
-            return node1;
-        if (node1.val <= node2.val)
+        /// <summary>
+        /// 合并两个有序链表
+        /// </summary>
+        /// <param name="node1"></param>
+        /// <param name="node2"></param>
+        /// <returns></returns>
+        public ListNode MergeTwoLists(ListNode node1, ListNode node2)
         {
-            node1.next = MergeTwoLists(node1.next, node2);
-            return node1;
-        }
-        else
-        {
-            node2.next = MergeTwoLists(node1, node2.next);
-            return node2;
+            if (node1 == null)
+                return node2;
+            if (node2 == null)
+                return node1;
+            if (node1.val <= node2.val)
+            {
+                node1.next = MergeTwoLists(node1.next, node2);
+                return node1;
+            }
+            else
+            {
+                node2.next = MergeTwoLists(node1, node2.next);
+                return node2;
+            }
         }
     }
+    // @lc code=end
 }
-// @lc code=end

@@ -59,12 +59,25 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public bool ContainsNearbyAlmostDuplicate(int[] nums, int indexDiff, int valueDiff) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 存在重复元素 III
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="indexDiff"></param>
+        /// <param name="valueDiff"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public bool ContainsNearbyAlmostDuplicate(int[] nums, int indexDiff, int valueDiff)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

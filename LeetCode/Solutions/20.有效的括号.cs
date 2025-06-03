@@ -67,48 +67,50 @@
  *
  *
  */
-
-// @lc code=start
 using System;
 using System.Collections.Generic;
+// @lc code=start
 
-public partial class Solution
+namespace LeetCode
 {
-#if true
-    /// <summary>
-    /// 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
-    /// </summary>
-    /// <param name="s"></param>
-    /// <returns></returns>
-    public bool IsValid(string s)
+    public partial class Solution
     {
-        if (string.IsNullOrEmpty(s))
-            return true;
-        Stack<char> stack = new Stack<char>();
-        List<char> leftparentheses = new List<char> { ')', '}', ']' };
-        bool Compare(char a, char b)
+#if true
+        /// <summary>
+        /// 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public bool IsValid(string s)
         {
-            return (a == '(' && b == ')') || (a == '{' && b == '}') || (a == '[' && b == ']');
-        }
-        foreach (char c in s)
-        {
-            if (stack.Count > 0)
+            if (string.IsNullOrEmpty(s))
+                return true;
+            Stack<char> stack = new Stack<char>();
+            List<char> leftparentheses = new List<char> { ')', '}', ']' };
+            bool Compare(char a, char b)
             {
-                if (Compare(stack.Peek(), c))
-                {
-                    stack.Pop();
-                    continue;
-                }
-                else if (leftparentheses.Contains(c))
-                    return false;
+                return (a == '(' && b == ')') || (a == '{' && b == '}') || (a == '[' && b == ']');
             }
-            stack.Push(c);
+            foreach (char c in s)
+            {
+                if (stack.Count > 0)
+                {
+                    if (Compare(stack.Peek(), c))
+                    {
+                        stack.Pop();
+                        continue;
+                    }
+                    else if (leftparentheses.Contains(c))
+                        return false;
+                }
+                stack.Push(c);
+            }
+            return stack.Count <= 0;
         }
-        return stack.Count <= 0;
-    }
 #endif
+    }
+    // @lc code=end
 }
-// @lc code=end
 // 100/100 cases passed (2 ms)
 // Your runtime beats 68.51 % of csharp submissions
 // Your memory usage beats 69.08 % of csharp submissions (41.7 MB)

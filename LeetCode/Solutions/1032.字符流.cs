@@ -70,36 +70,37 @@
  * 
  * 
  */
-
-// @lc code=start
-/// <summary>
-/// 字符流
-/// </summary>
-public partial class StreamChecker
+namespace LeetCode
 {
+    // @lc code=start
     /// <summary>
-    /// 构造函数
+    /// 字符流
     /// </summary>
-    /// <param name="words"></param>
-    public StreamChecker(string[] words)
-	{
+    public partial class StreamChecker
+    {
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="words"></param>
+        public StreamChecker(string[] words)
+        {
 
-	}
-    /// <summary>
-    /// 查询字符
-    /// </summary>
-    /// <param name="letter"></param>
-    /// <returns></returns>
-    public bool Query(char letter)
-	{
-		return default;
-	}
+        }
+        /// <summary>
+        /// 查询字符
+        /// </summary>
+        /// <param name="letter"></param>
+        /// <returns></returns>
+        public bool Query(char letter)
+        {
+            return default;
+        }
+    }
+
+    /**
+     * Your StreamChecker object will be instantiated and called as such:
+     * StreamChecker obj = new StreamChecker(words);
+     * bool param_1 = obj.Query(letter);
+     */
+    // @lc code=end
 }
-
-/**
- * Your StreamChecker object will be instantiated and called as such:
- * StreamChecker obj = new StreamChecker(words);
- * bool param_1 = obj.Query(letter);
- */
-// @lc code=end
-

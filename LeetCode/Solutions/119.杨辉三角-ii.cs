@@ -57,12 +57,23 @@
  * 你可以优化你的算法到 O(rowIndex) 空间复杂度吗？
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public System.Collections.Generic.IList<int> GetRow(int rowIndex) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 杨辉三角 II
+        /// </summary>
+        /// <param name="rowIndex"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public System.Collections.Generic.IList<int> GetRow(int rowIndex)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

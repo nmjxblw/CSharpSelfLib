@@ -65,64 +65,66 @@
  * 
  * 
  */
-
-// @lc code=start
 using System;
 using System.Text.RegularExpressions;
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 强密码检验器
-    /// </summary>
-    /// <param name="password"></param>
-    /// <returns></returns>
-    /// <exception cref="System.NotImplementedException"></exception>
-    public int StrongPasswordChecker(string password)
+    // @lc code=start
+
+    public partial class Solution
     {
-        int result = 0;
-        int length = password.Length;
-        int FixDuplicateCount(string tempPwd)
+        /// <summary>
+        /// 强密码检验器
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int StrongPasswordChecker(string password)
         {
-            int tempCount = 0;
-            MatchCollection matches = Regex.Matches(tempPwd, @"(.)\1{2，}");
-            if (matches.Count > 0)
+            int result = 0;
+            int length = password.Length;
+            int FixDuplicateCount(string tempPwd)
             {
-
-                for (int i = 0; i < matches.Count; i++)
+                int tempCount = 0;
+                MatchCollection matches = Regex.Matches(tempPwd, @"(.)\1{2，}");
+                if (matches.Count > 0)
                 {
-                    tempCount += matches[i].Groups[1].Value.Length - 2;
-                }
-            }
-            return tempCount;
-        }
-        if (!Regex.IsMatch(password, @"[0-9]"))
-        {
-            result++;
-            length++;
-        }
-        if (!Regex.IsMatch(password, @"[a-z]"))
-        {
-            result++;
-            length++;
-        }
-        if (!Regex.IsMatch(password, @"[A-Z]"))
-        {
-            result++;
-            length++;
-        }
-        int fixCount = FixDuplicateCount(password);
-        result += fixCount;
-        length -= fixCount;
-        if(length < 6)
-        {
-            result += 6 - length;
-        }
-        else if (length > 20)
-        {
-            result += length - 20;
-        }
-        return result;
-    }
-}
-// @lc code=end
 
+                    for (int i = 0; i < matches.Count; i++)
+                    {
+                        tempCount += matches[i].Groups[1].Value.Length - 2;
+                    }
+                }
+                return tempCount;
+            }
+            if (!Regex.IsMatch(password, @"[0-9]"))
+            {
+                result++;
+                length++;
+            }
+            if (!Regex.IsMatch(password, @"[a-z]"))
+            {
+                result++;
+                length++;
+            }
+            if (!Regex.IsMatch(password, @"[A-Z]"))
+            {
+                result++;
+                length++;
+            }
+            int fixCount = FixDuplicateCount(password);
+            result += fixCount;
+            length -= fixCount;
+            if (length < 6)
+            {
+                result += 6 - length;
+            }
+            else if (length > 20)
+            {
+                result += length - 20;
+            }
+            return result;
+        }
+    }
+    // @lc code=end
+}

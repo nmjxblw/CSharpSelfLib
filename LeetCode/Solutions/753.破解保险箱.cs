@@ -67,12 +67,15 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public string CrackSafe(int n, int k) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public string CrackSafe(int n, int k)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

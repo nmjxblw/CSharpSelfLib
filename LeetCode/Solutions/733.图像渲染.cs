@@ -65,12 +65,15 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int[][] FloodFill(int[][] image, int sr, int sc, int color) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public int[][] FloodFill(int[][] image, int sr, int sc, int color)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

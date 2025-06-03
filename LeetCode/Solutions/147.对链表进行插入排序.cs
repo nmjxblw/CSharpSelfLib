@@ -60,23 +60,35 @@
  * 
  * 
  */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     public int val;
- *     public ListNode next;
- *     public ListNode(int val=0, ListNode next=null) {
- *         this.val = val;
- *         this.next = next;
- *     }
- * }
- */
-public partial class Solution {
-    public ListNode InsertionSortList(ListNode head) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Linq;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *     public int val;
+     *     public ListNode next;
+     *     public ListNode(int val=0, ListNode next=null) {
+     *         this.val = val;
+     *         this.next = next;
+     *     }
+     * }
+     */
+    public partial class Solution
+    {
+        /// <summary>
+        /// 对链表进行插入排序。
+        /// </summary>
+        /// <param name="head">无序链表</param>
+        /// <returns>排序后的链表</returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public ListNode InsertionSortList(ListNode head)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

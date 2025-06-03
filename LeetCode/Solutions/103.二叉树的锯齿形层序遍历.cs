@@ -48,25 +48,34 @@
  * 
  * 
  */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     public int val;
- *     public TreeNode left;
- *     public TreeNode right;
- *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-public partial class Solution {
-    public System.Collections.Generic.IList<System.Collections.Generic.IList<int>> ZigzagLevelOrder(TreeNode root) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     public int val;
+     *     public TreeNode left;
+     *     public TreeNode right;
+     *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+     *         this.val = val;
+     *         this.left = left;
+     *         this.right = right;
+     *     }
+     * }
+     */
+    public partial class Solution
+    {
+        /// <summary>
+        /// 二叉树的锯齿形层序遍历
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public System.Collections.Generic.IList<System.Collections.Generic.IList<int>> ZigzagLevelOrder(TreeNode root)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

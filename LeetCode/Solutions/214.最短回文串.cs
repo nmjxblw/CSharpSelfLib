@@ -41,12 +41,23 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public string ShortestPalindrome(string s) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 最短回文串
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public string ShortestPalindrome(string s)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

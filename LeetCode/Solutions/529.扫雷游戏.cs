@@ -76,92 +76,95 @@
  *
  *
  */
-
-// @lc code=start
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 扫雷游戏
-    /// </summary>
-    /// <param name="board"></param>
-    /// <param name="click"></param>
-    /// <returns></returns>
-    /// <exception cref="Exception"></exception>
-    public char[][] UpdateBoard(char[][] board, int[] click)
-    {
-        if (board[click[0]][click[1]].Equals('M'))
-        {
-            board[click[0]][click[1]] = 'X';
-            return board;
-        }
-        if (
-            board[click[0]][click[1]].Equals('B')
-            || int.TryParse(board[click[0]][click[1]].ToString(), out _)
-        )
-        {
-            return board;
-        }
-        /// <summary>
-        /// 递归遍历空白方块
-        /// <summary/>
-        void IterateEmpty(int[] newClick)
-        {
-            List<int[]> emptyBlockList = new List<int[]>();
-            int mCount = 0;
-            for (int r = -1; r <= 1; r++)
-            {
-                for (int c = -1; c <= 1; c++)
-                {
-                    if (r == 0 && c == 0)
-                        continue;
-                    int nr = newClick[0] + r,
-                        nc = newClick[1] + c;
-                    if (nr < 0 || nr >= board.Length || nc < 0 || nc >= board[0].Length)
-                        continue;
-                    if (board[nr][nc].Equals('M'))
-                    {
-                        mCount++;
-                    }
-                    else if (board[nr][nc].Equals('E'))
-                    {
-                        emptyBlockList.Add(new int[] { nr, nc });
-                    }
-                }
-            }
-            if (mCount > 0)
-            {
-                board[newClick[0]][newClick[1]] = mCount.ToString("D1")[0];
-            }
-            else
-            {
-                board[newClick[0]][newClick[1]] = 'B';
-                foreach (int[] emptyBlock in emptyBlockList)
-                {
-                    IterateEmpty(emptyBlock);
-                }
-            }
-        }
-        IterateEmpty(click);
-        return board;
-    }
+    // @lc code=start
 
-    /// <summary>
-    /// 打印扫雷结果
-    /// </summary>
-    /// <param name="board"></param>
-    public void PrintMineSweeperBoard(char[][] board)
+
+    public partial class Solution
     {
-        Console.WriteLine(new string('-', board[0].Length * 2 - 1));
-        foreach (char[] row in board)
+        /// <summary>
+        /// 扫雷游戏
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="click"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public char[][] UpdateBoard(char[][] board, int[] click)
         {
-            Console.WriteLine(string.Join("|", row));
-            Console.WriteLine(new string('-', row.Length * 2 - 1));
+            if (board[click[0]][click[1]].Equals('M'))
+            {
+                board[click[0]][click[1]] = 'X';
+                return board;
+            }
+            if (
+                board[click[0]][click[1]].Equals('B')
+                || int.TryParse(board[click[0]][click[1]].ToString(), out _)
+            )
+            {
+                return board;
+            }
+            /// <summary>
+            /// 递归遍历空白方块
+            /// <summary/>
+            void IterateEmpty(int[] newClick)
+            {
+                List<int[]> emptyBlockList = new List<int[]>();
+                int mCount = 0;
+                for (int r = -1; r <= 1; r++)
+                {
+                    for (int c = -1; c <= 1; c++)
+                    {
+                        if (r == 0 && c == 0)
+                            continue;
+                        int nr = newClick[0] + r,
+                            nc = newClick[1] + c;
+                        if (nr < 0 || nr >= board.Length || nc < 0 || nc >= board[0].Length)
+                            continue;
+                        if (board[nr][nc].Equals('M'))
+                        {
+                            mCount++;
+                        }
+                        else if (board[nr][nc].Equals('E'))
+                        {
+                            emptyBlockList.Add(new int[] { nr, nc });
+                        }
+                    }
+                }
+                if (mCount > 0)
+                {
+                    board[newClick[0]][newClick[1]] = mCount.ToString("D1")[0];
+                }
+                else
+                {
+                    board[newClick[0]][newClick[1]] = 'B';
+                    foreach (int[] emptyBlock in emptyBlockList)
+                    {
+                        IterateEmpty(emptyBlock);
+                    }
+                }
+            }
+            IterateEmpty(click);
+            return board;
+        }
+
+        /// <summary>
+        /// 打印扫雷结果
+        /// </summary>
+        /// <param name="board"></param>
+        public void PrintMineSweeperBoard(char[][] board)
+        {
+            Console.WriteLine(new string('-', board[0].Length * 2 - 1));
+            foreach (char[] row in board)
+            {
+                Console.WriteLine(string.Join("|", row));
+                Console.WriteLine(new string('-', row.Length * 2 - 1));
+            }
         }
     }
+    // @lc code=end
 }
-// @lc code=end
 // 54/54 cases passed (5 ms) [WARN] Failed to get runtime percentile.

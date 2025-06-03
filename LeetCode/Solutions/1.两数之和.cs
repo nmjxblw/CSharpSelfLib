@@ -60,30 +60,33 @@
  *
  */
 
-// @lc code=start
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
-    /// </summary>
-    /// <param name="nums"></param>
-    /// <param name="target"></param>
-    /// <returns></returns>
-    /// <exception cref="System.Exception"></exception>
-    public int[] TwoSum(int[] nums, int target)
+    // @lc code=start
+    public partial class Solution
     {
-        for (int i = 0; i < nums.Length; i++)
+        /// <summary>
+        /// 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
+        public int[] TwoSum(int[] nums, int target)
         {
-            for (int j = i + 1; j < nums.Length; j++)
+            for (int i = 0; i < nums.Length; i++)
             {
-                if (nums[i] + nums[j] == target)
-                    return new int[] { i, j };
+                for (int j = i + 1; j < nums.Length; j++)
+                {
+                    if (nums[i] + nums[j] == target)
+                        return new int[] { i, j };
+                }
             }
+            return default;
         }
-        return default;
     }
+    // @lc code=end
 }
-// @lc code=end
 //63/63 cases passed (31 ms)
 //Your runtime beats 44.69 % of csharp submissions
 //Your memory usage beats 99.72 % of csharp submissions (47.5 MB)

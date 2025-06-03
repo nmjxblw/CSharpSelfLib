@@ -53,12 +53,24 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public System.Collections.Generic.IList<string> FindWords(char[][] board, string[] words) {
-        throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 单词搜索 II
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="words"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public System.Collections.Generic.IList<string> FindWords(char[][] board, string[] words)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

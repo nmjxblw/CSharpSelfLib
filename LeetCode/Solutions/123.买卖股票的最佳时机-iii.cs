@@ -64,12 +64,22 @@
  * 
  * 
  */
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 买卖股票的最佳时机 III
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int MaxProfit(int[] prices)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 
-// @lc code=start
-public partial class Solution {
-    public int MaxProfit(int[] prices) {
-		throw new System.NotImplementedException();
-	}
 }
-// @lc code=end
-

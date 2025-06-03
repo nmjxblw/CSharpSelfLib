@@ -69,20 +69,23 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-	/// <summary>
-	/// 给定一个 n x n 的网格和一些灯的位置，返回每个查询的结果，表示该位置是否被照亮。
-	/// </summary>
-	/// <param name="n"></param>
-	/// <param name="lamps"></param>
-	/// <param name="queries"></param>
-	/// <returns></returns>
-	/// <exception cref="System.NotImplementedException"></exception>
-	public int[] GridIllumination(int n, int[][] lamps, int[][] queries) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 给定一个 n x n 的网格和一些灯的位置，返回每个查询的结果，表示该位置是否被照亮。
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="lamps"></param>
+        /// <param name="queries"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int[] GridIllumination(int n, int[][] lamps, int[][] queries)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -47,29 +47,33 @@
  * 
  * 
  */
-
-// @lc code=start
 using System;
 using System.Collections.Generic;
-public partial class Solution {
-	/// <summary>
-	/// 打家劫舍
-	/// </summary>
-	/// <param name="nums"></param>
-	/// <returns></returns>
-	/// <exception cref="System.NotImplementedException"></exception>
-	public int Rob(int[] nums) {
-		if(nums.Length == 0) return 0;
-		if(nums.Length == 1) return nums[0];
-		int[] dp = new int[nums.Length + 1];
-		dp[0] = nums[0];
-		dp[1] = Math.Max(nums[0], nums[1]);
-		for (int index = 1;index < nums.Length; index++)
-		{
-			dp[index + 1] = Math.Max(dp[index], dp[index - 1] + nums[index]);
-		}
-		return dp[nums.Length];
-	}
-}
-// @lc code=end
+namespace LeetCode
+{
+	// @lc code=start
 
+	public partial class Solution
+	{
+		/// <summary>
+		/// 打家劫舍
+		/// </summary>
+		/// <param name="nums"></param>
+		/// <returns></returns>
+		/// <exception cref="System.NotImplementedException"></exception>
+		public int Rob(int[] nums)
+		{
+			if (nums.Length == 0) return 0;
+			if (nums.Length == 1) return nums[0];
+			int[] dp = new int[nums.Length + 1];
+			dp[0] = nums[0];
+			dp[1] = Math.Max(nums[0], nums[1]);
+			for (int index = 1; index < nums.Length; index++)
+			{
+				dp[index + 1] = Math.Max(dp[index], dp[index - 1] + nums[index]);
+			}
+			return dp[nums.Length];
+		}
+	}
+	// @lc code=end
+}

@@ -53,12 +53,24 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public bool CanFinish(int numCourses, int[][] prerequisites) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 课程表
+        /// </summary>
+        /// <param name="numCourses"></param>
+        /// <param name="prerequisites"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public bool CanFinish(int numCourses, int[][] prerequisites)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

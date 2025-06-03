@@ -51,12 +51,15 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public double FindMedianSortedArrays(int[] nums1, int[] nums2) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public double FindMedianSortedArrays(int[] nums1, int[] nums2)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

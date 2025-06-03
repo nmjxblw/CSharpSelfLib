@@ -43,12 +43,17 @@
  * 
  * 
  */
-
+using System;
+using System.Collections.Generic;
 // @lc code=start
-public partial class Solution {
-    public int MaxPoints(int[][] points) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    public partial class Solution
+    {
+        public int MaxPoints(int[][] points)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -191,6 +191,158 @@
             <param name="value"></param>
             <param name="options"></param>
         </member>
+        <member name="T:LeetCode.ListNode">
+            <summary>
+             链表节点
+            </summary>
+        </member>
+        <member name="F:LeetCode.ListNode.val">
+            <summary>
+            链表节点值
+            </summary>
+        </member>
+        <member name="F:LeetCode.ListNode.next">
+            <summary>
+            下一节点
+            </summary>
+        </member>
+        <member name="M:LeetCode.ListNode.#ctor(System.Int32,LeetCode.ListNode)">
+            <summary>
+            链表节点构造函数
+            </summary>
+            <param name="val"></param>
+            <param name="next"></param>
+        </member>
+        <member name="T:LeetCode.INestedInteger">
+            <summary>
+            嵌套整型接口
+            </summary>
+        </member>
+        <member name="M:LeetCode.INestedInteger.IsInteger">
+            <summary>
+            return true if this NestedInteger holds a single integer, rather than a nested list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.INestedInteger.GetInteger">
+            <summary>
+            return the single integer that this NestedInteger holds, if it holds a single integer
+            Return null if this NestedInteger holds a nested list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.INestedInteger.GetList">
+            <summary>
+            return the nested list that this NestedInteger holds, if it holds a nested list, Return null if this NestedInteger holds a single integer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LeetCode.NestedInteger">
+            <summary>
+            嵌套整型
+            </summary>
+        </member>
+        <member name="M:LeetCode.NestedInteger.#ctor(System.Object)">
+            <summary>
+            嵌套整型构造函数
+            </summary>
+            <param name="input"></param>
+        </member>
+        <member name="M:LeetCode.NestedInteger.GetInteger">
+            <summary>
+            返回整型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.NestedInteger.GetList">
+            <summary>
+            返回列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.NestedInteger.IsInteger">
+            <summary>
+            是否为整数
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:LeetCode.Node">
+            <summary>
+            图节点
+            </summary>
+        </member>
+        <member name="F:LeetCode.Node.val">
+            <summary>
+            节点值
+            </summary>
+        </member>
+        <member name="F:LeetCode.Node.neighbors">
+            <summary>
+            邻接节点
+            </summary>
+        </member>
+        <member name="M:LeetCode.Node.#ctor">
+            <summary>
+            图节点构造函数
+            </summary>
+        </member>
+        <member name="M:LeetCode.Node.#ctor(System.Int32)">
+            <summary>
+            图节点构造函数
+            </summary>
+            <param name="_val"></param>
+        </member>
+        <member name="M:LeetCode.Node.#ctor(System.Int32,System.Collections.Generic.List{LeetCode.Node})">
+            <summary>
+            图节点构造函数
+            </summary>
+            <param name="_val"></param>
+            <param name="_neighbors"></param>
+        </member>
+        <member name="T:LeetCode.Point">
+            <summary>
+            点结构
+            </summary>
+        </member>
+        <member name="F:LeetCode.Point.row">
+            <summary>
+            行索引
+            </summary>
+        </member>
+        <member name="F:LeetCode.Point.col">
+            <summary>
+            列索引
+            </summary>
+        </member>
+        <member name="T:LeetCode.TreeNode">
+            <summary>
+            树节点
+            </summary>
+        </member>
+        <member name="F:LeetCode.TreeNode.val">
+            <summary>
+            节点值
+            </summary>
+        </member>
+        <member name="F:LeetCode.TreeNode.left">
+            <summary>
+            左子节点
+            </summary>
+        </member>
+        <member name="F:LeetCode.TreeNode.right">
+            <summary>
+            右子节点
+            </summary>
+        </member>
+        <member name="M:LeetCode.TreeNode.#ctor(System.Int32,LeetCode.TreeNode,LeetCode.TreeNode)">
+            <summary>
+            树节点构造函数
+            </summary>
+            <param name="val"></param>
+            <param name="left"></param>
+            <param name="right"></param>
+        </member>
         <member name="T:LeetCode.JsonHelper">
             <summary>
             Json帮助类
@@ -270,237 +422,85 @@
             主方法，用于启动程序
             </summary>
         </member>
-        <member name="T:ListNode">
-            <summary>
-             链表节点
-            </summary>
-        </member>
-        <member name="F:ListNode.val">
-            <summary>
-            链表节点值
-            </summary>
-        </member>
-        <member name="F:ListNode.next">
-            <summary>
-            下一节点
-            </summary>
-        </member>
-        <member name="M:ListNode.#ctor(System.Int32,ListNode)">
-            <summary>
-            链表节点构造函数
-            </summary>
-            <param name="val"></param>
-            <param name="next"></param>
-        </member>
-        <member name="T:INestedInteger">
-            <summary>
-            嵌套整型接口
-            </summary>
-        </member>
-        <member name="M:INestedInteger.IsInteger">
-            <summary>
-            return true if this NestedInteger holds a single integer, rather than a nested list.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:INestedInteger.GetInteger">
-            <summary>
-            return the single integer that this NestedInteger holds, if it holds a single integer
-            Return null if this NestedInteger holds a nested list
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:INestedInteger.GetList">
-            <summary>
-            return the nested list that this NestedInteger holds, if it holds a nested list, Return null if this NestedInteger holds a single integer
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:NestedInteger">
-            <summary>
-            嵌套整型
-            </summary>
-        </member>
-        <member name="M:NestedInteger.#ctor(System.Object)">
-            <summary>
-            嵌套整型构造函数
-            </summary>
-            <param name="input"></param>
-        </member>
-        <member name="M:NestedInteger.GetInteger">
-            <summary>
-            返回整型
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:NestedInteger.GetList">
-            <summary>
-            返回列表
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:NestedInteger.IsInteger">
-            <summary>
-            是否为整数
-            </summary>
-            <returns></returns>
-            <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="T:Node">
-            <summary>
-            图节点
-            </summary>
-        </member>
-        <member name="F:Node.val">
-            <summary>
-            节点值
-            </summary>
-        </member>
-        <member name="F:Node.neighbors">
-            <summary>
-            邻接节点
-            </summary>
-        </member>
-        <member name="M:Node.#ctor">
-            <summary>
-            图节点构造函数
-            </summary>
-        </member>
-        <member name="M:Node.#ctor(System.Int32)">
-            <summary>
-            图节点构造函数
-            </summary>
-            <param name="_val"></param>
-        </member>
-        <member name="M:Node.#ctor(System.Int32,System.Collections.Generic.List{Node})">
-            <summary>
-            图节点构造函数
-            </summary>
-            <param name="_val"></param>
-            <param name="_neighbors"></param>
-        </member>
-        <member name="T:Point">
-            <summary>
-            点结构
-            </summary>
-        </member>
-        <member name="F:Point.row">
-            <summary>
-            行索引
-            </summary>
-        </member>
-        <member name="F:Point.col">
-            <summary>
-            列索引
-            </summary>
-        </member>
-        <member name="T:TreeNode">
-            <summary>
-            树节点
-            </summary>
-        </member>
-        <member name="F:TreeNode.val">
-            <summary>
-            节点值
-            </summary>
-        </member>
-        <member name="F:TreeNode.left">
-            <summary>
-            左子节点
-            </summary>
-        </member>
-        <member name="F:TreeNode.right">
-            <summary>
-            右子节点
-            </summary>
-        </member>
-        <member name="M:TreeNode.#ctor(System.Int32,TreeNode,TreeNode)">
-            <summary>
-            树节点构造函数
-            </summary>
-            <param name="val"></param>
-            <param name="left"></param>
-            <param name="right"></param>
-        </member>
-        <member name="T:DeepSeekApi.Recorder">
+        <member name="T:LeetCode.Recorder">
             <summary>
             记录器
             </summary>
         </member>
-        <member name="P:DeepSeekApi.Recorder.Enable">
+        <member name="P:LeetCode.Recorder.Enable">
             <summary>
             功能启用标识符
             </summary>
         </member>
-        <member name="M:DeepSeekApi.Recorder.#cctor">
+        <member name="M:LeetCode.Recorder.#cctor">
             <summary>
             私有构造，在构造时自动注册记录报错
             </summary>
         </member>
-        <member name="M:DeepSeekApi.Recorder.Write(System.String,System.String,System.Boolean,ContextLevel)">
+        <member name="M:LeetCode.Recorder.Write(System.String,System.String,System.Boolean,LeetCode.ContextLevel)">
             <summary>
             写入
             </summary>
         </member>
-        <member name="M:DeepSeekApi.Recorder.Record(System.String)">
+        <member name="M:LeetCode.Recorder.Record(System.String)">
             <summary>
             标准记录
             </summary>
         </member>
-        <member name="M:DeepSeekApi.Recorder.RecordError(System.String)">
+        <member name="M:LeetCode.Recorder.RecordError(System.String)">
             <summary>
             报错记录
             </summary>
             <param name="err_msg"></param>
         </member>
-        <member name="T:DeepSeekApi.PathHelper">
+        <member name="T:LeetCode.PathHelper">
             <summary>
             路径辅助类
             </summary>
         </member>
-        <member name="M:DeepSeekApi.PathHelper.GetRuntimeDirectory(System.String)">
+        <member name="M:LeetCode.PathHelper.GetRuntimeDirectory(System.String)">
             <summary>
             将路径转换成OS可识别的路径
             </summary>
             <param name="path"></param>
             <returns></returns>
         </member>
-        <member name="T:ContextLevel">
+        <member name="T:LeetCode.ContextLevel">
             <summary>
             记录器内容的等级
             </summary>
         </member>
-        <member name="F:ContextLevel.None">
+        <member name="F:LeetCode.ContextLevel.None">
             <summary>
             无设置
             </summary>
         </member>
-        <member name="F:ContextLevel.Public">
+        <member name="F:LeetCode.ContextLevel.Public">
             <summary>
             公开级别
             </summary>
         </member>
-        <member name="F:ContextLevel.Private">
+        <member name="F:LeetCode.ContextLevel.Private">
             <summary>
             非公开级别
             </summary>
         </member>
-        <member name="F:ContextLevel.Alert">
+        <member name="F:LeetCode.ContextLevel.Alert">
             <summary>
             警告级别
             </summary>
         </member>
-        <member name="F:ContextLevel.Error">
+        <member name="F:LeetCode.ContextLevel.Error">
             <summary>
             报错级别
             </summary>
         </member>
-        <member name="F:ContextLevel.Debug">
+        <member name="F:LeetCode.ContextLevel.Debug">
             <summary>
             调试级别
             </summary>
         </member>
-        <member name="T:Solution">
+        <member name="T:LeetCode.Solution">
             <summary>
             解决方法基类
             </summary>
@@ -537,6 +537,35 @@
                     this.right = right;
                 }
             }
+            Definition for a binary tree node.
+            public class TreeNode {
+                public int val;
+                public TreeNode left;
+                public TreeNode right;
+                public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+                    this.val = val;
+                    this.left = left;
+                    this.right = right;
+                }
+            }
+            Definition for singly-linked list.
+            public class ListNode {
+                public int val;
+                public ListNode next;
+                public ListNode(int val=0, ListNode next=null) {
+                    this.val = val;
+                    this.next = next;
+                }
+            }
+            Definition for singly-linked list.
+            public class ListNode {
+                public int val;
+                public ListNode next;
+                public ListNode(int val=0, ListNode next=null) {
+                    this.val = val;
+                    this.next = next;
+                }
+            }
             Definition for singly-linked list.
             public class ListNode {
                 public int val;
@@ -567,7 +596,7 @@
                 }
             }
         </member>
-        <member name="M:Solution.TwoSum(System.Int32[],System.Int32)">
+        <member name="M:LeetCode.Solution.TwoSum(System.Int32[],System.Int32)">
             <summary>
             给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
             </summary>
@@ -576,7 +605,7 @@
             <returns></returns>
             <exception cref="T:System.Exception"></exception>
         </member>
-        <member name="M:Solution.GridIllumination(System.Int32,System.Int32[][],System.Int32[][])">
+        <member name="M:LeetCode.Solution.GridIllumination(System.Int32,System.Int32[][],System.Int32[][])">
             <summary>
             给定一个 n x n 的网格和一些灯的位置，返回每个查询的结果，表示该位置是否被照亮。
             </summary>
@@ -586,7 +615,7 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.IsSymmetric(TreeNode)">
+        <member name="M:LeetCode.Solution.IsSymmetric(LeetCode.TreeNode)">
             <summary>
             判断二叉树是否对称
             </summary>
@@ -594,7 +623,42 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.RomanToInt(System.String)">
+        <member name="M:LeetCode.Solution.NumDistinct(System.String,System.String)">
+            <summary>
+            不同的子序列
+            </summary>
+            <param name="s"></param>
+            <param name="t"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.GetRow(System.Int32)">
+            <summary>
+            杨辉三角 II
+            </summary>
+            <param name="rowIndex"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MaxProfit(System.Int32[])">
+            <summary>
+            买卖股票的最佳时机 III
+            </summary>
+            <param name="prices"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.LadderLength(System.String,System.String,System.Collections.Generic.IList{System.String})">
+            <summary>
+            单词接龙
+            </summary>
+            <param name="beginWord"></param>
+            <param name="endWord"></param>
+            <param name="wordList"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.RomanToInt(System.String)">
             <summary>
             给定一个罗马数字，将其转换成整数。
             </summary>
@@ -602,28 +666,80 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.CloneGraph(Node)">
+        <member name="M:LeetCode.Solution.MinCut(System.String)">
+            <summary>
+            分割回文串 II
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.CloneGraph(LeetCode.Node)">
             <summary>
             给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。
             </summary>
             <param name="node"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.LongestCommonPrefix(System.String[])">
+        <member name="M:LeetCode.Solution.Candy(System.Int32[])">
+            <summary>
+            分发糖果
+            </summary>
+            <param name="ratings"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.LongestCommonPrefix(System.String[])">
             <summary>
             查找字符串数组中的最长公共前缀
             </summary>
             <param name="strs"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.CalculateMinimumHP(System.Int32[][])">
+        <member name="M:LeetCode.Solution.WordBreak(System.String,System.Collections.Generic.IList{System.String})">
+            <summary>
+            单词拆分 II
+            </summary>
+            <param name="s"></param>
+            <param name="wordDict"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.InsertionSortList(LeetCode.ListNode)">
+            <summary>
+            对链表进行插入排序。
+            </summary>
+            <param name="head">无序链表</param>
+            <returns>排序后的链表</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.FindMin(System.Int32[])">
+            <summary>
+            寻找旋转排序数组中的最小值 II
+            </summary>
+            <param name="nums"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.CalculateMinimumHP(System.Int32[][])">
             <summary>
             计算骑士拯救公主所需的最低初始健康点数
             </summary>
             <param name="dungeon"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.Rob(System.Int32[])">
+        <member name="M:LeetCode.Solution.MaxProfit(System.Int32,System.Int32[])">
+            <summary>
+            Calculates the maximum profit that can be achieved from at most <paramref name="k"/> transactions on the
+            given array of stock prices.
+            </summary>
+            <param name="k">The maximum number of transactions allowed. Must be a non-negative integer.</param>
+            <param name="prices">An array of integers representing the stock prices on consecutive days. Cannot be null.</param>
+            <returns>The maximum profit that can be achieved. Returns 0 if no transactions can be made or if the input array is
+            empty.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.Rob(System.Int32[])">
             <summary>
             打家劫舍
             </summary>
@@ -631,14 +747,23 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.IsValid(System.String)">
+        <member name="M:LeetCode.Solution.IsValid(System.String)">
             <summary>
             给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
             </summary>
             <param name="s"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.MergeTwoLists(ListNode,ListNode)">
+        <member name="M:LeetCode.Solution.CanFinish(System.Int32,System.Int32[][])">
+            <summary>
+            课程表
+            </summary>
+            <param name="numCourses"></param>
+            <param name="prerequisites"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MergeTwoLists(LeetCode.ListNode,LeetCode.ListNode)">
             <summary>
             合并两个有序链表
             </summary>
@@ -646,7 +771,59 @@
             <param name="node2"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.MergeKLists(ListNode[])">
+        <member name="M:LeetCode.Solution.FindOrder(System.Int32,System.Int32[][])">
+            <summary>
+            课程表 II
+            </summary>
+            <param name="numCourses"></param>
+            <param name="prerequisites"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.FindWords(System.Char[][],System.String[])">
+            <summary>
+            单词搜索 II
+            </summary>
+            <param name="board"></param>
+            <param name="words"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.ShortestPalindrome(System.String)">
+            <summary>
+            最短回文串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.GetSkyline(System.Int32[][])">
+            <summary>
+            天际线问题
+            </summary>
+            <param name="buildings"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.ContainsNearbyAlmostDuplicate(System.Int32[],System.Int32,System.Int32)">
+            <summary>
+            存在重复元素 III
+            </summary>
+            <param name="nums"></param>
+            <param name="indexDiff"></param>
+            <param name="valueDiff"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.Calculate(System.String)">
+            <summary>
+            基本计算器
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MergeKLists(LeetCode.ListNode[])">
             <summary>
             合并 K 个升序链表
             </summary>
@@ -654,7 +831,78 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.Trap(System.Int32[])">
+        <member name="M:LeetCode.Solution.CountDigitOne(System.Int32)">
+            <summary>
+            数字 1 的个数
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MaxSlidingWindow(System.Int32[],System.Int32)">
+            <summary>
+            滑动窗口最大值
+            </summary>
+            <param name="nums"></param>
+            <param name="k"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.ReverseKGroup(LeetCode.ListNode,System.Int32)">
+            <summary>
+            k 个一组翻转链表
+            </summary>
+            <param name="head"></param>
+            <param name="k"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.NumberToWords(System.Int32)">
+            <summary>
+            整数转换英文表示
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.CanWinNim(System.Int32)">
+            <summary>
+            Nim 游戏
+            </summary>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.Solution.RemoveDuplicateLetters(System.String)">
+            <summary>
+            去除重复字母
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.Solution.MaxNumber(System.Int32[],System.Int32[],System.Int32)">
+            <summary>
+            Combines two arrays to create the largest possible number of a specified length.
+            </summary>
+            <remarks>The method selects elements from <paramref name="nums1"/> and <paramref
+            name="nums2"/> in such a way that the resulting array is lexicographically the largest possible.</remarks>
+            <param name="nums1">The first array of integers to be considered for the result.</param>
+            <param name="nums2">The second array of integers to be considered for the result.</param>
+            <param name="k">The length of the resulting array. Must be a non-negative integer less than or equal to the combined length
+            of <paramref name="nums1"/> and <paramref name="nums2"/>.</param>
+            <returns>An array of integers representing the largest possible number of length <paramref name="k"/> formed by
+            combining elements from <paramref name="nums1"/> and <paramref name="nums2"/> while maintaining their
+            relative order.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.Rob(LeetCode.TreeNode)">
+            <summary>
+            打家劫舍 III
+            </summary>
+            <param name="root"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.Trap(System.Int32[])">
             <summary>
             给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
             </summary>
@@ -662,7 +910,7 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.StrongPasswordChecker(System.String)">
+        <member name="M:LeetCode.Solution.StrongPasswordChecker(System.String)">
             <summary>
             强密码检验器
             </summary>
@@ -670,7 +918,7 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.LicenseKeyFormatting(System.String,System.Int32)">
+        <member name="M:LeetCode.Solution.LicenseKeyFormatting(System.String,System.Int32)">
             <summary>
             密钥格式化
             </summary>
@@ -678,7 +926,7 @@
             <param name="k"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.SolveNQueens(System.Int32)">
+        <member name="M:LeetCode.Solution.SolveNQueens(System.Int32)">
             <summary>
             N 皇后问题
             </summary>
@@ -686,34 +934,34 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.GetEmptyBoard(System.Int32)">
+        <member name="M:LeetCode.Solution.GetEmptyBoard(System.Int32)">
             <summary>
             获取一个空的棋盘
             </summary>
             <param name="n"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.ToStringList(System.Boolean[][])">
+        <member name="M:LeetCode.Solution.ToStringList(System.Boolean[][])">
             <summary>
             将棋盘转化为字符串列表
             </summary>
             <param name="board"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.NewRow(System.Int32)">
+        <member name="M:LeetCode.Solution.NewRow(System.Int32)">
             <summary>
             获取一个新的行
             </summary>
             <param name="n"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.PrintSolveNQueens(System.Int32)">
+        <member name="M:LeetCode.Solution.PrintSolveNQueens(System.Int32)">
             <summary>
             打印N皇后问题的解
             </summary>
             <param name="n">棋盘尺寸</param>
         </member>
-        <member name="M:Solution.TotalNQueens(System.Int32)">
+        <member name="M:LeetCode.Solution.TotalNQueens(System.Int32)">
             <summary>
             给定一个整数 n ，返回 n 皇后问题 不同的解决方案的数量。
             </summary>
@@ -721,7 +969,7 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Solution.UpdateBoard(System.Char[][],System.Int32[])">
+        <member name="M:LeetCode.Solution.UpdateBoard(System.Char[][],System.Int32[])">
             <summary>
             扫雷游戏
             </summary>
@@ -730,13 +978,13 @@
             <returns></returns>
             <exception cref="T:System.Exception"></exception>
         </member>
-        <member name="M:Solution.PrintMineSweeperBoard(System.Char[][])">
+        <member name="M:LeetCode.Solution.PrintMineSweeperBoard(System.Char[][])">
             <summary>
             打印扫雷结果
             </summary>
             <param name="board"></param>
         </member>
-        <member name="M:Solution.CheckRecord(System.String)">
+        <member name="M:LeetCode.Solution.CheckRecord(System.String)">
             <summary>
             学生出勤记录 I
             </summary>
@@ -744,14 +992,14 @@
             <returns></returns>
             <exception cref="T:System.Exception"></exception>
         </member>
-        <member name="M:Solution.IsPalindrome(System.Int32)">
+        <member name="M:LeetCode.Solution.IsPalindrome(System.Int32)">
             <summary>
             判断一个整数是否是回文数
             </summary>
             <param name="x"></param>
             <returns></returns>
         </member>
-        <member name="M:Solution.FindPoisonedDuration(System.Int32[],System.Int32)">
+        <member name="M:LeetCode.Solution.FindPoisonedDuration(System.Int32[],System.Int32)">
             <summary>
             提莫在《英雄联盟》游戏中是一个非常可爱的角色，他的技能可以让敌人中毒。给你一个整数数组 timeSeries ，表示提莫在每个时间点施放技能的时刻，以及一个整数 duration ，表示提莫的技能在施放后持续多长时间（单位是秒）。返回敌人受到的总中毒时间。
             </summary>
@@ -759,53 +1007,104 @@
             <param name="duration"></param>
             <returns></returns>
         </member>
-        <member name="T:Foo">
+        <member name="T:LeetCode.Foo">
             <summary>
             解决方法代理类
             </summary>
         </member>
-        <member name="M:Foo.#ctor">
+        <member name="M:LeetCode.Foo.#ctor">
             <summary>
             按序打印，构造函数
             </summary>
         </member>
-        <member name="M:Foo.First(System.Action)">
+        <member name="M:LeetCode.Foo.First(System.Action)">
             <summary>
             第一个方法
             </summary>
             <param name="printFirst"></param>
         </member>
-        <member name="M:Foo.Second(System.Action)">
+        <member name="M:LeetCode.Foo.Second(System.Action)">
             <summary>
             第二个方法
             </summary>
             <param name="printSecond"></param>
         </member>
-        <member name="M:Foo.Third(System.Action)">
+        <member name="M:LeetCode.Foo.Third(System.Action)">
             <summary>
             第三个方法
             </summary>
             <param name="printThird"></param>
         </member>
-        <member name="T:StreamChecker">
+        <member name="T:LeetCode.StreamChecker">
             <summary>
             字符流
             </summary>
         </member>
-        <member name="M:StreamChecker.#ctor(System.String[])">
+        <member name="M:LeetCode.StreamChecker.#ctor(System.String[])">
             <summary>
             构造函数
             </summary>
             <param name="words"></param>
         </member>
-        <member name="M:StreamChecker.Query(System.Char)">
+        <member name="M:LeetCode.StreamChecker.Query(System.Char)">
             <summary>
             查询字符
             </summary>
             <param name="letter"></param>
             <returns></returns>
         </member>
-        <member name="T:Codec">
+        <member name="T:LeetCode.MinStack">
+            <summary>
+            Represents a stack data structure that supports retrieving the minimum element in constant time.
+            </summary>
+            <remarks>In addition to standard stack operations such as <see cref="M:LeetCode.MinStack.Push(System.Int32)"/> and <see
+            cref="M:LeetCode.MinStack.Pop"/>,  this class provides a method to retrieve the minimum value in the stack using <see
+            cref="M:LeetCode.MinStack.GetMin"/>.  The minimum value is updated dynamically as elements are added or removed.</remarks>
+        </member>
+        <member name="M:LeetCode.MinStack.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LeetCode.MinStack"/> class, which represents a stack that supports
+            retrieving the minimum element in constant time.
+            </summary>
+            <remarks>The <see cref="T:LeetCode.MinStack"/> class provides standard stack operations (push, pop, and
+            peek) along with a method to retrieve the minimum element in the stack.</remarks>
+        </member>
+        <member name="M:LeetCode.MinStack.Push(System.Int32)">
+            <summary>
+            Adds the specified value to the top of the stack.
+            </summary>
+            <remarks>The stack will grow dynamically to accommodate the new value if necessary.</remarks>
+            <param name="val">The value to push onto the stack.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.MinStack.Pop">
+            <summary>
+            Removes the top element from the stack.
+            </summary>
+            <remarks>This method modifies the state of the stack by removing its topmost element.  If the
+            stack is empty, calling this method will result in an exception.</remarks>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.MinStack.Top">
+            <summary>
+            Retrieves the top element of the stack without removing it.
+            </summary>
+            <returns>The value of the top element in the stack.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.MinStack.GetMin">
+            <summary>
+            Retrieves the minimum value from the collection.
+            </summary>
+            <returns>The smallest integer in the collection. If the collection is empty, the behavior is undefined.</returns>
+            <exception cref="T:System.NotImplementedException">Thrown when the method is not implemented.</exception>
+        </member>
+        <member name="T:LeetCode.PeekingIterator">
+            <summary>
+            窥视迭代器
+            </summary>
+        </member>
+        <member name="T:LeetCode.Codec">
             Definition for a binary tree node.
             public class TreeNode {
                 public int val;
@@ -814,44 +1113,40 @@
                 public TreeNode(int x) { val = x; }
             }
         </member>
-        <member name="T:NestedIterator">
-            <summary>
-            	扁平化嵌套列表迭代器
-             </summary>
-        </member>
-        <member name="M:NestedIterator.#ctor(System.Collections.Generic.IList{INestedInteger})">
+        <!-- Badly formed XML comment ignored for member "T:LeetCode.NestedIterator" -->
+        <member name="M:LeetCode.NestedIterator.#ctor(System.Collections.Generic.IList{LeetCode.INestedInteger})">
             <summary>
             扁平化嵌套列表迭代器
             </summary>
             <param name="nestedList"></param>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:NestedIterator.HasNext">
+        <member name="M:LeetCode.NestedIterator.HasNext">
             <summary>
             是否有下一个元素
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:NestedIterator.Next">
+        <member name="M:LeetCode.NestedIterator.Next">
             <summary>
             返回下一个元素
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="T:RandomizedSet">
+        <member name="T:LeetCode.RandomizedSet">
             <summary>
             设计一个支持在平均时间复杂度 O(1) 下，进行插入、删除和获取随机元素的集合。
             </summary>
         </member>
-        <member name="M:RandomizedSet.#ctor">
+        <member name="M:LeetCode.RandomizedSet.#ctor">
             <summary>
             构造集合对象
             </summary>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:RandomizedSet.Insert(System.Int32)">
+        <member name="M:LeetCode.RandomizedSet.Insert(System.Int32)">
             <summary>
             向集合中插入一个元素，如果元素已经存在，则返回 false，否则返回 true。
             </summary>
@@ -859,7 +1154,7 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:RandomizedSet.Remove(System.Int32)">
+        <member name="M:LeetCode.RandomizedSet.Remove(System.Int32)">
             <summary>
             从集合中删除一个元素，如果元素不存在，则返回 false，否则返回 true。
             </summary>
@@ -867,12 +1162,21 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:RandomizedSet.GetRandom">
+        <member name="M:LeetCode.RandomizedSet.GetRandom">
             <summary>
             随机返回集合中的一个元素，要求每个元素被返回的概率相同。
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Solution.IsEscapePossible(System.Int32[][],System.Int32[],System.Int32[])">
+            <summary>
+            逃离大迷宫
+            </summary>
+            <param name="blocked">封锁的方格列表</param>
+            <param name="source">源方格</param>
+            <param name="target">目标方格</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

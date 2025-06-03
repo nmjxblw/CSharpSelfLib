@@ -59,32 +59,35 @@
  * 进阶：你能不将整数转为字符串来解决这个问题吗？
  *
  */
-
-// @lc code=start
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 判断一个整数是否是回文数
-    /// </summary>
-    /// <param name="x"></param>
-    /// <returns></returns>
-    public bool IsPalindrome(int x)
+    // @lc code=start
+
+
+    public partial class Solution
     {
-        string s = x.ToString();
-        for (int i = 0; i < s.Length / 2; i++)
+        /// <summary>
+        /// 判断一个整数是否是回文数
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public bool IsPalindrome(int x)
         {
-            if (s[i] != s[s.Length - 1 - i])
-                return false;
+            string s = x.ToString();
+            for (int i = 0; i < s.Length / 2; i++)
+            {
+                if (s[i] != s[s.Length - 1 - i])
+                    return false;
+            }
+            return true;
         }
-        return true;
     }
+    // @lc code=end
 }
-// @lc code=end
 // 11511/11511 cases passed (2 ms)
 // Your runtime beats 76.55 % of csharp submissions
 // Your memory usage beats 36.88 % of csharp submissions (35.9 MB)

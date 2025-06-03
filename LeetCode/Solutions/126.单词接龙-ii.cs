@@ -68,12 +68,16 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public System.Collections.Generic.IList<System.Collections.Generic.IList<string>> FindLadders(string beginWord, string endWord, System.Collections.Generic.IList<string> wordList) {
-		throw new System.NotImplementedException();
-	}
+using System;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public System.Collections.Generic.IList<System.Collections.Generic.IList<string>> FindLadders(string beginWord, string endWord, System.Collections.Generic.IList<string> wordList)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -60,12 +60,24 @@
  * 
  * 
  */
-
+using System;
+using System.Collections.Generic;
 // @lc code=start
-public partial class Solution {
-    public int[] FindOrder(int numCourses, int[][] prerequisites) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    public partial class Solution
+    {
+        /// <summary>
+        /// 课程表 II
+        /// </summary>
+        /// <param name="numCourses"></param>
+        /// <param name="prerequisites"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int[] FindOrder(int numCourses, int[][] prerequisites)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -65,12 +65,15 @@
  * 
  * 进阶：你能设计一个在 o(m+n) 时间内解决此问题的算法吗？
  */
-
-// @lc code=start
-public partial class Solution {
-    public string MinWindow(string s, string t) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public string MinWindow(string s, string t)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -48,12 +48,26 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int MaxProfit(int k, int[] prices) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Linq;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// Calculates the maximum profit that can be achieved from at most <paramref name="k"/> transactions on the
+        /// given array of stock prices.
+        /// </summary>
+        /// <param name="k">The maximum number of transactions allowed. Must be a non-negative integer.</param>
+        /// <param name="prices">An array of integers representing the stock prices on consecutive days. Cannot be null.</param>
+        /// <returns>The maximum profit that can be achieved. Returns 0 if no transactions can be made or if the input array is
+        /// empty.</returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int MaxProfit(int k, int[] prices)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

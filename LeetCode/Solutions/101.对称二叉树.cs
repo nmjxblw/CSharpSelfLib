@@ -45,33 +45,38 @@
  * 进阶：你可以运用递归和迭代两种方法解决这个问题吗？
  * 
  */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     public int val;
- *     public TreeNode left;
- *     public TreeNode right;
- *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
 using System;
 using System.Linq;
-public partial class Solution {
-	/// <summary>
-	/// 判断二叉树是否对称
-	/// </summary>
-	/// <param name="root"></param>
-	/// <returns></returns>
-	/// <exception cref="System.NotImplementedException"></exception>
-	public bool IsSymmetric(TreeNode root) {
-		throw new System.NotImplementedException();
-	}
-}
-// @lc code=end
+namespace LeetCode
+{
+    // @lc code=start
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     public int val;
+     *     public TreeNode left;
+     *     public TreeNode right;
+     *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+     *         this.val = val;
+     *         this.left = left;
+     *         this.right = right;
+     *     }
+     * }
+     */
 
+    public partial class Solution
+    {
+        /// <summary>
+        /// 判断二叉树是否对称
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public bool IsSymmetric(TreeNode root)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
+
+}

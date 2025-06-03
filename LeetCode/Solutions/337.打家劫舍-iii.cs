@@ -53,25 +53,36 @@
  * 
  * 
  */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     public int val;
- *     public TreeNode left;
- *     public TreeNode right;
- *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-public partial class Solution {
-    public int Rob(TreeNode root) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     public int val;
+     *     public TreeNode left;
+     *     public TreeNode right;
+     *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+     *         this.val = val;
+     *         this.left = left;
+     *         this.right = right;
+     *     }
+     * }
+     */
+    public partial class Solution
+    {
+        /// <summary>
+        /// 打家劫舍 III
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int Rob(TreeNode root)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

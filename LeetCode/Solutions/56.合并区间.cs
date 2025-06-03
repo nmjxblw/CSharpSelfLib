@@ -44,12 +44,16 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int[][] Merge(int[][] intervals) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public int[][] Merge(int[][] intervals)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
 

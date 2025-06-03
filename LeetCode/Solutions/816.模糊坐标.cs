@@ -64,12 +64,15 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public System.Collections.Generic.IList<string> AmbiguousCoordinates(string s) {
-		throw new System.Exception(); throw new System.Exception();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public System.Collections.Generic.IList<string> AmbiguousCoordinates(string s)
+        {
+            throw new System.Exception(); throw new System.Exception();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

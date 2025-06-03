@@ -56,12 +56,15 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int[] FindRedundantConnection(int[][] edges) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public int[] FindRedundantConnection(int[][] edges)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

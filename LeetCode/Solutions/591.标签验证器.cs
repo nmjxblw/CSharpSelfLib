@@ -107,11 +107,12 @@
  * 
  * 
  */
-
-// @lc code=start
-
-public partial class Solution
+namespace LeetCode
 {
+    // @lc code=start
+
+    public partial class Solution
+    {
 #if 标签验证器
     /// <summary>
     /// 解析这段代码，并返回它是否合法
@@ -123,6 +124,6 @@ public partial class Solution
 		throw new System.NotImplementedException();
 	}
 #endif
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -54,23 +54,35 @@
  * 
  * 
  */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     public int val;
- *     public ListNode next;
- *     public ListNode(int val=0, ListNode next=null) {
- *         this.val = val;
- *         this.next = next;
- *     }
- * }
- */
-public partial class Solution {
-    public ListNode ReverseKGroup(ListNode head, int k) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Linq;
+namespace LeetCode
+{
+    // @lc code=start
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *     public int val;
+     *     public ListNode next;
+     *     public ListNode(int val=0, ListNode next=null) {
+     *         this.val = val;
+     *         this.next = next;
+     *     }
+     * }
+     */
+    public partial class Solution
+    {
+        /// <summary>
+        /// k 个一组翻转链表
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public ListNode ReverseKGroup(ListNode head, int k)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

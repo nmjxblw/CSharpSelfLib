@@ -57,12 +57,19 @@
  * 
  * 
  */
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 颜色分类
+        /// </summary>
+        /// <param name="nums"></param>
+        public void SortColors(int[] nums)
+        {
 
-// @lc code=start
-public partial class Solution {
-    public void SortColors(int[] nums) {
-        
+        }
     }
+    // @lc code=end
 }
-// @lc code=end
-

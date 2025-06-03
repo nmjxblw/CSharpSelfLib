@@ -62,63 +62,65 @@
  * 
  * 
  */
-
-// @lc code=start
-/**
- * // This is the interface that allows for creating nested lists.
- * // You should not implement it, or speculate about its implementation
- * interface NestedInteger {
- *
- *     // @return true if this NestedInteger holds a single integer, rather than a nested list.
- *     bool IsInteger();
- *
- *     // @return the single integer that this NestedInteger holds, if it holds a single integer
- *     // Return null if this NestedInteger holds a nested list
- *     int GetInteger();
- *
- *     // @return the nested list that this NestedInteger holds, if it holds a nested list
- *     // Return null if this NestedInteger holds a single integer
- *    System.Collections.Generic.IList<NestedInteger> GetList();
- * }
- */
 using System;
 using System.Collections.Generic;
-///<summary>
-///	扁平化嵌套列表迭代器
-/// </summary>
-public partial class NestedIterator {
-	private static int _ptr = 0;
-	private static IList<INestedInteger> _nestedList;
-	/// <summary>
-	/// 扁平化嵌套列表迭代器
-	/// </summary>
-	/// <param name="nestedList"></param>
-	/// <exception cref="System.NotImplementedException"></exception>
-	public NestedIterator(IList<INestedInteger> nestedList) {
-		throw new NotImplementedException();
-	}
-	/// <summary>
-	/// 是否有下一个元素
-	/// </summary>
-	/// <returns></returns>
-	/// <exception cref="System.NotImplementedException"></exception>
-    public bool HasNext() {
-		throw new NotImplementedException();
-	}
-	/// <summary>
-	/// 返回下一个元素
-	/// </summary>
-	/// <returns></returns>
-	/// <exception cref="System.NotImplementedException"></exception>
-    public int Next() {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    /**
+     * // This is the interface that allows for creating nested lists.
+     * // You should not implement it, or speculate about its implementation
+     * interface NestedInteger {
+     *
+     *     // @return true if this NestedInteger holds a single integer, rather than a nested list.
+     *     bool IsInteger();
+     *
+     *     // @return the single integer that this NestedInteger holds, if it holds a single integer
+     *     // Return null if this NestedInteger holds a nested list
+     *     int GetInteger();
+     *
+     *     // @return the nested list that this NestedInteger holds, if it holds a nested list
+     *     // Return null if this NestedInteger holds a single integer
+     *    System.Collections.Generic.IList<NestedInteger> GetList();
+     * }
+     */
+
+    ///<summary>
+    ///	扁平化嵌套列表迭代器
+    /// </summary>
+    public partial class NestedIterator {
+        private static int _ptr = 0;
+        private static IList<INestedInteger> _nestedList;
+        /// <summary>
+        /// 扁平化嵌套列表迭代器
+        /// </summary>
+        /// <param name="nestedList"></param>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public NestedIterator(IList<INestedInteger> nestedList) {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// 是否有下一个元素
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public bool HasNext() {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// 返回下一个元素
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int Next() {
+            throw new System.NotImplementedException();
+        }
+    }
+
+    /**
+     * Your NestedIterator will be called like this:
+     * NestedIterator i = new NestedIterator(nestedList);
+     * while (i.HasNext()) v[f()] = i.Next();
+     */
+    // @lc code=end
 }
-
-/**
- * Your NestedIterator will be called like this:
- * NestedIterator i = new NestedIterator(nestedList);
- * while (i.HasNext()) v[f()] = i.Next();
- */
-// @lc code=end
-

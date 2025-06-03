@@ -51,12 +51,21 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int TrapRainWater(int[][] heightMap) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 接雨水 II
+        /// </summary>
+        /// <param name="heightMap"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int TrapRainWater(int[][] heightMap)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

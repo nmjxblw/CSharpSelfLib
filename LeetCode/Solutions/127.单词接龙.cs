@@ -58,12 +58,25 @@
  * 
  * 
  */
+using System;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 单词接龙
+        /// </summary>
+        /// <param name="beginWord"></param>
+        /// <param name="endWord"></param>
+        /// <param name="wordList"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int LadderLength(string beginWord, string endWord, System.Collections.Generic.IList<string> wordList)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 
-// @lc code=start
-public partial class Solution {
-    public int LadderLength(string beginWord, string endWord,System.Collections.Generic.IList<string> wordList) {
-        throw new System.NotImplementedException();
-	}
 }
-// @lc code=end
-

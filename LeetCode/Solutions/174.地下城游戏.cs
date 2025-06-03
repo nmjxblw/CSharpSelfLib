@@ -65,47 +65,48 @@
  *
  *
  */
-
-// @lc code=start
 using System;
-
-public partial class Solution
+namespace LeetCode
 {
-	/// <summary>
-	/// 计算骑士拯救公主所需的最低初始健康点数
-	/// </summary>
-	/// <param name="dungeon"></param>
-	/// <returns></returns>
-	public int CalculateMinimumHP(int[][] dungeon)
+    // @lc code=start
+    public partial class Solution
     {
-        int m = dungeon.Length;
-        int n = dungeon[0].Length;
-        int[][] dp = dungeon;
-        dp[m - 1][n - 1] = Math.Max(1, 1 - dungeon[m - 1][n - 1]);
-        for (int x = m - 1; x >= 0; x--)
+        /// <summary>
+        /// 计算骑士拯救公主所需的最低初始健康点数
+        /// </summary>
+        /// <param name="dungeon"></param>
+        /// <returns></returns>
+        public int CalculateMinimumHP(int[][] dungeon)
         {
-            for (int y = n - 1; y >= 0; y--)
+            int m = dungeon.Length;
+            int n = dungeon[0].Length;
+            int[][] dp = dungeon;
+            dp[m - 1][n - 1] = Math.Max(1, 1 - dungeon[m - 1][n - 1]);
+            for (int x = m - 1; x >= 0; x--)
             {
-                if (x == m - 1 && y == n - 1)
-                    continue;
-                if (x == m - 1)
+                for (int y = n - 1; y >= 0; y--)
                 {
-                    dp[x][y] = Math.Max(1, dp[x][y + 1] - dungeon[x][y]);
-                }
-                else if (y == n - 1)
-                {
-                    dp[x][y] = Math.Max(1, dp[x + 1][y] - dungeon[x][y]);
-                }
-                else
-                {
-                    dp[x][y] = Math.Min(
-                        Math.Max(1, dp[x][y + 1] - dungeon[x][y]),
-                        Math.Max(1, dp[x + 1][y] - dungeon[x][y])
-                    );
+                    if (x == m - 1 && y == n - 1)
+                        continue;
+                    if (x == m - 1)
+                    {
+                        dp[x][y] = Math.Max(1, dp[x][y + 1] - dungeon[x][y]);
+                    }
+                    else if (y == n - 1)
+                    {
+                        dp[x][y] = Math.Max(1, dp[x + 1][y] - dungeon[x][y]);
+                    }
+                    else
+                    {
+                        dp[x][y] = Math.Min(
+                            Math.Max(1, dp[x][y + 1] - dungeon[x][y]),
+                            Math.Max(1, dp[x + 1][y] - dungeon[x][y])
+                        );
+                    }
                 }
             }
+            return dp[0][0];
         }
-        return dp[0][0];
     }
+    // @lc code=end
 }
-// @lc code=end

@@ -55,12 +55,22 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int MinCut(string s) {
-		throw new System.NotImplementedException();
-	}
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 分割回文串 II
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int MinCut(string s)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

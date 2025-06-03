@@ -39,12 +39,15 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int ReversePairs(int[] nums) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public int ReversePairs(int[] nums)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

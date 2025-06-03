@@ -90,12 +90,15 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public System.Collections.Generic.IList<string> FullJustify(string[] words, int maxWidth) {
-		throw new System.Exception();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public System.Collections.Generic.IList<string> FullJustify(string[] words, int maxWidth)
+        {
+            throw new System.Exception();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

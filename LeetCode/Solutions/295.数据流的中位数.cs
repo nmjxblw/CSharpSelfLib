@@ -61,28 +61,35 @@
  * 
  * 
  */
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public class MedianFinder
+    {
 
-// @lc code=start
-public class MedianFinder {
+        public MedianFinder()
+        {
+            throw new System.Exception();
+        }
 
-    public MedianFinder() {
-        throw new System.Exception(); 
+        public void AddNum(int num)
+        {
+            throw new System.Exception();
+        }
+
+        public double FindMedian()
+        {
+            throw new System.Exception();
+        }
     }
-    
-    public void AddNum(int num) {
-		throw new System.Exception();
-	}
-    
-    public double FindMedian() {
-		throw new System.Exception();
-	}
+
+    /**
+     * Your MedianFinder object will be instantiated and called as such:
+     * MedianFinder obj = new MedianFinder();
+     * obj.AddNum(num);
+     * double param_2 = obj.FindMedian();
+     */
+    // @lc code=end
 }
-
-/**
- * Your MedianFinder object will be instantiated and called as such:
- * MedianFinder obj = new MedianFinder();
- * obj.AddNum(num);
- * double param_2 = obj.FindMedian();
- */
-// @lc code=end
-

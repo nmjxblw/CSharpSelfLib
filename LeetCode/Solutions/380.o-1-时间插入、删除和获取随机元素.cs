@@ -63,69 +63,71 @@
  *
  *
  */
-
-// @lc code=start
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Random = System.Random;
-
-/// <summary>
-/// 设计一个支持在平均时间复杂度 O(1) 下，进行插入、删除和获取随机元素的集合。
-/// </summary>
-public class RandomizedSet
+namespace LeetCode
 {
-    private HashSet<int> Set { get; } = new HashSet<int>();
+    // @lc code=start
+
 
     /// <summary>
-    /// 构造集合对象
+    /// 设计一个支持在平均时间复杂度 O(1) 下，进行插入、删除和获取随机元素的集合。
     /// </summary>
-    /// <exception cref="System.NotImplementedException"></exception>
-    public RandomizedSet() { }
-
-    /// <summary>
-    /// 向集合中插入一个元素，如果元素已经存在，则返回 false，否则返回 true。
-    /// </summary>
-    /// <param name="val"></param>
-    /// <returns></returns>
-    /// <exception cref="System.NotImplementedException"></exception>
-    public bool Insert(int val)
+    public class RandomizedSet
     {
-        return Set.Add(val);
+        private HashSet<int> Set { get; } = new HashSet<int>();
+
+        /// <summary>
+        /// 构造集合对象
+        /// </summary>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public RandomizedSet() { }
+
+        /// <summary>
+        /// 向集合中插入一个元素，如果元素已经存在，则返回 false，否则返回 true。
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public bool Insert(int val)
+        {
+            return Set.Add(val);
+        }
+
+        /// <summary>
+        /// 从集合中删除一个元素，如果元素不存在，则返回 false，否则返回 true。
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public bool Remove(int val)
+        {
+            return Set.Remove(val);
+        }
+
+        /// <summary>
+        /// 随机返回集合中的一个元素，要求每个元素被返回的概率相同。
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int GetRandom()
+        {
+            Random random = new Random();
+            return Set.ToArray()[random.Next(0, Set.Count)];
+        }
     }
 
-    /// <summary>
-    /// 从集合中删除一个元素，如果元素不存在，则返回 false，否则返回 true。
-    /// </summary>
-    /// <param name="val"></param>
-    /// <returns></returns>
-    /// <exception cref="System.NotImplementedException"></exception>
-    public bool Remove(int val)
-    {
-        return Set.Remove(val);
-    }
-
-    /// <summary>
-    /// 随机返回集合中的一个元素，要求每个元素被返回的概率相同。
-    /// </summary>
-    /// <returns></returns>
-    /// <exception cref="System.NotImplementedException"></exception>
-    public int GetRandom()
-    {
-        Random random = new Random();
-        return Set.ToArray()[random.Next(0, Set.Count)];
-    }
+    /**
+     * Your RandomizedSet object will be instantiated and called as such:
+     * RandomizedSet obj = new RandomizedSet();
+     * bool param_1 = obj.Insert(val);
+     * bool param_2 = obj.Remove(val);
+     * int param_3 = obj.GetRandom();
+     */
+    // @lc code=end
 }
-
-/**
- * Your RandomizedSet object will be instantiated and called as such:
- * RandomizedSet obj = new RandomizedSet();
- * bool param_1 = obj.Insert(val);
- * bool param_2 = obj.Remove(val);
- * int param_3 = obj.GetRandom();
- */
-// @lc code=end
-
 // 21/21 cases passed (276 ms)
 // Your runtime beats 5.42 % of csharp submissions
 // Your memory usage beats 5.41 % of csharp submissions (137.6 MB)

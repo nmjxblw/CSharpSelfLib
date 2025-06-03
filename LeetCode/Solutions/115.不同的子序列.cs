@@ -54,12 +54,23 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int NumDistinct(string s, string t) {
-		throw new System.NotImplementedException();
-	}
+using System;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 不同的子序列
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int NumDistinct(string s, string t)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -61,14 +61,16 @@
  * 
  */
 
-// @lc code=start
-public partial class Solution
+namespace LeetCode
 {
+	// @lc code=start
+	public partial class Solution
+	{
 #if 正则表达式匹配
 	public bool IsMatch(string s, string p) {
 		return default;
 	}
 #endif
+	}
+	// @lc code=end
 }
-// @lc code=end
-

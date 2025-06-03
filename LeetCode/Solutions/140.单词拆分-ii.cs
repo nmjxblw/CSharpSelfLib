@@ -58,14 +58,26 @@
  * 
  * 
  */
-
-// @lc code=start
+using System;
 using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
 
-public partial class Solution {
-    public System.Collections.Generic.IList<string> WordBreak(string s,System.Collections.Generic.IList<string> wordDict) {
-		throw new System.NotImplementedException();
-	}
+    public partial class Solution
+    {
+        /// <summary>
+        /// 单词拆分 II
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="wordDict"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public System.Collections.Generic.IList<string> WordBreak(string s, System.Collections.Generic.IList<string> wordDict)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
+
 }
-// @lc code=end
-

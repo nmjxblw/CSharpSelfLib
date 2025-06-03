@@ -57,14 +57,19 @@
  * 
  * 
  */
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    using System.Diagnostics.Tracing;
 
-// @lc code=start
-using System.Diagnostics.Tracing;
-
-public partial class Solution {
-    public System.Collections.Generic.IList<int> FindMinHeightTrees(int n, int[][] edges) {
-        throw new System.NotImplementedException();
-	}
+    public partial class Solution
+    {
+        public System.Collections.Generic.IList<int> FindMinHeightTrees(int n, int[][] edges)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

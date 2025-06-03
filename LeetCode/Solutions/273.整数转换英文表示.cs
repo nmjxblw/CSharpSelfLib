@@ -48,12 +48,23 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public string NumberToWords(int num) {
-		throw new System.NotImplementedException();
-	}
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 整数转换英文表示
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public string NumberToWords(int num)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

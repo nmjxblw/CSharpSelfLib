@@ -69,33 +69,39 @@
  * 
  * 
  */
+namespace LeetCode
+{
+    // @lc code=start
+    public class RandomizedCollection
+    {
 
-// @lc code=start
-public class RandomizedCollection {
+        public RandomizedCollection()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public RandomizedCollection() {
-		throw new System.NotImplementedException();
-	}
-    
-    public bool Insert(int val) {
-		throw new System.NotImplementedException();
-	}
-    
-    public bool Remove(int val) {
-		throw new System.NotImplementedException();
-	}
-    
-    public int GetRandom() {
-		throw new System.NotImplementedException();
-	}
+        public bool Insert(int val)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool Remove(int val)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public int GetRandom()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+    /**
+     * Your RandomizedCollection object will be instantiated and called as such:
+     * RandomizedCollection obj = new RandomizedCollection();
+     * bool param_1 = obj.Insert(val);
+     * bool param_2 = obj.Remove(val);
+     * int param_3 = obj.GetRandom();
+     */
+    // @lc code=end
 }
-
-/**
- * Your RandomizedCollection object will be instantiated and called as such:
- * RandomizedCollection obj = new RandomizedCollection();
- * bool param_1 = obj.Insert(val);
- * bool param_2 = obj.Remove(val);
- * int param_3 = obj.GetRandom();
- */
-// @lc code=end
-

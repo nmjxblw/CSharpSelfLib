@@ -82,44 +82,48 @@
  *
  *
  */
-
-// @lc code=start
-/*
-// Definition for a Node.
-public class Node {
-    public int val;
-    public IList<Node> neighbors;
-
-    public Node() {
-        val = 0;
-        neighbors = new List<Node>();
-    }
-
-    public Node(int _val) {
-        val = _val;
-        neighbors = new List<Node>();
-    }
-
-    public Node(int _val, List<Node> _neighbors) {
-        val = _val;
-        neighbors = _neighbors;
-    }
-}
-*/
 using System;
 using System.Collections.Generic;
-
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。
-    /// </summary>
-    /// <param name="node"></param>
-    /// <returns></returns>
-    public Node CloneGraph(Node node) { 
-        List<Node> meetNodes = new List<Node>();
-        meetNodes.Add(node);
-        return node;
+    // @lc code=start
+    /*
+    // Definition for a Node.
+    public class Node {
+        public int val;
+        public IList<Node> neighbors;
+
+        public Node() {
+            val = 0;
+            neighbors = new List<Node>();
+        }
+
+        public Node(int _val) {
+            val = _val;
+            neighbors = new List<Node>();
+        }
+
+        public Node(int _val, List<Node> _neighbors) {
+            val = _val;
+            neighbors = _neighbors;
+        }
     }
+    */
+
+
+    public partial class Solution
+    {
+        /// <summary>
+        /// 给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public Node CloneGraph(Node node)
+        {
+            List<Node> meetNodes = new List<Node>();
+            meetNodes.Add(node);
+            return node;
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end

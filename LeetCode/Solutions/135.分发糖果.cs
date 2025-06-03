@@ -53,12 +53,24 @@
  * 
  * 
  */
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 分发糖果
+        /// </summary>
+        /// <param name="ratings"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int Candy(int[] ratings)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 
-// @lc code=start
-public partial class Solution {
-    public int Candy(int[] ratings) {
-		throw new System.NotImplementedException();
-	}
 }
-// @lc code=end
-

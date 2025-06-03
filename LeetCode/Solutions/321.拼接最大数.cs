@@ -57,12 +57,28 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int[] MaxNumber(int[] nums1, int[] nums2, int k) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// Combines two arrays to create the largest possible number of a specified length.
+        /// </summary>
+        /// <remarks>The method selects elements from <paramref name="nums1"/> and <paramref
+        /// name="nums2"/> in such a way that the resulting array is lexicographically the largest possible.</remarks>
+        /// <param name="nums1">The first array of integers to be considered for the result.</param>
+        /// <param name="nums2">The second array of integers to be considered for the result.</param>
+        /// <param name="k">The length of the resulting array. Must be a non-negative integer less than or equal to the combined length
+        /// of <paramref name="nums1"/> and <paramref name="nums2"/>.</param>
+        /// <returns>An array of integers representing the largest possible number of length <paramref name="k"/> formed by
+        /// combining elements from <paramref name="nums1"/> and <paramref name="nums2"/> while maintaining their
+        /// relative order.</returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int[] MaxNumber(int[] nums1, int[] nums2, int k)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

@@ -62,33 +62,40 @@
  * 
  * 
  */
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     public int val;
+     *     public TreeNode left;
+     *     public TreeNode right;
+     *     public TreeNode(int x) { val = x; }
+     * }
+     */
+    public class Codec
+    {
 
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     public int val;
- *     public TreeNode left;
- *     public TreeNode right;
- *     public TreeNode(int x) { val = x; }
- * }
- */
-public class Codec {
+        // Encodes a tree to a single string.
+        public string serialize(TreeNode root)
+        {
+            throw new System.Exception("Not Implemented");
+        }
 
-    // Encodes a tree to a single string.
-    public string serialize(TreeNode root) {
-		throw new System.Exception("Not Implemented");
-	}
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(string data)
+        {
+            throw new System.Exception("Not Implemented");
+        }
+    }
 
-    // Decodes your encoded data to tree.
-    public TreeNode deserialize(string data) {
-		throw new System.Exception("Not Implemented");
-	}
+    // Your Codec object will be instantiated and called as such:
+    // Codec ser = new Codec();
+    // Codec deser = new Codec();
+    // TreeNode ans = deser.deserialize(ser.serialize(root));
+    // @lc code=end
 }
-
-// Your Codec object will be instantiated and called as such:
-// Codec ser = new Codec();
-// Codec deser = new Codec();
-// TreeNode ans = deser.deserialize(ser.serialize(root));
-// @lc code=end
 

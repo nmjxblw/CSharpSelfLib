@@ -74,12 +74,16 @@
  * 
  * 
  */
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public int MinimumMoves(int[][] grid)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 
-// @lc code=start
-public partial class Solution {
-    public int MinimumMoves(int[][] grid) {
-		throw new System.NotImplementedException();
-	}
 }
-// @lc code=end
-

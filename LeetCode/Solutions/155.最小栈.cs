@@ -60,38 +60,75 @@
  * 
  * 
  */
+using System;
+namespace LeetCode
+{
+    // @lc code=start
+    /// <summary>
+    /// Represents a stack data structure that supports retrieving the minimum element in constant time.
+    /// </summary>
+    /// <remarks>In addition to standard stack operations such as <see cref="Push(int)"/> and <see
+    /// cref="Pop()"/>,  this class provides a method to retrieve the minimum value in the stack using <see
+    /// cref="GetMin()"/>.  The minimum value is updated dynamically as elements are added or removed.</remarks>
+    public class MinStack
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MinStack"/> class, which represents a stack that supports
+        /// retrieving the minimum element in constant time.
+        /// </summary>
+        /// <remarks>The <see cref="MinStack"/> class provides standard stack operations (push, pop, and
+        /// peek) along with a method to retrieve the minimum element in the stack.</remarks>
+        public MinStack()
+        {
 
-// @lc code=start
-public class MinStack {
-
-    public MinStack() {
-        
+        }
+        /// <summary>
+        /// Adds the specified value to the top of the stack.
+        /// </summary>
+        /// <remarks>The stack will grow dynamically to accommodate the new value if necessary.</remarks>
+        /// <param name="val">The value to push onto the stack.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public void Push(int val)
+        {
+            throw new System.NotImplementedException();
+        }
+        /// <summary>
+        /// Removes the top element from the stack.
+        /// </summary>
+        /// <remarks>This method modifies the state of the stack by removing its topmost element.  If the
+        /// stack is empty, calling this method will result in an exception.</remarks>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public void Pop()
+        {
+            throw new System.NotImplementedException();
+        }
+        /// <summary>
+        /// Retrieves the top element of the stack without removing it.
+        /// </summary>
+        /// <returns>The value of the top element in the stack.</returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int Top()
+        {
+            throw new System.NotImplementedException();
+        }
+        /// <summary>
+        /// Retrieves the minimum value from the collection.
+        /// </summary>
+        /// <returns>The smallest integer in the collection. If the collection is empty, the behavior is undefined.</returns>
+        /// <exception cref="System.NotImplementedException">Thrown when the method is not implemented.</exception>
+        public int GetMin()
+        {
+            throw new System.NotImplementedException();
+        }
     }
-    
-    public void Push(int val) {
-		throw new System.NotImplementedException();
-	}
-    
-    public void Pop() {
-		throw new System.NotImplementedException();
-	}
-    
-    public int Top() {
-		throw new System.NotImplementedException();
-	}
-    
-    public int GetMin() {
-		throw new System.NotImplementedException();
-	}
+
+    /**
+     * Your MinStack object will be instantiated and called as such:
+     * MinStack obj = new MinStack();
+     * obj.Push(val);
+     * obj.Pop();
+     * int param_3 = obj.Top();
+     * int param_4 = obj.GetMin();
+     */
+    // @lc code=end
 }
-
-/**
- * Your MinStack object will be instantiated and called as such:
- * MinStack obj = new MinStack();
- * obj.Push(val);
- * obj.Pop();
- * int param_3 = obj.Top();
- * int param_4 = obj.GetMin();
- */
-// @lc code=end
-

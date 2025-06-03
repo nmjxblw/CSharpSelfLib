@@ -61,20 +61,24 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-// @lc code=start
-public partial class Solution {
-    /// <summary>
-    /// 逃离大迷宫
-    /// </summary>
-    /// <param name="blocked">封锁的方格列表</param>
-    /// <param name="source">源方格</param>
-    /// <param name="target">目标方格</param>
-    /// <returns></returns>
-    public bool IsEscapePossible(int[][] blocked, int[] source, int[] target) {
-        if (blocked.Length<2)
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        /// <summary>
+        /// 逃离大迷宫
+        /// </summary>
+        /// <param name="blocked">封锁的方格列表</param>
+        /// <param name="source">源方格</param>
+        /// <param name="target">目标方格</param>
+        /// <returns></returns>
+        public bool IsEscapePossible(int[][] blocked, int[] source, int[] target)
+        {
+            if (blocked.Length < 2)
+                return true;
             return true;
-        return true;
+        }
     }
+    // @lc code=end
 }
-// @lc code=end
-

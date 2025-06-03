@@ -88,100 +88,103 @@
  *
  *
  */
-
-// @lc code=start
-public partial class Solution
+using System;
+namespace LeetCode
 {
-    /// <summary>
-    /// 给定一个罗马数字，将其转换成整数。
-    /// </summary>
-    /// <param name="s"></param>
-    /// <returns></returns>
-    /// <exception cref="System.NotImplementedException"></exception>
-    public int RomanToInt(string s)
+    // @lc code=start
+    public partial class Solution
     {
-        int sum = 0;
-        s = s.ToUpper().Trim();
-        for (int i = 0; i < s.Length; i++)
+        /// <summary>
+        /// 给定一个罗马数字，将其转换成整数。
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int RomanToInt(string s)
         {
-            if (s[i] == 'M')
+            int sum = 0;
+            s = s.ToUpper().Trim();
+            for (int i = 0; i < s.Length; i++)
             {
-                sum += 1000;
-            }
-            else if (s[i] == 'D')
-            {
-                sum += 500;
-            }
-            else if (s[i] == 'C')
-            {
-                if (i < s.Length - 1)
+                if (s[i] == 'M')
                 {
-                    if (s[i + 1] == 'D')
-                    {
-                        sum += 400;
-                        i++;
-                        continue;
-                    }
-                    else if (s[i + 1] == 'M')
-                    {
-                        sum += 900;
-                        i++;
-                        continue;
-                    }
+                    sum += 1000;
                 }
-                sum += 100;
-            }
-            else if (s[i] == 'L')
-            {
-                sum += 50;
-            }
-            else if (s[i] == 'X')
-            {
-                if (i < s.Length - 1)
+                else if (s[i] == 'D')
                 {
-                    if (s[i + 1] == 'L')
-                    {
-                        sum += 40;
-                        i++;
-                        continue;
-                    }
-                    else if (s[i + 1] == 'C')
-                    {
-                        sum += 90;
-                        i++;
-                        continue;
-                    }
+                    sum += 500;
                 }
-                sum += 10;
-            }
-            else if (s[i] == 'V')
-            {
-                sum += 5;
-            }
-            else
-            {
-                if (i < s.Length - 1)
+                else if (s[i] == 'C')
                 {
-                    if (s[i + 1] == 'V')
+                    if (i < s.Length - 1)
                     {
-                        sum += 4;
-                        i++;
-                        continue;
+                        if (s[i + 1] == 'D')
+                        {
+                            sum += 400;
+                            i++;
+                            continue;
+                        }
+                        else if (s[i + 1] == 'M')
+                        {
+                            sum += 900;
+                            i++;
+                            continue;
+                        }
                     }
-                    else if (s[i + 1] == 'X')
-                    {
-                        sum += 9;
-                        i++;
-                        continue;
-                    }
+                    sum += 100;
                 }
-                sum += 1;
+                else if (s[i] == 'L')
+                {
+                    sum += 50;
+                }
+                else if (s[i] == 'X')
+                {
+                    if (i < s.Length - 1)
+                    {
+                        if (s[i + 1] == 'L')
+                        {
+                            sum += 40;
+                            i++;
+                            continue;
+                        }
+                        else if (s[i + 1] == 'C')
+                        {
+                            sum += 90;
+                            i++;
+                            continue;
+                        }
+                    }
+                    sum += 10;
+                }
+                else if (s[i] == 'V')
+                {
+                    sum += 5;
+                }
+                else
+                {
+                    if (i < s.Length - 1)
+                    {
+                        if (s[i + 1] == 'V')
+                        {
+                            sum += 4;
+                            i++;
+                            continue;
+                        }
+                        else if (s[i + 1] == 'X')
+                        {
+                            sum += 9;
+                            i++;
+                            continue;
+                        }
+                    }
+                    sum += 1;
+                }
             }
+            return sum;
         }
-        return sum;
     }
+    // @lc code=end
 }
-// @lc code=end
 // 3999/3999 cases passed (10 ms)
 // Your runtime beats 6.02 % of csharp submissions
 // Your memory usage beats 13.26 % of csharp submissions (50.5 MB)

@@ -64,21 +64,23 @@
  */
 using System;
 using System.Collections.Generic;
-
-// @lc code=start
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// Nim 游戏
-    /// </summary>
-    /// <param name="n"></param>
-    /// <returns></returns>
-    public bool CanWinNim(int n)
+    // @lc code=start
+    public partial class Solution
     {
-        return n % 4 != 0;
+        /// <summary>
+        /// Nim 游戏
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public bool CanWinNim(int n)
+        {
+            return n % 4 != 0;
+        }
     }
+    // @lc code=end
 }
-// @lc code=end
 // 60/60 cases passed (0 ms)
 // Your runtime beats 100 % of csharp submissions
 // Your memory usage beats 59.38 % of csharp submissions (30.7 MB)

@@ -84,12 +84,15 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution {
-    public int[] HitBricks(int[][] grid, int[][] hits) {
-		throw new System.NotImplementedException();
-	}
+namespace LeetCode
+{
+    // @lc code=start
+    public partial class Solution
+    {
+        public int[] HitBricks(int[][] grid, int[][] hits)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

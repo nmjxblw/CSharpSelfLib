@@ -50,33 +50,35 @@
  *
  *
  */
-
-// @lc code=start
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
-
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 密钥格式化
-    /// </summary>
-    /// <param name="s"></param>
-    /// <param name="k"></param>
-    /// <returns></returns>
-    public string LicenseKeyFormatting(string s, int k)
+    // @lc code=start
+
+    public partial class Solution
     {
-        s = s.Replace("-", string.Empty).ToUpper();
-        if (s.Length <= k)
-            return s;
-        for (int i = s.Length - k; i > 0; i -= k)
+        /// <summary>
+        /// 密钥格式化
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public string LicenseKeyFormatting(string s, int k)
         {
-            s = s.Insert(i, "-");
+            s = s.Replace("-", string.Empty).ToUpper();
+            if (s.Length <= k)
+                return s;
+            for (int i = s.Length - k; i > 0; i -= k)
+            {
+                s = s.Insert(i, "-");
+            }
+            return s;
         }
-        return s;
     }
+    // @lc code=end
 }
-// @lc code=end
 // 39/39 cases passed (469 ms)
 // Your runtime beats 38.46 % of csharp submissions
 // Your memory usage beats 38.46 % of csharp submissions (70.2 MB)

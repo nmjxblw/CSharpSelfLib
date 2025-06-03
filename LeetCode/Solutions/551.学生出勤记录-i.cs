@@ -58,44 +58,47 @@
  *
  *
  */
-
-// @lc code=start
 using System;
 using System.Collections.Generic;
-
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 学生出勤记录 I
-    /// </summary>
-    /// <param name="s"></param>
-    /// <returns></returns>
-    /// <exception cref="Exception"></exception>
-    public bool CheckRecord(string s)
+    // @lc code=start
+
+
+    public partial class Solution
     {
-        int absentCount = 0; // 缺勤计数
-        for (int index = 0; index < s.Length; index++)
+        /// <summary>
+        /// 学生出勤记录 I
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public bool CheckRecord(string s)
         {
-            if (s[index] == 'A')
+            int absentCount = 0; // 缺勤计数
+            for (int index = 0; index < s.Length; index++)
             {
-                absentCount++;
-                if (absentCount >= 2) // 缺勤超过1次
+                if (s[index] == 'A')
                 {
-                    return false;
+                    absentCount++;
+                    if (absentCount >= 2) // 缺勤超过1次
+                    {
+                        return false;
+                    }
+                }
+                else if (s[index] == 'L')
+                {
+                    if (index + 2 < s.Length && s[index + 1] == 'L' && s[index + 2] == 'L')
+                    {
+                        return false; // 连续迟到超过2次
+                    }
                 }
             }
-            else if (s[index] == 'L')
-            {
-                if (index + 2 < s.Length && s[index + 1] == 'L' && s[index + 2] == 'L')
-                {
-                    return false; // 连续迟到超过2次
-                }
-            }
+            return true; // 满足条件
         }
-        return true; // 满足条件
     }
+    // @lc code=end
 }
-// @lc code=end
 // 115/115 cases passed (0 ms)
 // Your runtime beats 100 % of csharp submissions
 // Your memory usage beats 9.52 % of csharp submissions (41.9 MB)

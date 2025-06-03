@@ -63,31 +63,41 @@
  * 进阶：你将如何拓展你的设计？使之变得通用化，从而适应所有的类型，而不只是整数型？
  * 
  */
+using System;
+using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
+    // C# IEnumerator interface reference:
+    // https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerator?view=netframework-4.8
+    /// <summary>
+    /// 窥视迭代器
+    /// </summary>
+    class PeekingIterator
+    {
+        // iterators refers to the first element of the array.
+        public PeekingIterator(System.Collections.Generic.IEnumerator<int> iterator)
+        {
+            // initialize any member here.
+        }
 
-// @lc code=start
-// C# IEnumerator interface reference:
-// https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerator?view=netframework-4.8
+        // Returns the next element in the iteration without advancing the iterator.
+        public int Peek()
+        {
+            throw new System.NotImplementedException();
+        }
 
-class PeekingIterator {
-    // iterators refers to the first element of the array.
-    public PeekingIterator(System.Collections.Generic.IEnumerator<int> iterator) {
-        // initialize any member here.
+        // Returns the next element in the iteration and advances the iterator.
+        public int Next()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // Returns false if the iterator is refering to the end of the array of true otherwise.
+        public bool HasNext()
+        {
+            throw new System.NotImplementedException();
+        }
     }
-    
-    // Returns the next element in the iteration without advancing the iterator.
-    public int Peek() {
-		throw new System.NotImplementedException();
-	}
-    
-    // Returns the next element in the iteration and advances the iterator.
-    public int Next() {
-		throw new System.NotImplementedException();
-	}
-    
-    // Returns false if the iterator is refering to the end of the array of true otherwise.
-    public bool HasNext() {
-		throw new System.NotImplementedException();
-	}
+    // @lc code=end
 }
-// @lc code=end
-

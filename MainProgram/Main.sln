@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameTool", "..\FrameTool\F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoltageInsulationTest", "..\耐压测试\VoltageInsulationTest.csproj", "{834FF0F5-12C4-47CE-B68A-41C9B69C2267}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild", "..\MSBuild\MSBuild.csproj", "{DD3741DE-9EA8-4E75-9E63-E4F989E3CF20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3741DE-9EA8-4E75-9E63-E4F989E3CF20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3741DE-9EA8-4E75-9E63-E4F989E3CF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3741DE-9EA8-4E75-9E63-E4F989E3CF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3741DE-9EA8-4E75-9E63-E4F989E3CF20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

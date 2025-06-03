@@ -64,38 +64,45 @@
  * 
  * 
  */
+namespace LeetCode
+{
+    // @lc code=start
+    public class AllOne
+    {
 
-// @lc code=start
-public class AllOne {
+        public AllOne()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public AllOne() {
-		throw new System.NotImplementedException();
-	}
-    
-    public void Inc(string key) {
-		throw new System.NotImplementedException();
-	}
-    
-    public void Dec(string key) {
-		throw new System.NotImplementedException();
-	}
-    
-    public string GetMaxKey() {
-		throw new System.NotImplementedException();
-	}
-    
-    public string GetMinKey() {
-		throw new System.NotImplementedException();
-	}
+        public void Inc(string key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Dec(string key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string GetMaxKey()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string GetMinKey()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+    /**
+     * Your AllOne object will be instantiated and called as such:
+     * AllOne obj = new AllOne();
+     * obj.Inc(key);
+     * obj.Dec(key);
+     * string param_3 = obj.GetMaxKey();
+     * string param_4 = obj.GetMinKey();
+     */
+    // @lc code=end
 }
-
-/**
- * Your AllOne object will be instantiated and called as such:
- * AllOne obj = new AllOne();
- * obj.Inc(key);
- * obj.Dec(key);
- * string param_3 = obj.GetMaxKey();
- * string param_4 = obj.GetMinKey();
- */
-// @lc code=end
-

@@ -57,14 +57,18 @@
  * 
  * 
  */
-
-// @lc code=start
 using System.Collections.Generic;
+namespace LeetCode
+{
+    // @lc code=start
 
-public partial class Solution {
-    public System.Collections.Generic.IList<string> FindItinerary(IList<IList<string>> tickets) {
-        throw new System.NotImplementedException();
-	}
+
+    public partial class Solution
+    {
+        public System.Collections.Generic.IList<string> FindItinerary(IList<IList<string>> tickets)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    // @lc code=end
 }
-// @lc code=end
-

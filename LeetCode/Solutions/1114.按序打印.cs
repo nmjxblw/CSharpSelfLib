@@ -71,62 +71,65 @@
  *
  *
  */
-
-// @lc code=start
 using System;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-
-public partial class Foo
+namespace LeetCode
 {
-    private static AutoResetEvent[] autoResetEvents = new AutoResetEvent[]
+    // @lc code=start
+
+
+    public partial class Foo
     {
+        private static AutoResetEvent[] autoResetEvents = new AutoResetEvent[]
+        {
         new AutoResetEvent(false),
         new AutoResetEvent(false),
-    };
+        };
 
-    /// <summary>
-    /// 按序打印，构造函数
-    /// </summary>
-    public Foo() { }
+        /// <summary>
+        /// 按序打印，构造函数
+        /// </summary>
+        public Foo() { }
 
-    /// <summary>
-    /// 第一个方法
-    /// </summary>
-    /// <param name="printFirst"></param>
-    public void First(Action printFirst)
-    {
-        // printFirst() outputs "first". Do not change or remove this line.
-        printFirst();
-        Foo.autoResetEvents[0].Set();
+        /// <summary>
+        /// 第一个方法
+        /// </summary>
+        /// <param name="printFirst"></param>
+        public void First(Action printFirst)
+        {
+            // printFirst() outputs "first". Do not change or remove this line.
+            printFirst();
+            Foo.autoResetEvents[0].Set();
+        }
+
+        /// <summary>
+        /// 第二个方法
+        /// </summary>
+        /// <param name="printSecond"></param>
+        public void Second(Action printSecond)
+        {
+            autoResetEvents[0].WaitOne();
+
+            // printSecond() outputs "second". Do not change or remove this line.
+            printSecond();
+            // 通知其他Foo实例解锁2号锁
+            Foo.autoResetEvents[1].Set();
+        }
+
+        /// <summary>
+        /// 第三个方法
+        /// </summary>
+        /// <param name="printThird"></param>
+        public void Third(Action printThird)
+        {
+            autoResetEvents[1].WaitOne();
+            printThird();
+        }
     }
-
-    /// <summary>
-    /// 第二个方法
-    /// </summary>
-    /// <param name="printSecond"></param>
-    public void Second(Action printSecond)
-    {
-        autoResetEvents[0].WaitOne();
-
-        // printSecond() outputs "second". Do not change or remove this line.
-        printSecond();
-        // 通知其他Foo实例解锁2号锁
-        Foo.autoResetEvents[1].Set();
-    }
-
-    /// <summary>
-    /// 第三个方法
-    /// </summary>
-    /// <param name="printThird"></param>
-    public void Third(Action printThird)
-    {
-        autoResetEvents[1].WaitOne();
-        printThird();
-    }
+    // @lc code=end
 }
-// @lc code=end
 // 36/36 cases passed (200 ms)
 // Your runtime beats 58.33 % of csharp submissions
 // Your memory usage beats 100 % of csharp submissions (43.1 MB)

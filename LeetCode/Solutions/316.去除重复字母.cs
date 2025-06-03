@@ -48,19 +48,21 @@
  */
 using System;
 using System.Collections.Generic;
-
-// @lc code=start
-public partial class Solution
+namespace LeetCode
 {
-    /// <summary>
-    /// 去除重复字母
-    /// </summary>
-    /// <param name="s"></param>
-    /// <returns></returns>
-    public string RemoveDuplicateLetters(string s)
+    // @lc code=start
+    public partial class Solution
     {
-        string result = s;
-        return result;
+        /// <summary>
+        /// 去除重复字母
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public string RemoveDuplicateLetters(string s)
+        {
+            string result = s;
+            return result;
+        }
     }
+    // @lc code=end
 }
-// @lc code=end

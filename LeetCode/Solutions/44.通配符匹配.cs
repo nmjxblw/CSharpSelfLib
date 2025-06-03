@@ -62,10 +62,13 @@
  * 
  * 
  */
-
-// @lc code=start
-public partial class Solution
+using System;
+using System.Linq;
+namespace LeetCode
 {
+    // @lc code=start
+    public partial class Solution
+    {
 #if 通配符匹配
     /// <summary>
     /// 通配符匹配
@@ -78,6 +81,6 @@ public partial class Solution
 		throw new System.NotImplementedException();
 	}
 #endif
+    }
+    // @lc code=end
 }
-// @lc code=end
-
