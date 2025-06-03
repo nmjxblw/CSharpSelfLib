@@ -5,7 +5,6 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Version>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HH"))</Version>
-		<GamePath>D:\SteamLibrary\steamapps\common\Stardew Valley</GamePath>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
 		<Authors>Octette</Authors>

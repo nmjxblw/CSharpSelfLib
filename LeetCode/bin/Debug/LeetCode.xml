@@ -730,6 +730,20 @@
             <returns></returns>
             <exception cref="T:System.Exception"></exception>
         </member>
+        <member name="M:Solution.PrintMineSweeperBoard(System.Char[][])">
+            <summary>
+            打印扫雷结果
+            </summary>
+            <param name="board"></param>
+        </member>
+        <member name="M:Solution.CheckRecord(System.String)">
+            <summary>
+            学生出勤记录 I
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
         <member name="M:Solution.IsPalindrome(System.Int32)">
             <summary>
             判断一个整数是否是回文数

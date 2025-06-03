@@ -120,6 +120,7 @@
     <Compile Include="Solutions\102.二叉树的层序遍历.cs" />
     <Compile Include="Solutions\103.二叉树的锯齿形层序遍历.cs" />
     <Compile Include="Solutions\1032.字符流.cs" />
+    <Compile Include="Solutions\1036.逃离大迷宫.cs" />
     <Compile Include="Solutions\1114.按序打印.cs" />
     <Compile Include="Solutions\115.不同的子序列.cs" />
     <Compile Include="Solutions\119.杨辉三角-ii.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Solutions\273.整数转换英文表示.cs" />
     <Compile Include="Solutions\282.给表达式添加运算符.cs" />
     <Compile Include="Solutions\284.窥视迭代器.cs" />
+    <Compile Include="Solutions\292.nim-游戏.cs" />
     <Compile Include="Solutions\295.数据流的中位数.cs" />
     <Compile Include="Solutions\297.二叉树的序列化与反序列化.cs" />
     <Compile Include="Solutions\30.串联所有单词的子串.cs" />
@@ -164,6 +166,7 @@
     <Compile Include="Solutions\310.最小高度树.cs" />
     <Compile Include="Solutions\312.戳气球.cs" />
     <Compile Include="Solutions\315.计算右侧小于当前元素的个数.cs" />
+    <Compile Include="Solutions\316.去除重复字母.cs" />
     <Compile Include="Solutions\32.最长有效括号.cs" />
     <Compile Include="Solutions\321.拼接最大数.cs" />
     <Compile Include="Solutions\327.区间和的个数.cs" />
@@ -194,6 +197,7 @@
     <Compile Include="Solutions\517.超级洗衣机.cs" />
     <Compile Include="Solutions\52.n-皇后-ii.cs" />
     <Compile Include="Solutions\529.扫雷游戏.cs" />
+    <Compile Include="Solutions\551.学生出勤记录-i.cs" />
     <Compile Include="Solutions\552.学生出勤记录-ii.cs" />
     <Compile Include="Solutions\56.合并区间.cs" />
     <Compile Include="Solutions\591.标签验证器.cs" />
