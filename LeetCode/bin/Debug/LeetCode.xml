@@ -65,16 +65,6 @@
             <param name="y"></param>
             <returns></returns>
         </member>
-        <member name="T:LeetCode.LeetCodeApp">
-            <summary>
-            LeetCode的主程序
-            </summary>
-        </member>
-        <member name="M:LeetCode.LeetCodeApp.Start">
-            <summary>
-            程序主方法
-            </summary>
-        </member>
         <member name="P:LeetCode.ConfigManager.Data">
             <summary>
             动态解析后的 json 文件
@@ -83,6 +73,16 @@
         <member name="M:LeetCode.ConfigManager.Save">
             <summary>
             存储
+            </summary>
+        </member>
+        <member name="T:LeetCode.LeetCodeApp">
+            <summary>
+            LeetCode的主程序
+            </summary>
+        </member>
+        <member name="M:LeetCode.LeetCodeApp.Start">
+            <summary>
+            程序主方法
             </summary>
         </member>
         <member name="T:LeetCode.DynamicClass">
@@ -623,6 +623,23 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.ZigzagLevelOrder(LeetCode.TreeNode)">
+            <summary>
+            二叉树的锯齿形层序遍历
+            </summary>
+            <param name="root"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.IsEscapePossible(System.Int32[][],System.Int32[],System.Int32[])">
+            <summary>
+            逃离大迷宫
+            </summary>
+            <param name="blocked">封锁的方格列表</param>
+            <param name="source">源方格</param>
+            <param name="target">目标方格</param>
+            <returns></returns>
+        </member>
         <member name="M:LeetCode.Solution.NumDistinct(System.String,System.String)">
             <summary>
             不同的子序列
@@ -902,6 +919,26 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.SolveSudoku(System.Char[][])">
+            <summary>
+             解数独
+            </summary>
+            <param name="board"></param>
+        </member>
+        <member name="M:LeetCode.Solution.PrintSudokuBoard(System.Char[][])">
+            <summary>
+            打印数独棋盘
+            </summary>
+            <param name="board"></param>
+        </member>
+        <member name="M:LeetCode.Solution.TrapRainWater(System.Int32[][])">
+            <summary>
+            接雨水 II
+            </summary>
+            <param name="heightMap"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.Trap(System.Int32[])">
             <summary>
             给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
@@ -991,6 +1028,20 @@
             <param name="s"></param>
             <returns></returns>
             <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.StrangePrinter(System.String)">
+            <summary>
+            奇怪的打印机
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.SortColors(System.Int32[])">
+            <summary>
+            颜色分类
+            </summary>
+            <param name="nums"></param>
         </member>
         <member name="M:LeetCode.Solution.IsPalindrome(System.Int32)">
             <summary>
@@ -1168,15 +1219,6 @@
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="M:Solution.IsEscapePossible(System.Int32[][],System.Int32[],System.Int32[])">
-            <summary>
-            逃离大迷宫
-            </summary>
-            <param name="blocked">封锁的方格列表</param>
-            <param name="source">源方格</param>
-            <param name="target">目标方格</param>
-            <returns></returns>
         </member>
     </members>
 </doc>

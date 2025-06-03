@@ -59,6 +59,7 @@
  */
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace LeetCode
 {
@@ -71,6 +72,15 @@ namespace LeetCode
         /// <param name="board"></param>
         public void SolveSudoku(char[][] board)
         {
+            char[][] tempBoard = new char[board.Length][];
+            for (int i = 0; i < board.Length; i++)
+            {
+                tempBoard[i] = new char[board[i].Length];
+                for (int j = 0; j < board[i].Length; j++)
+                {
+                    tempBoard[i][j] = board[i][j];
+                }
+            }
             char[] fullChars = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' };
             for (int row = 0; row < board.Length; row++)
             {
@@ -79,6 +89,39 @@ namespace LeetCode
                 for (int col = 0; col < board[row].Length; col++)
                 {
 
+                }
+            }
+        }
+        /// <summary>
+        /// 打印数独棋盘
+        /// </summary>
+        /// <param name="board"></param>
+        public void PrintSudokuBoard(char[][] board)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < board.Length; i++)
+            {
+                for (int j = 0; j < board[i].Length; j++)
+                {
+                    string block = " ";
+                    if (int.TryParse(board[i][j].ToString(),out int temp))
+                    {
+                        block = temp.ToString();
+                    }
+                    stringBuilder.Append(block);
+                    if (j < board[i].Length - 1)
+                    {
+                        stringBuilder.Append("|");
+                    }
+                    if ((j + 1) % 3 == 0 && j < board[i].Length - 1)
+                    {
+                        stringBuilder.Append("|");
+                    }
+                }
+                stringBuilder.AppendLine(new string('-', board[i].Length * 2 + 1));
+                if ((i + 1) % 3 == 0 && i < board.Length - 1)
+                {
+                    stringBuilder.AppendLine(new string('-', board[i].Length * 2 + 1));
                 }
             }
         }

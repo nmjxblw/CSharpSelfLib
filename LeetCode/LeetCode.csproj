@@ -96,8 +96,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Checker.cs" />
+    <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="LeetCodeApp.cs" />
-    <Compile Include="Other\Config\ConfigManager.cs" />
     <Compile Include="Other\DynamicClass\DynamicClass.cs" />
     <Compile Include="Other\Structure\ListNode.cs" />
     <Compile Include="Other\Structure\NestedInteger.cs" />
@@ -227,7 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EmbeddedResource Include="Other\Config\RuntimeConfig.json">
+    <EmbeddedResource Include="Config\RuntimeConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config" />
