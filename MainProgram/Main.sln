@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameTool", "..\FrameTool\F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoltageInsulationTest", "..\耐压测试\VoltageInsulationTest.csproj", "{834FF0F5-12C4-47CE-B68A-41C9B69C2267}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamine.StardewValley", "..\Dopamine.StardewValley\Dopamine.StardewValley.csproj", "{1DF9313F-ABE4-46CC-8069-804E55D86F72}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,10 +77,6 @@ Global
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{834FF0F5-12C4-47CE-B68A-41C9B69C2267}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1DF9313F-ABE4-46CC-8069-804E55D86F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DF9313F-ABE4-46CC-8069-804E55D86F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DF9313F-ABE4-46CC-8069-804E55D86F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DF9313F-ABE4-46CC-8069-804E55D86F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

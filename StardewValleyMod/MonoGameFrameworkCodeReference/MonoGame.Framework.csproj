@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>MonoGame.Framework</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>netcoreapp6.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="MonoGame.bmp" />
+    <None Remove="gamecontrollerdb.txt" />
+    <None Remove="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.AlphaTestEffect.ogl.mgfxo" />
+    <None Remove="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.BasicEffect.ogl.mgfxo" />
+    <None Remove="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.DualTextureEffect.ogl.mgfxo" />
+    <None Remove="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.EnvironmentMapEffect.ogl.mgfxo" />
+    <None Remove="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.SkinnedEffect.ogl.mgfxo" />
+    <None Remove="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.SpriteEffect.ogl.mgfxo" />
+    <EmbeddedResource Include="MonoGame.bmp" LogicalName="MonoGame.bmp" />
+    <EmbeddedResource Include="gamecontrollerdb.txt" LogicalName="gamecontrollerdb.txt" />
+    <EmbeddedResource Include="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.AlphaTestEffect.ogl.mgfxo" LogicalName="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.AlphaTestEffect.ogl.mgfxo" />
+    <EmbeddedResource Include="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.BasicEffect.ogl.mgfxo" LogicalName="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.BasicEffect.ogl.mgfxo" />
+    <EmbeddedResource Include="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.DualTextureEffect.ogl.mgfxo" LogicalName="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.DualTextureEffect.ogl.mgfxo" />
+    <EmbeddedResource Include="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.EnvironmentMapEffect.ogl.mgfxo" LogicalName="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.EnvironmentMapEffect.ogl.mgfxo" />
+    <EmbeddedResource Include="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.SkinnedEffect.ogl.mgfxo" LogicalName="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.SkinnedEffect.ogl.mgfxo" />
+    <EmbeddedResource Include="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.SpriteEffect.ogl.mgfxo" LogicalName="Microsoft.Xna.Framework.Platform.Graphics.Effect.Resources.SpriteEffect.ogl.mgfxo" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>
