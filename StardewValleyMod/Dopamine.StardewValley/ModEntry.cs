@@ -4,12 +4,17 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using GenericModConfigMenu;
+using HarmonyLib;
 
 namespace YourProjectName
 {
     /// <summary>The mod entry point.</summary>
     internal sealed class ModEntry : Mod
     {
+        public static IManifest Mod { get; private set; } = null!;
         /*********
         ** Public methods
         *********/

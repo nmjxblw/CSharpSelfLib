@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>GenericModConfigMenu</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>netcoreapp6.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework" />
+    <Reference Include="SMAPI.Toolkit.CoreInterfaces" />
+    <Reference Include="StardewModdingAPI" />
+    <Reference Include="Stardew Valley" />
+    <Reference Include="xTile" />
+  </ItemGroup>
+</Project>

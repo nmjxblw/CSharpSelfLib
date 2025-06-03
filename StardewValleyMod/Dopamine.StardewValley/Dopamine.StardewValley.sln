@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirbCore", "..\StardewValle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stardew-Valley", "..\StardewValleyCodeReference\Stardew-Valley.csproj", "{807EB511-01AB-957C-1BD9-A0B910FA4EB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LookupAnything", "..\StardewValley.LookupAnything\LookupAnything.csproj", "{2C176C15-BB9D-3644-3B00-FEB8D7F405CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiggerBackpack", "..\StardewValley.BiggerBackpack\BiggerBackpack.csproj", "{5CE70DAF-6B9A-FDD8-62A3-5056ABE80729}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericModConfigMenu", "..\StardewValley.GenericModConfigMenu\GenericModConfigMenu.csproj", "{3E0F1F7E-D9D3-DC96-ACBF-FD488E41AFD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{807EB511-01AB-957C-1BD9-A0B910FA4EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{807EB511-01AB-957C-1BD9-A0B910FA4EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{807EB511-01AB-957C-1BD9-A0B910FA4EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C176C15-BB9D-3644-3B00-FEB8D7F405CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C176C15-BB9D-3644-3B00-FEB8D7F405CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C176C15-BB9D-3644-3B00-FEB8D7F405CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C176C15-BB9D-3644-3B00-FEB8D7F405CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CE70DAF-6B9A-FDD8-62A3-5056ABE80729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE70DAF-6B9A-FDD8-62A3-5056ABE80729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE70DAF-6B9A-FDD8-62A3-5056ABE80729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE70DAF-6B9A-FDD8-62A3-5056ABE80729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E0F1F7E-D9D3-DC96-ACBF-FD488E41AFD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0F1F7E-D9D3-DC96-ACBF-FD488E41AFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0F1F7E-D9D3-DC96-ACBF-FD488E41AFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0F1F7E-D9D3-DC96-ACBF-FD488E41AFD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
