@@ -4,9 +4,10 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<AssemblyName>MSBuild</AssemblyName>
-		<RootNamespace>MSBuild</RootNamespace>
+		<AssemblyName>Dopamine.MSBuild</AssemblyName>
+		<RootNamespace>Dopamine.MSBuild</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<Version>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HH"))</Version>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.14.8" />
