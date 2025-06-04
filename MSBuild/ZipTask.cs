@@ -64,7 +64,7 @@ namespace Dopamine.MSBuild
     }
 }
 
-#region .csproj
+#region -- .csproj --
 //< Project Sdk = "Microsoft.NET.Sdk" >
 //  ...
 //  < !--注册自定义任务-- >
@@ -82,7 +82,7 @@ namespace Dopamine.MSBuild
 //</ Project >
 #endregion
 
-#region 在任务中添加压缩级别属性
+#region -- 在任务中添加压缩级别属性 --
 //public CompressionLevel CompressionLevel { get; set; } = CompressionLevel.Optimal;
 
 //// 创建压缩包时使用：

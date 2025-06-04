@@ -1,7 +1,7 @@
 {
   "Name": "Dopamine.StardewValley",
   "Author": "Octette",
-  "Version": "1.0-beta",
+  "Version": "%ProjectVersion%",
   "Description": "Self StardewValley",
   "UniqueID": "Octette.Dopamine.StardewValley",
   "EntryDll": "Dopamine.StardewValley.dll",
