@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\MainProgram\packages\LLamaSharp.Backend.Cpu.0.24.0\build\netstandard2.0\LLamaSharp.Backend.Cpu.props" Condition="Exists('..\MainProgram\packages\LLamaSharp.Backend.Cpu.0.24.0\build\netstandard2.0\LLamaSharp.Backend.Cpu.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -29,6 +30,8 @@
     <ApplicationVersion>2025.06.03.14</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -264,4 +267,10 @@
     <Folder Include="List\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\MainProgram\packages\LLamaSharp.Backend.Cpu.0.24.0\build\netstandard2.0\LLamaSharp.Backend.Cpu.props')" Text="$([System.String]::Format('$(ErrorText)', '..\MainProgram\packages\LLamaSharp.Backend.Cpu.0.24.0\build\netstandard2.0\LLamaSharp.Backend.Cpu.props'))" />
+  </Target>
 </Project>

@@ -35,11 +35,14 @@ namespace Dopamine.StardewValley
                         Type = 0,
                         Speed = 4,
                         Knockback = 1.5f,
-                        CritChance = 0.05f,
-                        CritMultiplier = 1.5f,
+                        CritChance = 0.01f,
+                        CritMultiplier = 100f,
+                        Defense = 5,
+                        MineBaseLevel = 3,
+                        MineMinLevel = 1,
+                        CanBeLostOnDeath = false,
                     };
                 });
-                //DateTime dateTime = DateTime.Now.Day;
             }
         }
     }

@@ -16,23 +16,37 @@ namespace DeepSeekApi
 	/// </summary>
 	public static class LLamaManager
 	{
-		/// <summary>
-		/// 模型路径
-		/// </summary>
-		public static string ModelPath
-		{
-			get
-			{
-				string path = Path.Combine(Directory.GetCurrentDirectory(), "Resources", ConfigManager.Data.Model[0]);
-				if (!File.Exists(path))
-					throw new Exception($"模型路径不存在：{path}，请检查模型文件是否存在");
-				return path;
-			}
-		}
-		/// <summary>
-		/// 模型参数
-		/// </summary>
-		public static ModelParams ModelParams { get; set; } = new ModelParams(ModelPath)
+        /// <summary>
+        /// 模型路径
+        /// </summary>
+        public static string ModelPath
+        {
+            get
+            {
+                string path = string.Empty;
+                foreach (string modelLocalName in ConfigManager.Data.Model)
+                {
+                    if (string.IsNullOrWhiteSpace(modelLocalName))
+                        continue;
+                    path = Path.Combine(Directory.GetCurrentDirectory(), "Resources", modelLocalName);
+                    if (File.Exists(path))
+                        break; // 找到第一个有效的模型文件后退出循环
+                }
+                if (!File.Exists(path))
+                {
+                    throw new Exception("未找到有效的模型文件，请检查配置文件中的模型路径设置。");
+                }
+                else
+                {
+                    Console.WriteLine($"模型文件路径: {path}");
+                }
+                return path;
+            }
+        }
+        /// <summary>
+        /// 模型参数
+        /// </summary>
+        public static ModelParams ModelParams { get; set; } = new ModelParams(ModelPath)
 		{
 			ContextSize = 1024,
 			GpuLayerCount = 80,
