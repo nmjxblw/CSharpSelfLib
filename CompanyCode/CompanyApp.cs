@@ -15,8 +15,11 @@ namespace CompanyCode
         /// </summary>
         public void Start()
         {
-            int test = 99;
-            string result = (test + 1).ToString("X4").ShowInConsole(true);
+            //string parameter = "1.0c";
+            ////Regex.Replace(parameter, @"[^0-9.]", "").TrimEnd('.').ShowInConsole(true);
+            //Regex.IsMatch(parameter, @"^((1(\.0)?)|(0?\.\d))[Lr|Cc]$").ShowInConsole(true);
+            int testLong = (int)Math.Round(2.23566);
+           testLong.ShowInConsole(true);
         }
     }
 }
