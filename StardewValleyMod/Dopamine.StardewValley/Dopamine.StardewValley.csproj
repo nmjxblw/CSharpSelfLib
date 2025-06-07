@@ -10,6 +10,7 @@
 		<Version>$(Year).$(Month).$(Day)</Version>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+		<EnableHarmony>true</EnableHarmony>
 		<Authors>Octette</Authors>
 	</PropertyGroup>
 
