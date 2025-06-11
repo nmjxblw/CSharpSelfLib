@@ -78,6 +78,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Config\ConfigManager.cs" />
+    <Compile Include="Static\SystemSleepManager.cs" />
     <Compile Include="Static\WordHelper.cs" />
     <Compile Include="Styles\ResizeModeToVisibilityConverter.cs" />
     <Compile Include="Utilities\DynamicClass.cs" />

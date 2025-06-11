@@ -76,6 +76,9 @@ namespace Dopamine.ChatApp
         {
 
         }
+        /// <summary>
+        /// 处理发送按钮点击事件
+        /// </summary>
         public void Send()
         {
             AIChatBoxText = ConfigManager.Data.Test;

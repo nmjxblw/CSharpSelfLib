@@ -17,18 +17,18 @@ using Dopamine.Framework;
 namespace Dopamine.ChatApp
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// MainWindow.xaml 的交互逻辑,在这里仅处理 ​UI 渲染、动画、焦点控制​ 等与界面强相关的操作
     /// </summary>
     public partial class MainWindow : Window
     {
         /// <summary>
         /// 主对话窗口的视图模式
         /// </summary>
-        private readonly MainWindowViewModel vm = new MainWindowViewModel();
+        private readonly MainWindowViewModel ViewModel = new MainWindowViewModel();
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = vm;
+            this.DataContext = ViewModel;
         }
 
 		protected override void OnActivated(EventArgs e)

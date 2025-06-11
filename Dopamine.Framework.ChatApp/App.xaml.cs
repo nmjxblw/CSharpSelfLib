@@ -30,6 +30,7 @@ namespace Dopamine.ChatApp
 
         protected override void OnExit(ExitEventArgs e)
         {
+            SystemSleepManager.RestoreSleep(); // 恢复系统休眠和屏幕关闭策略
             base.OnExit(e);
         }
 
@@ -87,6 +88,7 @@ namespace Dopamine.ChatApp
                 Environment.Exit(0);
                 //Application.Current.Shutdown() // 安全关闭
             }
+            SystemSleepManager.PreventSleep(); // 阻止系统休眠和屏幕关闭
             SetUnhandledException();
             this.MainWindow = new MainWindow();
             MainWindow.Show();
