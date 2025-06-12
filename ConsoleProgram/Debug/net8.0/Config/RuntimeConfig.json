@@ -23,5 +23,6 @@
 		"Send": "cmd={0},sn={1},data={2}\r\n"
 	},
 	"AssemblyID": "440100",
-	"BenchID": "400001"
+	"BenchID": "400001",
+	"TestValue": 12
 }

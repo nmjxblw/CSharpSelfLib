@@ -8,5 +8,6 @@
     "DeepSeek-R1-Distill-Qwen-7B-Q8_0.gguf",
     "deepseek-r1-distill-llama-8b-q4_k_m.gguf",
     "DeepSeek-R1-0528-Qwen3-8B-UD-IQ1_M.gguf"
-  ]
+  ],
+  "TestValue": 12
 }

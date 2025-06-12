@@ -67,6 +67,7 @@
     <Compile Include="Utilities\ClipBoard.cs" />
     <Compile Include="Utilities\ConsoleManager.cs" />
     <Compile Include="Utilities\DynamicClass.cs" />
+    <Compile Include="Utilities\DynamicClassSerializer.cs" />
     <Compile Include="Utilities\JsonHelper.cs" />
     <Compile Include="Utilities\Recorder.cs" />
   </ItemGroup>

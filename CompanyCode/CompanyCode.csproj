@@ -13,6 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\LY_Meter_Code_M2\Resource\Aspose.Cells.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Dopamine" />
     <Using Include="System.Text" />
     <Using Include="System.Text.Encodings.Web" />
