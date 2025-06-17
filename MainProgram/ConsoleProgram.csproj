@@ -1,26 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <BaseOutputPath>..\$(MSBuildProjectName.Replace(" ", "_"))</BaseOutputPath>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Version>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HH"))</Version>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<BaseOutputPath>..\$(MSBuildProjectName.Replace(" ", "_"))</BaseOutputPath>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Year>$([MSBuild]::Subtract($([System.DateTime]::Now.Year), 2024))</Year>
+		<Month>$([System.DateTime]::Now.Month.ToString())</Month>
+		<Day>$([System.DateTime]::Now.Day.ToString())</Day>
+		<Hour>$([System.DateTime]::Now.Hour.ToString().PadLeft(2,'0'))</Hour>
+		<Minute>$([System.DateTime]::Now.Minute.ToString().PadLeft(2,'0'))</Minute>
+		<Version>$(Year).$(Month).$(Day).$(Hour)$(Minute)</Version>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DeepSeekApi\DeepSeekApi.csproj" />
-    <ProjectReference Include="..\Dopamine\Dopamine.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DeepSeekApi\DeepSeekApi.csproj" />
+		<ProjectReference Include="..\Dopamine\Dopamine.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Using Include="System.Text" />
-    <Using Include="System.Text.Encodings.Web" />
-    <Using Include="System.Text.Json" />
-    <Using Include="System.Security" />
-    <Using Include="Dopamine" />
-  </ItemGroup>
+	<ItemGroup>
+		<Using Include="System.Text" />
+		<Using Include="System.Text.Encodings.Web" />
+		<Using Include="System.Text.Json" />
+		<Using Include="System.Security" />
+		<Using Include="Dopamine" />
+	</ItemGroup>
 
 </Project>

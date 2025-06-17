@@ -24,6 +24,25 @@ namespace Dopamine.ChatApp
             CompositionTarget.Rendering += OnRenderingFrame;
         }
         #region 公开属性
+        #region 对话框GroupBox元素
+        /// <summary>
+        /// 对话组框标头
+        /// </summary>
+        public string ChatBoxSettingGroupBoxHeader
+        {
+            get => GetProperty(AppConfig.GetValue("TestKey"));
+            private set => SetProperty(value);
+        }
+        #endregion
+        #region 对话框元素
+        /// <summary>
+        /// 对话文本框组框标头
+        /// </summary>
+        public string ChatBoxTextGroupBoxHeader
+        {
+            get => GetProperty("ChatBox_Header".Translate());
+            private set => SetProperty(value);
+        }
         /// <summary>
         /// AI输出对话框
         /// </summary>
@@ -48,6 +67,7 @@ namespace Dopamine.ChatApp
             get => GetProperty("ToolBar_Setting".Translate());
             set => SetProperty(value);
         }
+        #endregion
         #endregion
         #region 私有属性
         /// <summary>
@@ -81,7 +101,7 @@ namespace Dopamine.ChatApp
         /// </summary>
         public void Send()
         {
-            AIChatBoxText = ConfigManager.Data.Test;
+            AIChatBoxText = AppConfig.GetValue(ConfigSection.SecondSection, "Test");
         }
         public void OnMinimizeClicked()
         {

@@ -44,6 +44,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        ///  翻转对
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int ReversePairs(int[] nums)
         {
             throw new System.NotImplementedException();

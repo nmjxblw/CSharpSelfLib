@@ -190,7 +190,29 @@
                     <Grid x:Name="ChatBoxGrid"
 						  Margin="1"
 						  >
-                        <TextBox x:Name="ChatBoxTextBox"
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox x:Name="ChatBoxSettingGroupBox"
+                                  Grid.Column="0"
+                                  Header="{Binding ChatBoxSettingGroupBoxHeader}"
+                                  FontSize="15"
+                                  Margin="5"
+                                  MinWidth="50"
+                                  Background="#88F0F0F0"
+                                  >
+                            <Grid x:Name="ChatBoxGroupBoxMainGrid">
+
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox x:Name="ChatBoxTextGroupBox"
+                                  Header="{Binding ChatBoxTextGroupBoxHeader}"
+                                  FontSize="15"
+                                  Grid.Column="1"
+                                  Background="#88F0F0F0"
+                                  Margin="5">
+                            <TextBox x:Name="ChatBoxTextBox"
 							 BorderBrush="Transparent"
 							 BorderThickness="0"
 							 Text="{Binding AIChatBoxText}" 
@@ -203,7 +225,9 @@
 							 TextWrapping="Wrap"
 							 AcceptsReturn="True"
 							 VerticalScrollBarVisibility="Visible"
+                             Grid.Column="1"
 					   />
+                        </GroupBox>
                     </Grid>
                 </Border>
                 <Border x:Name="SendButtonBorder"

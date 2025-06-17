@@ -92,7 +92,6 @@ namespace Dopamine.ChatApp
             SetUnhandledException();
             this.MainWindow = new MainWindow();
             MainWindow.Show();
-            
             base.OnStartup(e);
         }
 

@@ -17,8 +17,14 @@ namespace CompanyCode
         /// </summary>
         public void Start()
         {
-            var test = ConfigManager.Data.TestValue.GetType();
-            test.ShowInConsole();
+            var test = 0;
+            TestFunction(ref test);
+            test.ShowInConsole(true);
+        }
+
+        public void TestFunction(ref int temp)
+        {
+            temp = 10;
         }
     }
 }

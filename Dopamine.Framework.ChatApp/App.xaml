@@ -6,7 +6,10 @@
 	<Application.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary x:Name="Language" Source="/Resources/Language.xaml"/>
+                <!--语言-->
+				<ResourceDictionary x:Name="Language" Source="/Resources/zh-CN.xaml"/>
+                
+                <!--样式-->
 				<ResourceDictionary x:Name="DictionaryResource_1" Source="/Styles/DictionaryResource_1.xaml"/>
 
 			</ResourceDictionary.MergedDictionaries>
