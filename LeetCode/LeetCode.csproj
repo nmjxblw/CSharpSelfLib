@@ -162,6 +162,8 @@
     <Compile Include="Solutions\233.数字-1-的个数.cs" />
     <Compile Include="Solutions\239.滑动窗口最大值.cs" />
     <Compile Include="Solutions\25.k-个一组翻转链表.cs" />
+    <Compile Include="Solutions\26.删除有序数组中的重复项.cs" />
+    <Compile Include="Solutions\27.移除元素.cs" />
     <Compile Include="Solutions\273.整数转换英文表示.cs" />
     <Compile Include="Solutions\282.给表达式添加运算符.cs" />
     <Compile Include="Solutions\284.窥视迭代器.cs" />

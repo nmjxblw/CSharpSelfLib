@@ -61,6 +61,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 冗余连接
+        /// </summary>
+        /// <param name="edges"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int[] FindRedundantConnection(int[][] edges)
         {
             throw new System.NotImplementedException();

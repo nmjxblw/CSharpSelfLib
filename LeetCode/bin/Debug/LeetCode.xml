@@ -874,6 +874,21 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.RemoveDuplicates(System.Int32[])">
+            <summary>
+             删除有序数组中的重复项
+            </summary>
+            <param name="nums"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LeetCode.Solution.RemoveElement(System.Int32[],System.Int32)">
+            <summary>
+             移除元素
+            </summary>
+            <param name="nums"></param>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
         <member name="M:LeetCode.Solution.NumberToWords(System.Int32)">
             <summary>
             整数转换英文表示
@@ -963,6 +978,14 @@
             <param name="k"></param>
             <returns></returns>
         </member>
+        <member name="M:LeetCode.Solution.ReversePairs(System.Int32[])">
+            <summary>
+             翻转对
+            </summary>
+            <param name="nums"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.SolveNQueens(System.Int32)">
             <summary>
             N 皇后问题
@@ -1037,11 +1060,28 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.FindRedundantConnection(System.Int32[][])">
+            <summary>
+            冗余连接
+            </summary>
+            <param name="edges"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.SortColors(System.Int32[])">
             <summary>
             颜色分类
             </summary>
             <param name="nums"></param>
+        </member>
+        <member name="M:LeetCode.Solution.HitBricks(System.Int32[][],System.Int32[][])">
+            <summary>
+            打砖块
+            </summary>
+            <param name="grid"></param>
+            <param name="hits"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:LeetCode.Solution.IsPalindrome(System.Int32)">
             <summary>

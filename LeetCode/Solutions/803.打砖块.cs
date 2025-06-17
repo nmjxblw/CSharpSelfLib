@@ -84,14 +84,50 @@
  * 
  * 
  */
+using System;
+using System.Collections.Generic;
 namespace LeetCode
 {
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 打砖块
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <param name="hits"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int[] HitBricks(int[][] grid, int[][] hits)
         {
-            throw new System.NotImplementedException();
+            if (grid.Length <= 0) return new int[hits.Length];
+            if (hits.Length <= 0) return new int[0];
+            int HandleHit(int[] hit)
+            {
+                int fallBricks = 0;
+                // 将网格上的方格设置为0
+                grid[hit[0]][hit[1]] = 0;
+                // 与网格顶部相接的砖块不会掉落，不用判断是否稳定
+                for (int row = grid.Length - 1; row >= 1; row--)
+                {
+                    // 砖块起始指针
+                    int brickStart = -1;
+                    // 砖块结束指针
+                    int brickEnd = -1;
+                    for (int col = 1; col < grid[row].Length - 2; col++)
+                    {
+                        
+                    }
+                }
+                return fallBricks;
+            }
+            // 记录第n次打掉砖块时，掉落的砖块数
+            int[] result = new int[hits.Length];
+            for (int index = 0; index < hits.Length; index++)
+            {
+                result[index] = HandleHit(hits[index]);
+            }
+            return result;
         }
     }
     // @lc code=end

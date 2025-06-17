@@ -51,6 +51,7 @@
  */
 using System;
 using System.Collections.Generic;
+
 namespace LeetCode
 {
     // @lc code=start
@@ -95,3 +96,6 @@ namespace LeetCode
     }
     // @lc code=end
 }
+// 208/208 cases passed (0 ms)
+// Your runtime beats 100 % of csharp submissions
+// Your memory usage beats 49.26 % of csharp submissions (43.1 MB)
