@@ -163,6 +163,118 @@
             DLL帮助类
             </summary>
         </member>
+        <member name="F:Dopamine.DLLHelper.MB_OK">
+            <summary>
+            Represents the constant value for the "OK" button in a message box.
+            </summary>
+            <remarks>This value is used to specify the "OK" button when configuring message box
+            options.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_CANCELTRYCONTINUE">
+            <summary>
+            Represents the constant value for the "Cancel", "Try Again", and "Continue" button combination  used in
+            message box configurations.
+            </summary>
+            <remarks>This constant can be used with message box APIs to specify a button configuration
+            that includes  "Cancel", "Try Again", and "Continue" options.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_HELP">
+            <summary>
+            Represents the constant value for the Help button flag in a message box.
+            </summary>
+            <remarks>This constant can be used to specify that a Help button should be displayed in a
+            message box. It corresponds to the <c>MB_HELP</c> flag in the Windows API.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_ICONHAND">
+            <summary>
+            Represents the value used to specify the "Hand" icon in a message box.
+            </summary>
+            <remarks>This constant is typically used with message box functions to display a "Hand" icon, 
+            which is often associated with error or critical messages.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_ICONQUESTION">
+            <summary>
+            Represents the constant value for the "Question" icon used in message box displays.
+            </summary>
+            <remarks>This value corresponds to the <see
+            href="https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox">MessageBox</see>
+            API in the Windows API. It is used to specify the "Question" icon when displaying a message box.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_ICONEXCLAMATION">
+            <summary>
+            Represents the value for the MB_ICONEXCLAMATION constant used in Windows API message box functions.
+            </summary>
+            <remarks>This constant specifies that an exclamation mark icon should be displayed in the
+            message box. It is typically used with functions such as MessageBox in the Windows API.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_ICONASTERISK">
+            <summary>
+            Represents the value for the "Asterisk" icon in a message box, as defined by the Windows API.
+            </summary>
+            <remarks>This constant can be used to specify the "Asterisk" icon when displaying a message
+            box using native Windows API calls. The value corresponds to the MB_ICONASTERISK flag.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_USERICON">
+            <summary>
+            Specifies that a user-defined icon should be displayed in a message box.
+            </summary>
+            <remarks>This constant can be used with message box functions to indicate that a custom icon, 
+            defined by the user, should be displayed instead of the default icons.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_ICONWARNING">
+            <summary>
+            Represents a constant value used to display a warning icon in a message box.
+            </summary>
+            <remarks>This constant is equivalent to <see cref="F:Dopamine.DLLHelper.MB_ICONEXCLAMATION"/> and can be used with
+            message box functions  to specify a warning icon.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_ICONERROR">
+            <summary>
+            Represents the constant value for an error icon used in message boxes.
+            </summary>
+            <remarks>This constant is equivalent to <see cref="F:Dopamine.DLLHelper.MB_ICONHAND"/> and can be used to specify
+            an error icon when displaying a message box.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_ICONINFORMATION">
+            <summary>
+            Represents the constant value for the "Information" icon used in message boxes.
+            </summary>
+            <remarks>This constant is equivalent to <see cref="F:Dopamine.DLLHelper.MB_ICONASTERISK"/> and can be used to
+            specify the "Information" icon  when displaying a message box using Windows API functions.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.MB_ICONSTOP">
+            <summary>
+            Represents the value for the "Stop" icon used in message boxes.
+            </summary>
+            <remarks>This constant is equivalent to <see cref="F:Dopamine.DLLHelper.MB_ICONHAND"/> and can be used to specify
+            the "Stop" icon in message box configurations.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.IDOK">
+            <summary>
+            Represents the identifier for the "OK" button in a dialog box.
+            </summary>
+            <remarks>This constant is typically used in dialog box implementations to identify the "OK"
+            button. The value is set to <see langword="1"/>.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.IDCANCEL">
+            <summary>
+            Represents the identifier for a cancel operation.
+            </summary>
+            <remarks>This constant is typically used to indicate that a user has canceled an operation,
+            such as closing a dialog box or aborting a process.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.IDYES">
+            <summary>
+            Represents the constant value for a "Yes" response.
+            </summary>
+            <remarks>This constant is typically used in scenarios where a "Yes" response is represented by
+            an integer value.</remarks>
+        </member>
+        <member name="F:Dopamine.DLLHelper.IDNO">
+            <summary>
+            Represents the constant value for "No" in a decision or confirmation context.
+            </summary>
+        </member>
         <member name="M:Dopamine.DLLHelper.MessageBox(System.IntPtr,System.String,System.String,System.Int32)">
             <summary>
             显示消息框
@@ -172,6 +284,15 @@
             <param name="caption"></param>
             <param name="options"></param>
             <returns></returns>
+        </member>
+        <member name="M:Dopamine.DLLHelper.GetForegroundWindow">
+            <summary>
+            Retrieves a handle to the window that is currently in the foreground.
+            </summary>
+            <remarks>The foreground window is the window that is currently receiving user input. This
+            method is typically used in scenarios where interaction with the active window is required.</remarks>
+            <returns>An <see cref="T:System.IntPtr"/> representing the handle to the foreground window. If no window is in the foreground,
+            the return value is <see langword="IntPtr.Zero"/>.</returns>
         </member>
         <member name="T:Dopamine.ExtensionMethods">
             <summary>
@@ -946,6 +1067,13 @@
             <param name="key"></param>
             <returns></returns>
         </member>
+        <member name="P:Dopamine.DynamicClass.Item(System.Int32)">
+            <summary>
+            索引器访问
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
         <member name="P:Dopamine.DynamicClass.Properties">
             <summary>
             获取所有属性
@@ -975,6 +1103,18 @@
             </summary>
             <param name="keys"></param>
             <returns></returns>
+        </member>
+        <member name="M:Dopamine.DynamicClass.op_Implicit(Dopamine.DynamicClass)~System.String">
+            <summary>
+            DynamicClass的隐式转化
+            </summary>
+            <param name="dynamicClass"></param>
+        </member>
+        <member name="M:Dopamine.DynamicClass.op_Implicit(System.String)~Dopamine.DynamicClass">
+            <summary>
+            JsonString的隐式转化
+            </summary>
+            <param name="value"></param>
         </member>
         <member name="T:Dopamine.DynamicClassConverter">
             <summary>

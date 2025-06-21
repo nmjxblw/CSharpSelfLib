@@ -1,0 +1,24 @@
+﻿{
+  "Name": "Firearm",
+  "Author": "Enaium",
+  "Version": "1.0.1",
+  "Description": "Firearms for Stardew Valley",
+  "UniqueID": "Enaium.Firearm",
+  "EntryDll": "Firearm.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [
+    "CurseForge:1152742"
+  ],
+  "Dependencies": [
+    {
+      "UniqueID": "Enaium.EnaiumToolKit",
+      "MinimumVersion": "1.8.0",
+      "IsRequired": false
+    },
+    {
+      "UniqueId": "Enaium.ConfigUI",
+      "MinimumVersion": "1.0.0",
+      "IsRequired": false
+    }
+  ]
+}

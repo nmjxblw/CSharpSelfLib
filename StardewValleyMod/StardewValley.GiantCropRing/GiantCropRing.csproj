@@ -10,7 +10,9 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="Stardew Valley" />
     <Reference Include="PyTK" />

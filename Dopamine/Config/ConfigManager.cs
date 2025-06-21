@@ -41,7 +41,7 @@ namespace Dopamine
 				{
 					string json = reader.ReadToEnd();
 					if (string.IsNullOrEmpty(json)) throw new Exception("json is null");
-					Data = JsonSerializer.Deserialize<DynamicClass>(json, opts)!;
+					Data = ((DynamicClass)json)!;
 				}
 			}
 			catch (Exception ex)

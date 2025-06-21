@@ -9,7 +9,10 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework" />
     <Reference Include="Stardew Valley" />

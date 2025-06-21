@@ -24,15 +24,37 @@ namespace Dopamine.ChatApp
             CompositionTarget.Rendering += OnRenderingFrame;
         }
         #region 公开属性
+        #region 工具栏
+        public string ToolBarSettingButtonText
+        {
+            get => GetProperty("ToolBar_Setting".Translate());
+            private set => SetProperty(value);
+        }
+        #endregion
         #region 对话框GroupBox元素
         /// <summary>
         /// 对话组框标头
         /// </summary>
         public string ChatBoxSettingGroupBoxHeader
         {
-            get => GetProperty(AppConfig.GetValue("TestKey"));
+            get => GetProperty("HistoryChats".Translate());
             private set => SetProperty(value);
         }
+        #region 时钟区域
+        public string TimeDisplayGroupBoxHeader
+        {
+            get => GetProperty("TimeDisplay_Header".Translate());
+            private set => SetProperty(value);
+        }
+        /// <summary>
+        /// 系统时间
+        /// </summary>
+        public DateTime SystemTime
+        {
+            get => GetProperty(DateTime.Now);
+            private set => SetProperty(value);
+        }
+        #endregion
         #endregion
         #region 对话框元素
         /// <summary>
@@ -48,7 +70,7 @@ namespace Dopamine.ChatApp
         /// </summary>
         public string AIChatBoxText
         {
-            get => GetProperty("Hei,there!");
+            get => GetProperty("Greatings".Translate());
             set => SetProperty(value);
         }
         /// <summary>
@@ -56,15 +78,7 @@ namespace Dopamine.ChatApp
         /// </summary>
         public string UserChatBoxText
         {
-            get => GetProperty("Say Hi!");
-            set => SetProperty(value);
-        }
-        /// <summary>
-        /// 工具栏设置按钮
-        /// </summary>
-        public string ToolBarSettingButtonText
-        {
-            get => GetProperty("ToolBar_Setting".Translate());
+            get => GetProperty("AskForGreatings".Translate());
             set => SetProperty(value);
         }
         #endregion
@@ -94,8 +108,9 @@ namespace Dopamine.ChatApp
         /// <param name="deltaTime"></param>
         private void Update(double deltaTime)
         {
-
+            SystemTime = DateTime.Now;
         }
+        #region 按键逻辑处理
         /// <summary>
         /// 处理发送按钮点击事件
         /// </summary>
@@ -103,10 +118,16 @@ namespace Dopamine.ChatApp
         {
             AIChatBoxText = AppConfig.GetValue(ConfigSection.SecondSection, "Test");
         }
+        /// <summary>
+        /// 处理窗口最小化
+        /// </summary>
         public void OnMinimizeClicked()
         {
             App.Current.MainWindow.WindowState = WindowState.Minimized;
         }
+        /// <summary>
+        /// 处理窗口
+        /// </summary>
         public void OnResizeClicked()
         {
             if (App.Current.MainWindow.WindowState != WindowState.Normal)
@@ -131,6 +152,7 @@ namespace Dopamine.ChatApp
             }
             base.Dispose(disposing);
         }
+        #endregion
         #endregion
     }
 }

@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -25,24 +26,41 @@ namespace Dopamine.ChatApp
         /// 主对话窗口的视图模式
         /// </summary>
         private readonly MainWindowViewModel ViewModel = new MainWindowViewModel();
+        /// <summary>
+        /// 通知栏图标
+        /// </summary>
+        private NotifyIcon notifyIcon = null;
         public MainWindow()
         {
             InitializeComponent();
+            Initialization();
+
+        }
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public void Initialization()
+        {
             this.DataContext = ViewModel;
+            #region
+            ImageSource source = new BitmapImage(new Uri(AppConfig.GetValue("IconUri"), UriKind.RelativeOrAbsolute));
+            Icon = source;
+            IconImage.Source = source;
+            #endregion
         }
 
-		protected override void OnActivated(EventArgs e)
-		{
+        protected override void OnActivated(EventArgs e)
+        {
             WindowState = WindowState.Normal;
             base.OnActivated(e);
         }
 
-		private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-			if (e.LeftButton == MouseButtonState.Pressed)
-			{
-				this.DragMove();
-			}
-		}
-	}
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
+    }
 }
