@@ -29,6 +29,10 @@ namespace Dopamine.StardewValley
         /// Mod Instance
         /// </summary>
         public static ModEntry? Instance => _instance;
+        /// <summary>
+        /// Mod静态配置类
+        /// </summary>
+        public static ModConfig Config => ((Mod)Instance!).Helper.ReadConfig<ModConfig>();
         /// <summary>The mod entry point, called after the mod is first loaded.</summary>
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
@@ -51,7 +55,7 @@ namespace Dopamine.StardewValley
                 e.Edit(asset =>
                 {
                     var dict = asset.AsDictionary<string, WeaponData>();
-                    dict.Data["Blood_Fang"] = new BloodFangWeaponData();
+                    dict.Data[Config.BloodFang_Name] = new BloodFangWeaponData();
                 });
             }
             else if (e.Name.IsEquivalentTo("Data/Objects", false))
@@ -59,18 +63,16 @@ namespace Dopamine.StardewValley
                 e.Edit(asset =>
                 {
                     var dict = asset.AsDictionary<string, ObjectData>();
-                    dict.Data["Blood_Fang_Projectile"] = new BloodFangProjectileObjectData();
+                    dict.Data[Config.Blood_Fang_Projectile_Name] = new BloodFangProjectileObjectData();
                 });
             }
-            else if (e.Name.IsEquivalentTo("Blood_Fang", false))
+            else if (e.Name.IsEquivalentTo(Config.BloodFang_Name, false))
             {
-                Monitor.Log("加载血龙牙贴图", LogLevel.Debug);
-                e.LoadFromModFile<Texture2D>("Assets/Blood_Fang.png", AssetLoadPriority.Medium);
+                e.LoadFromModFile<Texture2D>($"Assets/{Config.BloodFang_Name}.png", AssetLoadPriority.Medium);
             }
-            else if (e.Name.IsEquivalentTo("Blood_Fang_Projectile", false))
+            else if (e.Name.IsEquivalentTo(Config.Blood_Fang_Projectile_Name, false))
             {
-                Monitor.Log("加载血龙牙投射物贴图", LogLevel.Debug);
-                e.LoadFromModFile<Texture2D>("Assets/Blood_Fang_Projectile.png", AssetLoadPriority.Medium);
+                e.LoadFromModFile<Texture2D>($"Assets/{Config.Blood_Fang_Projectile_Name}.png", AssetLoadPriority.Medium);
             }
             else if (e.Name.IsEquivalentTo("Data/Shops", false))
             {
@@ -79,8 +81,8 @@ namespace Dopamine.StardewValley
                     IAssetDataForDictionary<string, ShopData> dict = asset.AsDictionary<string, ShopData>();
                     dict.Data["AdventureShop"].Items.Add(new ShopItemData()
                     {
-                        ItemId = "Blood_Fang",
-                        Price = WeaponAsset.BloodFang.Data.Price,
+                        ItemId = Config.BloodFang_Name,
+                        Price = Config.BloodFang_Price,
                     });
                 });
             }
@@ -100,7 +102,7 @@ namespace Dopamine.StardewValley
         /// </summary>
         /// <param name="key">键名</param>
         /// <returns>对应的翻译文本</returns>
-        public Translation GetTranslation(string key) => ((Mod)this).Helper.Translation.Get(key).Default("missing translation?");
+        public static Translation GetTranslation(string key) => ((Mod)Instance!).Helper.Translation.Get(key).Default("missing translation?");
         /// <summary>
         /// 获取翻译
         /// </summary>
@@ -113,18 +115,18 @@ namespace Dopamine.StardewValley
         /// </para>
         /// </param>
         /// <returns>对应的翻译文本</returns>
-        public Translation GetTranslation(string key, object? tokens) => ((Mod)this).Helper.Translation.Get(key, tokens);
+        public static Translation GetTranslation(string key, object? tokens) => ((Mod)Instance!).Helper.Translation.Get(key, tokens);
         /// <summary>
         /// 读取模组配置文件
         /// </summary>
         /// <typeparam name="TConfig"></typeparam>
         /// <returns></returns>
-        public TConfig ReadConfig<TConfig>() where TConfig : class, new() => ((Mod)this).Helper.ReadConfig<TConfig>();
+        public static TConfig ReadConfig<TConfig>() where TConfig : class, new() => ((Mod)Instance!).Helper.ReadConfig<TConfig>();
         /// <summary>
         /// 写入模组配置文件
         /// </summary>
         /// <typeparam name="TConfig"></typeparam>
         /// <param name="config"></param>
-        public void WriteConfig<TConfig>(TConfig config) where TConfig : class, new() => ((Mod)this).Helper.WriteConfig<TConfig>(config);
+        public static void WriteConfig<TConfig>(TConfig config) where TConfig : class, new() => ((Mod)Instance!).Helper.WriteConfig<TConfig>(config);
     }
 }

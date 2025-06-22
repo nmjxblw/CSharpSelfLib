@@ -23,7 +23,7 @@ namespace Dopamine.StardewValley
         /// </summary>
         /// <param name="weaponID">武器ID</param>
         /// <returns>投射物翻译名称文本</returns>
-        public static string ProjectileDisplayName(this string weaponID) => ModEntry.Instance.GetTranslation("Object.Weapon_Projectile.Display", new { weaponName = ModEntry.Instance.GetTranslation($"Weapon.{weaponID}.Config.DisplayName") + " " });
+        public static string ProjectileDisplayName(this string weaponID) => ModEntry.GetTranslation("Object.Weapon_Projectile.Display", new { weaponName = ModEntry.GetTranslation($"Weapon.{weaponID}.Config.DisplayName") + " " });
     }
 
     /// <summary>
@@ -32,61 +32,27 @@ namespace Dopamine.StardewValley
     public sealed class BloodFangWeaponProjectile : WeaponProjectile
     {
         /// <summary>
-        /// 数据配置类
-        /// </summary>
-        public class DataConfig
-        {
-            /// <summary>
-            /// 默认配置
-            /// </summary>
-            public static DataConfig Default => new DataConfig();
-            /// <summary>
-            /// 伤害
-            /// </summary>
-            public int Damage { get; set; } = 50;
-            /// <summary>
-            /// 是否会爆炸
-            /// </summary>
-            public bool Explodes { get; set; } = true;
-            /// <summary>
-            /// 投射物在销毁前，在墙面上弹射的次数
-            /// </summary>
-            public int Bounces { get; set; } = 0;
-            /// <summary>
-            /// 投射物最大飞行距离
-            /// </summary>
-            public int MaxDistance { get; set; } = 10;
-            /// <summary>
-            /// 投射物飞行速度
-            /// </summary>
-            public int Velocity { get; set; } = 10;
-            /// <summary>
-            /// 投射物旋转速度
-            /// </summary>
-            public int RotationVelocity { get; set; } = 0;
-            /// <summary>
-            /// 投射物轨迹长度
-            /// </summary>
-            public int TailLength { get; set; } = 1;
-        }
-        /// <summary>
         /// 投射物数据配置
         /// </summary>
-        public DataConfig Data { get; private set; } = ModEntry.Instance.Helper.ReadConfig<DataConfig>() ?? DataConfig.Default;
+        public ModConfig Config => ModEntry.Config;
         /// <summary>
         /// 构造函数
         /// </summary>
         public BloodFangWeaponProjectile()
         {
-            Id = "Blood_Fang_Projectile";
-            Damage = Data.Damage;
-            Explodes = Data.Explodes;
-            Bounces = Data.Bounces;
-            MaxDistance = Data.MaxDistance;
-            Velocity = Data.Velocity;
-            RotationVelocity = Data.RotationVelocity;
-            TailLength = Data.TailLength;
-            Item = new GenericSpawnItemData() { Id = "Blood_Fang_Projectile" };
+            Id = Config.Blood_Fang_Projectile_Name;
+            Damage = Config.Blood_Fang_Projectile_Damage;
+            Explodes = Config.Blood_Fang_Projectile_Explodes;
+            Bounces = Config.Blood_Fang_Projectile_Bounces;
+            MaxDistance = Config.Blood_Fang_Projectile_MaxDistance;
+            Velocity = Config.Blood_Fang_Projectile_Velocity;
+            RotationVelocity = Config.Blood_Fang_Projectile_RotationVelocity;
+            TailLength = Config.Blood_Fang_Projectile_TailLength;
+            Item = new GenericSpawnItemData()
+            {
+                ItemId = Config.Blood_Fang_Projectile_Name,
+                Id = Config.Blood_Fang_Projectile_Name,
+            };
         }
     }
     /// <summary>
@@ -95,14 +61,18 @@ namespace Dopamine.StardewValley
     public class BloodFangProjectileObjectData : ObjectData
     {
         /// <summary>
+        /// 配置
+        /// </summary>
+        public static ModConfig Config => ModEntry.Config;
+        /// <summary>
         /// 构造函数
         /// </summary>
         public BloodFangProjectileObjectData() : base()
         {
-            Name = "Blood_Fang_Projectile";
-            DisplayName = "Blood_Fang".ProjectileDisplayName();
-            Description = "Blood_Fang".ProjectileDisplayName();
-            Texture = "Blood_Fang_Projectile";
+            Name = Config.Blood_Fang_Projectile_Name;
+            DisplayName = Config.Blood_Fang_Projectile_DisplayName;
+            Description = Config.Blood_Fang_Projectile_Description;
+            Texture = Config.Blood_Fang_Projectile_Texture;
         }
     }
 }
