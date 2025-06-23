@@ -1260,5 +1260,15 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="T:LeetCode.SyntaxLearning">
+            <summary>
+            语法学习
+            </summary>
+        </member>
+        <member name="M:LeetCode.SyntaxLearning.Main">
+            <summary>
+            主运行方法
+            </summary>
+        </member>
     </members>
 </doc>

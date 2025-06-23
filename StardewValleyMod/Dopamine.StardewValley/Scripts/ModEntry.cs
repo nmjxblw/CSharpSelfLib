@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using HarmonyLib;
 using Microsoft.Xna.Framework.Graphics;
@@ -32,16 +33,30 @@ namespace Dopamine.StardewValley
         /// <summary>
         /// Mod静态配置类
         /// </summary>
-        public static ModConfig Config => ((Mod)Instance!).Helper.ReadConfig<ModConfig>();
+        public static ModConfig Config
+        {
+            get => ReadConfig<ModConfig>();
+            set => WriteConfig<ModConfig>(value);
+        }
+        /// <summary>
+        /// 程序集名称
+        /// </summary>
+        public static string AssemblyName { get; private set; } = Assembly.GetExecutingAssembly().GetName().Name!;
         /// <summary>The mod entry point, called after the mod is first loaded.</summary>
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
         {
             #region 事件注册
             helper.Events.Content.AssetRequested += OnContentAssetRequested;
+            helper.Events.Input.CursorMoved += OnCursorMoved;
+            helper.Events.Input.MouseWheelScrolled += OnMouseWheelScrolled;
+            helper.Events.Input.ButtonPressed += OnButtonPressed;
+            helper.Events.Input.ButtonReleased += OnButtonReleased;
+            helper.Events.Input.ButtonsChanged += OnButtonsChanged;
             helper.Events.Display.MenuChanged += OnDisplayMenuChanged;
             #endregion
         }
+
         /// <summary>
         /// 注册资产请求事件
         /// </summary>
@@ -49,7 +64,20 @@ namespace Dopamine.StardewValley
         /// <param name="e"></param>
         private void OnContentAssetRequested(object? sender, AssetRequestedEventArgs e)
         {
+            #region --- 注册字符串 ---
+
+            if (e.Name.IsEquivalentTo($"Strings/{AssemblyName}", false))
+            {
+                LanguageCode localeEnum = Helper.Translation.LocaleEnum;
+                string? locale = (int)localeEnum != 0 ? Helper.Translation.LocaleEnum.ToString() : "default";
+                e.LoadFromModFile<Dictionary<string, string>>("i18n/" + locale + ".json", (AssetLoadPriority)0);
+            }
+
+            #endregion
+
             #region ---注册武器：血龙牙---
+
+            #region --- 武器本体 ---
             if (e.Name.IsEquivalentTo("Data/Weapons", false))
             {
                 e.Edit(asset =>
@@ -58,23 +86,31 @@ namespace Dopamine.StardewValley
                     dict.Data[Config.BloodFang_Name] = new BloodFangWeaponData();
                 });
             }
-            else if (e.Name.IsEquivalentTo("Data/Objects", false))
+            if (e.Name.IsEquivalentTo(Config.BloodFang_Name, false))
+            {
+                e.LoadFromModFile<Texture2D>($"Assets/{Config.BloodFang_Name}.png", AssetLoadPriority.Medium);
+            }
+            #endregion
+
+            #region --- 投射物 ---
+            if (e.Name.IsEquivalentTo("Data/Objects", false))
             {
                 e.Edit(asset =>
                 {
                     var dict = asset.AsDictionary<string, ObjectData>();
-                    dict.Data[Config.Blood_Fang_Projectile_Name] = new BloodFangProjectileObjectData();
+                    dict.Data[Config.BloodFang_Projectile_Name] = new BloodFangProjectileObjectData();
                 });
             }
-            else if (e.Name.IsEquivalentTo(Config.BloodFang_Name, false))
+            if (e.Name.IsEquivalentTo(Config.BloodFang_Projectile_Name, false))
             {
-                e.LoadFromModFile<Texture2D>($"Assets/{Config.BloodFang_Name}.png", AssetLoadPriority.Medium);
+                e.LoadFromModFile<Texture2D>($"Assets/{Config.BloodFang_Projectile_Name}.png", AssetLoadPriority.Medium);
             }
-            else if (e.Name.IsEquivalentTo(Config.Blood_Fang_Projectile_Name, false))
-            {
-                e.LoadFromModFile<Texture2D>($"Assets/{Config.Blood_Fang_Projectile_Name}.png", AssetLoadPriority.Medium);
-            }
-            else if (e.Name.IsEquivalentTo("Data/Shops", false))
+            #endregion
+
+            #endregion
+
+            #region --- 商店商品注册 ---
+            if (e.Name.IsEquivalentTo("Data/Shops", false))
             {
                 e.Edit(asset =>
                 {
@@ -95,6 +131,46 @@ namespace Dopamine.StardewValley
         /// <param name="e"></param>
         /// <exception cref="NotImplementedException"></exception>
         private void OnDisplayMenuChanged(object? sender, MenuChangedEventArgs e)
+        {
+        }
+        /// <summary>
+        /// 注册鼠标移动事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnCursorMoved(object? sender, CursorMovedEventArgs e)
+        {
+        }
+        /// <summary>
+        /// 注册鼠标滚轮滚动事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnMouseWheelScrolled(object? sender, MouseWheelScrolledEventArgs e)
+        {
+        }
+        // <summary>
+        /// 注册鼠标、控制器或者按键按下事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
+        {
+        }
+        /// <summary>
+        /// 注册鼠标、控制器或者按键松开事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonReleased(object? sender, ButtonReleasedEventArgs e)
+        {
+        }
+        /// <summary>
+        /// 注册鼠标、控制器或者按键状态改变事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonsChanged(object? sender, ButtonsChangedEventArgs e)
         {
         }
         /// <summary>

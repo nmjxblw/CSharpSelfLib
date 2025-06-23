@@ -46,7 +46,7 @@ namespace Dopamine.StardewValley
             MaxDamage = Config.BloodFang_MaxDamage;
             Knockback = Config.BloodFang_Knockback;
             CritChance = Config.BloodFang_CritChance;
-            CritMultiplier = Config.BloodFang_CritChance;
+            CritMultiplier = Config.BloodFang_CritMultiplier;
             Defense = Config.BloodFang_Defense;
             MineBaseLevel = Config.BloodFang_MineBaseLevel;
             MineMinLevel = Config.BloodFang_MineMinLevel;

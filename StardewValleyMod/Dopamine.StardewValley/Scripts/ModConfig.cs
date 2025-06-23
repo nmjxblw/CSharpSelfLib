@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Reflection;
 namespace Dopamine.StardewValley
 {
     /// <summary>
@@ -19,19 +19,19 @@ namespace Dopamine.StardewValley
         /// <summary>
         /// 血龙牙ID
         /// </summary>
-        public string BloodFang_Name { get; set; } = "Blood_Fang";
+        public string BloodFang_Name { get; set; } = "BloodFang";
         /// <summary>
         /// 血龙牙显示名字
         /// </summary>
-        public string BloodFang_DisplayName => ModEntry.GetTranslation("Weapon.Blood_Fang.Config.DisplayName");
+        public string BloodFang_DisplayName => $"[LocalizedText Strings\\{ModEntry.AssemblyName}:Weapon.BloodFang.Config.DisplayName]";/*ModEntry.GetTranslation("Weapon.BloodFang.Config.DisplayName");*/
         /// <summary>
         /// 血龙牙武器描述
         /// </summary>
-        public string BloodFang_Description => ModEntry.GetTranslation("Weapon.Blood_Fang.Config.Description");
+        public string BloodFang_Description => $"[LocalizedText Strings\\{ModEntry.AssemblyName}:Weapon.BloodFang.Config.Description]"; /* ModEntry.GetTranslation("Weapon.BloodFang.Config.Description");*/
         /// <summary>
         /// 血龙牙武器类型
         /// </summary>
-        public int BloodFang_Type { get; set; } = 0;
+        public int BloodFang_Type { get; set; } = 2;
         /// <summary>
         /// 武器速度
         /// </summary>
@@ -99,7 +99,7 @@ namespace Dopamine.StardewValley
         /// <summary>
         /// 材质
         /// </summary>
-        public string BloodFang_Texture { get; set; } = "Blood_Fang";
+        public string BloodFang_Texture { get; set; } = "BloodFang";
 
         #endregion
 
@@ -108,47 +108,47 @@ namespace Dopamine.StardewValley
         /// <summary>
         /// 投射物ID
         /// </summary>
-        public string Blood_Fang_Projectile_Name { get; set; } = "Blood_Fang_Projectile";
+        public string BloodFang_Projectile_Name { get; set; } = "BloodFang_Projectile";
         /// <summary>
         /// 投射物显示名称
         /// </summary>
-        public string Blood_Fang_Projectile_DisplayName => "Blood_Fang".ProjectileDisplayName();
+        public string BloodFang_Projectile_DisplayName => "BloodFang".ProjectileDisplayName();
         /// <summary>
         /// 投射物描述
         /// </summary>
-        public string Blood_Fang_Projectile_Description => "Blood_Fang".ProjectileDisplayName();
+        public string BloodFang_Projectile_Description => "BloodFang".ProjectileDisplayName();
         /// <summary>
         /// 投射物材质图
         /// </summary>
-        public string Blood_Fang_Projectile_Texture { get; set; } = "Blood_Fang_Projectile";
+        public string BloodFang_Projectile_Texture { get; set; } = "BloodFang_Projectile";
         /// <summary>
         /// 伤害
         /// </summary>        
-        public int Blood_Fang_Projectile_Damage { get; set; } = 50;
+        public int BloodFang_Projectile_Damage { get; set; } = 50;
         /// <summary>
         /// 是否会爆炸
         /// </summary>
-        public bool Blood_Fang_Projectile_Explodes { get; set; } = true;
+        public bool BloodFang_Projectile_Explodes { get; set; } = true;
         /// <summary>
         /// 投射物在销毁前，在墙面上弹射的次数
         /// </summary>
-        public int Blood_Fang_Projectile_Bounces { get; set; } = 0;
+        public int BloodFang_Projectile_Bounces { get; set; } = 0;
         /// <summary>
         /// 投射物最大飞行距离
         /// </summary>
-        public int Blood_Fang_Projectile_MaxDistance { get; set; } = 10;
+        public int BloodFang_Projectile_MaxDistance { get; set; } = 10;
         /// <summary>
         /// 投射物飞行速度
         /// </summary>
-        public int Blood_Fang_Projectile_Velocity { get; set; } = 10;
+        public int BloodFang_Projectile_Velocity { get; set; } = 10;
         /// <summary>
         /// 投射物旋转速度
         /// </summary>
-        public int Blood_Fang_Projectile_RotationVelocity { get; set; } = 32;
+        public int BloodFang_Projectile_RotationVelocity { get; set; } = 32;
         /// <summary>
         /// 投射物轨迹长度
         /// </summary>
-        public int Blood_Fang_Projectile_TailLength { get; set; } = 1;
+        public int BloodFang_Projectile_TailLength { get; set; } = 1;
 
         #endregion
 

@@ -43,6 +43,7 @@
     <WarningLevel>5</WarningLevel>
     <DocumentationFile>bin\Debug\LeetCode.xml</DocumentationFile>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,6 +52,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>LeetCode.Launcher</StartupObject>
@@ -232,6 +234,7 @@
     <Compile Include="Solutions\87.扰乱字符串.cs" />
     <Compile Include="Solutions\9.回文数.cs" />
     <Compile Include="Solutions\米哈游.中毒时长.cs" />
+    <Compile Include="Syntax\SyntaxLearning.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiantCropRing", "..\Stardew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firearm", "..\StardewValley.Firearm\Firearm.csproj", "{C4FFFC3A-9833-B954-AD1B-6326F3FFD552}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StardewValley.GameData", "..\StardewValley.GameData\StardewValley.GameData.csproj", "{F0098173-9847-5A60-641C-A3B31D43CEB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C4FFFC3A-9833-B954-AD1B-6326F3FFD552}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4FFFC3A-9833-B954-AD1B-6326F3FFD552}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4FFFC3A-9833-B954-AD1B-6326F3FFD552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0098173-9847-5A60-641C-A3B31D43CEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0098173-9847-5A60-641C-A3B31D43CEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0098173-9847-5A60-641C-A3B31D43CEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0098173-9847-5A60-641C-A3B31D43CEB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

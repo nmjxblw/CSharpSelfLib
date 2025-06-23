@@ -5,6 +5,5 @@
   "Description": "Self StardewValley",
   "UniqueID": "Octette.Dopamine.StardewValley",
   "EntryDll": "Dopamine.StardewValley.dll",
-  "MinimumApiVersion": "4.0.0",
-  "UpdateKeys": ["Dopamine"]
+  "MinimumApiVersion": "4.0.0"
 }

@@ -40,21 +40,22 @@ namespace Dopamine.StardewValley
         /// </summary>
         public BloodFangWeaponProjectile()
         {
-            Id = Config.Blood_Fang_Projectile_Name;
-            Damage = Config.Blood_Fang_Projectile_Damage;
-            Explodes = Config.Blood_Fang_Projectile_Explodes;
-            Bounces = Config.Blood_Fang_Projectile_Bounces;
-            MaxDistance = Config.Blood_Fang_Projectile_MaxDistance;
-            Velocity = Config.Blood_Fang_Projectile_Velocity;
-            RotationVelocity = Config.Blood_Fang_Projectile_RotationVelocity;
-            TailLength = Config.Blood_Fang_Projectile_TailLength;
+            Id = Config.BloodFang_Projectile_Name;
+            Damage = Config.BloodFang_Projectile_Damage;
+            Explodes = Config.BloodFang_Projectile_Explodes;
+            Bounces = Config.BloodFang_Projectile_Bounces;
+            MaxDistance = Config.BloodFang_Projectile_MaxDistance;
+            Velocity = Config.BloodFang_Projectile_Velocity;
+            RotationVelocity = Config.BloodFang_Projectile_RotationVelocity;
+            TailLength = Config.BloodFang_Projectile_TailLength;
             Item = new GenericSpawnItemData()
             {
-                ItemId = Config.Blood_Fang_Projectile_Name,
-                Id = Config.Blood_Fang_Projectile_Name,
+                ItemId = Config.BloodFang_Projectile_Name,
+                Id = Config.BloodFang_Projectile_Name,
             };
         }
     }
+
     /// <summary>
     /// 投射物物件
     /// </summary>
@@ -69,10 +70,10 @@ namespace Dopamine.StardewValley
         /// </summary>
         public BloodFangProjectileObjectData() : base()
         {
-            Name = Config.Blood_Fang_Projectile_Name;
-            DisplayName = Config.Blood_Fang_Projectile_DisplayName;
-            Description = Config.Blood_Fang_Projectile_Description;
-            Texture = Config.Blood_Fang_Projectile_Texture;
+            Name = Config.BloodFang_Projectile_Name;
+            DisplayName = Config.BloodFang_Projectile_DisplayName;
+            Description = Config.BloodFang_Projectile_Description;
+            Texture = Config.BloodFang_Projectile_Texture;
         }
     }
 }
