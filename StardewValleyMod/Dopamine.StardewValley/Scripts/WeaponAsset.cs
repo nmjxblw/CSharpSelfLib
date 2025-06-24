@@ -50,6 +50,7 @@ namespace Dopamine.StardewValley
             Defense = Config.BloodFang_Defense;
             MineBaseLevel = Config.BloodFang_MineBaseLevel;
             MineMinLevel = Config.BloodFang_MineMinLevel;
+            AreaOfEffect = Config.BloodFang_AreaOfEffect;
             CanBeLostOnDeath = Config.BloodFang_CanBeLostOnDeath;
             Projectiles = new List<WeaponProjectile>() {
                 new BloodFangWeaponProjectile()

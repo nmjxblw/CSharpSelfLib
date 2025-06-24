@@ -4,7 +4,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Year>$([MSBuild]::Subtract($([System.DateTime]::Now.Year), 2024))</Year>
+		<Year>$([MSBuild]::Subtract($([System.DateTime]::Now.Year), 2025))</Year>
 		<Month>$([System.DateTime]::Now.Month.ToString())</Month>
     	<Day>$([System.DateTime]::Now.Day.ToString())</Day>
 		<Version>$(Year).$(Month).$(Day)</Version>

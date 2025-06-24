@@ -48,12 +48,12 @@ namespace Dopamine.StardewValley
         {
             #region 事件注册
             helper.Events.Content.AssetRequested += OnContentAssetRequested;
-            helper.Events.Input.CursorMoved += OnCursorMoved;
-            helper.Events.Input.MouseWheelScrolled += OnMouseWheelScrolled;
-            helper.Events.Input.ButtonPressed += OnButtonPressed;
-            helper.Events.Input.ButtonReleased += OnButtonReleased;
-            helper.Events.Input.ButtonsChanged += OnButtonsChanged;
-            helper.Events.Display.MenuChanged += OnDisplayMenuChanged;
+            //helper.Events.Input.CursorMoved += OnCursorMoved;
+            //helper.Events.Input.MouseWheelScrolled += OnMouseWheelScrolled;
+            //helper.Events.Input.ButtonPressed += OnButtonPressed;
+            //helper.Events.Input.ButtonReleased += OnButtonReleased;
+            //helper.Events.Input.ButtonsChanged += OnButtonsChanged;
+            //helper.Events.Display.MenuChanged += OnDisplayMenuChanged;
             #endregion
         }
 
@@ -85,11 +85,13 @@ namespace Dopamine.StardewValley
                     var dict = asset.AsDictionary<string, WeaponData>();
                     dict.Data[Config.BloodFang_Name] = new BloodFangWeaponData();
                 });
+                Monitor.Log($"[{DateTime.Now:T}]{Config.BloodFang_Name}加载完成");
             }
             if (e.Name.IsEquivalentTo(Config.BloodFang_Name, false))
             {
                 e.LoadFromModFile<Texture2D>($"Assets/{Config.BloodFang_Name}.png", AssetLoadPriority.Medium);
             }
+
             #endregion
 
             #region --- 投射物 ---
@@ -100,11 +102,13 @@ namespace Dopamine.StardewValley
                     var dict = asset.AsDictionary<string, ObjectData>();
                     dict.Data[Config.BloodFang_Projectile_Name] = new BloodFangProjectileObjectData();
                 });
+                Monitor.Log($"[{DateTime.Now:T}]{Config.BloodFang_Projectile_Name}加载完成");
             }
             if (e.Name.IsEquivalentTo(Config.BloodFang_Projectile_Name, false))
             {
                 e.LoadFromModFile<Texture2D>($"Assets/{Config.BloodFang_Projectile_Name}.png", AssetLoadPriority.Medium);
             }
+
             #endregion
 
             #endregion
@@ -149,7 +153,7 @@ namespace Dopamine.StardewValley
         private void OnMouseWheelScrolled(object? sender, MouseWheelScrolledEventArgs e)
         {
         }
-        // <summary>
+        /// <summary>
         /// 注册鼠标、控制器或者按键按下事件
         /// </summary>
         /// <param name="sender"></param>

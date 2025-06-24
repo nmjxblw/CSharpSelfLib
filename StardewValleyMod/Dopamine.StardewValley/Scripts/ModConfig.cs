@@ -89,6 +89,10 @@ namespace Dopamine.StardewValley
         /// <remarks>-1意味着永远不可能掉落</remarks>
         public int BloodFang_MineMinLevel { get; set; } = -1;
         /// <summary>
+        /// 武器作用范围
+        /// </summary>
+        public int BloodFang_AreaOfEffect { get; set; } = 2;
+        /// <summary>
         /// 玩家死亡后掉落该武器
         /// </summary>
         public bool BloodFang_CanBeLostOnDeath { get; set; } = false;
