@@ -6,10 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ConsoleProgram/1.6.23.1456": {
+      "ConsoleProgram/1.6.25.1454": {
         "dependencies": {
           "DeepSeekApi": "1.6.13.1711",
-          "Dopamine": "1.6.18.2157"
+          "Dopamine": "1.6.25.1454"
         },
         "runtime": {
           "ConsoleProgram.dll": {}
@@ -2231,7 +2231,7 @@
           }
         }
       },
-      "Dopamine/1.6.18.2157": {
+      "Dopamine/1.6.25.1454": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Core": "5.3.0",
           "Microsoft.AspNet.WebApi.SelfHost": "5.3.0",
@@ -2242,8 +2242,8 @@
         },
         "runtime": {
           "Dopamine.dll": {
-            "assemblyVersion": "1.6.23.1456",
-            "fileVersion": "1.6.23.1456"
+            "assemblyVersion": "1.6.25.1454",
+            "fileVersion": "1.6.25.1454"
           }
         }
       },
@@ -2274,7 +2274,7 @@
     }
   },
   "libraries": {
-    "ConsoleProgram/1.6.23.1456": {
+    "ConsoleProgram/1.6.25.1454": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3474,7 +3474,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Dopamine/1.6.18.2157": {
+    "Dopamine/1.6.25.1454": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

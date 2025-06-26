@@ -1,11 +1,12 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Concurrent;
-using DeepSeekApi;
-using System.Dynamic;
-using Microsoft.AspNetCore.Mvc.Formatters;
-using Newtonsoft.Json.Linq;
-using System.Diagnostics;
+﻿using DeepSeekApi;
 using LLama.Batched;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections.Concurrent;
+using System.Diagnostics;
+using System.Dynamic;
+using System.Reflection;
 namespace MainProgram;
 /// <summary>
 /// 主程序
@@ -15,41 +16,13 @@ namespace MainProgram;
 /// </remarks>
 public sealed class App
 {
-    private DateTime dateTime { get; set; } = DateTime.Now;
     /// <summary>
     /// 运行主方法
     /// </summary>
     public void Start()
     {
-        //LLamaManager.OutputTextChangeEvent += (text) =>
-        //{
-        //	Console.ForegroundColor = (ConsoleColor)11;
-        //	Console.Write(text);
-        //};
-        //Console.ForegroundColor = ConsoleColor.Yellow;
-        //Console.Write("\nThe chat session has started.");
-        //while (true)
-        //{
-        //	Console.ForegroundColor = ConsoleColor.Yellow;
-        //	Console.Write("\nUser: ");
-        //	Console.ForegroundColor = ConsoleColor.Green;
-        //	string input = Console.ReadLine() ?? string.Empty;
-        //	if (input.ToLower().Equals("exit") || input.ToLower().Equals("quit") || input.ToLower().Equals("q"))
-        //	{
-        //		break;
-        //	}
-        //	else
-        //	{
-        //		LLamaManager.AskAsync(input).GetAwaiter().GetResult();
-        //	}
-        //}
-        //LLamaApplication.Run().GetAwaiter().GetResult();
-
-        while (true)
-        {
-            string val = dateTime.ToString("G");
-            val.ShowInConsole(true);
-            Console.ReadLine();
-        }
+        this.Invoke("TestMethod1")?.ToString().ShowInConsole(true);
     }
+
+   static string TestMethod() => "Successed";
 }

@@ -122,5 +122,42 @@ namespace Dopamine
             using Process? process = Process.Start(psi);
             if (process == null) throw new Exception("无法验证nvidia-smi识别状态");
         }
+        /// <summary>
+        /// 通过字符串调用方法
+        /// </summary>
+        /// <param name="targetClass">方法所在的类</param>
+        /// <param name="methodName">方法名</param>
+        /// <param name="parameters">参数</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="MissingMethodException"></exception>
+        /// <exception cref="Exception"></exception>
+        public static object? Invoke(this object targetClass, string methodName, object?[]? parameters = default)
+        {
+            if (targetClass == null)
+            {
+                throw new ArgumentNullException(nameof(targetClass), "类型不能为空。");
+            }
+            System.Reflection.MethodInfo? method = targetClass.GetType().GetMethod(methodName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy | BindingFlags.Static | BindingFlags.Instance);
+            if (method == null)
+            {
+                throw new MissingMethodException($"方法 {methodName} 在类型 {targetClass.GetType().FullName} 中未找到。");
+            }
+            try
+            {
+                // 调用方法并返回结果
+                return method.Invoke(method.IsStatic ? null : targetClass, parameters);
+            }
+            catch (TargetInvocationException ex)
+            {
+                // 捕获方法内部抛出的异常
+                throw new Exception($"调用方法 {methodName} 时发生错误：{ex.InnerException?.Message}", ex);
+            }
+            catch (Exception ex)
+            {
+                // 捕获其他异常
+                throw new Exception($"调用方法 {methodName} 时发生错误：{ex.Message}", ex);
+            }
+        }
     }
 }

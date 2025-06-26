@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Dopamine
 {
 	/// <summary>
-	/// DL/T 645-2007多功能电能表通讯协议
+	/// DL/TClass 645-2007多功能电能表通讯协议
 	/// </summary>
 	public static class DLT645_2007
 	{

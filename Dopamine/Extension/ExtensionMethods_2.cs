@@ -108,7 +108,7 @@ namespace Dopamine
         /// </summary>
         /// <param name="hex"></param>
         /// <returns></returns>
-        public static byte[] FromHexString(this string hex)
+        public static byte[] HexStringToBytes(this string hex)
         {
             hex = Regex.Replace(hex, @"[^0-9A-F]", "", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             if (string.IsNullOrWhiteSpace(hex)) return Array.Empty<byte>();

@@ -23,6 +23,7 @@ sealed class Launcher
 	/// 启动
 	/// </summary>
 	/// <param name="args"></param>
+	[Dopamine]
 	static void Main(string[] args)
 	{
 		sw.Restart();

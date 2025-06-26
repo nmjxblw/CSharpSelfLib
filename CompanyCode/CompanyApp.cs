@@ -17,14 +17,10 @@ namespace CompanyCode
         /// </summary>
         public void Start()
         {
-            var test = 0;
-            TestFunction(ref test);
-            test.ShowInConsole(true);
-        }
-
-        public void TestFunction(ref int temp)
-        {
-            temp = 10;
+            string hexString = "68 01 FE 0A 13 60 01 05 00";
+            byte[] bytes = hexString.HexStringToBytes();
+            bytes = bytes.AppendXor(false);
+            BitConverter.ToString(bytes).Replace("-", " ").ShowInConsole(true);
         }
     }
 }

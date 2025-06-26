@@ -20,6 +20,7 @@ namespace LeetCode
         /// <summary>
         /// 主方法，用于启动程序
         /// </summary>
+        [STAThread]
         public static void Main()
         {
             #region 进程锁

@@ -14,6 +14,29 @@
             在控制台显示当前时间的各种格式
             </summary>
         </member>
+        <member name="T:Dopamine.DopamineAttribute">
+            <summary>
+            Dopamine特性
+            </summary>
+        </member>
+        <member name="P:Dopamine.DopamineAttribute.Name">
+            <summary>
+            绑定对象的名称
+            </summary>
+            <remarks>完整程序集名称</remarks>
+        </member>
+        <member name="M:Dopamine.DopamineAttribute.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            初始化 <see cref="T:Dopamine.DopamineAttribute"/> 实例
+            </summary>
+            <remarks>This constructor uses the provided caller information to generate a unique identifier
+            based on the file path, member name, and line number. The identifier can be useful for debugging or tracking
+            the origin of the attribute usage.</remarks>
+            <param name="filePath">The full path of the source file containing the caller. Defaults to an empty string if not provided.</param>
+            <param name="memberName">The name of the method or property from which this attribute is applied. Defaults to an empty string if not
+            provided.</param>
+            <param name="lineNumber">The line number in the source file where this attribute is applied. Defaults to 0 if not provided.</param>
+        </member>
         <member name="T:Dopamine.ConfigManager">
             <summary>
             拓展域名下的Json配置管理器
@@ -362,6 +385,18 @@
             <param name="args"></param>
             <exception cref="T:System.Exception"></exception>
         </member>
+        <member name="M:Dopamine.ExtensionMethods.Invoke(System.Object,System.String,System.Object[])">
+            <summary>
+            通过字符串调用方法
+            </summary>
+            <param name="targetClass">方法所在的类</param>
+            <param name="methodName">方法名</param>
+            <param name="parameters">参数</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.MissingMethodException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
         <member name="M:Dopamine.ExtensionMethods.GetFrame(System.Net.Sockets.NetworkStream,System.Int32)">
             <summary>
             从流中获取数据帧
@@ -474,7 +509,7 @@
         </member>
         <member name="T:Dopamine.DLT645_2007">
             <summary>
-            DL/T 645-2007多功能电能表通讯协议
+            DL/TClass 645-2007多功能电能表通讯协议
             </summary>
         </member>
         <member name="P:Dopamine.DLT645_2007.Header">
