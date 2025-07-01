@@ -119,9 +119,8 @@ namespace DeepSeekApi
 				UseShellExecute = false
 			};
 
-			using Process? process = Process.Start(psi);
-			if (process == null) throw new Exception("无法验证nvidia-smi识别状态");
-			string output = process.StandardOutput.ReadToEnd();
+			using Process? process = Process.Start(psi) ?? throw new Exception("无法验证nvidia-smi识别状态");
+            string output = process.StandardOutput.ReadToEnd();
 			Console.WriteLine($"【验证nvidia-smi识别状态】\n{output}\n");
 			Weights = LLamaWeights.LoadFromFile(ModelParams);
 			Context = Weights.CreateContext(ModelParams);

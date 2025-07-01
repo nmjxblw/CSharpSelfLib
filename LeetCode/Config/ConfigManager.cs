@@ -13,56 +13,57 @@ using System.IO;
 
 namespace LeetCode
 {
-	internal static class ConfigManager
-	{
-		private static Assembly Assembly => Assembly.GetExecutingAssembly();
-		private static readonly string ConfigName = "LeetCode.Config.RuntimeConfig.json";
-		private static readonly JsonSerializerOptions opts = new JsonSerializerOptions()
-		{
-			PropertyNameCaseInsensitive = true,
-			WriteIndented = true,
-			IgnoreReadOnlyFields = true,
-			IgnoreReadOnlyProperties = true,
-			AllowTrailingCommas = true,
-			ReadCommentHandling = JsonCommentHandling.Skip,
-			Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
-		};
-		/// <summary>
-		/// 动态解析后的 json 文件
-		/// </summary>
-		public static dynamic Data { get; set; } = new DynamicClass();
-		static ConfigManager()
-		{
-			try
-			{
-				using (Stream stream = Assembly.GetManifestResourceStream(ConfigName))
-				using (StreamReader reader = new StreamReader(stream))
-				{
-					string json = reader.ReadToEnd();
-					if (string.IsNullOrEmpty(json)) throw new Exception("json is null");
-					Data = JsonSerializer.Deserialize<DynamicClass>(json, opts);
-				}
-			}
-			catch (Exception ex)
-			{
-				Trace.WriteLine(ex.Message);
-			}
-		}
-		/// <summary>
-		/// 存储
-		/// </summary>
-		public static void Save()
-		{
-			string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "test.json");
-			string path = Path.GetDirectoryName(filepath);
-			if (string.IsNullOrEmpty(path)) return;
+    internal static class ConfigManager
+    {
+        private static Assembly Assembly => Assembly.GetExecutingAssembly();
+        private static readonly string ConfigName = "LeetCode.Config.RuntimeConfig.json";
+        private static readonly JsonSerializerOptions opts = new JsonSerializerOptions()
+        {
+            PropertyNameCaseInsensitive = true,
+            WriteIndented = true,
+            IgnoreReadOnlyFields = true,
+            IgnoreReadOnlyProperties = true,
+            AllowTrailingCommas = true,
+            ReadCommentHandling = JsonCommentHandling.Skip,
+            Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+        };
+        /// <summary>
+        /// 动态解析后的 json 文件
+        /// </summary>
+        public static dynamic Data { get; set; } = new DynamicClass();
+        static ConfigManager()
+        {
+            try
+            {
+                using (Stream stream = Assembly.GetManifestResourceStream(ConfigName) ??
+                    throw new Exception("Didn't get manifest resource stream."))
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string json = reader.ReadToEnd();
+                    if (string.IsNullOrEmpty(json)) throw new Exception("json is null");
+                    Data = JsonSerializer.Deserialize<DynamicClass>(json, opts);
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+            }
+        }
+        /// <summary>
+        /// 存储
+        /// </summary>
+        public static void Save()
+        {
+            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "test.json");
+            string path = Path.GetDirectoryName(filepath);
+            if (string.IsNullOrEmpty(path)) return;
 
-			if (!Directory.Exists(path))
-				Directory.CreateDirectory(path);
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
 
-			FileStream stream = File.Create(filepath);
-			JsonSerializer.Serialize(stream, Data, opts);
-			stream.Dispose();
-		}
-	}
+            FileStream stream = File.Create(filepath);
+            JsonSerializer.Serialize(stream, Data, opts);
+            stream.Dispose();
+        }
+    }
 }

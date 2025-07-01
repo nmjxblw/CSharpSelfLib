@@ -55,6 +55,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 戳气球
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int MaxCoins(int[] nums)
         {
             throw new System.NotImplementedException();

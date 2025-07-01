@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace Dopamine.ChatApp
 {
@@ -22,16 +23,35 @@ namespace Dopamine.ChatApp
         public MainWindowViewModel() : base()
         {
             CompositionTarget.Rendering += OnRenderingFrame;
+            #region 开启固定帧率刷新线程
+            Task FixedRateTask = Task.Run(() =>
+            {
+                if (int.TryParse(AppConfig.GetValue("FrameRate"), out var tempFrame))
+                {
+                    FrameRate = tempFrame;
+                }
+                OnFixedUpdate += FixedUpdate; // 订阅固定更新事件
+                int sleepTime = (int)Math.Round(1000f / FrameRate); // 计算每帧的睡眠时间
+                while (true)
+                {
+                    Thread.Sleep(sleepTime);
+                    this.OnFixedUpdate?.Invoke(sleepTime / 1000d);
+                }
+            });
+            #endregion
         }
         #region 公开属性
-        #region 工具栏
+        #region - 事件 - 
+        public event Action<double> OnFixedUpdate;
+        #endregion
+        #region - 工具栏 - 
         public string ToolBarSettingButtonText
         {
             get => GetProperty("ToolBar_Setting".Translate());
             private set => SetProperty(value);
         }
         #endregion
-        #region 对话框GroupBox元素
+        #region - 对话框GroupBox元素 - 
         /// <summary>
         /// 对话组框标头
         /// </summary>
@@ -40,7 +60,7 @@ namespace Dopamine.ChatApp
             get => GetProperty("HistoryChats".Translate());
             private set => SetProperty(value);
         }
-        #region 时钟区域
+        #region  -- 时钟区域 --  
         public string TimeDisplayGroupBoxHeader
         {
             get => GetProperty("TimeDisplay_Header".Translate());
@@ -52,11 +72,22 @@ namespace Dopamine.ChatApp
         public DateTime SystemTime
         {
             get => GetProperty(DateTime.Now);
-            private set => SetProperty(value);
+            /*private*/
+            set => SetProperty(value);
+        }
+        #endregion
+        #region -- 数据信息区域 --
+        /// <summary>
+        /// 帧率，默认为60帧每秒
+        /// </summary>
+        public int FrameRate
+        {
+            get => GetProperty(60);
+            set => SetProperty(value);
         }
         #endregion
         #endregion
-        #region 对话框元素
+        #region - 对话框元素 -  
         /// <summary>
         /// 对话文本框组框标头
         /// </summary>
@@ -105,10 +136,22 @@ namespace Dopamine.ChatApp
         /// <summary>
         /// 每帧更新
         /// </summary>
-        /// <param name="deltaTime"></param>
-        private void Update(double deltaTime)
+        /// <param name="_">每帧之间间隔的时间
+        /// <para>单位s</para>
+        /// </param>
+        private void Update(double _)
         {
             SystemTime = DateTime.Now;
+        }
+        /// <summary>
+        /// 按照刷新率更新
+        /// </summary>
+        /// <param name="_">帧间隔
+        /// <para>单位s</para>
+        /// </param>
+        private void FixedUpdate(double _)
+        {
+
         }
         #region 按键逻辑处理
         /// <summary>
@@ -117,6 +160,10 @@ namespace Dopamine.ChatApp
         public void Send()
         {
             AIChatBoxText = AppConfig.GetValue(ConfigSection.SecondSection, "Test");
+        }
+        public void Settings()
+        {
+            throw new NotImplementedException();
         }
         /// <summary>
         /// 处理窗口最小化
@@ -141,7 +188,7 @@ namespace Dopamine.ChatApp
         }
         public void OnAppQuitClicked()
         {
-            if (MessageBox.Show("确定要退出吗？", "退出程序", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Quit_App_Confirm".Translate(), "Quit_App".Translate(), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 App.Current.Shutdown();
         }
         protected override void Dispose(bool disposing)

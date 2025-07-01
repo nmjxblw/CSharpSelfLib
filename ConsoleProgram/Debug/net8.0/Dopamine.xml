@@ -436,7 +436,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Dopamine.ExtensionMethods.FromHexString(System.String)">
+        <member name="M:Dopamine.ExtensionMethods.HexStringToBytes(System.String)">
             <summary>
             将hex-string转化成byte[]
             </summary>

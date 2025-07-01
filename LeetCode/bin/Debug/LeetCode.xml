@@ -113,6 +113,13 @@
             <param name="key"></param>
             <returns></returns>
         </member>
+        <member name="P:LeetCode.DynamicClass.Item(System.Int32)">
+            <summary>
+            索引器访问
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
         <member name="P:LeetCode.DynamicClass.Properties">
             <summary>
             获取所有属性
@@ -142,6 +149,18 @@
             </summary>
             <param name="keys"></param>
             <returns></returns>
+        </member>
+        <member name="M:LeetCode.DynamicClass.op_Implicit(LeetCode.DynamicClass)~System.String">
+            <summary>
+            DynamicClass的隐式转化
+            </summary>
+            <param name="dynamicClass"></param>
+        </member>
+        <member name="M:LeetCode.DynamicClass.op_Implicit(System.String)~LeetCode.DynamicClass">
+            <summary>
+            JsonString的隐式转化
+            </summary>
+            <param name="value"></param>
         </member>
         <member name="T:LeetCode.DynamicClassConverter">
             <summary>
@@ -623,6 +642,14 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.LevelOrder(LeetCode.TreeNode)">
+            <summary>
+            二叉树的层序遍历
+            </summary>
+            <param name="root"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
         <member name="M:LeetCode.Solution.ZigzagLevelOrder(LeetCode.TreeNode)">
             <summary>
             二叉树的锯齿形层序遍历
@@ -657,11 +684,27 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.MinimumMoves(System.Int32[][])">
+            <summary>
+            穿过迷宫的最少移动次数
+            </summary>
+            <param name="grid"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.MaxProfit(System.Int32[])">
             <summary>
             买卖股票的最佳时机 III
             </summary>
             <param name="prices"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MaxPathSum(LeetCode.TreeNode)">
+            <summary>
+            二叉树中的最大路径和
+            </summary>
+            <param name="root"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
@@ -728,6 +771,14 @@
             </summary>
             <param name="head">无序链表</param>
             <returns>排序后的链表</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MaxPoints(System.Int32[][])">
+            <summary>
+            直线上最多的点数
+            </summary>
+            <param name="points"></param>
+            <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:LeetCode.Solution.FindMin(System.Int32[])">
@@ -904,12 +955,36 @@
             <param name="n"></param>
             <returns></returns>
         </member>
+        <member name="M:LeetCode.Solution.RemoveInvalidParentheses(System.String)">
+            <summary>
+            删除无效的括号
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MaxCoins(System.Int32[])">
+            <summary>
+            戳气球
+            </summary>
+            <param name="nums"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.RemoveDuplicateLetters(System.String)">
             <summary>
             去除重复字母
             </summary>
             <param name="s"></param>
             <returns></returns>
+        </member>
+        <member name="M:LeetCode.Solution.LongestValidParentheses(System.String)">
+            <summary>
+            最长有效括号
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:LeetCode.Solution.MaxNumber(System.Int32[],System.Int32[],System.Int32)">
             <summary>
@@ -926,11 +1001,45 @@
             relative order.</returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.LongestIncreasingPath(System.Int32[][])">
+            <summary>
+            矩阵中的最长递增路径
+            </summary>
+            <param name="matrix"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MinPatches(System.Int32[],System.Int32)">
+            <summary>
+            按要求补齐数组
+            </summary>
+            <param name="nums"></param>
+            <param name="n"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.Rob(LeetCode.TreeNode)">
             <summary>
             打家劫舍 III
             </summary>
             <param name="root"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MaxSubarrays(System.Int32,System.Int32[][])">
+            <summary>
+            删除一个冲突对后最大子数组数目
+            </summary>
+            <param name="n"></param>
+            <param name="conflictingPairs"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MaxEnvelopes(System.Int32[][])">
+            <summary>
+             俄罗斯套娃信封问题
+            </summary>
+            <param name="envelopes"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
@@ -986,6 +1095,14 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.LongestPalindrome(System.String)">
+            <summary>
+            最长回文子串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.SolveNQueens(System.Int32)">
             <summary>
             N 皇后问题
@@ -1021,6 +1138,14 @@
             </summary>
             <param name="n">棋盘尺寸</param>
         </member>
+        <member name="M:LeetCode.Solution.LongestPalindromeSubseq(System.String)">
+            <summary>
+            最长回文子序列
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.TotalNQueens(System.Int32)">
             <summary>
             给定一个整数 n ，返回 n 皇后问题 不同的解决方案的数量。
@@ -1052,6 +1177,30 @@
             <returns></returns>
             <exception cref="T:System.Exception"></exception>
         </member>
+        <member name="M:LeetCode.Solution.Merge(System.Int32[][])">
+            <summary>
+            合并区间
+            </summary>
+            <param name="intervals"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.IsNumber(System.String)">
+            <summary>
+            有效数字
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.ImageSmoother(System.Int32[][])">
+            <summary>
+            图片平滑器
+            </summary>
+            <param name="img"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.StrangePrinter(System.String)">
             <summary>
             奇怪的打印机
@@ -1068,11 +1217,29 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:LeetCode.Solution.MaxProfit(System.Int32[],System.Int32)">
+            <summary>
+            买卖股票的最佳时机含手续费
+            </summary>
+            <param name="prices"></param>
+            <param name="fee"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:LeetCode.Solution.SortColors(System.Int32[])">
             <summary>
             颜色分类
             </summary>
             <param name="nums"></param>
+        </member>
+        <member name="M:LeetCode.Solution.MinWindow(System.String,System.String)">
+            <summary>
+            最小覆盖子串
+            </summary>
+            <param name="s"></param>
+            <param name="t"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:LeetCode.Solution.HitBricks(System.Int32[][],System.Int32[][])">
             <summary>
@@ -1080,6 +1247,31 @@
             </summary>
             <param name="grid"></param>
             <param name="hits"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.LargestRectangleArea(System.Int32[])">
+            <summary>
+            柱状图中最大的矩形
+            </summary>
+            <param name="heights"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.MaximalRectangle(System.Char[][])">
+            <summary>
+            最大矩形
+            </summary>
+            <param name="matrix"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.Solution.IsScramble(System.String,System.String)">
+            <summary>
+            扰乱字符串
+            </summary>
+            <param name="s1"></param>
+            <param name="s2"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
@@ -1256,6 +1448,66 @@
         <member name="M:LeetCode.RandomizedSet.GetRandom">
             <summary>
             随机返回集合中的一个元素，要求每个元素被返回的概率相同。
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:LeetCode.AllOne">
+            <summary>
+             全 O(1) 的数据结构
+            </summary>
+            <remarks>
+            以次数为索引的
+            </remarks>
+        </member>
+        <member name="F:LeetCode.AllOne._privateDic">
+            <summary>
+            字符串计数的字典
+            </summary>
+            <remarks>
+            键为字符串，值为该字符串的计数
+            </remarks>
+        </member>
+        <member name="F:LeetCode.AllOne._maxKey">
+            <summary>
+            最大计数字符串
+            </summary>
+        </member>
+        <member name="F:LeetCode.AllOne._minKey">
+            <summary>
+            最小计数字符串
+            </summary>
+        </member>
+        <member name="M:LeetCode.AllOne.#ctor">
+            <summary>
+            构造函数
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.AllOne.Inc(System.String)">
+            <summary>
+            字符串 key 的计数增加 1 。如果数据结构中尚不存在 key ，那么插入计数为 1 的 key 。
+            </summary>
+            <param name="key"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.AllOne.Dec(System.String)">
+            <summary>
+            字符串 key 的计数减少 1 。如果 key 的计数在减少后为 0 ，那么需要将这个 key 从数据结构中删除。测试用例保证：在减少计数前，key 存在于数据结构中。
+            </summary>
+            <param name="key"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.AllOne.GetMaxKey">
+            <summary>
+            返回任意一个计数最大的字符串。如果没有元素存在，返回一个空字符串 "" 。
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LeetCode.AllOne.GetMinKey">
+            <summary>
+            返回任意一个计数最小的字符串。如果没有元素存在，返回一个空字符串 "" 。
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>

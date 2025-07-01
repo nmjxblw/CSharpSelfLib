@@ -9,6 +9,7 @@ namespace CompanyCode
 	/// <summary>
 	/// 电能终端测试代码
 	/// </summary>
+	[Obsolete("已经弃用，使用新的测试代码",true)]
     public class ElectricalTerminalTestCode
     {
 		/// <summary>

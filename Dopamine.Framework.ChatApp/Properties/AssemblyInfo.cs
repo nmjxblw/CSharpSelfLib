@@ -7,11 +7,11 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Dopamine.Framework.ChatApp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ChatApp")]
+[assembly: AssemblyDescription("Chat App by LLamaSharp")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Dopamine.Framework.ChatApp")]
+[assembly: AssemblyCompany("DopamineMaker")]
+[assembly: AssemblyProduct("ChatApp")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -39,6 +39,9 @@ using System.Windows;
                                       //(未在页面中找到资源时使用，
                                       //、应用程序或任何主题专用资源字典中找到时使用)
 )]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguage("zh-CN")]
 
 
 // 程序集的版本信息由下列四个值组成: 
@@ -48,5 +51,5 @@ using System.Windows;
 //      生成号
 //      修订号
 //
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+//[assembly: AssemblyVersion("1.0.0.0")]
+//[assembly: AssemblyFileVersion("1.0.0.0")]

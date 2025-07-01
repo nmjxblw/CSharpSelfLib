@@ -52,6 +52,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 柱状图中最大的矩形
+        /// </summary>
+        /// <param name="heights"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int LargestRectangleArea(int[] heights)
         {
             throw new System.NotImplementedException();

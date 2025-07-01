@@ -97,6 +97,7 @@ namespace Dopamine.ChatApp
 
         private void SetUnhandledException()
         {
+            //
             this.DispatcherUnhandledException += (s, e) =>
             {
                 string error_str;

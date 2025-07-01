@@ -58,6 +58,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 矩阵中的最长递增路径
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int LongestIncreasingPath(int[][] matrix)
         {
             throw new System.NotImplementedException();

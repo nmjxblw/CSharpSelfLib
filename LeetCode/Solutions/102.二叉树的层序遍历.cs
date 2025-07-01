@@ -66,6 +66,12 @@ namespace LeetCode
      */
     public partial class Solution
     {
+        /// <summary>
+        /// 二叉树的层序遍历
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public System.Collections.Generic.IList<System.Collections.Generic.IList<int>> LevelOrder(TreeNode root)
         {
             throw new System.Exception("Not Implemented");

@@ -49,6 +49,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 合并区间
+        /// </summary>
+        /// <param name="intervals"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int[][] Merge(int[][] intervals)
         {
             throw new System.NotImplementedException();

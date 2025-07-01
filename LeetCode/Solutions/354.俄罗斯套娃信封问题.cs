@@ -52,6 +52,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        ///  俄罗斯套娃信封问题
+        /// </summary>
+        /// <param name="envelopes"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int MaxEnvelopes(int[][] envelopes)
         {
             throw new System.NotImplementedException();

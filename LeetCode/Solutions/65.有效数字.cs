@@ -81,6 +81,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 有效数字
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public bool IsNumber(string s)
         {
             throw new System.NotImplementedException();

@@ -50,6 +50,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 最长回文子序列
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int LongestPalindromeSubseq(string s)
         {
             throw new System.NotImplementedException();

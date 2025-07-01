@@ -6,10 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ConsoleProgram/1.6.25.1454": {
+      "ConsoleProgram/1.7.2.0109": {
         "dependencies": {
-          "DeepSeekApi": "1.6.13.1711",
-          "Dopamine": "1.6.25.1454"
+          "DeepSeekApi": "1.6.26.1623",
+          "Dopamine": "1.6.26.1623"
         },
         "runtime": {
           "ConsoleProgram.dll": {}
@@ -2219,19 +2219,19 @@
           }
         }
       },
-      "DeepSeekApi/1.6.13.1711": {
+      "DeepSeekApi/1.6.26.1623": {
         "dependencies": {
           "LLamaSharp": "0.24.0",
           "LLamaSharp.Backend.Cpu": "0.24.0"
         },
         "runtime": {
           "DeepSeekApi.dll": {
-            "assemblyVersion": "1.6.23.1456",
-            "fileVersion": "1.6.23.1456"
+            "assemblyVersion": "1.7.2.109",
+            "fileVersion": "1.7.2.109"
           }
         }
       },
-      "Dopamine/1.6.25.1454": {
+      "Dopamine/1.6.26.1623": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Core": "5.3.0",
           "Microsoft.AspNet.WebApi.SelfHost": "5.3.0",
@@ -2242,8 +2242,8 @@
         },
         "runtime": {
           "Dopamine.dll": {
-            "assemblyVersion": "1.6.25.1454",
-            "fileVersion": "1.6.25.1454"
+            "assemblyVersion": "1.7.2.109",
+            "fileVersion": "1.7.2.109"
           }
         }
       },
@@ -2274,7 +2274,7 @@
     }
   },
   "libraries": {
-    "ConsoleProgram/1.6.25.1454": {
+    "ConsoleProgram/1.7.2.0109": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3469,12 +3469,12 @@
       "path": "textcopy/6.2.1",
       "hashPath": "textcopy.6.2.1.nupkg.sha512"
     },
-    "DeepSeekApi/1.6.13.1711": {
+    "DeepSeekApi/1.6.26.1623": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Dopamine/1.6.25.1454": {
+    "Dopamine/1.6.26.1623": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

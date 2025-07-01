@@ -47,6 +47,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 最长回文子串
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public string LongestPalindrome(string s)
         {
             throw new System.NotImplementedException();

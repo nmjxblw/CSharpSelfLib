@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,12 +30,11 @@ namespace Dopamine.ChatApp
         /// <summary>
         /// 通知栏图标
         /// </summary>
-        private NotifyIcon notifyIcon = null;
+        private NotifyIcon notifyIcon = null;   
         public MainWindow()
         {
             InitializeComponent();
             Initialization();
-
         }
         /// <summary>
         /// 初始化
@@ -42,7 +42,7 @@ namespace Dopamine.ChatApp
         public void Initialization()
         {
             this.DataContext = ViewModel;
-            #region
+            #region 设置窗口图标
             ImageSource source = new BitmapImage(new Uri(AppConfig.GetValue("IconUri"), UriKind.RelativeOrAbsolute));
             Icon = source;
             IconImage.Source = source;

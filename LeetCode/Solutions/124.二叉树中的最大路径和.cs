@@ -68,6 +68,12 @@ namespace LeetCode
      */
     public partial class Solution
     {
+        /// <summary>
+        /// 二叉树中的最大路径和
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int MaxPathSum(TreeNode root)
         {
             throw new System.NotImplementedException();

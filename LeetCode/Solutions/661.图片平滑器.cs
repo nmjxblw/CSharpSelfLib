@@ -69,6 +69,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 图片平滑器
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int[][] ImageSmoother(int[][] img)
         {
             throw new System.NotImplementedException();

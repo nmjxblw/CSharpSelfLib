@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Diagnostics;
 using System.Net.NetworkInformation;
 
 namespace MainProgram;
@@ -11,10 +12,14 @@ sealed class Launcher
 	/// 主程序类
 	/// </summary>
 	private static App App { get; } = new App();
-	/// <summary>
-	/// 内置计时器
-	/// </summary>
-	private static Stopwatch sw { get; } = new Stopwatch();
+    /// <summary>
+    /// 启动参数
+    /// </summary>
+    public static string[] Args { get; private set; } = [];
+    /// <summary>
+    /// 内置计时器
+    /// </summary>
+    private static Stopwatch sw { get; } = new Stopwatch();
 	/// <summary>
 	/// 1兆字节
 	/// </summary>
@@ -26,7 +31,8 @@ sealed class Launcher
 	[Dopamine]
 	static void Main(string[] args)
 	{
-		sw.Restart();
+		Args = args;
+        sw.Restart();
 		App.Start();
 		sw.Stop();
 		System.Diagnostics.Process process = Process.GetCurrentProcess();

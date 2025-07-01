@@ -58,6 +58,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 删除无效的括号
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public System.Collections.Generic.IList<string> RemoveInvalidParentheses(string s)
         {
             throw new System.NotImplementedException();

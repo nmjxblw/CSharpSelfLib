@@ -20,7 +20,16 @@ namespace Dopamine.ChatApp
         /// <returns></returns>
         public static string Translate(this string id)
         {
-            string text = Application.Current.FindResource(id) as string;
+            string text = id;
+            try
+            {
+                text = Application.Current.FindResource(id) as string;
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = $"翻译短语失败，id: {id}\r\n 错误信息: {ex.Message}";
+                Recorder.RecordError(errorMessage);
+            }
             return text;
         }
         /// <summary>
@@ -31,7 +40,16 @@ namespace Dopamine.ChatApp
         /// <returns></returns>
         public static string Translate(this string id, params object[] args)
         {
-            string text = Application.Current.FindResource(id) as string;
+            string text = id;
+            try
+            {
+                text = Application.Current.FindResource(id) as string;
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = $"翻译短语失败，id: {id}\r\n 错误信息: {ex.Message}";
+                Recorder.RecordError(errorMessage);
+            }
             return string.Format(text, args);
         }
     }

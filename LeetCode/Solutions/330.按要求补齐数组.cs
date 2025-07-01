@@ -63,6 +63,13 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 按要求补齐数组
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int MinPatches(int[] nums, int n)
         {
             throw new System.NotImplementedException();

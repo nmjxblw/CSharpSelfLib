@@ -15,4 +15,10 @@
     <sys:String x:Key="AskForGreatings">尝试打个招呼吧！</sys:String>
     <sys:String x:Key="HistoryChats">历史会话</sys:String>
     <sys:String x:Key="TimeDisplay_Header">系统时间</sys:String>
+    <sys:String x:Key="Quit_App">退出程序</sys:String>
+    <sys:String x:Key="Quit_App_Confirm">确定要退出吗?</sys:String>
+    <sys:String x:Key="Confirmed">确认</sys:String>
+    <sys:String x:Key="Cancel">取消</sys:String>
+    <sys:String x:Key="Yes">是</sys:String>
+    <sys:String x:Key="No">否</sys:String>
 </ResourceDictionary>

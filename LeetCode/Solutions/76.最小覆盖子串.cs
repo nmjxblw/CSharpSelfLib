@@ -70,6 +70,13 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 最小覆盖子串
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public string MinWindow(string s, string t)
         {
             throw new System.NotImplementedException();

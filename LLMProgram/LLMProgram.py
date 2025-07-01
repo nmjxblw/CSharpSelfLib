@@ -1,7 +1,7 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 import logging
 
-def LLMProgram(self):
+class LLMProgram():
     def __init__(self, model_name: str = "gpt2", device: str = "cpu"):
 
         self.model_name = model_name

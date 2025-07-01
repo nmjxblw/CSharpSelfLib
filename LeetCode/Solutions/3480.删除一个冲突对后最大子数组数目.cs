@@ -78,6 +78,13 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 删除一个冲突对后最大子数组数目
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="conflictingPairs"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public long MaxSubarrays(int n, int[][] conflictingPairs)
         {
             throw new System.NotImplementedException();

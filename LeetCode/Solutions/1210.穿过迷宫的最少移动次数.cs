@@ -79,6 +79,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 穿过迷宫的最少移动次数
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int MinimumMoves(int[][] grid)
         {
             throw new System.NotImplementedException();

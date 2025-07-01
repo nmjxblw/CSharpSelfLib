@@ -58,6 +58,13 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 买卖股票的最佳时机含手续费
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <param name="fee"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int MaxProfit(int[] prices, int fee)
         {
             throw new System.NotImplementedException();

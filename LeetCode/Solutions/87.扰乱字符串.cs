@@ -77,6 +77,13 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 扰乱字符串
+        /// </summary>
+        /// <param name="s1"></param>
+        /// <param name="s2"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public bool IsScramble(string s1, string s2)
         {
             throw new System.NotImplementedException();

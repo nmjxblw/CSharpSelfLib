@@ -57,6 +57,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 最大矩形
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int MaximalRectangle(char[][] matrix)
         {
             throw new System.NotImplementedException();

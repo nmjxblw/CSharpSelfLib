@@ -42,7 +42,7 @@ namespace Dopamine
 		/// 读取表地址
 		/// </summary>
 		/// <returns></returns>
-		public static byte[] ReadMeterAddress()
+		public static byte[]? ReadMeterAddress()
 		{
 			return default;
 		}

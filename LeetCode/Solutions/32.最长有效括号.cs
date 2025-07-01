@@ -61,6 +61,12 @@ namespace LeetCode
     // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 最长有效括号
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int LongestValidParentheses(string s)
         {
             throw new System.NotImplementedException();

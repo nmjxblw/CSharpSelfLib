@@ -45,11 +45,17 @@
  */
 using System;
 using System.Collections.Generic;
-// @lc code=start
 namespace LeetCode
 {
+    // @lc code=start
     public partial class Solution
     {
+        /// <summary>
+        /// 直线上最多的点数
+        /// </summary>
+        /// <param name="points"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public int MaxPoints(int[][] points)
         {
             throw new System.NotImplementedException();
