@@ -141,7 +141,7 @@ namespace Dopamine.ChatApp
         /// </param>
         private void Update(double _)
         {
-            SystemTime = DateTime.Now;
+
         }
         /// <summary>
         /// 按照刷新率更新
@@ -151,7 +151,7 @@ namespace Dopamine.ChatApp
         /// </param>
         private void FixedUpdate(double _)
         {
-
+            SystemTime = DateTime.Now;
         }
         #region 按键逻辑处理
         /// <summary>
@@ -188,7 +188,8 @@ namespace Dopamine.ChatApp
         }
         public void OnAppQuitClicked()
         {
-            if (MessageBox.Show("Quit_App_Confirm".Translate(), "Quit_App".Translate(), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Quit_App_Confirm".Translate(),
+                "Quit_App".Translate(), MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 App.Current.Shutdown();
         }
         protected override void Dispose(bool disposing)

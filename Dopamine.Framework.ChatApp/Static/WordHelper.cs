@@ -27,8 +27,7 @@ namespace Dopamine.ChatApp
             }
             catch (Exception ex)
             {
-                string errorMessage = $"翻译短语失败，id: {id}\r\n 错误信息: {ex.Message}";
-                Recorder.RecordError(errorMessage);
+                Recorder.RecordError(ex);
             }
             return text;
         }
@@ -47,8 +46,7 @@ namespace Dopamine.ChatApp
             }
             catch (Exception ex)
             {
-                string errorMessage = $"翻译短语失败，id: {id}\r\n 错误信息: {ex.Message}";
-                Recorder.RecordError(errorMessage);
+                Recorder.RecordError(ex);
             }
             return string.Format(text, args);
         }

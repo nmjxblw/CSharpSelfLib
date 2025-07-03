@@ -17,7 +17,7 @@ namespace CompanyCode
         /// </summary>
         public void Start()
         {
-            string hexString = "68 01 FE 0A 13 60 01 04 01";
+            string hexString = "68 13 FE 0B 01 FF 08 00 01 00";
             byte[] bytes = hexString.HexStringToBytes();
             bytes = bytes.AppendXor(false);
             BitConverter.ToString(bytes).Replace("-", " ").ShowInConsole(true);

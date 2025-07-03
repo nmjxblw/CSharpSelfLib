@@ -94,23 +94,25 @@ namespace Dopamine.ChatApp
             MainWindow.Show();
             base.OnStartup(e);
         }
-
+        /// <summary>
+        /// 配置应用程序以处理由调度程序引发的未处理异常。
+        /// </summary>
+        /// <remarks>This method subscribes to the <see cref="DispatcherUnhandledException"/> event to
+        /// capture and log unhandled exceptions. Exceptions are recorded using the <c>Recorder.RecordError</c> method,
+        /// and the event is marked as handled to prevent further propagation.</remarks>
         private void SetUnhandledException()
         {
-            //
+            // 记录未处理的异常
             this.DispatcherUnhandledException += (s, e) =>
             {
-                string error_str;
                 try
                 {
                     e.Handled = true;
-                    error_str = string.Format("{0}\t{1}", s.ToString(), e.Exception.StackTrace);
-                    Recorder.RecordError(error_str);
+                    Recorder.RecordError(e.Exception);
                 }
                 catch (Exception ex)
                 {
-                    error_str = string.Format("致命错误：{0}\n额外错误：{1}", e.Exception.StackTrace, ex.StackTrace);
-                    Recorder.RecordError(error_str);
+                    Recorder.RecordError(ex);
                 }
             };
         }
